@@ -16,7 +16,6 @@ import java.util.List;
  * @create 2018/1/6
  */
 @RestController
-@Transactional
 public class NewsModuleApi {
 
 	@Autowired
@@ -34,11 +33,7 @@ public class NewsModuleApi {
 	@RequestMapping(path = "newsModule",method = RequestMethod.POST)
 	public ResultBean add(@RequestBody NewsModule newsModule){
 		int newsModuleId = newsModuleMapper.insert(newsModule);
-		if (newsModuleId > 0){
-			NewsModuleExample newsModuleExample = new NewsModuleExample();
-			newsModuleExample.createCriteria().andIdEqualTo(newsModuleId);
-			newsModuleMapper.updateChangeNumberByExample(1,newsModuleExample);
-		}
+
 		return ResultBean.create(newsModuleId > 0);
 	}
 
@@ -49,11 +44,7 @@ public class NewsModuleApi {
 		newsMapper.updateModuleIdIsNullByModuleId(id);
 		//remove module
 		int result = newsModuleMapper.deleteByPrimaryKey(id);
-		if (result > 0 ){
-			NewsModuleExample newsModuleExample = new NewsModuleExample();
-			newsModuleExample.createCriteria().andIdEqualTo(id);
-			newsModuleMapper.updateChangeNumberByExample(-1,newsModuleExample);
-		}
+
 		return ResultBean.create(result > 0);
 	}
 

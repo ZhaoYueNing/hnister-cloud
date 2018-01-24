@@ -2,6 +2,7 @@ package cn.zynworld.hnister.news.mappers;
 
 import cn.zynworld.hnister.common.domain.News;
 import cn.zynworld.hnister.common.domain.NewsExample;
+import org.apache.ibatis.session.RowBounds;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -33,5 +34,17 @@ public class NewsMappersTests {
         System.out.println(result);
     }
 
+    @Test
+    public void testFindByPage() {
+        NewsExample newsExample = new NewsExample();
+        RowBounds rowBounds = new RowBounds(1,10);
+        List<News> news = newsMapper.selectByExampleWithBLOBsWithRowbounds(newsExample, rowBounds);
+        System.out.println(news);
+    }
 
+    @Test
+    public void testNewsFindById() throws Exception {
+        News news = newsMapper.selectByPrimaryKey(11L);
+        System.out.println(news);
+    }
 }

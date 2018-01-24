@@ -7,7 +7,7 @@ spring:
         config:
             server:
                 git:
-                    uri: file://H:\project\ideaProject\hnister
+                    uri: file:///Users/zhaoyuening/Documents/project/hnister-parent/
                     search-paths: hnister-config-server/config-repo
 
 eureka:

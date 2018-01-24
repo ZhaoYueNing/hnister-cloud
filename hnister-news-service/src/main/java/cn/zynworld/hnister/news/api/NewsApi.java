@@ -2,6 +2,7 @@ package cn.zynworld.hnister.news.api;
 
 import cn.zynworld.hnister.common.domain.News;
 import cn.zynworld.hnister.common.domain.NewsExample;
+import cn.zynworld.hnister.common.domain.NewsModuleExample;
 import cn.zynworld.hnister.common.utils.PageBean;
 import cn.zynworld.hnister.common.utils.ResultBean;
 import cn.zynworld.hnister.news.mappers.NewsMapper;
@@ -16,11 +17,11 @@ import java.util.Date;
 import java.util.List;
 
 /**
+ * 批量查询将无法查询出text类型的content 保证了传输速率
  * @auther Buynow Zhao
  * @create 2018/1/2
  */
 @RestController
-@Transactional
 public class NewsApi {
 
 
@@ -28,6 +29,13 @@ public class NewsApi {
 	private NewsMapper newsMapper;
 	@Autowired
 	private NewsModuleMapper newsModuleMapper;
+
+
+	@GetMapping(path = "news/{id}")
+	public News findById(@PathVariable Long id){
+		News news = newsMapper.selectByPrimaryKey(id);
+		return news;
+	}
 
 	/**
 	 *
@@ -39,6 +47,12 @@ public class NewsApi {
 	public ResultBean addNews(@RequestBody News news){
 		news.setPostDate(new Date());
 		int newsId = newsMapper.insert(news);
+
+		if (newsId > 0 ){
+			NewsModuleExample newsModuleExample = new NewsModuleExample();
+			newsModuleExample.createCriteria().andIdEqualTo(news.getModuleId());
+			newsModuleMapper.updateChangeNumberByExample(1,newsModuleExample);
+		}
 		return ResultBean.create(newsId > 0).setMsg(newsId);
 	}
 
@@ -63,20 +77,23 @@ public class NewsApi {
 	@GetMapping(path = "news",params = "page=true")
 	public PageBean<News> findByPage(@PathParam("pageCount") Integer pageCount, @PathParam("pageSize") Integer pageSize, @PathParam("moduleId") Integer moduleId){
 		NewsExample newsExample = null;
-		PageBean<News> pageBean = null;
+		PageBean<News> pageBean = new PageBean<News>();
 		pageBean.setPageCount(pageCount).setPageSize(pageSize);
 
 		RowBounds rowBounds = new RowBounds(pageBean.getFirstItemIndex(),pageBean.getPageSize());
 		//判断模块类型
-		if (moduleId >= 0) {
+		if (moduleId > 0) {
 			newsExample = new NewsExample();
 			newsExample.createCriteria().andModuleIdEqualTo(moduleId);
+		} else if (moduleId == 0){
+			//moduleId = 0 为查询草稿箱内的文章 数据库内module_id 为null
+			newsExample = new NewsExample();
+			newsExample.createCriteria().andModuleIdIsNull();
 		}
 		//分页查询
 		List<News> newsList = newsMapper.selectByExampleWithRowbounds(newsExample, rowBounds);
 		//获取该查询非分页情况总数
 		int total = newsMapper.countByExample(newsExample);
-
 		pageBean.setTotal((long) total);
 		pageBean.setItems(newsList);
 
@@ -86,7 +103,17 @@ public class NewsApi {
 	@Transactional
 	@DeleteMapping(path = "news/{id}")
 	public ResultBean deleteById(@PathVariable Long id){
+		News news = newsMapper.selectByPrimaryKey(id);
+		if (news == null){
+			return ResultBean.fail("无该 news");
+		}
 		int result = newsMapper.deleteByPrimaryKey(id);
+		if (result > 0 && news.getModuleId() != null && news.getModuleId() != 0){
+//			//删除成功 将该文章的module 文章数量减一
+			NewsModuleExample newsModuleExample = new NewsModuleExample();
+			newsModuleExample.createCriteria().andIdEqualTo(news.getModuleId());
+			newsModuleMapper.updateChangeNumberByExample(-1,newsModuleExample);
+		}
 		return ResultBean.create(result > 0);
 	}
 
