@@ -1,0 +1,16 @@
+server:
+    port: 8888
+spring:
+    application:
+        name: hnister-config-server
+    cloud:
+        config:
+            server:
+                git:
+                    uri: file://H:\project\ideaProject\hnister
+                    search-paths: hnister-config-server/config-repo
+
+eureka:
+    client:
+        serviceUrl:
+            defaultZone: http://localhost:8889/eureka/

@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>cn.zynworld.hnister</groupId>
+    <artifactId>hnister-parent</artifactId>
+    <version>1.0-SNAPSHOT</version>
+    <packaging>pom</packaging>
+
+    <parent>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter-parent</artifactId>
+        <version>1.5.9.RELEASE</version>
+        <relativePath/>
+    </parent>
+
+    <modules>
+        <!--SpringCloud组件-->
+        <module>hnister-eureka-server</module>
+        <module>hnister-config-server</module>
+        <module>hnister-zuul-server</module>
+
+        <module>hnister-common</module>
+        <module>hnister-news-service</module>
+        <!--废弃模块-->
+        <module>hnister-config-demo</module>
+        <module>hnister-news-service-old</module>
+    </modules>
+
+
+    <dependencyManagement>
+
+        <dependencies>
+            <!--自建-->
+            <dependency>
+                <groupId>cn.zhaoyuening.hnister</groupId>
+                <artifactId>hnister-common</artifactId>
+                <version>1.0-SNAPSHOT</version>
+            </dependency>
+
+            
+        </dependencies>
+
+
+    </dependencyManagement>
+
+
+</project>
