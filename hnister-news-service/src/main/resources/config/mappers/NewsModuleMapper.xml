@@ -98,7 +98,7 @@
       <include refid="Example_Where_Clause" />
     </if>
   </delete>
-  <insert id="insert" parameterType="cn.zynworld.hnister.common.domain.NewsModule" >
+  <insert id="insert" parameterType="cn.zynworld.hnister.common.domain.NewsModule" useGeneratedKeys="true" keyProperty="id" keyColumn="id">
     insert into t_news_module (id, name, remark, 
       number)
     values (#{id,jdbcType=INTEGER}, #{name,jdbcType=VARCHAR}, #{remark,jdbcType=VARCHAR}, 
@@ -192,5 +192,27 @@
       remark = #{remark,jdbcType=VARCHAR},
       number = #{number,jdbcType=BIGINT}
     where id = #{id,jdbcType=INTEGER}
+  </update>
+  <select resultMap="BaseResultMap" parameterType="cn.zynworld.hnister.common.domain.NewsModuleExample" id="selectByExampleWithRowbounds" >
+    select
+    <if test="distinct" >
+      distinct
+    </if>
+    <include refid="Base_Column_List" />
+    from t_news_module
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null" >
+      order by ${orderByClause}
+    </if>
+  </select>
+
+  <!--myself-->
+  <update id="updateChangeNumberByExample" >
+    UPDATE t_news_module AS m SET m.`number` = (m.`number`+ (${val}))
+    <if test="_parameter != null" >
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
   </update>
 </mapper>

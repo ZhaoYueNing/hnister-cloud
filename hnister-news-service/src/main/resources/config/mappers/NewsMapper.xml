@@ -123,7 +123,7 @@
       <include refid="Example_Where_Clause" />
     </if>
   </delete>
-  <insert id="insert" parameterType="cn.zynworld.hnister.common.domain.News" >
+  <insert id="insert" parameterType="cn.zynworld.hnister.common.domain.News" useGeneratedKeys="true" keyProperty="id" keyColumn="id">
     insert into t_news (id, title, author, 
       post_date, module_id, content
       )
@@ -267,4 +267,41 @@
       module_id = #{moduleId,jdbcType=INTEGER}
     where id = #{id,jdbcType=BIGINT}
   </update>
+  <select resultMap="ResultMapWithBLOBs" parameterType="cn.zynworld.hnister.common.domain.NewsExample" id="selectByExampleWithBLOBsWithRowbounds" >
+    select
+    <if test="distinct" >
+      distinct
+    </if>
+    <include refid="Base_Column_List" />
+    ,
+    <include refid="Blob_Column_List" />
+    from t_news
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null" >
+      order by ${orderByClause}
+    </if>
+  </select>
+  <select resultMap="BaseResultMap" parameterType="cn.zynworld.hnister.common.domain.NewsExample" id="selectByExampleWithRowbounds" >
+    select
+    <if test="distinct" >
+      distinct
+    </if>
+    <include refid="Base_Column_List" />
+    from t_news
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null" >
+      order by ${orderByClause}
+    </if>
+  </select>
+
+  <!--myself-->
+  <update id="updateModuleIdIsNullByModuleId" parameterType="int">
+    UPDATE t_news SET module_id = NULL
+    WHERE module_id = ${moduleId}
+  </update>
+  
 </mapper>

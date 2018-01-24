@@ -15,6 +15,7 @@ public class News {
 
     private String content;
 
+
     public Long getId() {
         return id;
     }

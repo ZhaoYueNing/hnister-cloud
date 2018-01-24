@@ -3,6 +3,7 @@ package cn.zynworld.hnister.news.mappers;
 import cn.zynworld.hnister.common.domain.NewsModule;
 import cn.zynworld.hnister.common.domain.NewsModuleExample;
 import org.apache.ibatis.annotations.Param;
+import org.apache.ibatis.session.RowBounds;
 
 import java.util.List;
 
@@ -17,6 +18,8 @@ public interface NewsModuleMapper {
 
     int insertSelective(NewsModule record);
 
+    List<NewsModule> selectByExampleWithRowbounds(NewsModuleExample example, RowBounds rowBounds);
+
     List<NewsModule> selectByExample(NewsModuleExample example);
 
     NewsModule selectByPrimaryKey(Integer id);
@@ -28,4 +31,6 @@ public interface NewsModuleMapper {
     int updateByPrimaryKeySelective(NewsModule record);
 
     int updateByPrimaryKey(NewsModule record);
+
+    int updateChangeNumberByExample(@Param("val")Integer val,@Param("example") NewsModuleExample example);
 }

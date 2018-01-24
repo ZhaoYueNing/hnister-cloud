@@ -1,7 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="b09429e5-0af3-4c1a-a6d3-da7e0d0f5397" name="Default" comment="" />
+    <list default="true" id="b09429e5-0af3-4c1a-a6d3-da7e0d0f5397" name="Default" comment="">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/dataSources.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/hnister-news-service/src/main/java/cn/zynworld/hnister/news/api/NewsApi.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/hnister-news-service/src/main/java/cn/zynworld/hnister/news/api/NewsModuleApi.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/hnister-news-service/src/test/java/cn/zynworld/hnister/news/api/NewsApiTest.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/hnister-news-service/src/test/java/cn/zynworld/hnister/news/mappers/NewsModuleMapperTest.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/hnister-news-service/src/test/java/cn/zynworld/hnister/news/mappers/MappersTests.java" afterPath="$PROJECT_DIR$/hnister-news-service/src/test/java/cn/zynworld/hnister/news/mappers/NewsMappersTests.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/hnister-common/target/classes/cn/zynworld/hnister/common/domain/News.class" afterPath="$PROJECT_DIR$/hnister-common/target/classes/cn/zynworld/hnister/common/domain/News.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/hnister-common/src/main/java/cn/zynworld/hnister/common/domain/News.java" afterPath="$PROJECT_DIR$/hnister-common/src/main/java/cn/zynworld/hnister/common/domain/News.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/hnister-common/src/main/java/cn/zynworld/hnister/common/utils/PageBean.java" afterPath="$PROJECT_DIR$/hnister-common/src/main/java/cn/zynworld/hnister/common/utils/PageBean.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/hnister-news-service/pom.xml" afterPath="$PROJECT_DIR$/hnister-news-service/pom.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/hnister-news-service/src/main/java/cn/zynworld/hnister/news/mappers/NewsMapper.java" afterPath="$PROJECT_DIR$/hnister-news-service/src/main/java/cn/zynworld/hnister/news/mappers/NewsMapper.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/hnister-news-service/src/main/java/cn/zynworld/hnister/news/mappers/NewsModuleMapper.java" afterPath="$PROJECT_DIR$/hnister-news-service/src/main/java/cn/zynworld/hnister/news/mappers/NewsModuleMapper.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/hnister-news-service/src/main/resources/config/mappers/NewsMapper.xml" afterPath="$PROJECT_DIR$/hnister-news-service/src/main/resources/config/mappers/NewsMapper.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/hnister-news-service/src/main/resources/config/mappers/NewsModuleMapper.xml" afterPath="$PROJECT_DIR$/hnister-news-service/src/main/resources/config/mappers/NewsModuleMapper.xml" />
+    </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
     <ignored path="$USER_HOME$/IdeaProjects/hnister/hnister-common/target/" />
@@ -23,107 +39,167 @@
     <option name="MAKE_PROJECT_ON_SAVE" value="true" />
     <option name="PARALLEL_COMPILATION" value="true" />
   </component>
+  <component name="DatabaseView">
+    <option name="SHOW_INTERMEDIATE" value="true" />
+    <option name="GROUP_SCHEMA" value="true" />
+    <option name="GROUP_CONTENTS" value="false" />
+    <option name="SORT_POSITIONED" value="false" />
+    <option name="SHOW_TABLE_DETAILS" value="true" />
+    <option name="SHOW_EMPTY_GROUPS" value="false" />
+    <option name="AUTO_SCROLL_FROM_SOURCE" value="false" />
+    <PATH>
+      <PATH_ELEMENT>
+        <option name="myItemId" />
+        <option name="myItemType" value="com.intellij.database.view.DatabaseStructure$Root" />
+      </PATH_ELEMENT>
+      <PATH_ELEMENT>
+        <option name="myItemId" value="hnister@localhost" />
+        <option name="myItemType" value="com.intellij.database.view.DbNodeDescriptor" />
+      </PATH_ELEMENT>
+    </PATH>
+    <PATH>
+      <PATH_ELEMENT>
+        <option name="myItemId" />
+        <option name="myItemType" value="com.intellij.database.view.DatabaseStructure$Root" />
+      </PATH_ELEMENT>
+      <PATH_ELEMENT>
+        <option name="myItemId" value="hnister@localhost" />
+        <option name="myItemType" value="com.intellij.database.view.DbNodeDescriptor" />
+      </PATH_ELEMENT>
+      <PATH_ELEMENT>
+        <option name="myItemId" value="hnister" />
+        <option name="myItemType" value="com.intellij.database.view.DbNodeDescriptor" />
+      </PATH_ELEMENT>
+    </PATH>
+    <PATH>
+      <PATH_ELEMENT>
+        <option name="myItemId" />
+        <option name="myItemType" value="com.intellij.database.view.DatabaseStructure$Root" />
+      </PATH_ELEMENT>
+      <PATH_ELEMENT>
+        <option name="myItemId" value="hnister@localhost" />
+        <option name="myItemType" value="com.intellij.database.view.DbNodeDescriptor" />
+      </PATH_ELEMENT>
+      <PATH_ELEMENT>
+        <option name="myItemId" value="hnister" />
+        <option name="myItemType" value="com.intellij.database.view.DbNodeDescriptor" />
+      </PATH_ELEMENT>
+      <PATH_ELEMENT>
+        <option name="myItemId" value="t_news" />
+        <option name="myItemType" value="com.intellij.database.view.DbNodeDescriptor" />
+      </PATH_ELEMENT>
+    </PATH>
+  </component>
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="HnisterNewsServiceApplication.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/hnister-news-service/src/main/java/cn/zynworld/hnister/news/HnisterNewsServiceApplication.java">
+      <file leaf-file-name="NewsMappersTests.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/hnister-news-service/src/test/java/cn/zynworld/hnister/news/mappers/NewsMappersTests.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="75">
-              <caret line="7" column="0" lean-forward="false" selection-start-line="7" selection-start-column="0" selection-end-line="7" selection-end-column="0" />
+            <state relative-caret-position="307">
+              <caret line="35" column="0" lean-forward="false" selection-start-line="35" selection-start-column="0" selection-end-line="35" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="NewsModuleMapperTest.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/hnister-news-service/src/test/java/cn/zynworld/hnister/news/mappers/NewsModuleMapperTest.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="343">
+              <caret line="23" column="8" lean-forward="false" selection-start-line="23" selection-start-column="8" selection-end-line="23" selection-end-column="8" />
               <folding>
-                <element signature="imports" expanded="false" />
-                <element signature="e#362#363#0" expanded="false" />
-                <element signature="e#433#434#0" expanded="false" />
+                <element signature="imports" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="mybatis-config.xml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/hnister-news-service/src/main/resources/config/mybatis-config.xml">
+      <file leaf-file-name="NewsApiTest.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/hnister-news-service/src/test/java/cn/zynworld/hnister/news/api/NewsApiTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="MappersTests.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/hnister-news-service/src/test/java/cn/zynworld/hnister/news/mappers/MappersTests.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="285">
-              <caret line="19" column="0" lean-forward="true" selection-start-line="19" selection-start-column="0" selection-end-line="19" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="HnisterNewsServiceApplicationTests.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/hnister-news-service/src/test/java/cn/zynworld/hnister/news/HnisterNewsServiceApplicationTests.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="60">
-              <caret line="11" column="19" lean-forward="false" selection-start-line="11" selection-start-column="19" selection-end-line="11" selection-end-column="19" />
+            <state relative-caret-position="252">
+              <caret line="25" column="5" lean-forward="false" selection-start-line="25" selection-start-column="5" selection-end-line="25" selection-end-column="5" />
               <folding>
-                <element signature="imports" expanded="false" />
+                <element signature="imports" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="NewsMapper.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/hnister-news-service/src/main/java/cn/zynworld/hnister/news/mappers/NewsMapper.java">
+      <file leaf-file-name="NewsModuleApi.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/hnister-news-service/src/main/java/cn/zynworld/hnister/news/api/NewsModuleApi.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="120">
-              <caret line="8" column="0" lean-forward="false" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="bootstrap.properties" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/hnister-news-service/src/main/resources/bootstrap.properties">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="60">
-              <caret line="4" column="53" lean-forward="false" selection-start-line="4" selection-start-column="53" selection-end-line="4" selection-end-column="53" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="application.properties" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/hnister-news-service/src/main/resources/application.properties">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="60">
-              <caret line="4" column="13" lean-forward="true" selection-start-line="4" selection-start-column="13" selection-end-line="4" selection-end-column="13" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="HnisterNewsServiceApplication.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/hnister-news-service-old/src/main/java/cn/zynworld/hnister/hnisternewsservice/HnisterNewsServiceApplication.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="90">
-              <caret line="9" column="13" lean-forward="false" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
+            <state relative-caret-position="316">
+              <caret line="55" column="0" lean-forward="false" selection-start-line="55" selection-start-column="0" selection-end-line="55" selection-end-column="0" />
               <folding>
-                <element signature="imports" expanded="false" />
-                <element signature="e#502#503#0" expanded="false" />
-                <element signature="e#573#574#0" expanded="false" />
+                <element signature="imports" expanded="true" />
+                <element signature="e#801#802#0" expanded="true" />
+                <element signature="e#853#854#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="MybatisProperties.class" pinned="false" current-in-tab="false">
-        <entry file="jar://$MAVEN_REPOSITORY$/org/mybatis/spring/boot/mybatis-spring-boot-autoconfigure/1.3.1/mybatis-spring-boot-autoconfigure-1.3.1.jar!/org/mybatis/spring/boot/autoconfigure/MybatisProperties.class">
+      <file leaf-file-name="NewsApi.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/hnister-news-service/src/main/java/cn/zynworld/hnister/news/api/NewsApi.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="135">
-              <caret line="78" column="16" lean-forward="false" selection-start-line="78" selection-start-column="16" selection-end-line="78" selection-end-column="16" />
+            <state relative-caret-position="412">
+              <caret line="89" column="18" lean-forward="true" selection-start-line="89" selection-start-column="18" selection-end-line="89" selection-end-column="18" />
               <folding>
-                <element signature="e#2300#2301#0" expanded="true" />
-                <element signature="e#2360#2361#0" expanded="true" />
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="NewsModuleMapper.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/hnister-news-service/src/main/java/cn/zynworld/hnister/news/mappers/NewsModuleMapper.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="321">
+              <caret line="34" column="35" lean-forward="false" selection-start-line="34" selection-start-column="35" selection-end-line="34" selection-end-column="35" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="NewsModuleMapper.xml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/hnister-news-service/src/main/resources/config/mappers/NewsModuleMapper.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="226">
+              <caret line="212" column="69" lean-forward="false" selection-start-line="212" selection-start-column="69" selection-end-line="212" selection-end-column="69" />
+              <folding>
+                <marker date="1516784875668" expanded="true" signature="3505:3614" ph="select from t_news_module" />
+                <marker date="1516784875668" expanded="true" signature="3701:3764" ph="delete from " />
+                <marker date="1516784875668" expanded="true" signature="3882:3907" ph="delete from " />
+                <marker date="1516784875668" expanded="true" signature="4157:4340" ph="insert into t_news_module... " />
+                <marker date="1516784875668" expanded="true" signature="5314:5348" ph="select count... t_news_module" />
+                <marker date="1516784875668" expanded="true" signature="6136:6344" ph="update t_new... " />
+                <marker date="1516784875668" expanded="true" signature="6570:6916" ph="update t_new... " />
+                <marker date="1516784875668" expanded="true" signature="7030:7213" ph="update t_new... " />
+                <marker date="1516784875668" expanded="true" signature="7744:7809" ph="UPDATE t_new... " />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="NewsDao.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/hnister-news-service-old/src/main/java/cn/zynworld/hnister/hnisternewsservice/dao/NewsDao.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-57">
+              <caret line="142" column="13" lean-forward="false" selection-start-line="142" selection-start-column="13" selection-end-line="142" selection-end-column="13" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <marker date="1516759869406" expanded="true" signature="686:765" ph="INSERT INTO t_news... " />
+                <marker date="1516759869406" expanded="true" signature="1340:1360" ph="SELECT * FRO... t_news" />
+                <marker date="1516759869406" expanded="true" signature="1940:1978" ph="DELETE FROM " />
+                <marker date="1516759869406" expanded="true" signature="2230:2261" ph="DELETE FROM " />
+                <marker date="1516759869406" expanded="true" signature="2530:2584" ph="UPDATE t_new... " />
+                <marker date="1516759869406" expanded="true" signature="3169:3219" ph="SELECT SQL_C... t_news" />
+                <marker date="1516759869406" expanded="true" signature="3482:3557" ph="SELECT SQL_C... t_news" />
+                <marker date="1516759869406" expanded="true" signature="3793:3863" ph="SELECT SQL_C... t_news" />
+                <marker date="1516759869406" expanded="true" signature="4662:4681" ph="SELECT FOUND... " />
+                <marker date="1516759869406" expanded="true" signature="4981:5060" ph="UPDATE t_new... " />
               </folding>
             </state>
           </provider>
@@ -132,19 +208,32 @@
       <file leaf-file-name="NewsMapper.xml" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/hnister-news-service/src/main/resources/config/mappers/NewsMapper.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="30">
-              <caret line="2" column="55" lean-forward="false" selection-start-line="2" selection-start-column="55" selection-end-line="2" selection-end-column="55" />
+            <state relative-caret-position="230">
+              <caret line="303" column="32" lean-forward="false" selection-start-line="303" selection-start-column="24" selection-end-line="303" selection-end-column="32" />
               <folding>
-                <marker date="1516759869410" expanded="true" signature="4311:4459" ph="select , fro... " />
-                <marker date="1516759869410" expanded="true" signature="4543:4598" ph="delete from " />
-                <marker date="1516759869410" expanded="true" signature="4710:4728" ph="delete from " />
-                <marker date="1516759869410" expanded="true" signature="4917:5194" ph="insert into t_news... " />
-                <marker date="1516759869410" expanded="true" signature="6464:6491" ph="select count... t_news" />
-                <marker date="1516759869410" expanded="true" signature="7512:7828" ph="update t_new... " />
-                <marker date="1516759869410" expanded="true" signature="8001:8261" ph="update t_new... " />
-                <marker date="1516759869410" expanded="true" signature="8481:9023" ph="update t_new... " />
-                <marker date="1516759869410" expanded="true" signature="9140:9417" ph="update t_new... " />
-                <marker date="1516759869410" expanded="true" signature="9525:9753" ph="update t_new... " />
+                <marker date="1516783941140" expanded="true" signature="4311:4459" ph="select , fro... " />
+                <marker date="1516783941140" expanded="true" signature="4543:4598" ph="delete from " />
+                <marker date="1516783941140" expanded="true" signature="4710:4728" ph="delete from " />
+                <marker date="1516783941140" expanded="true" signature="4972:5249" ph="insert into t_news... " />
+                <marker date="1516783941140" expanded="true" signature="6519:6546" ph="select count... t_news" />
+                <marker date="1516783941140" expanded="true" signature="7567:7883" ph="update t_new... " />
+                <marker date="1516783941140" expanded="true" signature="8056:8316" ph="update t_new... " />
+                <marker date="1516783941140" expanded="true" signature="8536:9078" ph="update t_new... " />
+                <marker date="1516783941140" expanded="true" signature="9195:9472" ph="update t_new... " />
+                <marker date="1516783941140" expanded="true" signature="9580:9808" ph="update t_new... " />
+                <marker date="1516783941140" expanded="true" signature="10848:10916" ph="UPDATE t_new... " />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="NewsMapper.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/hnister-news-service/src/main/java/cn/zynworld/hnister/news/mappers/NewsMapper.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="262">
+              <caret line="42" column="55" lean-forward="false" selection-start-line="42" selection-start-column="55" selection-end-line="42" selection-end-column="55" />
+              <folding>
+                <element signature="imports" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -162,7 +251,14 @@
   <component name="FindInProjectRecents">
     <findStrings>
       <find>mapper</find>
+      <find>insert</find>
+      <find>number</find>
+      <find>${</find>
+      <find>updateModuleIdIsNullByModuleId</find>
     </findStrings>
+    <replaceStrings>
+      <replace />
+    </replaceStrings>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -187,13 +283,28 @@
         <option value="$PROJECT_DIR$/hnister-common/src/main/java/cn/zynworld/hnister/domain/NewsModule.java" />
         <option value="$PROJECT_DIR$/hnister-news-service/src/main/java/cn/zynworld/hnister/mapper/NewsModuleMapper.java" />
         <option value="$PROJECT_DIR$/pom.xml" />
-        <option value="$PROJECT_DIR$/hnister-news-service/src/test/java/cn/zynworld/hnister/news/mappers/MappersTests.java" />
         <option value="$PROJECT_DIR$/hnister-config-server/config-repo/hnister-news-service-dev.properties" />
-        <option value="$PROJECT_DIR$/hnister-news-service/pom.xml" />
-        <option value="$PROJECT_DIR$/hnister-news-service/src/main/java/cn/zynworld/hnister/news/mappers/NewsMapper.java" />
         <option value="$PROJECT_DIR$/hnister-news-service/src/test/java/cn/zynworld/hnister/news/HnisterNewsServiceApplicationTests.java" />
         <option value="$PROJECT_DIR$/hnister-news-service/src/main/java/cn/zynworld/hnister/news/HnisterNewsServiceApplication.java" />
         <option value="$PROJECT_DIR$/hnister-news-service/src/main/resources/application.properties" />
+        <option value="$PROJECT_DIR$/hnister-news-service/pom.xml" />
+        <option value="$PROJECT_DIR$/hnister-news-service/src/main/java/cn/zynworld/hnister/news/service/NewsService.java" />
+        <option value="$PROJECT_DIR$/hnister-news-service/src/main/java/cn/zynworld/hnister/news/api/NewsModuleRest.java" />
+        <option value="$PROJECT_DIR$/hnister-news-service/src/main/resources/generatorConfig.xml" />
+        <option value="$PROJECT_DIR$/hnister-common/src/main/java/cn/zynworld/hnister/common/domain/NewsModuleExample.java" />
+        <option value="$PROJECT_DIR$/hnister-common/src/main/java/cn/zynworld/hnister/common/utils/PageBean.java" />
+        <option value="$PROJECT_DIR$/hnister-common/src/main/java/cn/zynworld/hnister/common/domain/News.java" />
+        <option value="$PROJECT_DIR$/hnister-common/src/main/java/cn/zynworld/hnister/common/domain/NewsModule.java" />
+        <option value="$PROJECT_DIR$/hnister-news-service/src/main/java/cn/zynworld/hnister/news/api/NewsApi.java" />
+        <option value="$PROJECT_DIR$/hnister-news-service/src/test/java/cn/zynworld/hnister/news/mappers/MappersTests.java" />
+        <option value="$PROJECT_DIR$/hnister-news-service/src/test/java/cn/zynworld/hnister/news/api/NewsApiTest.java" />
+        <option value="$PROJECT_DIR$/hnister-news-service/src/main/java/cn/zynworld/hnister/news/mappers/NewsMapper.java" />
+        <option value="$PROJECT_DIR$/hnister-news-service/src/main/resources/config/mappers/NewsMapper.xml" />
+        <option value="$PROJECT_DIR$/hnister-news-service/src/test/java/cn/zynworld/hnister/news/mappers/NewsMappersTests.java" />
+        <option value="$PROJECT_DIR$/hnister-news-service/src/main/java/cn/zynworld/hnister/news/mappers/NewsModuleMapper.java" />
+        <option value="$PROJECT_DIR$/hnister-news-service/src/main/resources/config/mappers/NewsModuleMapper.xml" />
+        <option value="$PROJECT_DIR$/hnister-news-service/src/main/java/cn/zynworld/hnister/news/api/NewsModuleApi.java" />
+        <option value="$PROJECT_DIR$/hnister-news-service/src/test/java/cn/zynworld/hnister/news/mappers/NewsModuleMapperTest.java" />
       </list>
     </option>
   </component>
@@ -246,6 +357,7 @@
     <panes>
       <pane id="PackagesPane" />
       <pane id="Scope" />
+      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -311,8 +423,46 @@
               <option name="myItemId" value="main" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
+          </PATH>
+          <PATH>
             <PATH_ELEMENT>
-              <option name="myItemId" value="resources" />
+              <option name="myItemId" value="hnister-parent" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="hnister-parent" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="hnister-news-service-old" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="java" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="cn" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="zynworld" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="hnister" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="hnisternewsservice" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -355,6 +505,10 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="hnisternewsservice" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="dao" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -457,6 +611,52 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="mappers" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="hnister-parent" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="hnister-parent" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="hnister-news-service" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="test" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="java" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="cn" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="zynworld" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="hnister" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="news" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="api" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -538,6 +738,40 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
+              <option name="myItemId" value="resources" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="config" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="mappers" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="hnister-parent" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="hnister-parent" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="hnister-news-service" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
               <option name="myItemId" value="java" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
@@ -601,6 +835,52 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="mappers" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="hnister-parent" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="hnister-parent" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="hnister-news-service" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="java" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="cn" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="zynworld" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="hnister" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="news" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="api" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -732,9 +1012,54 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="hnister-parent" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="hnister-parent" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="hnister-common" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="java" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="cn" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="zynworld" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="hnister" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="common" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="domain" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
         </subPane>
       </pane>
-      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -744,16 +1069,18 @@
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.1970803" />
+    <property name="com.intellij.database.dataSource.DataSourceTemplate" value="MySQL" />
   </component>
   <component name="RecentsManager">
     <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
       <recent name="cn.zynworld.hnister.news" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/hnister-news-service/src/main/resources/config/mappers" />
+      <recent name="$PROJECT_DIR$/hnister-news-service/src/main/java/cn/zynworld/hnister/news/mappers" />
+      <recent name="$PROJECT_DIR$/hnister-common/src/main/java/cn/zynworld/hnister/common/domain" />
+      <recent name="$PROJECT_DIR$/hnister-news-service/src/main/java/cn/zynworld/hnister/news/api" />
       <recent name="$PROJECT_DIR$/hnister-news-service/src/main/resources/config" />
-      <recent name="$PROJECT_DIR$/hnister-news-service/src/main/java/cn/zynworld/hnister/mapper" />
-      <recent name="$PROJECT_DIR$/hnister-common/src/main/java/cn/zynworld/hnister/domain" />
-      <recent name="$PROJECT_DIR$/hnister-news-service/src/main/resources" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -768,8 +1095,8 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="JUnit.MappersTests.testNewsMapper">
-    <configuration default="false" name="MappersTests.testNewsMapper" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="Spring Boot.HnisterEurekaServerApplication">
+    <configuration default="false" name="NewsMappersTests.testNewsMapper" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
         <pattern>
           <option name="PATTERN" value="cn.zynworld.hnister.news.mappers.*" />
@@ -780,7 +1107,7 @@
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
       <option name="ALTERNATIVE_JRE_PATH" />
       <option name="PACKAGE_NAME" value="cn.zynworld.hnister.news.mappers" />
-      <option name="MAIN_CLASS_NAME" value="cn.zynworld.hnister.news.mappers.MappersTests" />
+      <option name="MAIN_CLASS_NAME" value="cn.zynworld.hnister.news.mappers.NewsMappersTests" />
       <option name="METHOD_NAME" value="testNewsMapper" />
       <option name="TEST_OBJECT" value="method" />
       <option name="VM_PARAMETERS" value="-ea" />
@@ -835,6 +1162,58 @@
       <option name="MAIN_CLASS_NAME" value="cn.zynworld.hnister.news.HnisterNewsServiceApplicationTests" />
       <option name="METHOD_NAME" />
       <option name="TEST_OBJECT" value="class" />
+      <option name="VM_PARAMETERS" value="-ea" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="singleModule" />
+      </option>
+      <envs />
+      <patterns />
+      <method />
+    </configuration>
+    <configuration default="false" name="NewsMappersTests.testNull" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
+        <pattern>
+          <option name="PATTERN" value="cn.zynworld.hnister.news.mappers.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <module name="hnister-news-service" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PACKAGE_NAME" value="cn.zynworld.hnister.news.mappers" />
+      <option name="MAIN_CLASS_NAME" value="cn.zynworld.hnister.news.mappers.NewsMappersTests" />
+      <option name="METHOD_NAME" value="testNull" />
+      <option name="TEST_OBJECT" value="method" />
+      <option name="VM_PARAMETERS" value="-ea" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="singleModule" />
+      </option>
+      <envs />
+      <patterns />
+      <method />
+    </configuration>
+    <configuration default="false" name="NewsModuleMapperTest.testNumberChange" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
+        <pattern>
+          <option name="PATTERN" value="cn.zynworld.hnister.news.mappers.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <module name="hnister-news-service" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PACKAGE_NAME" value="cn.zynworld.hnister.news.mappers" />
+      <option name="MAIN_CLASS_NAME" value="cn.zynworld.hnister.news.mappers.NewsModuleMapperTest" />
+      <option name="METHOD_NAME" value="testNumberChange" />
+      <option name="TEST_OBJECT" value="method" />
       <option name="VM_PARAMETERS" value="-ea" />
       <option name="PARAMETERS" />
       <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
@@ -1291,21 +1670,25 @@
       <envs />
       <method />
     </configuration>
-    <list size="8">
+    <list size="10">
       <item index="0" class="java.lang.String" itemvalue="Spring Boot.HnisterConfigDemoApplication" />
       <item index="1" class="java.lang.String" itemvalue="Spring Boot.HnisterConfigServerApplication" />
       <item index="2" class="java.lang.String" itemvalue="Spring Boot.HnisterEurekaServerApplication" />
       <item index="3" class="java.lang.String" itemvalue="Spring Boot.HnisterNewsServiceApplication" />
       <item index="4" class="java.lang.String" itemvalue="Spring Boot.HnisterZuulServerApplication" />
-      <item index="5" class="java.lang.String" itemvalue="JUnit.MappersTests.testNewsMapper" />
+      <item index="5" class="java.lang.String" itemvalue="JUnit.NewsMappersTests.testNewsMapper" />
       <item index="6" class="java.lang.String" itemvalue="JUnit.HnisterNewsServiceApplicationTests.contextLoads" />
       <item index="7" class="java.lang.String" itemvalue="JUnit.HnisterNewsServiceApplicationTests" />
+      <item index="8" class="java.lang.String" itemvalue="JUnit.NewsMappersTests.testNull" />
+      <item index="9" class="java.lang.String" itemvalue="JUnit.NewsModuleMapperTest.testNumberChange" />
     </list>
     <recent_temporary>
-      <list size="3">
-        <item index="0" class="java.lang.String" itemvalue="JUnit.MappersTests.testNewsMapper" />
-        <item index="1" class="java.lang.String" itemvalue="JUnit.HnisterNewsServiceApplicationTests.contextLoads" />
-        <item index="2" class="java.lang.String" itemvalue="JUnit.HnisterNewsServiceApplicationTests" />
+      <list size="5">
+        <item index="0" class="java.lang.String" itemvalue="JUnit.NewsModuleMapperTest.testNumberChange" />
+        <item index="1" class="java.lang.String" itemvalue="JUnit.NewsMappersTests.testNull" />
+        <item index="2" class="java.lang.String" itemvalue="JUnit.NewsMappersTests.testNewsMapper" />
+        <item index="3" class="java.lang.String" itemvalue="JUnit.HnisterNewsServiceApplicationTests.contextLoads" />
+        <item index="4" class="java.lang.String" itemvalue="JUnit.HnisterNewsServiceApplicationTests" />
       </list>
     </recent_temporary>
   </component>
@@ -1321,44 +1704,45 @@
       <updated>1516699540627</updated>
       <workItem from="1516699544605" duration="2378000" />
       <workItem from="1516701939876" duration="909000" />
-      <workItem from="1516758948065" duration="3324000" />
+      <workItem from="1516758948065" duration="4036000" />
+      <workItem from="1516776296557" duration="8485000" />
     </task>
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="HnisterNewsServiceApplicationTests - 2018.01.24 at 10h 46m 04s.xml">
-      <configuration name="HnisterNewsServiceApplicationTests" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="HnisterNewsServiceApplicationTests - 2018.01.24 at 10h 49m 08s.xml">
-      <configuration name="HnisterNewsServiceApplicationTests" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="HnisterNewsServiceApplicationTests - 2018.01.24 at 10h 51m 59s.xml">
-      <configuration name="HnisterNewsServiceApplicationTests" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="HnisterNewsServiceApplicationTests_contextLoads - 2018.01.24 at 10h 44m 59s.xml">
-      <configuration name="HnisterNewsServiceApplicationTests.contextLoads" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="HnisterNewsServiceApplicationTests_contextLoads - 2018.01.24 at 10h 59m 24s.xml">
-      <configuration name="HnisterNewsServiceApplicationTests.contextLoads" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="HnisterNewsServiceApplicationTests_contextLoads - 2018.01.24 at 11h 02m 06s.xml">
-      <configuration name="HnisterNewsServiceApplicationTests.contextLoads" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="MappersTests_testNewsMapper - 2018.01.24 at 10h 21m 51s.xml">
-      <configuration name="MappersTests.testNewsMapper" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="MappersTests_testNewsMapper - 2018.01.24 at 11h 02m 35s.xml">
-      <configuration name="MappersTests.testNewsMapper" configurationId="JUnit" />
-    </history-entry>
     <history-entry file="MappersTests_testNewsMapper - 2018.01.24 at 11h 03m 00s.xml">
       <configuration name="MappersTests.testNewsMapper" configurationId="JUnit" />
     </history-entry>
     <history-entry file="MappersTests_testNewsMapper - 2018.01.24 at 11h 06m 11s.xml">
       <configuration name="MappersTests.testNewsMapper" configurationId="JUnit" />
     </history-entry>
+    <history-entry file="MappersTests_testNewsMapper - 2018.01.24 at 14h 55m 58s.xml">
+      <configuration name="MappersTests.testNewsMapper" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="NewsMappersTests_testNull - 2018.01.24 at 16h 47m 15s.xml">
+      <configuration name="NewsMappersTests.testNull" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="NewsMappersTests_testNull - 2018.01.24 at 16h 53m 43s.xml">
+      <configuration name="NewsMappersTests.testNull" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="NewsMappersTests_testNull - 2018.01.24 at 16h 53m 56s.xml">
+      <configuration name="NewsMappersTests.testNull" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="NewsModuleMapperTest_testNumberChange - 2018.01.24 at 17h 09m 56s.xml">
+      <configuration name="NewsModuleMapperTest.testNumberChange" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="NewsModuleMapperTest_testNumberChange - 2018.01.24 at 17h 09m 59s.xml">
+      <configuration name="NewsModuleMapperTest.testNumberChange" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="NewsModuleMapperTest_testNumberChange - 2018.01.24 at 17h 10m 11s.xml">
+      <configuration name="NewsModuleMapperTest.testNumberChange" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="NewsModuleMapperTest_testNumberChange - 2018.01.24 at 17h 10m 35s.xml">
+      <configuration name="NewsModuleMapperTest.testNumberChange" configurationId="JUnit" />
+    </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="6611000" />
+    <option name="totallyTimeSpent" value="15808000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="3" y="24" width="1430" height="814" extended-state="0" />
@@ -1366,28 +1750,29 @@
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Nl-Palette" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32925072" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.13616715" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Properties" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.19668588" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.39889196" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.39889196" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Java Enterprise" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Java Enterprise" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.34903046" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3292517" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Spring" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32963988" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25648415" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32963988" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3170029" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Problems" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Bean Validation" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
@@ -1395,7 +1780,6 @@
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -1406,7 +1790,7 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="2" />
+      <option name="time" value="4" />
     </breakpoint-manager>
     <watches-manager />
   </component>
@@ -1415,109 +1799,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/hnister-news-service/src/test/java/cn/zynworld/hnister/news/HnisterNewsServiceApplicationTests.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="90">
-          <caret line="9" column="13" lean-forward="false" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
-          <folding>
-            <element signature="imports" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/hnister-common/src/main/java/cn/zynworld/hnister/common/utils/DaoUtils.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
-          <caret line="9" column="13" lean-forward="false" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/hnister-news-service-old/pom.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="17" column="13" lean-forward="false" selection-start-line="17" selection-start-column="13" selection-end-line="17" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/hnister-common/src/main/java/cn/zynworld/hnister/common/utils/PageBean.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="135">
-          <caret line="9" column="13" lean-forward="false" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/hnister-common/src/main/java/cn/zynworld/hnister/common/utils/ResultBean.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="105">
-          <caret line="7" column="13" lean-forward="false" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/hnister-news-service/src/main/java/cn/zynworld/hnister/news/mappers/NewsMapper.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="90">
-          <caret line="10" column="0" lean-forward="false" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/hnister-news-service/src/main/java/cn/zynworld/hnister/news/mappers/NewsModuleMapper.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="8" column="17" lean-forward="false" selection-start-line="8" selection-start-column="17" selection-end-line="8" selection-end-column="17" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/hnister-config-server/src/main/java/cn/zynworld/hnister/hnisterconfigserver/HnisterConfigServerApplication.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="165">
-          <caret line="16" column="0" lean-forward="false" selection-start-line="16" selection-start-column="0" selection-end-line="16" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/hnister-news-service/src/main/resources/application.properties">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/pom.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
-          <caret line="8" column="35" lean-forward="true" selection-start-line="6" selection-start-column="4" selection-end-line="8" selection-end-column="35" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/hnister-news-service/src/test/java/cn/zynworld/hnister/news/HnisterNewsServiceApplicationTests.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="90">
-          <caret line="9" column="13" lean-forward="false" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
-          <folding>
-            <element signature="imports" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/hnister-news-service/src/main/java/cn/zynworld/hnister/news/HnisterNewsServiceApplication.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="75">
-          <caret line="6" column="13" lean-forward="false" selection-start-line="6" selection-start-column="13" selection-end-line="6" selection-end-column="13" />
-          <folding>
-            <element signature="imports" expanded="false" />
-            <element signature="e#362#363#0" expanded="false" />
-            <element signature="e#433#434#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/hnister-news-service-old/pom.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="255">
@@ -1555,7 +1836,7 @@
         <state relative-caret-position="330">
           <caret line="22" column="40" lean-forward="false" selection-start-line="22" selection-start-column="40" selection-end-line="22" selection-end-column="40" />
           <folding>
-            <marker date="1516760501396" expanded="true" signature="1094:1572" ph="..." />
+            <marker date="1516776436527" expanded="true" signature="1094:1572" ph="..." />
           </folding>
         </state>
       </provider>
@@ -1596,13 +1877,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="60">
           <caret line="10" column="22" lean-forward="false" selection-start-line="10" selection-start-column="22" selection-end-line="10" selection-end-column="22" />
-          <folding>
-            <element signature="imports" expanded="false" />
-            <element signature="e#657#658#0" expanded="false" />
-            <element signature="e#727#728#0" expanded="false" />
-            <element signature="e#838#839#0" expanded="false" />
-            <element signature="e#860#861#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1627,80 +1901,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/hnister-news-service-old/src/main/resources/application.properties">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/hnister-common/src/main/java/cn/zynworld/hnister/common/domain/NewsModuleExample.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/hnister-common/src/main/java/cn/zynworld/hnister/common/domain/News.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="17" column="25" lean-forward="false" selection-start-line="17" selection-start-column="25" selection-end-line="17" selection-end-column="25" />
-          <folding>
-            <element signature="e#302#303#0" expanded="true" />
-            <element signature="e#417#418#0" expanded="true" />
-            <element signature="e#445#446#0" expanded="true" />
-            <element signature="e#575#576#0" expanded="true" />
-            <element signature="e#604#605#0" expanded="true" />
-            <element signature="e#738#739#0" expanded="true" />
-            <element signature="e#769#770#0" expanded="true" />
-            <element signature="e#912#913#0" expanded="true" />
-            <element signature="e#943#944#0" expanded="true" />
-            <element signature="e#1087#1088#0" expanded="true" />
-            <element signature="e#1117#1118#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/hnister-common/src/main/java/cn/zynworld/hnister/common/domain/NewsExample.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="13">
-          <caret line="7" column="13" lean-forward="false" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/hnister-common/src/main/java/cn/zynworld/hnister/common/domain/NewsModule.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="240">
-          <caret line="18" column="5" lean-forward="false" selection-start-line="18" selection-start-column="5" selection-end-line="18" selection-end-column="5" />
-          <folding>
-            <element signature="e#202#203#0" expanded="true" />
-            <element signature="e#227#228#0" expanded="true" />
-            <element signature="e#350#351#0" expanded="true" />
-            <element signature="e#377#378#0" expanded="true" />
-            <element signature="e#509#510#0" expanded="true" />
-            <element signature="e#538#539#0" expanded="true" />
-            <element signature="e#676#677#0" expanded="true" />
-            <element signature="e#705#706#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/hnister-common/src/main/java/cn/zynworld/hnister/common/utils/DaoUtils.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="120">
           <caret line="9" column="13" lean-forward="false" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/hnister-common/src/main/java/cn/zynworld/hnister/common/utils/PageBean.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="135">
-          <caret line="9" column="13" lean-forward="false" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1720,7 +1924,14 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/hnister-news-service-old/pom.xml">
+    <entry file="file://$PROJECT_DIR$/hnister-config-server/config-repo/hnister-news-service-dev.properties">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/hnister-config-server/pom.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="255">
           <caret line="17" column="13" lean-forward="false" selection-start-line="17" selection-start-column="13" selection-end-line="17" selection-end-column="13" />
@@ -1728,10 +1939,49 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/hnister-news-service/src/main/java/cn/zynworld/hnister/news/mappers/NewsModuleMapper.java">
+    <entry file="jar://$MAVEN_REPOSITORY$/org/mybatis/spring/boot/mybatis-spring-boot-autoconfigure/1.3.1/mybatis-spring-boot-autoconfigure-1.3.1.jar!/org/mybatis/spring/boot/autoconfigure/MybatisProperties.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="135">
+          <caret line="78" column="16" lean-forward="false" selection-start-line="78" selection-start-column="16" selection-end-line="78" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/hnister-news-service/src/test/java/cn/zynworld/hnister/news/HnisterNewsServiceApplicationTests.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="60">
-          <caret line="8" column="17" lean-forward="false" selection-start-line="8" selection-start-column="17" selection-end-line="8" selection-end-column="17" />
+          <caret line="11" column="19" lean-forward="false" selection-start-line="11" selection-start-column="19" selection-end-line="11" selection-end-column="19" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/hnister-news-service/src/main/java/cn/zynworld/hnister/news/HnisterNewsServiceApplication.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="75">
+          <caret line="7" column="0" lean-forward="false" selection-start-line="7" selection-start-column="0" selection-end-line="7" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/hnister-news-service/src/main/resources/application.properties">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="60">
+          <caret line="4" column="13" lean-forward="false" selection-start-line="4" selection-start-column="13" selection-end-line="4" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/hnister-news-service-old/src/main/resources/application.properties">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/hnister-news-service-old/src/main/java/cn/zynworld/hnister/hnisternewsservice/HnisterNewsServiceApplication.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="90">
+          <caret line="9" column="13" lean-forward="false" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
           <folding />
         </state>
       </provider>
@@ -1744,118 +1994,122 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/hnister-config-server/config-repo/hnister-news-service-dev.properties">
+    <entry file="file://$PROJECT_DIR$/hnister-news-service/src/main/resources/bootstrap.properties">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        <state relative-caret-position="60">
+          <caret line="4" column="53" lean-forward="false" selection-start-line="4" selection-start-column="53" selection-end-line="4" selection-end-column="53" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/hnister-config-server/pom.xml">
+    <entry file="file://$PROJECT_DIR$/hnister-news-service-old/pom.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="17" column="13" lean-forward="false" selection-start-line="17" selection-start-column="13" selection-end-line="17" selection-end-column="13" />
+        <state relative-caret-position="-3">
+          <caret line="64" column="17" lean-forward="false" selection-start-line="64" selection-start-column="17" selection-end-line="64" selection-end-column="17" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/hnister-news-service/pom.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="63">
-          <caret line="34" column="0" lean-forward="false" selection-start-line="34" selection-start-column="0" selection-end-line="45" selection-end-column="25" />
+        <state relative-caret-position="51">
+          <caret line="49" column="27" lean-forward="false" selection-start-line="49" selection-start-column="27" selection-end-line="49" selection-end-column="27" />
           <folding>
-            <marker date="1516760501396" expanded="true" signature="1094:1572" ph="..." />
+            <marker date="1516776436527" expanded="true" signature="1094:1572" ph="..." />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/hnister-news-service/src/main/resources/config/mappers/NewsModuleMapper.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="118">
-          <caret line="70" column="110" lean-forward="false" selection-start-line="70" selection-start-column="106" selection-end-line="70" selection-end-column="110" />
-          <folding>
-            <marker date="1516759869421" expanded="true" signature="3505:3614" ph="select from t_news_module" />
-            <marker date="1516759869421" expanded="true" signature="3701:3764" ph="delete from " />
-            <marker date="1516759869421" expanded="true" signature="3882:3907" ph="delete from " />
-            <marker date="1516759869421" expanded="true" signature="4102:4285" ph="insert into t_news_module... " />
-            <marker date="1516759869421" expanded="true" signature="5259:5293" ph="select count... t_news_module" />
-            <marker date="1516759869421" expanded="true" signature="6081:6289" ph="update t_new... " />
-            <marker date="1516759869421" expanded="true" signature="6515:6861" ph="update t_new... " />
-            <marker date="1516759869421" expanded="true" signature="6975:7158" ph="update t_new... " />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/hnister-news-service/src/main/resources/config/mappers/NewsMapper.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="30">
-          <caret line="2" column="55" lean-forward="false" selection-start-line="2" selection-start-column="55" selection-end-line="2" selection-end-column="55" />
-          <folding>
-            <marker date="1516759869410" expanded="true" signature="4311:4459" ph="select , fro... " />
-            <marker date="1516759869410" expanded="true" signature="4543:4598" ph="delete from " />
-            <marker date="1516759869410" expanded="true" signature="4710:4728" ph="delete from " />
-            <marker date="1516759869410" expanded="true" signature="4917:5194" ph="insert into t_news... " />
-            <marker date="1516759869410" expanded="true" signature="6464:6491" ph="select count... t_news" />
-            <marker date="1516759869410" expanded="true" signature="7512:7828" ph="update t_new... " />
-            <marker date="1516759869410" expanded="true" signature="8001:8261" ph="update t_new... " />
-            <marker date="1516759869410" expanded="true" signature="8481:9023" ph="update t_new... " />
-            <marker date="1516759869410" expanded="true" signature="9140:9417" ph="update t_new... " />
-            <marker date="1516759869410" expanded="true" signature="9525:9753" ph="update t_new... " />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/org/mybatis/spring/boot/mybatis-spring-boot-autoconfigure/1.3.1/mybatis-spring-boot-autoconfigure-1.3.1.jar!/org/mybatis/spring/boot/autoconfigure/MybatisProperties.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="135">
-          <caret line="78" column="16" lean-forward="false" selection-start-line="78" selection-start-column="16" selection-end-line="78" selection-end-column="16" />
-          <folding>
-            <element signature="e#2300#2301#0" expanded="true" />
-            <element signature="e#2360#2361#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/hnister-news-service-old/src/main/java/cn/zynworld/hnister/hnisternewsservice/HnisterNewsServiceApplication.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="90">
-          <caret line="9" column="13" lean-forward="false" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
-          <folding>
-            <element signature="imports" expanded="false" />
-            <element signature="e#502#503#0" expanded="false" />
-            <element signature="e#573#574#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/hnister-news-service/src/main/java/cn/zynworld/hnister/news/mappers/NewsMapper.java">
+    <entry file="file://$PROJECT_DIR$/hnister-news-service/src/main/java/cn/zynworld/hnister/news/service/NewsService.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="120">
-          <caret line="8" column="0" lean-forward="false" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
+          <caret line="8" column="3" lean-forward="false" selection-start-line="8" selection-start-column="3" selection-end-line="8" selection-end-column="3" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/hnister-news-service/src/test/java/cn/zynworld/hnister/news/HnisterNewsServiceApplicationTests.java">
+    <entry file="file://$PROJECT_DIR$/hnister-news-service/src/main/java/cn/zynworld/hnister/news/api/NewsApi.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="11" column="19" lean-forward="false" selection-start-line="11" selection-start-column="19" selection-end-line="11" selection-end-column="19" />
+        <state relative-caret-position="150">
+          <caret line="10" column="0" lean-forward="false" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/hnister-news-service/src/main/resources/generatorConfig.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="330">
+          <caret line="22" column="25" lean-forward="false" selection-start-line="22" selection-start-column="25" selection-end-line="22" selection-end-column="25" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/hnister-common/src/main/java/cn/zynworld/hnister/common/domain/NewsExample.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="15">
+          <caret line="7" column="13" lean-forward="false" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/hnister-common/src/main/java/cn/zynworld/hnister/common/domain/NewsModuleExample.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="376">
+          <caret line="234" column="9" lean-forward="true" selection-start-line="234" selection-start-column="9" selection-end-line="234" selection-end-column="9" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/hnister-common/src/main/java/cn/zynworld/hnister/common/utils/PageBean.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="220">
+          <caret line="74" column="0" lean-forward="false" selection-start-line="74" selection-start-column="0" selection-end-line="74" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/hnister-common/src/main/java/cn/zynworld/hnister/common/domain/NewsModule.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="165">
+          <caret line="11" column="28" lean-forward="false" selection-start-line="11" selection-start-column="28" selection-end-line="11" selection-end-column="28" />
           <folding>
-            <element signature="imports" expanded="false" />
+            <element signature="e#227#228#0" expanded="true" />
+            <element signature="e#350#351#0" expanded="true" />
+            <element signature="e#377#378#0" expanded="true" />
+            <element signature="e#509#510#0" expanded="true" />
+            <element signature="e#538#539#0" expanded="true" />
+            <element signature="e#676#677#0" expanded="true" />
+            <element signature="e#705#706#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/hnister-news-service/src/main/java/cn/zynworld/hnister/news/HnisterNewsServiceApplication.java">
+    <entry file="file://$PROJECT_DIR$/hnister-common/src/main/java/cn/zynworld/hnister/common/domain/News.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="75">
-          <caret line="7" column="0" lean-forward="false" selection-start-line="7" selection-start-column="0" selection-end-line="7" selection-end-column="0" />
+        <state relative-caret-position="60">
+          <caret line="4" column="13" lean-forward="false" selection-start-line="4" selection-start-column="13" selection-end-line="4" selection-end-column="13" />
           <folding>
-            <element signature="imports" expanded="false" />
-            <element signature="e#362#363#0" expanded="false" />
-            <element signature="e#433#434#0" expanded="false" />
+            <element signature="e#278#279#0" expanded="true" />
+            <element signature="e#303#304#0" expanded="true" />
+            <element signature="e#418#419#0" expanded="true" />
+            <element signature="e#446#447#0" expanded="true" />
+            <element signature="e#576#577#0" expanded="true" />
+            <element signature="e#605#606#0" expanded="true" />
+            <element signature="e#739#740#0" expanded="true" />
+            <element signature="e#770#771#0" expanded="true" />
+            <element signature="e#913#914#0" expanded="true" />
+            <element signature="e#944#945#0" expanded="true" />
+            <element signature="e#1088#1089#0" expanded="true" />
+            <element signature="e#1118#1119#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/hnister-config-server/config-repo/demo-dev.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1867,27 +2121,164 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/hnister-news-service/src/main/resources/bootstrap.properties">
+    <entry file="file://$PROJECT_DIR$/hnister-news-service-old/src/main/java/cn/zynworld/hnister/hnisternewsservice/dao/NewsModuleDao.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="4" column="53" lean-forward="false" selection-start-line="4" selection-start-column="53" selection-end-line="4" selection-end-column="53" />
+        <state relative-caret-position="125">
+          <caret line="79" column="115" lean-forward="false" selection-start-line="79" selection-start-column="42" selection-end-line="79" selection-end-column="115" />
+          <folding>
+            <marker date="1516759869424" expanded="true" signature="728:755" ph="SELECT * FRO... t_news_module" />
+            <marker date="1516759869424" expanded="true" signature="1276:1327" ph="INSERT INTO t_news_module... " />
+            <marker date="1516759869424" expanded="true" signature="1645:1683" ph="DELETE FROM " />
+            <marker date="1516759869424" expanded="true" signature="1939:1997" ph="UPDATE t_new... " />
+            <marker date="1516759869424" expanded="true" signature="2457:2530" ph="UPDATE t_new... " />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/hnister-news-service-old/src/main/java/cn/zynworld/hnister/hnisternewsservice/dao/NewsDao.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-57">
+          <caret line="142" column="13" lean-forward="false" selection-start-line="142" selection-start-column="13" selection-end-line="142" selection-end-column="13" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <marker date="1516759869406" expanded="true" signature="686:765" ph="INSERT INTO t_news... " />
+            <marker date="1516759869406" expanded="true" signature="1340:1360" ph="SELECT * FRO... t_news" />
+            <marker date="1516759869406" expanded="true" signature="1940:1978" ph="DELETE FROM " />
+            <marker date="1516759869406" expanded="true" signature="2230:2261" ph="DELETE FROM " />
+            <marker date="1516759869406" expanded="true" signature="2530:2584" ph="UPDATE t_new... " />
+            <marker date="1516759869406" expanded="true" signature="3169:3219" ph="SELECT SQL_C... t_news" />
+            <marker date="1516759869406" expanded="true" signature="3482:3557" ph="SELECT SQL_C... t_news" />
+            <marker date="1516759869406" expanded="true" signature="3793:3863" ph="SELECT SQL_C... t_news" />
+            <marker date="1516759869406" expanded="true" signature="4662:4681" ph="SELECT FOUND... " />
+            <marker date="1516759869406" expanded="true" signature="4981:5060" ph="UPDATE t_new... " />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/hnister-news-service/src/test/java/cn/zynworld/hnister/news/api/NewsApiTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="252">
+          <caret line="25" column="5" lean-forward="false" selection-start-line="25" selection-start-column="5" selection-end-line="25" selection-end-column="5" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/eca09914-8b9b-459a-9d92-fb7e10a6f40f/console.sql">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/hnister-news-service/src/main/resources/application.properties">
+    <entry file="dbDummy://dbtable:/dec99177/eca09914-8b9b-459a-9d92-fb7e10a6f40f/hnister.t_news">
+      <provider editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/hnister-news-service/src/main/java/cn/zynworld/hnister/news/mappers/NewsMapper.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="4" column="13" lean-forward="true" selection-start-line="4" selection-start-column="13" selection-end-line="4" selection-end-column="13" />
+        <state relative-caret-position="262">
+          <caret line="42" column="55" lean-forward="false" selection-start-line="42" selection-start-column="55" selection-end-line="42" selection-end-column="55" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/hnister-news-service/src/test/java/cn/zynworld/hnister/news/mappers/NewsMappersTests.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="307">
+          <caret line="35" column="0" lean-forward="false" selection-start-line="35" selection-start-column="0" selection-end-line="35" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/hnister-news-service/src/test/java/cn/zynworld/hnister/news/mappers/MappersTests.java">
+    <entry file="file://$PROJECT_DIR$/hnister-news-service/src/main/resources/config/mappers/NewsMapper.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="285">
-          <caret line="19" column="0" lean-forward="true" selection-start-line="19" selection-start-column="0" selection-end-line="19" selection-end-column="0" />
+        <state relative-caret-position="230">
+          <caret line="303" column="32" lean-forward="false" selection-start-line="303" selection-start-column="24" selection-end-line="303" selection-end-column="32" />
+          <folding>
+            <marker date="1516783941140" expanded="true" signature="4311:4459" ph="select , fro... " />
+            <marker date="1516783941140" expanded="true" signature="4543:4598" ph="delete from " />
+            <marker date="1516783941140" expanded="true" signature="4710:4728" ph="delete from " />
+            <marker date="1516783941140" expanded="true" signature="4972:5249" ph="insert into t_news... " />
+            <marker date="1516783941140" expanded="true" signature="6519:6546" ph="select count... t_news" />
+            <marker date="1516783941140" expanded="true" signature="7567:7883" ph="update t_new... " />
+            <marker date="1516783941140" expanded="true" signature="8056:8316" ph="update t_new... " />
+            <marker date="1516783941140" expanded="true" signature="8536:9078" ph="update t_new... " />
+            <marker date="1516783941140" expanded="true" signature="9195:9472" ph="update t_new... " />
+            <marker date="1516783941140" expanded="true" signature="9580:9808" ph="update t_new... " />
+            <marker date="1516783941140" expanded="true" signature="10848:10916" ph="UPDATE t_new... " />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/hnister-news-service/src/main/resources/config/mappers/NewsModuleMapper.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="226">
+          <caret line="212" column="69" lean-forward="false" selection-start-line="212" selection-start-column="69" selection-end-line="212" selection-end-column="69" />
+          <folding>
+            <marker date="1516784875668" expanded="true" signature="3505:3614" ph="select from t_news_module" />
+            <marker date="1516784875668" expanded="true" signature="3701:3764" ph="delete from " />
+            <marker date="1516784875668" expanded="true" signature="3882:3907" ph="delete from " />
+            <marker date="1516784875668" expanded="true" signature="4157:4340" ph="insert into t_news_module... " />
+            <marker date="1516784875668" expanded="true" signature="5314:5348" ph="select count... t_news_module" />
+            <marker date="1516784875668" expanded="true" signature="6136:6344" ph="update t_new... " />
+            <marker date="1516784875668" expanded="true" signature="6570:6916" ph="update t_new... " />
+            <marker date="1516784875668" expanded="true" signature="7030:7213" ph="update t_new... " />
+            <marker date="1516784875668" expanded="true" signature="7744:7809" ph="UPDATE t_new... " />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/hnister-news-service/src/main/java/cn/zynworld/hnister/news/api/NewsModuleApi.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="316">
+          <caret line="55" column="0" lean-forward="false" selection-start-line="55" selection-start-column="0" selection-end-line="55" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#801#802#0" expanded="true" />
+            <element signature="e#853#854#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/hnister-news-service/src/main/java/cn/zynworld/hnister/news/api/NewsApi.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="412">
+          <caret line="89" column="18" lean-forward="true" selection-start-line="89" selection-start-column="18" selection-end-line="89" selection-end-column="18" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/hnister-news-service/src/main/java/cn/zynworld/hnister/news/mappers/NewsModuleMapper.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="321">
+          <caret line="34" column="35" lean-forward="false" selection-start-line="34" selection-start-column="35" selection-end-line="34" selection-end-column="35" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/hnister-news-service/src/test/java/cn/zynworld/hnister/news/mappers/NewsModuleMapperTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="343">
+          <caret line="23" column="8" lean-forward="false" selection-start-line="23" selection-start-column="8" selection-end-line="23" selection-end-column="8" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

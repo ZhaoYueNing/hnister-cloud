@@ -1,0 +1,111 @@
+package cn.zynworld.hnister.news.api;
+
+import cn.zynworld.hnister.common.domain.News;
+import cn.zynworld.hnister.common.domain.NewsExample;
+import cn.zynworld.hnister.common.utils.PageBean;
+import cn.zynworld.hnister.common.utils.ResultBean;
+import cn.zynworld.hnister.news.mappers.NewsMapper;
+import cn.zynworld.hnister.news.mappers.NewsModuleMapper;
+import org.apache.ibatis.session.RowBounds;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.transaction.annotation.Transactional;
+import org.springframework.web.bind.annotation.*;
+
+import javax.websocket.server.PathParam;
+import java.util.Date;
+import java.util.List;
+
+/**
+ * @auther Buynow Zhao
+ * @create 2018/1/2
+ */
+@RestController
+@Transactional
+public class NewsApi {
+
+
+	@Autowired
+	private NewsMapper newsMapper;
+	@Autowired
+	private NewsModuleMapper newsModuleMapper;
+
+	/**
+	 *
+	 * @param news 需要新增的News
+	 * @return 成功返回 success resultBean & msg = newsId
+	 */
+	@Transactional
+	@RequestMapping(path = "/news",method = RequestMethod.POST)
+	public ResultBean addNews(@RequestBody News news){
+		news.setPostDate(new Date());
+		int newsId = newsMapper.insert(news);
+		return ResultBean.create(newsId > 0).setMsg(newsId);
+	}
+
+
+	/**
+	 * 查询所有news，非分页
+	 */
+	@GetMapping(path = "news",params = "!page")
+	public List<News> findAll() {
+		List<News> list = newsMapper.selectByExample(null);
+		return list;
+	}
+
+	/**
+	 *
+	 * @param pageCount 页数
+	 * @param pageSize 分页大小
+	 * @param moduleId -1 查询所有 0 查询草稿箱 >0 查询对应id的文章
+	 * @return pageBean
+	 * http://localhost:10000/hnist-news-service/news?page=true&pageCount=1&pageSize=2&moduleId=3
+	 */
+	@GetMapping(path = "news",params = "page=true")
+	public PageBean<News> findByPage(@PathParam("pageCount") Integer pageCount, @PathParam("pageSize") Integer pageSize, @PathParam("moduleId") Integer moduleId){
+		NewsExample newsExample = null;
+		PageBean<News> pageBean = null;
+		pageBean.setPageCount(pageCount).setPageSize(pageSize);
+
+		RowBounds rowBounds = new RowBounds(pageBean.getFirstItemIndex(),pageBean.getPageSize());
+		//判断模块类型
+		if (moduleId >= 0) {
+			newsExample = new NewsExample();
+			newsExample.createCriteria().andModuleIdEqualTo(moduleId);
+		}
+		//分页查询
+		List<News> newsList = newsMapper.selectByExampleWithRowbounds(newsExample, rowBounds);
+		//获取该查询非分页情况总数
+		int total = newsMapper.countByExample(newsExample);
+
+		pageBean.setTotal((long) total);
+		pageBean.setItems(newsList);
+
+		return pageBean;
+	}
+
+	@Transactional
+	@DeleteMapping(path = "news/{id}")
+	public ResultBean deleteById(@PathVariable Long id){
+		int result = newsMapper.deleteByPrimaryKey(id);
+		return ResultBean.create(result > 0);
+	}
+
+	@Transactional
+	@PutMapping(path = "news")
+	public ResultBean update(@RequestBody News news) {
+		if (news.getId() == null) {
+			return ResultBean.fail("id 不得为空");
+		}
+
+		int result = newsMapper.updateByPrimaryKey(news);
+		return ResultBean.create(result > 0);
+	}
+
+
+/*
+
+
+
+
+*/
+}

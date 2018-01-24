@@ -16,16 +16,22 @@ import java.util.List;
 
 @RunWith(SpringRunner.class)
 @SpringBootTest
-public class MappersTests {
+public class NewsMappersTests {
 
     @Autowired
     private NewsMapper newsMapper;
 
     @Test
     public void testNewsMapper(){
-        List<News> newsList = newsMapper.selectByExample(new NewsExample());
+        List<News> newsList = newsMapper.selectByExample(null);
         System.out.println(newsList);
-
     }
+
+    @Test
+    public void testNull() throws Exception {
+        int result = newsMapper.updateModuleIdIsNullByModuleId(18);
+        System.out.println(result);
+    }
+
 
 }
