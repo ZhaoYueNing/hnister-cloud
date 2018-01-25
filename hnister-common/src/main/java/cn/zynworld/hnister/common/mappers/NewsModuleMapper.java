@@ -1,4 +1,4 @@
-package cn.zynworld.hnister.news.mappers;
+package cn.zynworld.hnister.common.mappers;
 
 import cn.zynworld.hnister.common.domain.NewsModule;
 import cn.zynworld.hnister.common.domain.NewsModuleExample;
@@ -32,5 +32,5 @@ public interface NewsModuleMapper {
 
     int updateByPrimaryKey(NewsModule record);
 
-    int updateChangeNumberByExample(@Param("val")Integer val,@Param("example") NewsModuleExample example);
+    int updateChangeNumberByExample(@Param("val") Integer val, @Param("example") NewsModuleExample example);
 }

@@ -5,8 +5,8 @@ import cn.zynworld.hnister.common.domain.NewsExample;
 import cn.zynworld.hnister.common.domain.NewsModuleExample;
 import cn.zynworld.hnister.common.utils.PageBean;
 import cn.zynworld.hnister.common.utils.ResultBean;
-import cn.zynworld.hnister.news.mappers.NewsMapper;
-import cn.zynworld.hnister.news.mappers.NewsModuleMapper;
+import cn.zynworld.hnister.common.mappers.NewsMapper;
+import cn.zynworld.hnister.common.mappers.NewsModuleMapper;
 import org.apache.ibatis.session.RowBounds;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.transaction.annotation.Transactional;
@@ -123,16 +123,11 @@ public class NewsApi {
 		if (news.getId() == null) {
 			return ResultBean.fail("id 不得为空");
 		}
-
+		if (news.getModuleId() == 0){
+			news.setModuleId(null);
+		}
 		int result = newsMapper.updateByPrimaryKey(news);
 		return ResultBean.create(result > 0);
 	}
 
-
-/*
-
-
-
-
-*/
 }

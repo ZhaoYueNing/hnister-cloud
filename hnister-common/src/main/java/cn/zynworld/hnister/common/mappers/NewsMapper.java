@@ -1,4 +1,4 @@
-package cn.zynworld.hnister.news.mappers;
+package cn.zynworld.hnister.common.mappers;
 
 import cn.zynworld.hnister.common.domain.News;
 import cn.zynworld.hnister.common.domain.NewsExample;

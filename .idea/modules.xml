@@ -9,6 +9,7 @@
       <module fileurl="file://$PROJECT_DIR$/hnister-news-service/hnister-news-service.iml" filepath="$PROJECT_DIR$/hnister-news-service/hnister-news-service.iml" />
       <module fileurl="file://$PROJECT_DIR$/hnister-common/hnister-news-service-old.iml" filepath="$PROJECT_DIR$/hnister-common/hnister-news-service-old.iml" />
       <module fileurl="file://$PROJECT_DIR$/hnister-parent.iml" filepath="$PROJECT_DIR$/hnister-parent.iml" />
+      <module fileurl="file://$PROJECT_DIR$/hnister-security-service/hnister-security-service.iml" filepath="$PROJECT_DIR$/hnister-security-service/hnister-security-service.iml" />
       <module fileurl="file://$PROJECT_DIR$/hnister-common/hnister-zuul-server.iml" filepath="$PROJECT_DIR$/hnister-common/hnister-zuul-server.iml" />
     </modules>
   </component>

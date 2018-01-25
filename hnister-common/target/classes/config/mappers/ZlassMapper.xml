@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
-<mapper namespace="cn.zynworld.hnister.news.mappers.NewsModuleMapper" >
-  <resultMap id="BaseResultMap" type="cn.zynworld.hnister.common.domain.NewsModule" >
+<mapper namespace="cn.zynworld.hnister.common.mappers.ZlassMapper" >
+  <resultMap id="BaseResultMap" type="cn.zynworld.hnister.common.domain.Zlass" >
     <id column="id" property="id" jdbcType="INTEGER" />
     <result column="name" property="name" jdbcType="VARCHAR" />
-    <result column="remark" property="remark" jdbcType="VARCHAR" />
-    <result column="number" property="number" jdbcType="BIGINT" />
+    <result column="specialty_id" property="specialtyId" jdbcType="INTEGER" />
+    <result column="grade" property="grade" jdbcType="VARCHAR" />
   </resultMap>
   <sql id="Example_Where_Clause" >
     <where >
@@ -66,15 +66,15 @@
     </where>
   </sql>
   <sql id="Base_Column_List" >
-    id, name, remark, number
+    id, name, specialty_id, grade
   </sql>
-  <select id="selectByExample" resultMap="BaseResultMap" parameterType="cn.zynworld.hnister.common.domain.NewsModuleExample" >
+  <select id="selectByExample" resultMap="BaseResultMap" parameterType="cn.zynworld.hnister.common.domain.ZlassExample" >
     select
     <if test="distinct" >
       distinct
     </if>
     <include refid="Base_Column_List" />
-    from t_news_module
+    from t_zlass
     <if test="_parameter != null" >
       <include refid="Example_Where_Clause" />
     </if>
@@ -85,27 +85,27 @@
   <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
     select 
     <include refid="Base_Column_List" />
-    from t_news_module
+    from t_zlass
     where id = #{id,jdbcType=INTEGER}
   </select>
   <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
-    delete from t_news_module
+    delete from t_zlass
     where id = #{id,jdbcType=INTEGER}
   </delete>
-  <delete id="deleteByExample" parameterType="cn.zynworld.hnister.common.domain.NewsModuleExample" >
-    delete from t_news_module
+  <delete id="deleteByExample" parameterType="cn.zynworld.hnister.common.domain.ZlassExample" >
+    delete from t_zlass
     <if test="_parameter != null" >
       <include refid="Example_Where_Clause" />
     </if>
   </delete>
-  <insert id="insert" parameterType="cn.zynworld.hnister.common.domain.NewsModule" useGeneratedKeys="true" keyProperty="id" keyColumn="id">
-    insert into t_news_module (id, name, remark, 
-      number)
-    values (#{id,jdbcType=INTEGER}, #{name,jdbcType=VARCHAR}, #{remark,jdbcType=VARCHAR}, 
-      #{number,jdbcType=BIGINT})
+  <insert id="insert" parameterType="cn.zynworld.hnister.common.domain.Zlass" >
+    insert into t_zlass (id, name, specialty_id, 
+      grade)
+    values (#{id,jdbcType=INTEGER}, #{name,jdbcType=VARCHAR}, #{specialtyId,jdbcType=INTEGER}, 
+      #{grade,jdbcType=VARCHAR})
   </insert>
-  <insert id="insertSelective" parameterType="cn.zynworld.hnister.common.domain.NewsModule" >
-    insert into t_news_module
+  <insert id="insertSelective" parameterType="cn.zynworld.hnister.common.domain.Zlass" >
+    insert into t_zlass
     <trim prefix="(" suffix=")" suffixOverrides="," >
       <if test="id != null" >
         id,
@@ -113,11 +113,11 @@
       <if test="name != null" >
         name,
       </if>
-      <if test="remark != null" >
-        remark,
+      <if test="specialtyId != null" >
+        specialty_id,
       </if>
-      <if test="number != null" >
-        number,
+      <if test="grade != null" >
+        grade,
       </if>
     </trim>
     <trim prefix="values (" suffix=")" suffixOverrides="," >
@@ -127,22 +127,22 @@
       <if test="name != null" >
         #{name,jdbcType=VARCHAR},
       </if>
-      <if test="remark != null" >
-        #{remark,jdbcType=VARCHAR},
+      <if test="specialtyId != null" >
+        #{specialtyId,jdbcType=INTEGER},
       </if>
-      <if test="number != null" >
-        #{number,jdbcType=BIGINT},
+      <if test="grade != null" >
+        #{grade,jdbcType=VARCHAR},
       </if>
     </trim>
   </insert>
-  <select id="countByExample" parameterType="cn.zynworld.hnister.common.domain.NewsModuleExample" resultType="java.lang.Integer" >
-    select count(*) from t_news_module
+  <select id="countByExample" parameterType="cn.zynworld.hnister.common.domain.ZlassExample" resultType="java.lang.Integer" >
+    select count(*) from t_zlass
     <if test="_parameter != null" >
       <include refid="Example_Where_Clause" />
     </if>
   </select>
   <update id="updateByExampleSelective" parameterType="map" >
-    update t_news_module
+    update t_zlass
     <set >
       <if test="record.id != null" >
         id = #{record.id,jdbcType=INTEGER},
@@ -150,11 +150,11 @@
       <if test="record.name != null" >
         name = #{record.name,jdbcType=VARCHAR},
       </if>
-      <if test="record.remark != null" >
-        remark = #{record.remark,jdbcType=VARCHAR},
+      <if test="record.specialtyId != null" >
+        specialty_id = #{record.specialtyId,jdbcType=INTEGER},
       </if>
-      <if test="record.number != null" >
-        number = #{record.number,jdbcType=BIGINT},
+      <if test="record.grade != null" >
+        grade = #{record.grade,jdbcType=VARCHAR},
       </if>
     </set>
     <if test="_parameter != null" >
@@ -162,44 +162,44 @@
     </if>
   </update>
   <update id="updateByExample" parameterType="map" >
-    update t_news_module
+    update t_zlass
     set id = #{record.id,jdbcType=INTEGER},
       name = #{record.name,jdbcType=VARCHAR},
-      remark = #{record.remark,jdbcType=VARCHAR},
-      number = #{record.number,jdbcType=BIGINT}
+      specialty_id = #{record.specialtyId,jdbcType=INTEGER},
+      grade = #{record.grade,jdbcType=VARCHAR}
     <if test="_parameter != null" >
       <include refid="Update_By_Example_Where_Clause" />
     </if>
   </update>
-  <update id="updateByPrimaryKeySelective" parameterType="cn.zynworld.hnister.common.domain.NewsModule" >
-    update t_news_module
+  <update id="updateByPrimaryKeySelective" parameterType="cn.zynworld.hnister.common.domain.Zlass" >
+    update t_zlass
     <set >
       <if test="name != null" >
         name = #{name,jdbcType=VARCHAR},
       </if>
-      <if test="remark != null" >
-        remark = #{remark,jdbcType=VARCHAR},
+      <if test="specialtyId != null" >
+        specialty_id = #{specialtyId,jdbcType=INTEGER},
       </if>
-      <if test="number != null" >
-        number = #{number,jdbcType=BIGINT},
+      <if test="grade != null" >
+        grade = #{grade,jdbcType=VARCHAR},
       </if>
     </set>
     where id = #{id,jdbcType=INTEGER}
   </update>
-  <update id="updateByPrimaryKey" parameterType="cn.zynworld.hnister.common.domain.NewsModule" >
-    update t_news_module
+  <update id="updateByPrimaryKey" parameterType="cn.zynworld.hnister.common.domain.Zlass" >
+    update t_zlass
     set name = #{name,jdbcType=VARCHAR},
-      remark = #{remark,jdbcType=VARCHAR},
-      number = #{number,jdbcType=BIGINT}
+      specialty_id = #{specialtyId,jdbcType=INTEGER},
+      grade = #{grade,jdbcType=VARCHAR}
     where id = #{id,jdbcType=INTEGER}
   </update>
-  <select resultMap="BaseResultMap" parameterType="cn.zynworld.hnister.common.domain.NewsModuleExample" id="selectByExampleWithRowbounds" >
+  <select resultMap="BaseResultMap" parameterType="cn.zynworld.hnister.common.domain.ZlassExample" id="selectByExampleWithRowbounds" >
     select
     <if test="distinct" >
       distinct
     </if>
     <include refid="Base_Column_List" />
-    from t_news_module
+    from t_zlass
     <if test="_parameter != null" >
       <include refid="Example_Where_Clause" />
     </if>
@@ -207,12 +207,4 @@
       order by ${orderByClause}
     </if>
   </select>
-
-  <!--myself-->
-  <update id="updateChangeNumberByExample" >
-    UPDATE t_news_module AS m SET m.`number` = (m.`number`+ (${val}))
-    <if test="_parameter != null" >
-      <include refid="Update_By_Example_Where_Clause" />
-    </if>
-  </update>
 </mapper>

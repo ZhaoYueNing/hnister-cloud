@@ -2,6 +2,7 @@ package cn.zynworld.hnister.news.mappers;
 
 import cn.zynworld.hnister.common.domain.News;
 import cn.zynworld.hnister.common.domain.NewsExample;
+import cn.zynworld.hnister.common.mappers.NewsMapper;
 import org.apache.ibatis.session.RowBounds;
 import org.junit.Test;
 import org.junit.runner.RunWith;

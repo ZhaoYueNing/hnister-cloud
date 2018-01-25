@@ -7,6 +7,7 @@
 	<groupId>cn.zhaoyuening.hnister</groupId>
 	<artifactId>hnister-common</artifactId>
 	<version>1.0-SNAPSHOT</version>
+	<packaging>jar</packaging>
 
 
 	<parent>
@@ -14,5 +15,12 @@
 		<artifactId>hnister-parent</artifactId>
 		<version>1.0-SNAPSHOT</version>
 	</parent>
+
+	<dependencies>
+		<dependency>
+			<groupId>org.mybatis.spring.boot</groupId>
+			<artifactId>mybatis-spring-boot-starter</artifactId>
+		</dependency>
+	</dependencies>
 
 </project>

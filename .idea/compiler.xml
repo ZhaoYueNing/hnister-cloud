@@ -12,6 +12,7 @@
         <module name="hnister-eureka-server" />
         <module name="hnister-news-service" />
         <module name="hnister-news-service-old" />
+        <module name="hnister-security-service" />
         <module name="hnister-zuul-server" />
       </profile>
     </annotationProcessing>
@@ -23,6 +24,7 @@
       <module name="hnister-news-service" target="1.8" />
       <module name="hnister-news-service-old" target="1.8" />
       <module name="hnister-parent" target="1.6" />
+      <module name="hnister-security-service" target="1.8" />
       <module name="hnister-zuul-server" target="1.8" />
     </bytecodeTargetLevel>
   </component>

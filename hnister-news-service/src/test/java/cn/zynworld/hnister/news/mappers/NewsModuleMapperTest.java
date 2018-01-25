@@ -1,6 +1,7 @@
 package cn.zynworld.hnister.news.mappers;
 
 import cn.zynworld.hnister.common.domain.NewsModuleExample;
+import cn.zynworld.hnister.common.mappers.NewsModuleMapper;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
