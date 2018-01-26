@@ -58,4 +58,6 @@ public class UserApi {
         return ResultBean.create(result);
     }
 
+
+
 }
