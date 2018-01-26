@@ -23,6 +23,8 @@ public class User {
 
     private String username;
 
+    private Date createTime;
+
     public Integer getId() {
         return id;
     }
@@ -101,5 +103,13 @@ public class User {
 
     public void setUsername(String username) {
         this.username = username == null ? null : username.trim();
+    }
+
+    public Date getCreateTime() {
+        return createTime;
+    }
+
+    public void setCreateTime(Date createTime) {
+        this.createTime = createTime;
     }
 }
