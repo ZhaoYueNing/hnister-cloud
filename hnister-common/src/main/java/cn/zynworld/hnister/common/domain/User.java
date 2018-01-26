@@ -3,7 +3,7 @@ package cn.zynworld.hnister.common.domain;
 import java.util.Date;
 
 public class User {
-    private Integer id;
+    private String username;
 
     private Integer zlassId;
 
@@ -21,14 +21,14 @@ public class User {
 
     private String password;
 
-    private String username;
+    private Date createTime;
 
-    public Integer getId() {
-        return id;
+    public String getUsername() {
+        return username;
     }
 
-    public void setId(Integer id) {
-        this.id = id;
+    public void setUsername(String username) {
+        this.username = username == null ? null : username.trim();
     }
 
     public Integer getZlassId() {
@@ -95,11 +95,11 @@ public class User {
         this.password = password == null ? null : password.trim();
     }
 
-    public String getUsername() {
-        return username;
+    public Date getCreateTime() {
+        return createTime;
     }
 
-    public void setUsername(String username) {
-        this.username = username == null ? null : username.trim();
+    public void setCreateTime(Date createTime) {
+        this.createTime = createTime;
     }
 }
