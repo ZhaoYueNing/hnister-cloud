@@ -14,6 +14,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -70,9 +71,18 @@ public class UserApi {
         CodecUtils.JwtBean jwtBean = new CodecUtils.JwtBean();
         jwtBean.addHead("typ","JWT");
         jwtBean.addHead("alg","HA256");
-        jwtBean.addPlayload("role",roles);
+        jwtBean.addPlayload("role",roleUserRelaKeyListToRoleIdList(roles));
 
         return ResultBean.create(result).setMsg(jwtBean.toString());
+    }
+
+    private List<Integer> roleUserRelaKeyListToRoleIdList(List<RoleUserRelaKey> roles){
+        List<Integer> roleIdList = new ArrayList<>();
+        for (RoleUserRelaKey key:
+             roles) {
+            roleIdList.add(key.getRoleId());
+        }
+        return roleIdList;
     }
 
 

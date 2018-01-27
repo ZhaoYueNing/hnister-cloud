@@ -120,6 +120,9 @@ public class CodecUtils {
          * @return
          */
         public static JwtBean getJwtBean(String jwt){
+            if (jwt == null){
+                return null;
+            }
             String[] jwts = jwt.split("\\.");
             if (jwts.length != 3){
                 return null;

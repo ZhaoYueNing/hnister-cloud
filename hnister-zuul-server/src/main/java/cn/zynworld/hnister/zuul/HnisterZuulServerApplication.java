@@ -1,7 +1,12 @@
 package cn.zynworld.hnister.zuul;
 
+import cn.zynworld.hnister.zuul.manager.RoleResourceManager;
+import org.mybatis.spring.annotation.MapperScan;
+import org.mybatis.spring.boot.autoconfigure.MybatisAutoConfiguration;
 import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.boot.autoconfigure.jdbc.DataSourceAutoConfiguration;
 import org.springframework.cloud.netflix.zuul.EnableZuulProxy;
 import org.springframework.context.annotation.Bean;
 import org.springframework.web.cors.CorsConfiguration;
@@ -10,6 +15,8 @@ import org.springframework.web.filter.CorsFilter;
 
 @SpringBootApplication
 @EnableZuulProxy
+@MapperScan("cn.zynworld.hnister.common.mappers")
+//@EnableAutoConfiguration(exclude = {MybatisAutoConfiguration.class, DataSourceAutoConfiguration.class})
 public class HnisterZuulServerApplication {
 
 
@@ -38,6 +45,13 @@ public class HnisterZuulServerApplication {
 		source.registerCorsConfiguration("/**", config);
 		return new CorsFilter(source);
 	}
+
+	//实现资源角色缓存
+	@Bean(initMethod = "init")
+	public RoleResourceManager roleResourceManager(){
+		return new RoleResourceManager();
+	}
+
 
 	public static void main(String[] args) {
 		SpringApplication.run(HnisterZuulServerApplication.class, args);
