@@ -50,7 +50,7 @@ public class CodecUtilsTest {
 
     @Test
     public void testCreateJwtByJsonToken() throws Exception {
-        String jsonToken = "eyJ0eXAiOiJqd3QiLCJhbGciOiJoYTI1NiJ9.eyJyb2xlIjoiYWRtaW4ifQ==.55f08b263402a3100683d9eafe72e2f5d629b7e5e010b51f20a13cdf45dd8c19";
+        String jsonToken = "eyJ0eXAiOiJKV1QiLCJhbGciOiJIQTI1NiJ9.eyJyb2xlIjpbXX0=.6cd63c22c2001ac7884fc8a2cc82868f7d30e636db6efc111a2ef46d0820cb7c";
         CodecUtils.JwtBean jwtBean = CodecUtils.JwtBean.getJwtBean(jsonToken);
         System.out.println(jwtBean.getHeadJson());
         System.out.println(jwtBean.getPlayloadJson());

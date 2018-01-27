@@ -105,8 +105,8 @@ public class CodecUtils {
     }
     //用于装载 jwt 信息的载体
     public static class JwtBean{
-        private Map<String,String> headMap = new HashMap<String, String>();
-        private Map<String,String> playloadMap = new HashMap<String, String>();
+        private Map<String,Object> headMap = new HashMap<String, Object>();
+        private Map<String,Object> playloadMap = new HashMap<String, Object>();
         private static Gson gson = new GsonBuilder().create();
         private static JsonParser jsonParser = new JsonParser();
 
@@ -132,19 +132,14 @@ public class CodecUtils {
             //验证成功 构建jwtBean
             JwtBean jwtBean = null;
             try{
-                JsonObject headJsonObject = jsonParser.parse(decodeBase64(jwts[0])).getAsJsonObject();
-                JsonObject playloadJsonObject = jsonParser.parse(decodeBase64(jwts[1])).getAsJsonObject();
+                JsonElement headElement = jsonParser.parse(decodeBase64(jwts[0]));
+                JsonElement payloadElement = jsonParser.parse(decodeBase64(jwts[1]));
 
                 jwtBean = new JwtBean();
+                jwtBean.setHeadMap( JsonUtils.jsonToMap(decodeBase64(jwts[0])));
+                jwtBean.setPlayloadMap( JsonUtils.jsonToMap(decodeBase64(jwts[1])));
 
-                for (String key :
-                        headJsonObject.keySet()) {
-                    jwtBean.getHeadMap().put(key, headJsonObject.get(key).getAsString());
-                }
-                for (String key :
-                        playloadJsonObject.keySet()) {
-                    jwtBean.getPlayloadMap().put(key, playloadJsonObject.get(key).getAsString());
-                }
+
             }catch (Exception e){
                 return null;
             }
@@ -152,27 +147,27 @@ public class CodecUtils {
             return jwtBean;
         }
 
-        public void addHead(String key,String value){
+        public void addHead(String key,Object value){
             headMap.put(key,value);
         }
 
-        public void addPlayload(String key,String value){
+        public void addPlayload(String key,Object value){
             playloadMap.put(key,value);
         }
 
-        public Map<String, String> getHeadMap() {
+        public Map<String, Object> getHeadMap() {
             return headMap;
         }
 
-        public Map<String, String> getPlayloadMap() {
+        public Map<String, Object> getPlayloadMap() {
             return playloadMap;
         }
 
-        public String getHead(String key){
+        public Object getHead(String key){
             return headMap.get(key);
         }
 
-        public String getPlayload(String key){
+        public Object getPlayload(String key){
             return playloadMap.get(key);
         }
 
@@ -183,6 +178,16 @@ public class CodecUtils {
 
         public String getPlayloadJson(){
             return gson.toJson(playloadMap);
+        }
+
+        public JwtBean setHeadMap(Map<String, Object> headMap) {
+            this.headMap = headMap;
+            return this;
+        }
+
+        public JwtBean setPlayloadMap(Map<String, Object> playloadMap) {
+            this.playloadMap = playloadMap;
+            return this;
         }
 
         @Override

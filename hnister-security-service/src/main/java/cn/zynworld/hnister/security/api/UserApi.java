@@ -1,6 +1,9 @@
 package cn.zynworld.hnister.security.api;
 
+import cn.zynworld.hnister.common.domain.RoleUserRelaExample;
+import cn.zynworld.hnister.common.domain.RoleUserRelaKey;
 import cn.zynworld.hnister.common.domain.User;
+import cn.zynworld.hnister.common.mappers.RoleUserRelaMapper;
 import cn.zynworld.hnister.common.mappers.UserMapper;
 import cn.zynworld.hnister.common.utils.CodecUtils;
 import cn.zynworld.hnister.common.utils.ResultBean;
@@ -11,6 +14,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
+
 /**
  * Created by zhaoyuening on 2018/1/26.
  * 登录、注册等账户操作API
@@ -20,6 +25,8 @@ public class UserApi {
 
     @Autowired
     private UserMapper userMapper;
+    @Autowired
+    private RoleUserRelaMapper roleUserRelaMapper;
 
     /**
      * 用户注册
@@ -55,7 +62,17 @@ public class UserApi {
 
         //检验
         boolean result = CodecUtils.checkUser(userLoginVo.getPassword(),sale,encodedPassword);
-        return ResultBean.create(result);
+        //创建token
+        //获取用户角色
+        RoleUserRelaExample roleUserRelaExample = new RoleUserRelaExample();
+        roleUserRelaExample.createCriteria().andUsernameEqualTo(user.getUsername());
+        List<RoleUserRelaKey> roles = roleUserRelaMapper.selectByExample(roleUserRelaExample);
+        CodecUtils.JwtBean jwtBean = new CodecUtils.JwtBean();
+        jwtBean.addHead("typ","JWT");
+        jwtBean.addHead("alg","HA256");
+        jwtBean.addPlayload("role",roles);
+
+        return ResultBean.create(result).setMsg(jwtBean.toString());
     }
 
 
