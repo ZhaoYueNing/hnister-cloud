@@ -1,13 +1,10 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
-<mapper namespace="cn.zynworld.hnister.common.mappers.ResourceMapper" >
-  <resultMap id="BaseResultMap" type="cn.zynworld.hnister.common.domain.Resource" >
+<mapper namespace="cn.zynworld.hnister.common.mappers.ResourceGroupMapper" >
+  <resultMap id="BaseResultMap" type="cn.zynworld.hnister.common.domain.ResourceGroup" >
     <id column="id" property="id" jdbcType="INTEGER" />
     <result column="name" property="name" jdbcType="VARCHAR" />
-    <result column="method" property="method" jdbcType="INTEGER" />
-    <result column="url" property="url" jdbcType="VARCHAR" />
-    <result column="status" property="status" jdbcType="INTEGER" />
-    <result column="group" property="group" jdbcType="INTEGER" />
+    <result column="remark" property="remark" jdbcType="VARCHAR" />
   </resultMap>
   <sql id="Example_Where_Clause" >
     <where >
@@ -68,15 +65,15 @@
     </where>
   </sql>
   <sql id="Base_Column_List" >
-    id, name, method, url, status, group
+    id, name, remark
   </sql>
-  <select id="selectByExample" resultMap="BaseResultMap" parameterType="cn.zynworld.hnister.common.domain.ResourceExample" >
+  <select id="selectByExample" resultMap="BaseResultMap" parameterType="cn.zynworld.hnister.common.domain.ResourceGroupExample" >
     select
     <if test="distinct" >
       distinct
     </if>
     <include refid="Base_Column_List" />
-    from t_resource
+    from t_resource_group
     <if test="_parameter != null" >
       <include refid="Example_Where_Clause" />
     </if>
@@ -87,27 +84,27 @@
   <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
     select 
     <include refid="Base_Column_List" />
-    from t_resource
+    from t_resource_group
     where id = #{id,jdbcType=INTEGER}
   </select>
   <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
-    delete from t_resource
+    delete from t_resource_group
     where id = #{id,jdbcType=INTEGER}
   </delete>
-  <delete id="deleteByExample" parameterType="cn.zynworld.hnister.common.domain.ResourceExample" >
-    delete from t_resource
+  <delete id="deleteByExample" parameterType="cn.zynworld.hnister.common.domain.ResourceGroupExample" >
+    delete from t_resource_group
     <if test="_parameter != null" >
       <include refid="Example_Where_Clause" />
     </if>
   </delete>
-  <insert id="insert" parameterType="cn.zynworld.hnister.common.domain.Resource" >
-    insert into t_resource (id, name, method, 
-      url, status, group)
-    values (#{id,jdbcType=INTEGER}, #{name,jdbcType=VARCHAR}, #{method,jdbcType=INTEGER}, 
-      #{url,jdbcType=VARCHAR}, #{status,jdbcType=INTEGER}, #{group,jdbcType=INTEGER})
+  <insert id="insert" parameterType="cn.zynworld.hnister.common.domain.ResourceGroup" >
+    insert into t_resource_group (id, name, remark
+      )
+    values (#{id,jdbcType=INTEGER}, #{name,jdbcType=VARCHAR}, #{remark,jdbcType=VARCHAR}
+      )
   </insert>
-  <insert id="insertSelective" parameterType="cn.zynworld.hnister.common.domain.Resource" >
-    insert into t_resource
+  <insert id="insertSelective" parameterType="cn.zynworld.hnister.common.domain.ResourceGroup" >
+    insert into t_resource_group
     <trim prefix="(" suffix=")" suffixOverrides="," >
       <if test="id != null" >
         id,
@@ -115,17 +112,8 @@
       <if test="name != null" >
         name,
       </if>
-      <if test="method != null" >
-        method,
-      </if>
-      <if test="url != null" >
-        url,
-      </if>
-      <if test="status != null" >
-        status,
-      </if>
-      <if test="group != null" >
-        group,
+      <if test="remark != null" >
+        remark,
       </if>
     </trim>
     <trim prefix="values (" suffix=")" suffixOverrides="," >
@@ -135,28 +123,19 @@
       <if test="name != null" >
         #{name,jdbcType=VARCHAR},
       </if>
-      <if test="method != null" >
-        #{method,jdbcType=INTEGER},
-      </if>
-      <if test="url != null" >
-        #{url,jdbcType=VARCHAR},
-      </if>
-      <if test="status != null" >
-        #{status,jdbcType=INTEGER},
-      </if>
-      <if test="group != null" >
-        #{group,jdbcType=INTEGER},
+      <if test="remark != null" >
+        #{remark,jdbcType=VARCHAR},
       </if>
     </trim>
   </insert>
-  <select id="countByExample" parameterType="cn.zynworld.hnister.common.domain.ResourceExample" resultType="java.lang.Integer" >
-    select count(*) from t_resource
+  <select id="countByExample" parameterType="cn.zynworld.hnister.common.domain.ResourceGroupExample" resultType="java.lang.Integer" >
+    select count(*) from t_resource_group
     <if test="_parameter != null" >
       <include refid="Example_Where_Clause" />
     </if>
   </select>
   <update id="updateByExampleSelective" parameterType="map" >
-    update t_resource
+    update t_resource_group
     <set >
       <if test="record.id != null" >
         id = #{record.id,jdbcType=INTEGER},
@@ -164,17 +143,8 @@
       <if test="record.name != null" >
         name = #{record.name,jdbcType=VARCHAR},
       </if>
-      <if test="record.method != null" >
-        method = #{record.method,jdbcType=INTEGER},
-      </if>
-      <if test="record.url != null" >
-        url = #{record.url,jdbcType=VARCHAR},
-      </if>
-      <if test="record.status != null" >
-        status = #{record.status,jdbcType=INTEGER},
-      </if>
-      <if test="record.group != null" >
-        group = #{record.group,jdbcType=INTEGER},
+      <if test="record.remark != null" >
+        remark = #{record.remark,jdbcType=VARCHAR},
       </if>
     </set>
     <if test="_parameter != null" >
@@ -182,54 +152,39 @@
     </if>
   </update>
   <update id="updateByExample" parameterType="map" >
-    update t_resource
+    update t_resource_group
     set id = #{record.id,jdbcType=INTEGER},
       name = #{record.name,jdbcType=VARCHAR},
-      method = #{record.method,jdbcType=INTEGER},
-      url = #{record.url,jdbcType=VARCHAR},
-      status = #{record.status,jdbcType=INTEGER},
-      group = #{record.group,jdbcType=INTEGER}
+      remark = #{record.remark,jdbcType=VARCHAR}
     <if test="_parameter != null" >
       <include refid="Update_By_Example_Where_Clause" />
     </if>
   </update>
-  <update id="updateByPrimaryKeySelective" parameterType="cn.zynworld.hnister.common.domain.Resource" >
-    update t_resource
+  <update id="updateByPrimaryKeySelective" parameterType="cn.zynworld.hnister.common.domain.ResourceGroup" >
+    update t_resource_group
     <set >
       <if test="name != null" >
         name = #{name,jdbcType=VARCHAR},
       </if>
-      <if test="method != null" >
-        method = #{method,jdbcType=INTEGER},
-      </if>
-      <if test="url != null" >
-        url = #{url,jdbcType=VARCHAR},
-      </if>
-      <if test="status != null" >
-        status = #{status,jdbcType=INTEGER},
-      </if>
-      <if test="group != null" >
-        group = #{group,jdbcType=INTEGER},
+      <if test="remark != null" >
+        remark = #{remark,jdbcType=VARCHAR},
       </if>
     </set>
     where id = #{id,jdbcType=INTEGER}
   </update>
-  <update id="updateByPrimaryKey" parameterType="cn.zynworld.hnister.common.domain.Resource" >
-    update t_resource
+  <update id="updateByPrimaryKey" parameterType="cn.zynworld.hnister.common.domain.ResourceGroup" >
+    update t_resource_group
     set name = #{name,jdbcType=VARCHAR},
-      method = #{method,jdbcType=INTEGER},
-      url = #{url,jdbcType=VARCHAR},
-      status = #{status,jdbcType=INTEGER},
-      group = #{group,jdbcType=INTEGER}
+      remark = #{remark,jdbcType=VARCHAR}
     where id = #{id,jdbcType=INTEGER}
   </update>
-  <select resultMap="BaseResultMap" parameterType="cn.zynworld.hnister.common.domain.ResourceExample" id="selectByExampleWithRowbounds" >
+  <select resultMap="BaseResultMap" parameterType="cn.zynworld.hnister.common.domain.ResourceGroupExample" id="selectByExampleWithRowbounds" >
     select
     <if test="distinct" >
       distinct
     </if>
     <include refid="Base_Column_List" />
-    from t_resource
+    from t_resource_group
     <if test="_parameter != null" >
       <include refid="Example_Where_Clause" />
     </if>

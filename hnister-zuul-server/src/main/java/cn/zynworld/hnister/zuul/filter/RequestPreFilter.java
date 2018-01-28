@@ -7,17 +7,9 @@ import com.netflix.zuul.context.RequestContext;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.cloud.netflix.zuul.filters.ProxyRequestHelper;
-import org.springframework.cloud.netflix.zuul.filters.RouteLocator;
-import org.springframework.cloud.netflix.zuul.filters.ZuulProperties;
-import org.springframework.cloud.netflix.zuul.filters.pre.PreDecorationFilter;
 import org.springframework.stereotype.Component;
-import org.springframework.util.ReflectionUtils;
 
 import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
-import java.io.IOException;
-import java.io.PrintWriter;
 import java.util.List;
 
 /**
@@ -67,6 +59,11 @@ public class RequestPreFilter extends ZuulFilter {
         if (jwtBean != null){
             //jwt 用户角色信息
             List<String> roleIdList = (List<String>) jwtBean.getPlayload("role");
+            //指定id为1 的角色为超级管理员
+            if (roleIdList != null && roleIdList.contains("1")){
+                return null;
+            }
+
             if (roleIdList != null && roleResourceManager.checkAuthority(method, url, roleIdList)) {
                 //该检验通过 该用户具备访问资源的权限
                 return null;
@@ -78,10 +75,18 @@ public class RequestPreFilter extends ZuulFilter {
         return null;
     }
 
+    /**
+     * 请求失败 调用
+     * @param msg
+     * @param ctx
+     */
     private void createResponce(String msg,RequestContext ctx){
-        ctx.setSendZuulResponse(false);// 过滤该请求，不对其进行路由
-        ctx.setResponseStatusCode(401);// 返回错误码
-        ctx.setResponseBody(msg);// 返回错误内容
+        // 过滤该请求，不对其进行路由
+        ctx.setSendZuulResponse(false);
+        // 返回错误码
+        ctx.setResponseStatusCode(401);
+        // 返回错误内容
+        ctx.setResponseBody(msg);
         ctx.set("isSuccess", false);
     }
 }
