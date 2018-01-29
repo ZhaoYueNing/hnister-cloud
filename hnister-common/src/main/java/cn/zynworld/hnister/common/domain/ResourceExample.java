@@ -424,63 +424,63 @@ public class ResourceExample {
             return (Criteria) this;
         }
 
-        public Criteria andGroupIsNull() {
-            addCriterion("group is null");
+        public Criteria andGroupIdIsNull() {
+            addCriterion("group_id is null");
             return (Criteria) this;
         }
 
-        public Criteria andGroupIsNotNull() {
-            addCriterion("group is not null");
+        public Criteria andGroupIdIsNotNull() {
+            addCriterion("group_id is not null");
             return (Criteria) this;
         }
 
-        public Criteria andGroupEqualTo(Integer value) {
-            addCriterion("group =", value, "group");
+        public Criteria andGroupIdEqualTo(Integer value) {
+            addCriterion("group_id =", value, "groupId");
             return (Criteria) this;
         }
 
-        public Criteria andGroupNotEqualTo(Integer value) {
-            addCriterion("group <>", value, "group");
+        public Criteria andGroupIdNotEqualTo(Integer value) {
+            addCriterion("group_id <>", value, "groupId");
             return (Criteria) this;
         }
 
-        public Criteria andGroupGreaterThan(Integer value) {
-            addCriterion("group >", value, "group");
+        public Criteria andGroupIdGreaterThan(Integer value) {
+            addCriterion("group_id >", value, "groupId");
             return (Criteria) this;
         }
 
-        public Criteria andGroupGreaterThanOrEqualTo(Integer value) {
-            addCriterion("group >=", value, "group");
+        public Criteria andGroupIdGreaterThanOrEqualTo(Integer value) {
+            addCriterion("group_id >=", value, "groupId");
             return (Criteria) this;
         }
 
-        public Criteria andGroupLessThan(Integer value) {
-            addCriterion("group <", value, "group");
+        public Criteria andGroupIdLessThan(Integer value) {
+            addCriterion("group_id <", value, "groupId");
             return (Criteria) this;
         }
 
-        public Criteria andGroupLessThanOrEqualTo(Integer value) {
-            addCriterion("group <=", value, "group");
+        public Criteria andGroupIdLessThanOrEqualTo(Integer value) {
+            addCriterion("group_id <=", value, "groupId");
             return (Criteria) this;
         }
 
-        public Criteria andGroupIn(List<Integer> values) {
-            addCriterion("group in", values, "group");
+        public Criteria andGroupIdIn(List<Integer> values) {
+            addCriterion("group_id in", values, "groupId");
             return (Criteria) this;
         }
 
-        public Criteria andGroupNotIn(List<Integer> values) {
-            addCriterion("group not in", values, "group");
+        public Criteria andGroupIdNotIn(List<Integer> values) {
+            addCriterion("group_id not in", values, "groupId");
             return (Criteria) this;
         }
 
-        public Criteria andGroupBetween(Integer value1, Integer value2) {
-            addCriterion("group between", value1, value2, "group");
+        public Criteria andGroupIdBetween(Integer value1, Integer value2) {
+            addCriterion("group_id between", value1, value2, "groupId");
             return (Criteria) this;
         }
 
-        public Criteria andGroupNotBetween(Integer value1, Integer value2) {
-            addCriterion("group not between", value1, value2, "group");
+        public Criteria andGroupIdNotBetween(Integer value1, Integer value2) {
+            addCriterion("group_id not between", value1, value2, "groupId");
             return (Criteria) this;
         }
     }

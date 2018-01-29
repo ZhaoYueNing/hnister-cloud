@@ -2,20 +2,34 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b09429e5-0af3-4c1a-a6d3-da7e0d0f5397" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/hnister-common/src/main/java/cn/zynworld/hnister/common/domain/ResourceGroup.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/hnister-common/src/main/java/cn/zynworld/hnister/common/domain/ResourceGroupExample.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/hnister-common/src/main/java/cn/zynworld/hnister/common/mappers/ResourceGroupMapper.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/hnister-common/src/main/resources/config/mappers/ResourceGroupMapper.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/hnister-common/target/classes/cn/zynworld/hnister/common/domain/Resource.class" afterPath="$PROJECT_DIR$/hnister-common/target/classes/cn/zynworld/hnister/common/domain/Resource.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/hnister-common/target/classes/cn/zynworld/hnister/common/domain/ResourceExample$Criteria.class" afterPath="$PROJECT_DIR$/hnister-common/target/classes/cn/zynworld/hnister/common/domain/ResourceExample$Criteria.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/hnister-common/target/classes/cn/zynworld/hnister/common/domain/ResourceExample$Criterion.class" afterPath="$PROJECT_DIR$/hnister-common/target/classes/cn/zynworld/hnister/common/domain/ResourceExample$Criterion.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/hnister-common/target/classes/cn/zynworld/hnister/common/domain/ResourceExample$GeneratedCriteria.class" afterPath="$PROJECT_DIR$/hnister-common/target/classes/cn/zynworld/hnister/common/domain/ResourceExample$GeneratedCriteria.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/hnister-common/target/classes/cn/zynworld/hnister/common/domain/User.class" afterPath="$PROJECT_DIR$/hnister-common/target/classes/cn/zynworld/hnister/common/domain/User.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/hnister-common/target/classes/cn/zynworld/hnister/common/domain/UserExample$Criteria.class" afterPath="$PROJECT_DIR$/hnister-common/target/classes/cn/zynworld/hnister/common/domain/UserExample$Criteria.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/hnister-common/target/classes/cn/zynworld/hnister/common/domain/UserExample$Criterion.class" afterPath="$PROJECT_DIR$/hnister-common/target/classes/cn/zynworld/hnister/common/domain/UserExample$Criterion.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/hnister-common/target/classes/cn/zynworld/hnister/common/domain/UserExample$GeneratedCriteria.class" afterPath="$PROJECT_DIR$/hnister-common/target/classes/cn/zynworld/hnister/common/domain/UserExample$GeneratedCriteria.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/hnister-common/src/main/java/cn/zynworld/hnister/common/domain/Resource.java" afterPath="$PROJECT_DIR$/hnister-common/src/main/java/cn/zynworld/hnister/common/domain/Resource.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/hnister-common/src/main/java/cn/zynworld/hnister/common/domain/ResourceExample.java" afterPath="$PROJECT_DIR$/hnister-common/src/main/java/cn/zynworld/hnister/common/domain/ResourceExample.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/hnister-common/src/main/java/cn/zynworld/hnister/common/domain/User.java" afterPath="$PROJECT_DIR$/hnister-common/src/main/java/cn/zynworld/hnister/common/domain/User.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/hnister-common/src/main/java/cn/zynworld/hnister/common/domain/UserExample.java" afterPath="$PROJECT_DIR$/hnister-common/src/main/java/cn/zynworld/hnister/common/domain/UserExample.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/hnister-common/src/main/resources/config/mappers/ResourceMapper.xml" afterPath="$PROJECT_DIR$/hnister-common/src/main/resources/config/mappers/ResourceMapper.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/hnister-common/src/main/resources/config/mappers/UserMapper.xml" afterPath="$PROJECT_DIR$/hnister-common/src/main/resources/config/mappers/UserMapper.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/hnister-common/target/classes/config/mappers/ResourceMapper.xml" afterPath="$PROJECT_DIR$/hnister-common/target/classes/config/mappers/ResourceMapper.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/hnister-common/target/classes/config/mappers/UserMapper.xml" afterPath="$PROJECT_DIR$/hnister-common/target/classes/config/mappers/UserMapper.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/hnister-config-demo/src/main/resources/bootstrap.properties" afterPath="$PROJECT_DIR$/hnister-config-demo/src/main/resources/bootstrap.properties" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/hnister-news-service-old/src/main/java/cn/zynworld/hnister/hnisternewsservice/rest/NewsRest.java" afterPath="$PROJECT_DIR$/hnister-news-service-old/src/main/java/cn/zynworld/hnister/hnisternewsservice/rest/NewsRest.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/hnister-news-service-old/src/main/resources/bootstrap.properties" afterPath="$PROJECT_DIR$/hnister-news-service-old/src/main/resources/bootstrap.properties" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/hnister-news-service/src/main/java/cn/zynworld/hnister/news/api/NewsApi.java" afterPath="$PROJECT_DIR$/hnister-news-service/src/main/java/cn/zynworld/hnister/news/api/NewsApi.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/hnister-news-service/src/main/resources/bootstrap.properties" afterPath="$PROJECT_DIR$/hnister-news-service/src/main/resources/bootstrap.properties" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/hnister-security-service/src/main/java/cn/zynworld/hnister/security/api/ResourceApi.java" afterPath="$PROJECT_DIR$/hnister-security-service/src/main/java/cn/zynworld/hnister/security/api/ResourceApi.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/hnister-security-service/src/main/java/cn/zynworld/hnister/security/api/UserApi.java" afterPath="$PROJECT_DIR$/hnister-security-service/src/main/java/cn/zynworld/hnister/security/api/UserApi.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/hnister-security-service/src/main/resources/bootstrap.properties" afterPath="$PROJECT_DIR$/hnister-security-service/src/main/resources/bootstrap.properties" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/hnister-zuul-server/src/main/java/cn/zynworld/hnister/zuul/filter/RequestPreFilter.java" afterPath="$PROJECT_DIR$/hnister-zuul-server/src/main/java/cn/zynworld/hnister/zuul/filter/RequestPreFilter.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/hnister-zuul-server/src/main/resources/application.properties" afterPath="$PROJECT_DIR$/hnister-zuul-server/src/main/resources/application.properties" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/hnister-zuul-server/src/main/resources/bootstrap.properties" afterPath="$PROJECT_DIR$/hnister-zuul-server/src/main/resources/bootstrap.properties" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/sql_backup/hnister_2018-01-28.sql" afterPath="$PROJECT_DIR$/sql_backup/hnister_2018-01-28.sql" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -96,46 +110,20 @@
       <file leaf-file-name="RequestPreFilter.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/hnister-zuul-server/src/main/java/cn/zynworld/hnister/zuul/filter/RequestPreFilter.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="719">
-              <caret line="71" column="14" lean-forward="false" selection-start-line="71" selection-start-column="14" selection-end-line="71" selection-end-column="14" />
+            <state relative-caret-position="244">
+              <caret line="73" column="9" lean-forward="true" selection-start-line="73" selection-start-column="9" selection-end-line="73" selection-end-column="9" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#838#839#0" expanded="true" />
-                <element signature="e#866#867#0" expanded="true" />
-                <element signature="e#912#913#0" expanded="true" />
-                <element signature="e#936#937#0" expanded="true" />
-                <element signature="e#987#988#0" expanded="true" />
-                <element signature="e#1014#1015#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="HnisterSecurityServiceApplication.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/hnister-security-service/src/main/java/cn/zynworld/hnister/security/HnisterSecurityServiceApplication.java">
+      <file leaf-file-name="NewsRest.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/hnister-news-service-old/src/main/java/cn/zynworld/hnister/hnisternewsservice/rest/NewsRest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="135">
-              <caret line="13" column="1" lean-forward="false" selection-start-line="13" selection-start-column="1" selection-end-line="13" selection-end-column="1" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ResourceGroup.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/hnister-common/src/main/java/cn/zynworld/hnister/common/domain/ResourceGroup.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Resource.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/hnister-common/src/main/java/cn/zynworld/hnister/common/domain/Resource.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="165">
-              <caret line="11" column="25" lean-forward="false" selection-start-line="11" selection-start-column="25" selection-end-line="11" selection-end-column="25" />
+            <state relative-caret-position="158">
+              <caret line="58" column="24" lean-forward="true" selection-start-line="58" selection-start-column="24" selection-end-line="58" selection-end-column="24" />
               <folding />
             </state>
           </provider>
@@ -144,15 +132,35 @@
       <file leaf-file-name="ResourceGroupExample.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/hnister-common/src/main/java/cn/zynworld/hnister/common/domain/ResourceGroupExample.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+            <state relative-caret-position="164">
+              <caret line="114" column="9" lean-forward="true" selection-start-line="114" selection-start-column="9" selection-end-line="114" selection-end-column="9" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ResourceExample.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/hnister-common/src/main/java/cn/zynworld/hnister/common/domain/ResourceExample.java">
+      <file leaf-file-name="UserApi.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/hnister-security-service/src/main/java/cn/zynworld/hnister/security/api/UserApi.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="151">
+              <caret line="94" column="24" lean-forward="true" selection-start-line="94" selection-start-column="24" selection-end-line="94" selection-end-column="24" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="UserMapper.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/hnister-common/src/main/java/cn/zynworld/hnister/common/mappers/UserMapper.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="105">
+              <caret line="7" column="17" lean-forward="false" selection-start-line="7" selection-start-column="17" selection-end-line="7" selection-end-column="17" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="UserExample.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/hnister-common/src/main/java/cn/zynworld/hnister/common/domain/UserExample.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="0">
               <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
@@ -161,50 +169,40 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ResourceGroupMapper.xml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/hnister-common/src/main/resources/config/mappers/ResourceGroupMapper.xml">
+      <file leaf-file-name="User.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/hnister-common/src/main/java/cn/zynworld/hnister/common/domain/User.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="0">
               <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="UserMapper.xml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/hnister-common/src/main/resources/config/mappers/UserMapper.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="345">
+              <caret line="23" column="48" lean-forward="true" selection-start-line="23" selection-start-column="48" selection-end-line="23" selection-end-column="48" />
               <folding>
-                <marker date="1517119432000" expanded="true" signature="3444:3556" ph="select from t_resource_group" />
-                <marker date="1517119432000" expanded="true" signature="3643:3709" ph="delete from " />
-                <marker date="1517119432000" expanded="true" signature="3830:3858" ph="delete from " />
-                <marker date="1517119432000" expanded="true" signature="4056:4207" ph="insert into t_resource_group... " />
-                <marker date="1517119432000" expanded="true" signature="5047:5084" ph="select count... t_resource_group" />
-                <marker date="1517119432000" expanded="true" signature="5771:5933" ph="update t_res... " />
-                <marker date="1517119432000" expanded="true" signature="6162:6421" ph="update t_res... " />
-                <marker date="1517119432000" expanded="true" signature="6538:6682" ph="update t_res... " />
+                <marker date="1517208277000" expanded="true" signature="4047:4161" ph="select from t_user" />
+                <marker date="1517208277000" expanded="true" signature="4247:4315" ph="delete from " />
+                <marker date="1517208277000" expanded="true" signature="4427:4445" ph="delete from " />
+                <marker date="1517208277000" expanded="true" signature="4634:5109" ph="insert into t_user... " />
+                <marker date="1517208277000" expanded="true" signature="7107:7134" ph="select count... t_user" />
+                <marker date="1517208277000" expanded="true" signature="8677:9247" ph="update t_use... " />
+                <marker date="1517208277000" expanded="true" signature="9467:10464" ph="update t_use... " />
+                <marker date="1517208277000" expanded="true" signature="10572:11068" ph="update t_use... " />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ResourceGroupMapper.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/hnister-common/src/main/java/cn/zynworld/hnister/common/mappers/ResourceGroupMapper.java">
+      <file leaf-file-name="ResourceApi.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/hnister-security-service/src/main/java/cn/zynworld/hnister/security/api/ResourceApi.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ResourceMapper.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/hnister-common/src/main/java/cn/zynworld/hnister/common/mappers/ResourceMapper.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="UserApi.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/hnister-security-service/src/main/java/cn/zynworld/hnister/security/api/UserApi.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="343">
-              <caret line="74" column="0" lean-forward="false" selection-start-line="74" selection-start-column="0" selection-end-line="74" selection-end-column="0" />
+            <state relative-caret-position="300">
+              <caret line="27" column="0" lean-forward="false" selection-start-line="27" selection-start-column="0" selection-end-line="27" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -221,26 +219,41 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>classpath:</find>
-      <find>p</find>
-      <find>params</find>
-      <find>codec</find>
-      <find>256</find>
-      <find>head</find>
-      <find>String</find>
-      <find>sec</find>
-      <find>config</find>
-      <find>path</find>
-      <find>mysql</find>
-      <find>mybatis</find>
-      <find>method:</find>
-      <find>http_method</find>
-      <find>httpMethod_id</find>
-      <find>|||</find>
-      <find>3</find>
+      <find>from t_res</find>
+      <find>from t_resou</find>
+      <find>from t_resour</find>
+      <find>updateByPrimaryKey</find>
+      <find>BaseResultMap</find>
+      <find>from t_resource</find>
+      <find>h</find>
+      <find>hnis</find>
+      <find>hnist</find>
+      <find>hnist-ne</find>
+      <find>hnist-new</find>
+      <find>hnist-news</find>
+      <find>hnist-news-</find>
+      <find>hnist-news-s</find>
+      <find>hnist-news-se</find>
+      <find>hnist-news-ser</find>
+      <find>hnist-news-serv</find>
+      <find>hnist-news-servi</find>
+      <find>hnist-news-service</find>
+      <find>hnist-news-servic</find>
+      <find>hnist-n</find>
+      <find>resourceStatus0Set</find>
+      <find>hnist-</find>
+      <find>j</find>
+      <find>jwt</find>
+      <find>ro</find>
+      <find>roles</find>
+      <find>JWT_HEADER_NAME</find>
+      <find>info</find>
+      <find>role</find>
     </findStrings>
     <replaceStrings>
       <replace>httpMethod</replace>
+      <replace>hnister-news-service</replace>
+      <replace>hnister-</replace>
     </replaceStrings>
   </component>
   <component name="Git.Settings">
@@ -254,9 +267,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/hnister-common/src/main/java/cn/zynworld/hnister/common/domain/NewsModuleExample.java" />
-        <option value="$PROJECT_DIR$/hnister-common/src/main/java/cn/zynworld/hnister/common/utils/PageBean.java" />
-        <option value="$PROJECT_DIR$/hnister-common/src/main/java/cn/zynworld/hnister/common/domain/News.java" />
         <option value="$PROJECT_DIR$/hnister-common/src/main/java/cn/zynworld/hnister/common/domain/NewsModule.java" />
         <option value="$PROJECT_DIR$/hnister-news-service/src/test/java/cn/zynworld/hnister/news/mappers/MappersTests.java" />
         <option value="$PROJECT_DIR$/hnister-news-service/src/test/java/cn/zynworld/hnister/news/api/NewsApiTest.java" />
@@ -286,12 +296,10 @@
         <option value="$PROJECT_DIR$/.idea/workspace.xml" />
         <option value="$PROJECT_DIR$/hnister-common/src/main/java/cn/zynworld/hnister/common/domain/User.java" />
         <option value="$PROJECT_DIR$/hnister-common/src/main/java/cn/zynworld/hnister/common/vo/UserLoginVo.java" />
-        <option value="$PROJECT_DIR$/hnister-common/src/main/java/cn/zynworld/hnister/common/mappers/UserMapper.java" />
         <option value="$PROJECT_DIR$/hnister-common/src/test/java/cn/zynworld/hnister/common/utils/JsonUtilsTest.java" />
         <option value="$PROJECT_DIR$/hnister-common/src/main/java/cn/zynworld/hnister/common/utils/JsonUtils.java" />
         <option value="$PROJECT_DIR$/hnister-common/src/main/java/cn/zynworld/hnister/common/utils/CodecUtils.java" />
         <option value="$PROJECT_DIR$/hnister-common/src/test/java/cn/zynworld/hnister/common/utils/CodecUtilsTest.java" />
-        <option value="$PROJECT_DIR$/hnister-security-service/src/main/java/cn/zynworld/hnister/security/api/UserApi.java" />
         <option value="$PROJECT_DIR$/hnister-common/pom.xml" />
         <option value="$PROJECT_DIR$/hnister-news-service/pom.xml" />
         <option value="$PROJECT_DIR$/hnister-security-service/src/main/resources/application.properties" />
@@ -303,8 +311,13 @@
         <option value="$PROJECT_DIR$/hnister-common/src/main/java/cn/zynworld/hnister/common/domain/Resource.java" />
         <option value="$PROJECT_DIR$/hnister-zuul-server/src/main/java/cn/zynworld/hnister/zuul/manager/RoleResourceManager.java" />
         <option value="$PROJECT_DIR$/sql_backup/hnister_2018-01-28.sql" />
-        <option value="$PROJECT_DIR$/hnister-zuul-server/src/main/java/cn/zynworld/hnister/zuul/filter/RequestPreFilter.java" />
         <option value="$PROJECT_DIR$/hnister-common/src/main/java/cn/zynworld/hnister/common/mappers/ResourceMapper.java" />
+        <option value="$PROJECT_DIR$/hnister-security-service/src/main/java/cn/zynworld/hnister/security/api/ResourceApi.java" />
+        <option value="$PROJECT_DIR$/hnister-news-service-old/src/main/java/cn/zynworld/hnister/hnisternewsservice/rest/NewsRest.java" />
+        <option value="$PROJECT_DIR$/hnister-config-demo/src/main/resources/bootstrap.properties" />
+        <option value="$PROJECT_DIR$/hnister-zuul-server/src/main/java/cn/zynworld/hnister/zuul/filter/RequestPreFilter.java" />
+        <option value="$PROJECT_DIR$/hnister-security-service/src/main/java/cn/zynworld/hnister/security/api/UserApi.java" />
+        <option value="$PROJECT_DIR$/hnister-common/src/main/java/cn/zynworld/hnister/common/mappers/UserMapper.java" />
       </list>
     </option>
   </component>
@@ -373,10 +386,9 @@
     <option name="jreName" value="1.8" />
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="2" />
-    <option name="y" value="35" />
-    <option name="width" value="1430" />
-    <option name="height" value="814" />
+    <option name="y" value="23" />
+    <option name="width" value="1440" />
+    <option name="height" value="826" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
@@ -462,6 +474,40 @@
               <option name="myItemId" value="main" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="resources" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="hnister-parent" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="hnister-parent" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="hnister-zuul-server" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="resources" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="config" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
           </PATH>
           <PATH>
             <PATH_ELEMENT>
@@ -490,6 +536,40 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="zuul" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="hnister-parent" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="hnister-parent" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="hnister-zuul-server" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="java" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="zuul" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="manager" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -578,6 +658,10 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="resources" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -702,6 +786,44 @@
               <option name="myItemId" value="resources" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="config" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="hnister-parent" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="hnister-parent" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="hnister-common" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="resources" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="config" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="mappers" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
           </PATH>
           <PATH>
             <PATH_ELEMENT>
@@ -730,40 +852,6 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="common" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="hnister-parent" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="hnister-parent" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="hnister-common" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="main" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="java" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="common" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="domain" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -787,11 +875,11 @@
       <recent name="cn.zynworld.hnister.common.mappers" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/hnister-common/src/main/java/cn/zynworld/hnister/common/mappers" />
+      <recent name="$PROJECT_DIR$/hnister-security-service/src/main/resources/static/imgs/avatar" />
       <recent name="$PROJECT_DIR$/hnister-common/src/main/resources/config/mappers" />
       <recent name="$PROJECT_DIR$/hnister-common/src/main/java/cn/zynworld/hnister/common/domain" />
+      <recent name="$PROJECT_DIR$/hnister-common/src/main/java/cn/zynworld/hnister/common/mappers" />
       <recent name="$PROJECT_DIR$/hnister-zuul-server/src/main/resources" />
-      <recent name="$PROJECT_DIR$/hnister-common/src/main/java" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -806,7 +894,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Spring Boot.HnisterNewsServiceApplication (1)">
+  <component name="RunManager" selected="Spring Boot.HnisterSecurityServiceApplication">
     <configuration default="false" name="CodecUtilsTest.testCreateJwtByJsonToken" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
         <pattern>
@@ -1357,7 +1445,7 @@
       <workItem from="1516791408563" duration="18224000" />
       <workItem from="1516969669098" duration="11531000" />
       <workItem from="1517014513416" duration="13415000" />
-      <workItem from="1517036351686" duration="6968000" />
+      <workItem from="1517036351686" duration="20466000" />
     </task>
     <servers />
   </component>
@@ -1394,15 +1482,16 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="72660000" />
+    <option name="totallyTimeSpent" value="86158000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="2" y="35" width="1430" height="814" extended-state="0" />
+    <frame x="0" y="23" width="1440" height="826" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Nl-Palette" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.27423823" sideWeight="0.5028818" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.1649856" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.28882834" sideWeight="0.5028818" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.16380544" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Properties" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -1410,7 +1499,7 @@
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3933518" sideWeight="0.7910663" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.2936288" sideWeight="0.8573487" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -1420,10 +1509,11 @@
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32825485" sideWeight="0.49135447" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32963988" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Spring" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32963988" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.27423823" sideWeight="0.49711815" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.22838616" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.27423823" sideWeight="0.49711815" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2267525" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Problems" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32963988" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Bean Validation" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32963988" sideWeight="0.49711815" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
@@ -1431,7 +1521,6 @@
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
     <layout-to-restore>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -1477,7 +1566,7 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="58" />
+      <option name="time" value="67" />
     </breakpoint-manager>
     <watches-manager />
   </component>
@@ -1486,92 +1575,11 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/hnister-common/src/main/java/cn/zynworld/hnister/common/vo/UserLoginVo.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="315">
-          <caret line="21" column="0" lean-forward="true" selection-start-line="21" selection-start-column="0" selection-end-line="21" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/hnister-common/src/main/java/cn/zynworld/hnister/common/domain/User.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="148">
-          <caret line="14" column="0" lean-forward="true" selection-start-line="14" selection-start-column="0" selection-end-line="14" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/hnister-common/src/main/java/cn/zynworld/hnister/common/mappers/RoleUserRelaMapper.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/hnister-common/src/main/java/cn/zynworld/hnister/common/mappers/UserMapper.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="285">
-          <caret line="24" column="40" lean-forward="false" selection-start-line="24" selection-start-column="40" selection-end-line="24" selection-end-column="40" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/hnister-common/src/main/resources/config/mappers/UserMapper.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <marker date="1516960976000" expanded="true" signature="3966:4080" ph="select from t_user" />
-            <marker date="1516960976000" expanded="true" signature="4166:4234" ph="delete from " />
-            <marker date="1516960976000" expanded="true" signature="4346:4364" ph="delete from " />
-            <marker date="1516960976000" expanded="true" signature="4553:4992" ph="insert into t_user... " />
-            <marker date="1516960976000" expanded="true" signature="6846:6873" ph="select count... t_user" />
-            <marker date="1516960976000" expanded="true" signature="8311:8831" ph="update t_use... " />
-            <marker date="1516960976000" expanded="true" signature="9051:9957" ph="update t_use... " />
-            <marker date="1516960976000" expanded="true" signature="10065:10518" ph="update t_use... " />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/hnister-common/src/main/java/cn/zynworld/hnister/common/domain/UserExample.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/hnister-common/src/main/java/cn/zynworld/hnister/common/domain/RoleUserRelaExample.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="40" column="26" lean-forward="false" selection-start-line="40" selection-start-column="26" selection-end-line="40" selection-end-column="26" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/hnister-common/src/main/java/cn/zynworld/hnister/common/mappers/CollegeMapper.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="150">
-          <caret line="15" column="0" lean-forward="false" selection-start-line="15" selection-start-column="0" selection-end-line="15" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/hnister-common/src/main/resources/config/mappers/NewsMapper.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="268">
           <caret line="68" column="16" lean-forward="false" selection-start-line="68" selection-start-column="16" selection-end-line="68" selection-end-column="16" />
-          <folding>
-            <marker date="1516933275599" expanded="true" signature="4313:4461" ph="select , fro... " />
-            <marker date="1516933275599" expanded="true" signature="4545:4600" ph="delete from " />
-            <marker date="1516933275599" expanded="true" signature="4712:4730" ph="delete from " />
-            <marker date="1516933275599" expanded="true" signature="4974:5251" ph="insert into t_news... " />
-            <marker date="1516933275599" expanded="true" signature="6521:6548" ph="select count... t_news" />
-            <marker date="1516933275599" expanded="true" signature="7569:7885" ph="update t_new... " />
-            <marker date="1516933275599" expanded="true" signature="8058:8318" ph="update t_new... " />
-            <marker date="1516933275599" expanded="true" signature="8538:9080" ph="update t_new... " />
-            <marker date="1516933275599" expanded="true" signature="9197:9474" ph="update t_new... " />
-            <marker date="1516933275599" expanded="true" signature="9582:9810" ph="update t_new... " />
-            <marker date="1516933275599" expanded="true" signature="10850:10918" ph="UPDATE t_new... " />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1586,6 +1594,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="105">
           <caret line="10" column="13" lean-forward="false" selection-start-line="10" selection-start-column="13" selection-end-line="10" selection-end-column="13" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1593,6 +1602,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="90">
           <caret line="8" column="13" lean-forward="false" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1624,6 +1634,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="46" lean-forward="false" selection-start-line="0" selection-start-column="24" selection-end-line="0" selection-end-column="46" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1667,6 +1678,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="105">
           <caret line="7" column="28" lean-forward="false" selection-start-line="7" selection-start-column="28" selection-end-line="7" selection-end-column="28" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1674,6 +1686,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="135">
           <caret line="9" column="59" lean-forward="false" selection-start-line="9" selection-start-column="59" selection-end-line="9" selection-end-column="59" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1681,6 +1694,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="15">
           <caret line="1" column="0" lean-forward="false" selection-start-line="1" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1696,6 +1710,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="240">
           <caret line="16" column="0" lean-forward="false" selection-start-line="16" selection-start-column="0" selection-end-line="16" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1738,26 +1753,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/hnister-common/src/main/resources/config/mappers/ResourceMapper.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/hnister-zuul-server/src/main/java/cn/zynworld/hnister/zuul/manager/RoleResourceManager.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="432">
-          <caret line="37" column="20" lean-forward="false" selection-start-line="37" selection-start-column="20" selection-end-line="37" selection-end-column="20" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#5112#5113#0" expanded="true" />
-            <element signature="e#5159#5160#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/hnister-common/src/test/java/cn/zynworld/hnister/common/utils/JsonUtilsTest.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="195">
@@ -1779,7 +1774,7 @@
         <state relative-caret-position="165">
           <caret line="11" column="5" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="45" selection-end-column="0" />
           <folding>
-            <element signature="imports" expanded="true" />
+            <element signature="imports" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1789,7 +1784,7 @@
         <state relative-caret-position="620">
           <caret line="121" column="52" lean-forward="false" selection-start-line="121" selection-start-column="8" selection-end-line="121" selection-end-column="52" />
           <folding>
-            <element signature="imports" expanded="true" />
+            <element signature="imports" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1815,7 +1810,7 @@
         <state relative-caret-position="418">
           <caret line="51" column="0" lean-forward="false" selection-start-line="51" selection-start-column="0" selection-end-line="51" selection-end-column="0" />
           <folding>
-            <element signature="e#1937#1938#0" expanded="true" />
+            <element signature="e#1937#1938#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1833,54 +1828,30 @@
         <state relative-caret-position="-3643">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <marker date="1517119289096" expanded="true" signature="10099:10128" ph="DROP TABLE I... " />
-            <marker date="1517119289096" expanded="true" signature="10131:10341" ph="CREATE TABLE... t_role" />
-            <marker date="1517119289096" expanded="true" signature="10372:10417" ph="/*!40000 ALT... " />
-            <marker date="1517119289096" expanded="true" signature="10420:10518" ph="INSERT INTO `t_role`... " />
-            <marker date="1517119289096" expanded="true" signature="10521:10565" ph="/*!40000 ALT... " />
-            <marker date="1517119289096" expanded="true" signature="10680:10718" ph="DROP TABLE I... " />
-            <marker date="1517119289096" expanded="true" signature="10721:11137" ph="CREATE TABLE... t_role_resource" />
-            <marker date="1517119289096" expanded="true" signature="11177:11231" ph="/*!40000 ALT... " />
-            <marker date="1517119289096" expanded="true" signature="11234:11304" ph="INSERT INTO `t_role_resource`... " />
-            <marker date="1517119289096" expanded="true" signature="11307:11360" ph="/*!40000 ALT... " />
-            <marker date="1517119289096" expanded="true" signature="11471:11505" ph="DROP TABLE I... " />
-            <marker date="1517119289096" expanded="true" signature="11508:11905" ph="CREATE TABLE... t_role_user" />
-            <marker date="1517119289096" expanded="true" signature="11941:11991" ph="/*!40000 ALT... " />
-            <marker date="1517119289096" expanded="true" signature="11994:12071" ph="INSERT INTO `t_role_user`... " />
-            <marker date="1517119289096" expanded="true" signature="12074:12123" ph="/*!40000 ALT... " />
-            <marker date="1517119289096" expanded="true" signature="12234:12268" ph="DROP TABLE I... " />
-            <marker date="1517119289096" expanded="true" signature="12271:12617" ph="CREATE TABLE... t_specialty" />
-            <marker date="1517119289096" expanded="true" signature="12709:12738" ph="DROP TABLE I... " />
-            <marker date="1517119289096" expanded="true" signature="12741:13499" ph="CREATE TABLE... t_user" />
-            <marker date="1517119289096" expanded="true" signature="13530:13575" ph="/*!40000 ALT... " />
-            <marker date="1517119289096" expanded="true" signature="13578:14171" ph="INSERT INTO `t_user`... " />
-            <marker date="1517119289096" expanded="true" signature="14174:14218" ph="/*!40000 ALT... " />
-            <marker date="1517119289096" expanded="true" signature="14325:14355" ph="DROP TABLE I... " />
+            <marker date="1517208704635" expanded="true" signature="10153:10182" ph="DROP TABLE I... " />
+            <marker date="1517208704635" expanded="true" signature="10185:10395" ph="CREATE TABLE... t_role" />
+            <marker date="1517208704635" expanded="true" signature="10426:10471" ph="/*!40000 ALT... " />
+            <marker date="1517208704635" expanded="true" signature="10474:10572" ph="INSERT INTO `t_role`... " />
+            <marker date="1517208704635" expanded="true" signature="10575:10619" ph="/*!40000 ALT... " />
+            <marker date="1517208704635" expanded="true" signature="10734:10772" ph="DROP TABLE I... " />
+            <marker date="1517208704635" expanded="true" signature="10775:11191" ph="CREATE TABLE... t_role_resource" />
+            <marker date="1517208704635" expanded="true" signature="11231:11285" ph="/*!40000 ALT... " />
+            <marker date="1517208704635" expanded="true" signature="11288:11358" ph="INSERT INTO `t_role_resource`... " />
+            <marker date="1517208704635" expanded="true" signature="11361:11414" ph="/*!40000 ALT... " />
+            <marker date="1517208704635" expanded="true" signature="11525:11559" ph="DROP TABLE I... " />
+            <marker date="1517208704635" expanded="true" signature="11562:11959" ph="CREATE TABLE... t_role_user" />
+            <marker date="1517208704635" expanded="true" signature="11995:12045" ph="/*!40000 ALT... " />
+            <marker date="1517208704635" expanded="true" signature="12048:12125" ph="INSERT INTO `t_role_user`... " />
+            <marker date="1517208704635" expanded="true" signature="12128:12177" ph="/*!40000 ALT... " />
+            <marker date="1517208704635" expanded="true" signature="12288:12322" ph="DROP TABLE I... " />
+            <marker date="1517208704635" expanded="true" signature="12325:12671" ph="CREATE TABLE... t_specialty" />
+            <marker date="1517208704635" expanded="true" signature="12763:12792" ph="DROP TABLE I... " />
+            <marker date="1517208704635" expanded="true" signature="12795:13553" ph="CREATE TABLE... t_user" />
+            <marker date="1517208704635" expanded="true" signature="13584:13629" ph="/*!40000 ALT... " />
+            <marker date="1517208704635" expanded="true" signature="13632:14225" ph="INSERT INTO `t_user`... " />
+            <marker date="1517208704635" expanded="true" signature="14228:14272" ph="/*!40000 ALT... " />
+            <marker date="1517208704635" expanded="true" signature="14379:14409" ph="DROP TABLE I... " />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/hnister-zuul-server/src/main/java/cn/zynworld/hnister/zuul/filter/RequestPreFilter.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="719">
-          <caret line="71" column="14" lean-forward="false" selection-start-line="71" selection-start-column="14" selection-end-line="71" selection-end-column="14" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#838#839#0" expanded="true" />
-            <element signature="e#866#867#0" expanded="true" />
-            <element signature="e#912#913#0" expanded="true" />
-            <element signature="e#936#937#0" expanded="true" />
-            <element signature="e#987#988#0" expanded="true" />
-            <element signature="e#1014#1015#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/hnister-security-service/src/main/java/cn/zynworld/hnister/security/api/UserApi.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="343">
-          <caret line="74" column="0" lean-forward="false" selection-start-line="74" selection-start-column="0" selection-end-line="74" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1892,6 +1863,81 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/hnister-common/src/main/resources/config/mappers/ResourceGroupMapper.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/hnister-common/src/main/resources/config/mappers/ResourceMapper.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="3405">
+          <caret line="227" column="34" lean-forward="false" selection-start-line="227" selection-start-column="21" selection-end-line="227" selection-end-column="34" />
+          <folding>
+            <marker date="1517120593000" expanded="true" signature="3647:3753" ph="select from t_resource" />
+            <marker date="1517120593000" expanded="true" signature="3840:3900" ph="delete from " />
+            <marker date="1517120593000" expanded="true" signature="4016:4038" ph="delete from " />
+            <marker date="1517120593000" expanded="true" signature="4231:4495" ph="insert into t_resource... " />
+            <marker date="1517120593000" expanded="true" signature="5744:5775" ph="select count... t_resource" />
+            <marker date="1517120593000" expanded="true" signature="6766:7069" ph="update t_res... " />
+            <marker date="1517120593000" expanded="true" signature="7293:7814" ph="update t_res... " />
+            <marker date="1517120593000" expanded="true" signature="7926:8190" ph="update t_res... " />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/hnister-common/src/main/java/cn/zynworld/hnister/common/domain/ResourceExample.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="false" />
+            <element signature="e#270#271#0" expanded="false" />
+            <element signature="e#326#327#0" expanded="false" />
+            <element signature="e#384#385#0" expanded="false" />
+            <element signature="e#434#435#0" expanded="false" />
+            <element signature="e#474#475#0" expanded="false" />
+            <element signature="e#510#511#0" expanded="false" />
+            <element signature="e#559#560#0" expanded="false" />
+            <element signature="e#599#600#0" expanded="false" />
+            <element signature="e#634#635#0" expanded="false" />
+            <element signature="e#665#666#0" expanded="false" />
+            <element signature="e#712#713#0" expanded="false" />
+            <element signature="e#747#748#0" expanded="false" />
+            <element signature="e#788#789#0" expanded="false" />
+            <element signature="e#830#831#0" expanded="false" />
+            <element signature="e#1699#1700#0" expanded="false" />
+            <element signature="e#1749#1750#0" expanded="false" />
+            <element signature="e#1800#1801#0" expanded="false" />
+            <element signature="e#1839#1840#0" expanded="false" />
+            <element signature="e#1887#1888#0" expanded="false" />
+            <element signature="e#1926#1927#0" expanded="false" />
+            <element signature="e#15235#15236#0" expanded="false" />
+            <element signature="e#15266#15267#0" expanded="false" />
+            <element signature="e#15635#15636#0" expanded="false" />
+            <element signature="e#15675#15676#0" expanded="false" />
+            <element signature="e#15711#15712#0" expanded="false" />
+            <element signature="e#15747#15748#0" expanded="false" />
+            <element signature="e#15789#15790#0" expanded="false" />
+            <element signature="e#15831#15832#0" expanded="false" />
+            <element signature="e#15869#15870#0" expanded="false" />
+            <element signature="e#15907#15908#0" expanded="false" />
+            <element signature="e#15949#15950#0" expanded="false" />
+            <element signature="e#15991#15992#0" expanded="false" />
+            <element signature="e#16034#16035#0" expanded="false" />
+            <element signature="e#16077#16078#0" expanded="false" />
+            <element signature="e#16117#16118#0" expanded="false" />
+            <element signature="e#16157#16158#0" expanded="false" />
+            <element signature="e#16199#16200#0" expanded="false" />
+            <element signature="e#16241#16242#0" expanded="false" />
+            <element signature="e#16883#16884#0" expanded="false" />
+            <element signature="e#16935#16936#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/hnister-common/src/main/java/cn/zynworld/hnister/common/domain/ResourceGroup.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -1900,48 +1946,93 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/hnister-common/src/main/java/cn/zynworld/hnister/common/mappers/ResourceGroupMapper.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/hnister-common/src/main/java/cn/zynworld/hnister/common/mappers/ResourceMapper.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="55">
+          <caret line="9" column="17" lean-forward="false" selection-start-line="9" selection-start-column="17" selection-end-line="9" selection-end-column="17" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/hnister-common/src/main/java/cn/zynworld/hnister/common/domain/Resource.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="165">
-          <caret line="11" column="25" lean-forward="false" selection-start-line="11" selection-start-column="25" selection-end-line="11" selection-end-column="25" />
+        <state relative-caret-position="75">
+          <caret line="5" column="24" lean-forward="true" selection-start-line="5" selection-start-column="24" selection-end-line="5" selection-end-column="24" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/hnister-zuul-server/src/main/java/cn/zynworld/hnister/zuul/manager/RoleResourceManager.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="183">
+          <caret line="104" column="21" lean-forward="true" selection-start-line="104" selection-start-column="21" selection-end-line="104" selection-end-column="21" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/hnister-config-demo/src/main/resources/bootstrap.properties">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="15">
+          <caret line="1" column="24" lean-forward="false" selection-start-line="1" selection-start-column="24" selection-end-line="1" selection-end-column="24" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/hnister-common/src/main/java/cn/zynworld/hnister/common/domain/ResourceGroupExample.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        <state relative-caret-position="164">
+          <caret line="114" column="9" lean-forward="true" selection-start-line="114" selection-start-column="9" selection-end-line="114" selection-end-column="9" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/hnister-common/src/main/java/cn/zynworld/hnister/common/domain/ResourceExample.java">
+    <entry file="file://$PROJECT_DIR$/hnister-security-service/src/main/java/cn/zynworld/hnister/security/api/ResourceApi.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        <state relative-caret-position="300">
+          <caret line="27" column="0" lean-forward="false" selection-start-line="27" selection-start-column="0" selection-end-line="27" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/hnister-common/src/main/resources/config/mappers/ResourceGroupMapper.xml">
+    <entry file="file://$PROJECT_DIR$/hnister-zuul-server/src/main/java/cn/zynworld/hnister/zuul/filter/RequestPreFilter.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        <state relative-caret-position="244">
+          <caret line="73" column="9" lean-forward="true" selection-start-line="73" selection-start-column="9" selection-end-line="73" selection-end-column="9" />
           <folding>
-            <marker date="1517119432000" expanded="true" signature="3444:3556" ph="select from t_resource_group" />
-            <marker date="1517119432000" expanded="true" signature="3643:3709" ph="delete from " />
-            <marker date="1517119432000" expanded="true" signature="3830:3858" ph="delete from " />
-            <marker date="1517119432000" expanded="true" signature="4056:4207" ph="insert into t_resource_group... " />
-            <marker date="1517119432000" expanded="true" signature="5047:5084" ph="select count... t_resource_group" />
-            <marker date="1517119432000" expanded="true" signature="5771:5933" ph="update t_res... " />
-            <marker date="1517119432000" expanded="true" signature="6162:6421" ph="update t_res... " />
-            <marker date="1517119432000" expanded="true" signature="6538:6682" ph="update t_res... " />
+            <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/hnister-common/src/main/java/cn/zynworld/hnister/common/mappers/ResourceGroupMapper.java">
+    <entry file="file://$PROJECT_DIR$/hnister-news-service-old/src/main/java/cn/zynworld/hnister/hnisternewsservice/rest/NewsRest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="158">
+          <caret line="58" column="24" lean-forward="true" selection-start-line="58" selection-start-column="24" selection-end-line="58" selection-end-column="24" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/hnister-common/src/main/java/cn/zynworld/hnister/common/mappers/UserMapper.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="105">
+          <caret line="7" column="17" lean-forward="false" selection-start-line="7" selection-start-column="17" selection-end-line="7" selection-end-column="17" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/hnister-common/src/main/java/cn/zynworld/hnister/common/domain/UserExample.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
@@ -1949,10 +2040,40 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/hnister-common/src/main/java/cn/zynworld/hnister/common/mappers/ResourceMapper.java">
+    <entry file="file://$PROJECT_DIR$/hnister-common/src/main/java/cn/zynworld/hnister/common/domain/User.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/hnister-security-service/src/main/resources/static/imgs/avatar/default-avatar.jpg">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/hnister-common/src/main/resources/config/mappers/UserMapper.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="345">
+          <caret line="23" column="48" lean-forward="true" selection-start-line="23" selection-start-column="48" selection-end-line="23" selection-end-column="48" />
+          <folding>
+            <marker date="1517208277000" expanded="true" signature="4047:4161" ph="select from t_user" />
+            <marker date="1517208277000" expanded="true" signature="4247:4315" ph="delete from " />
+            <marker date="1517208277000" expanded="true" signature="4427:4445" ph="delete from " />
+            <marker date="1517208277000" expanded="true" signature="4634:5109" ph="insert into t_user... " />
+            <marker date="1517208277000" expanded="true" signature="7107:7134" ph="select count... t_user" />
+            <marker date="1517208277000" expanded="true" signature="8677:9247" ph="update t_use... " />
+            <marker date="1517208277000" expanded="true" signature="9467:10464" ph="update t_use... " />
+            <marker date="1517208277000" expanded="true" signature="10572:11068" ph="update t_use... " />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/hnister-security-service/src/main/java/cn/zynworld/hnister/security/api/UserApi.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="151">
+          <caret line="94" column="24" lean-forward="true" selection-start-line="94" selection-start-column="24" selection-end-line="94" selection-end-column="24" />
           <folding />
         </state>
       </provider>

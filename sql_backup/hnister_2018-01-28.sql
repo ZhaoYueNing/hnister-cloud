@@ -7,7 +7,7 @@
 #
 # Host: 127.0.0.1 (MySQL 5.7.20)
 # Database: hnister
-# Generation Time: 2018-01-28 06:01:29 +0000
+# Generation Time: 2018-01-28 06:20:02 +0000
 # ************************************************************
 
 
@@ -109,7 +109,7 @@ VALUES
 	(70,'DEMO','<p>init contentDEMO</p>','DEMO','2018-01-10',17),
 	(71,'DEMO','<p>init contentDEMO</p>','DEMO','2018-01-10',17),
 	(72,'DEMO','<p>init contentDEMO</p>','DEMO','2018-01-10',17),
-	(74,'这是一篇测试文章','<article style=\"box-sizing: border-box; box-shadow: rgba(0, 0, 0, 0.05) 0px 2px 4px 0px; background-color: #ffffff; padding: 20px 0px; color: #333333; font-family: \'PingFang SC\', \'Microsoft YaHei\', SimHei, Arial, SimSun; font-size: 16px;\">\n<div id=\"article_content\" class=\"article_content csdn-tracking-statistics tracking-click\" style=\"box-sizing: border-box; margin: 0px 0px 30px; padding: 20px 30px 0px; color: #454545;\" data-mod=\"popu_519\" data-dsm=\"post\">\n<div class=\"markdown_views\" style=\"box-sizing: border-box; margin: 0px; padding: 0px;\">\n<p style=\"box-sizing: border-box; margin: 0px 0px 16px; padding: 0px; color: #4f4f4f; line-height: 26px; text-align: justify;\">从昨天开始使用IDEA开始就一直在搭建java环境，许久没有使用过java，刚开始有些生疏，先建了一个最简单的类：test.java ，可是运行的时候出现 错误：找不到或无法加载主类 。</p>\n<p style=\"box-sizing: border-box; margin: 0px 0px 16px; padding: 0px; color: #4f4f4f; line-height: 26px; text-align: justify;\">在网上找了好久资料，都是环境变量的问题，我在我的window命令行下看了一下java 和javac 两个均是1.7 而且可以正常的编译和运行。排除了java 环境的问题，只能是IDEA环境的问题，在项目的project structure 中，先将项目指定JDK ，然后在项目的PATH 中，将path修改为跟当前项目在一个路径下就可以了&nbsp;<br style=\"box-sizing: border-box;\" /><img style=\"box-sizing: border-box; border: 0px; vertical-align: middle; outline: 0px; margin: 24px 0px; max-width: 100%;\" title=\"\" src=\"http://img.blog.csdn.net/20170607114152084?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvcXFfMzEzODI5MjE=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast\" alt=\"\" /></p>\n</div>\n</div>\n</article>\n<div class=\"article_copyright\" style=\"box-sizing: border-box; margin: -10px 0px 0px; padding: 10px 20px 30px 30px; box-shadow: rgba(0, 0, 0, 0.05) 0px 2px 4px 0px; font-size: 14px; color: #788087; clear: both; overflow: hidden; background-color: #ffffff; font-family: \'PingFang SC\', \'Microsoft YaHei\', SimHei, Arial, SimSun;\">&nbsp;</div>','赵岳宁','2018-01-23',17),
+	(74,'这是一篇测试文章','<article style=\"box-sizing: border-box; box-shadow: rgba(0, 0, 0, 0.05) 0px 2px 4px 0px; background-color: #ffffff; padding: 20px 0px; color: #333333; font-family: \'PingFang SC\', \'Microsoft YaHei\', SimHei, Arial, SimSun; font-size: 16px;\">\n<div id=\"article_content\" class=\"article_content csdn-tracking-statistics tracking-click\" style=\"box-sizing: border-box; margin: 0px 0px 30px; padding: 20px 30px 0px; color: #454545;\" data-mod=\"popu_519\" data-dsm=\"post\">\n<div class=\"markdown_views\" style=\"box-sizing: border-box; margin: 0px; padding: 0px;\">\n<p style=\"box-sizing: border-box; margin: 0px 0px 16px; padding: 0px; color: #4f4f4f; line-height: 26px; text-align: justify;\">从昨天开始使用IDEA开始就一直在搭建java环境，许久没有使用过java，刚开始有些生疏，先建了一个最简单的类：test.java ，可是运行的时候出现 错误：找不到或无法加载主类 。</p>\n<p style=\"box-sizing: border-box; margin: 0px 0px 16px; padding: 0px; color: #4f4f4f; line-height: 26px; text-align: justify;\">在网上找了好久资料，都是环境变量的问题，我在我的window命令行下看了一下java 和javac 两个均是1.7 而且可以正常的编译和运行。排除了java 环境的问题，只能是IDEA环境的问题，在项目的project structure 中，先将项目指定JDK ，然后在项目的PATH 中，将path修改为跟当前项目在一个路径下就可以了&nbsp;<br style=\"box-sizing: border-box;\" /><imgs style=\"box-sizing: border-box; border: 0px; vertical-align: middle; outline: 0px; margin: 24px 0px; max-width: 100%;\" title=\"\" src=\"http://imgs.blog.csdn.net/20170607114152084?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvcXFfMzEzODI5MjE=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast\" alt=\"\" /></p>\n</div>\n</div>\n</article>\n<div class=\"article_copyright\" style=\"box-sizing: border-box; margin: -10px 0px 0px; padding: 10px 20px 30px 30px; box-shadow: rgba(0, 0, 0, 0.05) 0px 2px 4px 0px; font-size: 14px; color: #788087; clear: both; overflow: hidden; background-color: #ffffff; font-family: \'PingFang SC\', \'Microsoft YaHei\', SimHei, Arial, SimSun;\">&nbsp;</div>','赵岳宁','2018-01-23',17),
 	(75,'中国男足取得世界杯冠军','<p>这是不可能的事情</p>','赵岳宁','2018-01-24',NULL),
 	(76,'中国男足取得世界杯冠军','<p>这是不可能的事情</p>','赵岳宁','2018-01-24',NULL),
 	(77,'中国男足取得世界杯冠军','<p>这是不可能的事情</p>','赵岳宁','2018-01-24',NULL),
@@ -159,19 +159,19 @@ CREATE TABLE `t_resource` (
   `method` int(4) unsigned NOT NULL COMMENT 'GET,\n    HEAD,\n    POST,\n    PUT,\n    PATCH,\n    DELETE,\n    OPTIONS,\n    TRACE;',
   `url` varchar(100) NOT NULL DEFAULT '',
   `status` int(11) NOT NULL DEFAULT '0' COMMENT '资源状态 0：白名单不被权限监控 1：被监控 2：废弃',
-  `group` int(11) unsigned DEFAULT NULL COMMENT '资源组 便于后台管理',
+  `group_id` int(11) unsigned DEFAULT NULL COMMENT '资源组 便于后台管理',
   PRIMARY KEY (`id`),
   UNIQUE KEY `method` (`method`,`url`),
-  KEY `group` (`group`),
-  CONSTRAINT `t_resource_ibfk_1` FOREIGN KEY (`group`) REFERENCES `t_resource` (`id`)
+  KEY `group` (`group_id`),
+  CONSTRAINT `t_resource_ibfk_1` FOREIGN KEY (`group_id`) REFERENCES `t_resource` (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 LOCK TABLES `t_resource` WRITE;
 /*!40000 ALTER TABLE `t_resource` DISABLE KEYS */;
 
-INSERT INTO `t_resource` (`id`, `name`, `method`, `url`, `status`, `group`)
+INSERT INTO `t_resource` (`id`, `name`, `method`, `url`, `status`, `group_id`)
 VALUES
-	(1,'add news',0,'/hnist-news-service/news',0,NULL);
+	(1,'add news',0,'/hnister-news-service/news',0,NULL);
 
 /*!40000 ALTER TABLE `t_resource` ENABLE KEYS */;
 UNLOCK TABLES;
@@ -185,6 +185,7 @@ DROP TABLE IF EXISTS `t_resource_group`;
 CREATE TABLE `t_resource_group` (
   `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
   `name` varchar(50) NOT NULL DEFAULT '',
+  `remark` varchar(100) DEFAULT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 

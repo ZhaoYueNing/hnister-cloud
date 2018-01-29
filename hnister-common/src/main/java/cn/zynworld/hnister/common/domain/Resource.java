@@ -11,7 +11,7 @@ public class Resource {
 
     private Integer status;
 
-    private Integer group;
+    private Integer groupId;
 
     public Integer getId() {
         return id;
@@ -53,11 +53,11 @@ public class Resource {
         this.status = status;
     }
 
-    public Integer getGroup() {
-        return group;
+    public Integer getGroupId() {
+        return groupId;
     }
 
-    public void setGroup(Integer group) {
-        this.group = group;
+    public void setGroupId(Integer groupId) {
+        this.groupId = groupId;
     }
 }

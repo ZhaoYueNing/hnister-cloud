@@ -18,7 +18,7 @@ import java.util.List;
 @Component
 public class RequestPreFilter extends ZuulFilter {
 
-    private final String JWT_HEADER_NAME = "jwt";
+    private final String JWT_HEADER_NAME = "token";
     private final Logger logger = LoggerFactory.getLogger(RequestPreFilter.class);
 
     @Autowired
@@ -52,13 +52,16 @@ public class RequestPreFilter extends ZuulFilter {
         if (resourceStatus == null || resourceStatus == -1||resourceStatus == 2){
             createResponce("request fail!",ctx);
             return null;
+        } else if (resourceStatus == 0){
+            //白名单 放行
+            return null;
         }
 
         //使用jwtBean解码装载jwt信息
-        CodecUtils.JwtBean jwtBean = CodecUtils.JwtBean.getJwtBean(request.getHeader("jwt"));
+        CodecUtils.JwtBean jwtBean = CodecUtils.JwtBean.getJwtBean(request.getHeader(JWT_HEADER_NAME));
         if (jwtBean != null){
             //jwt 用户角色信息
-            List<String> roleIdList = (List<String>) jwtBean.getPlayload("role");
+            List<String> roleIdList = (List<String>) jwtBean.getPlayload("roles");
             //指定id为1 的角色为超级管理员
             if (roleIdList != null && roleIdList.contains("1")){
                 return null;

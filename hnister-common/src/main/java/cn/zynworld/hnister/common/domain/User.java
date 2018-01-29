@@ -23,6 +23,8 @@ public class User {
 
     private Date createTime;
 
+    private String avatar;
+
     public String getUsername() {
         return username;
     }
@@ -101,5 +103,13 @@ public class User {
 
     public void setCreateTime(Date createTime) {
         this.createTime = createTime;
+    }
+
+    public String getAvatar() {
+        return avatar;
+    }
+
+    public void setAvatar(String avatar) {
+        this.avatar = avatar == null ? null : avatar.trim();
     }
 }

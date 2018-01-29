@@ -52,12 +52,15 @@ public class UserApi {
         return ResultBean.create(result > 0);
     }
 
-    @RequestMapping(path = "user",method = RequestMethod.POST,params = "login=true")
+    @RequestMapping(path = "user/login",method = RequestMethod.POST)
     public ResultBean login(@RequestBody UserLoginVo userLoginVo) {
         if (StringUtils.isBlank(userLoginVo.getUsername()) || StringUtils.isBlank(userLoginVo.getPassword())){
             return ResultBean.fail();
         }
         User user = userMapper.selectByPrimaryKey(userLoginVo.getUsername());
+        if (user == null){
+            return ResultBean.fail().setMsg("用户名或密码错误!");
+        }
         String encodedPassword = user.getPassword();
         String sale = user.getSalt();
 
@@ -71,9 +74,29 @@ public class UserApi {
         CodecUtils.JwtBean jwtBean = new CodecUtils.JwtBean();
         jwtBean.addHead("typ","JWT");
         jwtBean.addHead("alg","HA256");
-        jwtBean.addPlayload("role",roleUserRelaKeyListToRoleIdList(roles));
+        //放入角色列表
+        jwtBean.addPlayload("roles",roleUserRelaKeyListToRoleIdList(roles));
+        //用户名
+        jwtBean.addPlayload("username",userLoginVo.getUsername());
 
         return ResultBean.create(result).setMsg(jwtBean.toString());
+    }
+
+    @RequestMapping(path = "user/logout")
+    public ResultBean logout(@RequestHeader("token") String token){
+        CodecUtils.JwtBean jwtBean = CodecUtils.JwtBean.getJwtBean(token);
+        return ResultBean.create(jwtBean != null);
+    }
+
+    @RequestMapping(method = RequestMethod.GET,path = "user/info")
+    public User getUserInfo(@RequestParam("token") String jwt){
+        CodecUtils.JwtBean jwtBean = CodecUtils.JwtBean.getJwtBean(jwt);
+        if (jwtBean == null || jwtBean.getPlayload("username")==null){
+            return null;
+        }
+        String username = (String) jwtBean.getPlayload("username");
+        //进行查询
+        return userMapper.selectByPrimaryKey(username);
     }
 
     private List<Integer> roleUserRelaKeyListToRoleIdList(List<RoleUserRelaKey> roles){
