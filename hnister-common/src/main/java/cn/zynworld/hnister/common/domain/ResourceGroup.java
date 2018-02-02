@@ -1,6 +1,7 @@
 package cn.zynworld.hnister.common.domain;
 
 public class ResourceGroup {
+
     private Integer id;
 
     private String name;

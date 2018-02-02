@@ -96,7 +96,13 @@ public class UserApi {
         }
         String username = (String) jwtBean.getPlayload("username");
         //进行查询
-        return userMapper.selectByPrimaryKey(username);
+        User user = userMapper.selectByPrimaryKey(username);
+        if (user != null){
+            //敏感数据不暴露
+            user.setSalt(null);
+            user.setCreateTime(null);
+        }
+        return user;
     }
 
     private List<Integer> roleUserRelaKeyListToRoleIdList(List<RoleUserRelaKey> roles){

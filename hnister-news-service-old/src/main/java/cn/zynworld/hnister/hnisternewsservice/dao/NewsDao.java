@@ -93,7 +93,6 @@ public class NewsDao {
 	 * @return
 	 */
 	public PageBean<News> findByPage(Integer pageCount,Integer pageSize,Integer moduleId) {
-//		TODO
 		PageBean<News> pageBean = new PageBean<>();
 		pageBean.setPageCount(pageCount).setPageSize(pageSize);
 		String sql = "";
