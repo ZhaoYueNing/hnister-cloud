@@ -56,4 +56,6 @@ public class ResourceGroupApi {
         int result = resourceGroupMapper.insert(resourceGroup);
         return ResultBean.create(result > 0);
     }
+
+
 }

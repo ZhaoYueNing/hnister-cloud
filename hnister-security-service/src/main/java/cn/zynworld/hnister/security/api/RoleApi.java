@@ -37,6 +37,10 @@ public class RoleApi {
 
     @DeleteMapping(path = "role/{id}")
     public ResultBean deleteById(@PathVariable Integer id){
+        //固定ID 1 为超级管理员 不得删除
+        if (id == 1){
+            return ResultBean.fail("超级管理员角色不可以删除");
+        }
         int result = roleMapper.deleteByPrimaryKey(id);
         return ResultBean.create(result > 0);
     }
