@@ -10,7 +10,6 @@
         <module name="hnister-config-demo" />
         <module name="hnister-config-server" />
         <module name="hnister-eureka-server" />
-        <module name="hnister-news-service" />
         <module name="hnister-news-service-old" />
         <module name="hnister-security-service" />
         <module name="hnister-zuul-server" />
