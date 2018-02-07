@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dataSource name="hnister@localhost">
-  <database-model serializer="dbm" rdbms="MYSQL" format-version="4.2">
+  <database-model serializer="dbm" rdbms="MYSQL" format-version="4.4">
     <root id="1"/>
     <schema id="2" parent="1" name="hnister">
       <Current>1</Current>
@@ -9,80 +9,449 @@
     <schema id="3" parent="1" name="information_schema"/>
     <schema id="4" parent="1" name="mysql"/>
     <schema id="5" parent="1" name="performance_schema"/>
-    <schema id="6" parent="1" name="saasdemo"/>
-    <schema id="7" parent="1" name="saasuser"/>
-    <schema id="8" parent="1" name="springdemo"/>
-    <schema id="9" parent="1" name="sys"/>
-    <table id="10" parent="2" name="t_news"/>
-    <table id="11" parent="2" name="t_news_module"/>
-    <column id="12" parent="10" name="id">
+    <schema id="6" parent="1" name="sys"/>
+    <schema id="7" parent="1" name="ajaxdemo"/>
+    <schema id="8" parent="1" name="bjyadmin"/>
+    <schema id="9" parent="1" name="fanadmin"/>
+    <schema id="10" parent="1" name="hardb"/>
+    <schema id="11" parent="1" name="hnistbbs"/>
+    <schema id="12" parent="1" name="leasecloud"/>
+    <schema id="13" parent="1" name="market"/>
+    <schema id="14" parent="1" name="micor"/>
+    <schema id="15" parent="1" name="sakila"/>
+    <schema id="16" parent="1" name="schooldb"/>
+    <schema id="17" parent="1" name="schoolmates"/>
+    <schema id="18" parent="1" name="shop"/>
+    <schema id="19" parent="1" name="springdb"/>
+    <schema id="20" parent="1" name="test"/>
+    <schema id="21" parent="1" name="world"/>
+    <schema id="22" parent="1" name="zshop"/>
+    <table id="23" parent="2" name="t_college"/>
+    <table id="24" parent="2" name="t_news"/>
+    <table id="25" parent="2" name="t_news_module"/>
+    <table id="26" parent="2" name="t_resource"/>
+    <table id="27" parent="2" name="t_resource_group"/>
+    <table id="28" parent="2" name="t_role"/>
+    <table id="29" parent="2" name="t_role_resource"/>
+    <table id="30" parent="2" name="t_role_user"/>
+    <table id="31" parent="2" name="t_specialty"/>
+    <table id="32" parent="2" name="t_user"/>
+    <table id="33" parent="2" name="t_zlass"/>
+    <column id="34" parent="23" name="id">
+      <Position>1</Position>
+      <DataType>int(11) unsigned|0</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+    </column>
+    <column id="35" parent="23" name="name">
+      <Position>2</Position>
+      <Comment>学院名称</Comment>
+      <DataType>varchar(40)|0</DataType>
+      <NotNull>1</NotNull>
+      <DefaultExpression>&apos;&apos;</DefaultExpression>
+    </column>
+    <column id="36" parent="23" name="remark">
+      <Position>3</Position>
+      <Comment>备注</Comment>
+      <DataType>varchar(100)|0</DataType>
+    </column>
+    <key id="37" parent="23" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>id</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <column id="38" parent="24" name="id">
       <Position>1</Position>
       <DataType>bigint(20)|0</DataType>
       <NotNull>1</NotNull>
       <SequenceIdentity>1</SequenceIdentity>
     </column>
-    <column id="13" parent="10" name="title">
+    <column id="39" parent="24" name="title">
       <Position>2</Position>
       <DataType>varchar(200)|0</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="14" parent="10" name="content">
+    <column id="40" parent="24" name="content">
       <Position>3</Position>
       <DataType>text|0</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="15" parent="10" name="author">
+    <column id="41" parent="24" name="author">
       <Position>4</Position>
       <DataType>varchar(30)|0</DataType>
     </column>
-    <column id="16" parent="10" name="post_date">
+    <column id="42" parent="24" name="post_date">
       <Position>5</Position>
       <DataType>date|0</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="17" parent="10" name="module_id">
+    <column id="43" parent="24" name="module_id">
       <Position>6</Position>
       <DataType>int(11)|0</DataType>
     </column>
-    <index id="18" parent="10" name="module_id">
+    <index id="44" parent="24" name="module_id">
       <ColNames>module_id</ColNames>
     </index>
-    <key id="19" parent="10" name="PRIMARY">
+    <key id="45" parent="24" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>id</ColNames>
       <Primary>1</Primary>
     </key>
-    <foreign-key id="20" parent="10" name="t_news_ibfk_1">
+    <foreign-key id="46" parent="24" name="t_news_ibfk_1">
       <ColNames>module_id</ColNames>
       <RefSchemaName>hnister</RefSchemaName>
       <RefTableName>t_news_module</RefTableName>
       <RefColNames>id</RefColNames>
+      <OnDelete>set-null</OnDelete>
     </foreign-key>
-    <column id="21" parent="11" name="id">
+    <column id="47" parent="25" name="id">
       <Position>1</Position>
       <DataType>int(11)|0</DataType>
       <NotNull>1</NotNull>
       <SequenceIdentity>1</SequenceIdentity>
     </column>
-    <column id="22" parent="11" name="name">
+    <column id="48" parent="25" name="name">
       <Position>2</Position>
       <DataType>varchar(100)|0</DataType>
     </column>
-    <column id="23" parent="11" name="remark">
+    <column id="49" parent="25" name="remark">
       <Position>3</Position>
       <Comment>备注</Comment>
       <DataType>varchar(200)|0</DataType>
     </column>
-    <column id="24" parent="11" name="number">
+    <column id="50" parent="25" name="number">
       <Position>4</Position>
       <Comment>文章数量</Comment>
       <DataType>bigint(20)|0</DataType>
       <DefaultExpression>&apos;0&apos;</DefaultExpression>
     </column>
-    <key id="25" parent="11" name="PRIMARY">
+    <key id="51" parent="25" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>id</ColNames>
       <Primary>1</Primary>
     </key>
+    <column id="52" parent="26" name="id">
+      <Position>1</Position>
+      <DataType>int(11) unsigned|0</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+    </column>
+    <column id="53" parent="26" name="name">
+      <Position>2</Position>
+      <DataType>varchar(50)|0</DataType>
+    </column>
+    <column id="54" parent="26" name="method">
+      <Position>3</Position>
+      <Comment>GET,
+    HEAD,
+    POST,
+    PUT,
+    PATCH,
+    DELETE,
+    OPTIONS,
+    TRACE;</Comment>
+      <DataType>int(4) unsigned|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="55" parent="26" name="url">
+      <Position>4</Position>
+      <DataType>varchar(100)|0</DataType>
+      <NotNull>1</NotNull>
+      <DefaultExpression>&apos;&apos;</DefaultExpression>
+    </column>
+    <column id="56" parent="26" name="status">
+      <Position>5</Position>
+      <Comment>资源状态 0：白名单不被权限监控 1：被监控 2：废弃</Comment>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+      <DefaultExpression>&apos;0&apos;</DefaultExpression>
+    </column>
+    <column id="57" parent="26" name="group_id">
+      <Position>6</Position>
+      <Comment>资源组 便于后台管理</Comment>
+      <DataType>int(11) unsigned|0</DataType>
+    </column>
+    <index id="58" parent="26" name="method">
+      <ColNames>method
+url</ColNames>
+      <Unique>1</Unique>
+    </index>
+    <index id="59" parent="26" name="group_id">
+      <ColNames>group_id</ColNames>
+    </index>
+    <key id="60" parent="26" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>id</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <key id="61" parent="26" name="method">
+      <ColNames>method
+url</ColNames>
+      <UnderlyingIndexName>method</UnderlyingIndexName>
+    </key>
+    <foreign-key id="62" parent="26" name="t_resource_ibfk_1">
+      <ColNames>group_id</ColNames>
+      <RefSchemaName>hnister</RefSchemaName>
+      <RefTableName>t_resource_group</RefTableName>
+      <RefColNames>id</RefColNames>
+      <OnDelete>set-null</OnDelete>
+    </foreign-key>
+    <column id="63" parent="27" name="id">
+      <Position>1</Position>
+      <DataType>int(11) unsigned|0</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+    </column>
+    <column id="64" parent="27" name="name">
+      <Position>2</Position>
+      <DataType>varchar(50)|0</DataType>
+      <NotNull>1</NotNull>
+      <DefaultExpression>&apos;&apos;</DefaultExpression>
+    </column>
+    <column id="65" parent="27" name="remark">
+      <Position>3</Position>
+      <DataType>varchar(100)|0</DataType>
+    </column>
+    <key id="66" parent="27" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>id</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <column id="67" parent="28" name="id">
+      <Position>1</Position>
+      <DataType>int(11) unsigned|0</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+    </column>
+    <column id="68" parent="28" name="name">
+      <Position>2</Position>
+      <DataType>varchar(40)|0</DataType>
+      <NotNull>1</NotNull>
+      <DefaultExpression>&apos;&apos;</DefaultExpression>
+    </column>
+    <column id="69" parent="28" name="remark">
+      <Position>3</Position>
+      <DataType>varchar(100)|0</DataType>
+    </column>
+    <key id="70" parent="28" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>id</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <column id="71" parent="29" name="role_id">
+      <Position>1</Position>
+      <DataType>int(11) unsigned|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="72" parent="29" name="resource_id">
+      <Position>2</Position>
+      <DataType>int(11) unsigned|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <index id="73" parent="29" name="resource_id">
+      <ColNames>resource_id</ColNames>
+    </index>
+    <key id="74" parent="29" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>role_id
+resource_id</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <foreign-key id="75" parent="29" name="t_role_resource_ibfk_1">
+      <ColNames>role_id</ColNames>
+      <RefSchemaName>hnister</RefSchemaName>
+      <RefTableName>t_role</RefTableName>
+      <RefColNames>id</RefColNames>
+      <OnDelete>cascade</OnDelete>
+    </foreign-key>
+    <foreign-key id="76" parent="29" name="t_role_resource_ibfk_2">
+      <ColNames>resource_id</ColNames>
+      <RefSchemaName>hnister</RefSchemaName>
+      <RefTableName>t_resource</RefTableName>
+      <RefColNames>id</RefColNames>
+      <OnDelete>cascade</OnDelete>
+    </foreign-key>
+    <column id="77" parent="30" name="role_id">
+      <Position>1</Position>
+      <DataType>int(11) unsigned|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="78" parent="30" name="username">
+      <Position>2</Position>
+      <DataType>varchar(50)|0</DataType>
+      <NotNull>1</NotNull>
+      <DefaultExpression>&apos;&apos;</DefaultExpression>
+    </column>
+    <index id="79" parent="30" name="username">
+      <ColNames>username</ColNames>
+    </index>
+    <key id="80" parent="30" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>role_id
+username</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <foreign-key id="81" parent="30" name="t_role_user_ibfk_2">
+      <ColNames>role_id</ColNames>
+      <RefSchemaName>hnister</RefSchemaName>
+      <RefTableName>t_role</RefTableName>
+      <RefColNames>id</RefColNames>
+      <OnDelete>cascade</OnDelete>
+    </foreign-key>
+    <foreign-key id="82" parent="30" name="t_role_user_ibfk_1">
+      <ColNames>username</ColNames>
+      <RefSchemaName>hnister</RefSchemaName>
+      <RefTableName>t_user</RefTableName>
+      <RefColNames>username</RefColNames>
+      <OnDelete>cascade</OnDelete>
+    </foreign-key>
+    <column id="83" parent="31" name="id">
+      <Position>1</Position>
+      <DataType>int(11) unsigned|0</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+    </column>
+    <column id="84" parent="31" name="college_id">
+      <Position>2</Position>
+      <DataType>int(11) unsigned|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="85" parent="31" name="name">
+      <Position>3</Position>
+      <DataType>varchar(50)|0</DataType>
+      <NotNull>1</NotNull>
+      <DefaultExpression>&apos;&apos;</DefaultExpression>
+    </column>
+    <index id="86" parent="31" name="college_id">
+      <ColNames>college_id</ColNames>
+    </index>
+    <key id="87" parent="31" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>id</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <foreign-key id="88" parent="31" name="t_specialty_ibfk_1">
+      <ColNames>college_id</ColNames>
+      <RefSchemaName>hnister</RefSchemaName>
+      <RefTableName>t_college</RefTableName>
+      <RefColNames>id</RefColNames>
+    </foreign-key>
+    <column id="89" parent="32" name="zlass_id">
+      <Position>1</Position>
+      <DataType>int(11) unsigned|0</DataType>
+    </column>
+    <column id="90" parent="32" name="name">
+      <Position>2</Position>
+      <DataType>varchar(40)|0</DataType>
+      <NotNull>1</NotNull>
+      <DefaultExpression>&apos;&apos;</DefaultExpression>
+    </column>
+    <column id="91" parent="32" name="birth">
+      <Position>3</Position>
+      <DataType>date|0</DataType>
+    </column>
+    <column id="92" parent="32" name="gender">
+      <Position>4</Position>
+      <Comment>1 man 0 woman</Comment>
+      <DataType>int(2)|0</DataType>
+      <DefaultExpression>&apos;1&apos;</DefaultExpression>
+    </column>
+    <column id="93" parent="32" name="status">
+      <Position>5</Position>
+      <Comment>校友账号状态 0：未验证 1：已验证</Comment>
+      <DataType>smallint(2)|0</DataType>
+      <NotNull>1</NotNull>
+      <DefaultExpression>&apos;0&apos;</DefaultExpression>
+    </column>
+    <column id="94" parent="32" name="city">
+      <Position>6</Position>
+      <Comment>当前所在地 长沙</Comment>
+      <DataType>varchar(11)|0</DataType>
+    </column>
+    <column id="95" parent="32" name="salt">
+      <Position>7</Position>
+      <Comment>密码加密盐</Comment>
+      <DataType>varchar(100)|0</DataType>
+      <NotNull>1</NotNull>
+      <DefaultExpression>&apos;&apos;</DefaultExpression>
+    </column>
+    <column id="96" parent="32" name="password">
+      <Position>8</Position>
+      <DataType>varchar(100)|0</DataType>
+      <NotNull>1</NotNull>
+      <DefaultExpression>&apos;&apos;</DefaultExpression>
+    </column>
+    <column id="97" parent="32" name="username">
+      <Position>9</Position>
+      <DataType>varchar(50)|0</DataType>
+      <NotNull>1</NotNull>
+      <DefaultExpression>&apos;&apos;</DefaultExpression>
+    </column>
+    <column id="98" parent="32" name="create_time">
+      <Position>10</Position>
+      <Comment>账号创建时间</Comment>
+      <DataType>timestamp|0</DataType>
+      <NotNull>1</NotNull>
+      <DefaultExpression>CURRENT_TIMESTAMP</DefaultExpression>
+    </column>
+    <column id="99" parent="32" name="avatar">
+      <Position>11</Position>
+      <Comment>用户头像</Comment>
+      <DataType>varchar(150)|0</DataType>
+    </column>
+    <index id="100" parent="32" name="zlass_id">
+      <ColNames>zlass_id</ColNames>
+    </index>
+    <key id="101" parent="32" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>username</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <foreign-key id="102" parent="32" name="t_user_ibfk_1">
+      <ColNames>zlass_id</ColNames>
+      <RefSchemaName>hnister</RefSchemaName>
+      <RefTableName>t_zlass</RefTableName>
+      <RefColNames>id</RefColNames>
+    </foreign-key>
+    <column id="103" parent="33" name="id">
+      <Position>1</Position>
+      <DataType>int(11) unsigned|0</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+    </column>
+    <column id="104" parent="33" name="name">
+      <Position>2</Position>
+      <Comment>名称</Comment>
+      <DataType>varchar(40)|0</DataType>
+      <NotNull>1</NotNull>
+      <DefaultExpression>&apos;&apos;</DefaultExpression>
+    </column>
+    <column id="105" parent="33" name="specialty_id">
+      <Position>3</Position>
+      <Comment>专业</Comment>
+      <DataType>int(11) unsigned|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="106" parent="33" name="grade">
+      <Position>4</Position>
+      <Comment>年级 如2014级</Comment>
+      <DataType>varchar(40)|0</DataType>
+      <NotNull>1</NotNull>
+      <DefaultExpression>&apos;&apos;</DefaultExpression>
+    </column>
+    <index id="107" parent="33" name="specialty_id">
+      <ColNames>specialty_id</ColNames>
+    </index>
+    <key id="108" parent="33" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>id</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <foreign-key id="109" parent="33" name="t_zlass_ibfk_1">
+      <ColNames>specialty_id</ColNames>
+      <RefSchemaName>hnister</RefSchemaName>
+      <RefTableName>t_specialty</RefTableName>
+      <RefColNames>id</RefColNames>
+    </foreign-key>
   </database-model>
 </dataSource>

@@ -43,6 +43,7 @@ public class ResourceApi {
         if (resource == null || resource.getId() == null) {
             return ResultBean.fail("参数异常");
         }
+
         int result = resourceMapper.updateByPrimaryKey(resource);
         return ResultBean.create(result > 0);
     }

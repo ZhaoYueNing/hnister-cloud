@@ -5,7 +5,6 @@ import cn.zynworld.hnister.common.mappers.RoleMapper;
 import cn.zynworld.hnister.common.utils.ResultBean;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
-import sun.jvm.hotspot.debugger.proc.arm.ProcARMThread;
 
 import java.util.List;
 
