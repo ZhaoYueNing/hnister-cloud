@@ -25,6 +25,8 @@ public class User {
 
     private String avatar;
 
+    private Short type;
+
     public String getUsername() {
         return username;
     }
@@ -111,5 +113,13 @@ public class User {
 
     public void setAvatar(String avatar) {
         this.avatar = avatar == null ? null : avatar.trim();
+    }
+
+    public Short getType() {
+        return type;
+    }
+
+    public void setType(Short type) {
+        this.type = type;
     }
 }

@@ -52,6 +52,9 @@ public class UserApi {
         return ResultBean.create(result > 0);
     }
 
+
+    //后台管理登录
+    //TODO 前后台登录不能使用相同的接口 token格式区分
     @RequestMapping(path = "user/login",method = RequestMethod.POST)
     public ResultBean login(@RequestBody UserLoginVo userLoginVo) {
         if (StringUtils.isBlank(userLoginVo.getUsername()) || StringUtils.isBlank(userLoginVo.getPassword())){
@@ -84,6 +87,7 @@ public class UserApi {
 
     @RequestMapping(path = "user/logout")
     public ResultBean logout(@RequestHeader("token") String token){
+        //登出系统靠前端移除
         CodecUtils.JwtBean jwtBean = CodecUtils.JwtBean.getJwtBean(token);
         return ResultBean.create(jwtBean != null);
     }
@@ -115,6 +119,12 @@ public class UserApi {
         return roleIdList;
     }
 
+
+    //查询用户信息 不得暴露敏感数据
+    @GetMapping(path = "users",params = "query=")
+    public List<User> findAllFor(String keyWord,List<Integer> roles){
+        return null;
+    }
 
 
 }

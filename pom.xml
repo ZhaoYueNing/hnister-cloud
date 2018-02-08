@@ -27,9 +27,10 @@
         <module>hnister-security-service</module>
 
 
-        <!--废弃模块-->
+        <!--废弃模块
         <module>hnister-config-demo</module>
         <module>hnister-news-service-old</module>
+        -->
     </modules>
 
 

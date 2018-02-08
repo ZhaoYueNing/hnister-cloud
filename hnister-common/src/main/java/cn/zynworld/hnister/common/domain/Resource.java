@@ -13,6 +13,8 @@ public class Resource {
 
     private Integer groupId;
 
+    private String remark;
+
     public Integer getId() {
         return id;
     }
@@ -59,5 +61,13 @@ public class Resource {
 
     public void setGroupId(Integer groupId) {
         this.groupId = groupId;
+    }
+
+    public String getRemark() {
+        return remark;
+    }
+
+    public void setRemark(String remark) {
+        this.remark = remark == null ? null : remark.trim();
     }
 }
