@@ -3,11 +3,13 @@ package cn.zynworld.hnister.security.api;
 import cn.zynworld.hnister.common.domain.RoleUserRelaExample;
 import cn.zynworld.hnister.common.domain.RoleUserRelaKey;
 import cn.zynworld.hnister.common.domain.User;
+import cn.zynworld.hnister.common.domain.UserExample;
 import cn.zynworld.hnister.common.mappers.RoleUserRelaMapper;
 import cn.zynworld.hnister.common.mappers.UserMapper;
 import cn.zynworld.hnister.common.utils.CodecUtils;
 import cn.zynworld.hnister.common.utils.ResultBean;
 import cn.zynworld.hnister.common.vo.UserLoginVo;
+import com.google.common.collect.Lists;
 import com.netflix.discovery.converters.Auto;
 import org.apache.commons.lang.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -16,10 +18,12 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.stream.Collector;
+import java.util.stream.Collectors;
 
 /**
  * Created by zhaoyuening on 2018/1/26.
- * 登录、注册等账户操作API
+ * 用户管理API
  */
 @RestController
 public class UserApi {
@@ -29,70 +33,9 @@ public class UserApi {
     @Autowired
     private RoleUserRelaMapper roleUserRelaMapper;
 
-    /**
-     * 用户注册
-     * @param user
-     * @return
-     */
-    @Transactional
-    @RequestMapping(path = "user",method = RequestMethod.POST)
-    public ResultBean register(@RequestBody User user){
-        if (user == null || user.getPassword() == null || user.getPassword().length() < 8){
-            return ResultBean.fail();
-        }
-
-        //获取sale
-        String sale = CodecUtils.getSale();
-        //结合sale加密password
-        user.setPassword(CodecUtils.getSalePassword(user.getPassword(),sale));
-        user.setSalt(sale);
-        user.setStatus((short) 0);
-
-        int result = userMapper.insert(user);
-        return ResultBean.create(result > 0);
-    }
 
 
-    //后台管理登录
-    //TODO 前后台登录不能使用相同的接口 token格式区分
-    @RequestMapping(path = "user/login",method = RequestMethod.POST)
-    public ResultBean login(@RequestBody UserLoginVo userLoginVo) {
-        if (StringUtils.isBlank(userLoginVo.getUsername()) || StringUtils.isBlank(userLoginVo.getPassword())){
-            return ResultBean.fail();
-        }
-        User user = userMapper.selectByPrimaryKey(userLoginVo.getUsername());
-        if (user == null){
-            return ResultBean.fail().setMsg("用户名或密码错误!");
-        }
-        String encodedPassword = user.getPassword();
-        String sale = user.getSalt();
-
-        //检验
-        boolean result = CodecUtils.checkUser(userLoginVo.getPassword(),sale,encodedPassword);
-        //创建token
-        //获取用户角色
-        RoleUserRelaExample roleUserRelaExample = new RoleUserRelaExample();
-        roleUserRelaExample.createCriteria().andUsernameEqualTo(user.getUsername());
-        List<RoleUserRelaKey> roles = roleUserRelaMapper.selectByExample(roleUserRelaExample);
-        CodecUtils.JwtBean jwtBean = new CodecUtils.JwtBean();
-        jwtBean.addHead("typ","JWT");
-        jwtBean.addHead("alg","HA256");
-        //放入角色列表
-        jwtBean.addPlayload("roles",roleUserRelaKeyListToRoleIdList(roles));
-        //用户名
-        jwtBean.addPlayload("username",userLoginVo.getUsername());
-
-        return ResultBean.create(result).setMsg(jwtBean.toString());
-    }
-
-    @RequestMapping(path = "user/logout")
-    public ResultBean logout(@RequestHeader("token") String token){
-        //登出系统靠前端移除
-        CodecUtils.JwtBean jwtBean = CodecUtils.JwtBean.getJwtBean(token);
-        return ResultBean.create(jwtBean != null);
-    }
-
-    @RequestMapping(method = RequestMethod.GET,path = "user/info")
+    @RequestMapping(method = RequestMethod.GET,path = "user/admin/info")
     public User getUserInfo(@RequestParam("token") String jwt){
         CodecUtils.JwtBean jwtBean = CodecUtils.JwtBean.getJwtBean(jwt);
         if (jwtBean == null || jwtBean.getPlayload("username")==null){
@@ -110,20 +53,59 @@ public class UserApi {
     }
 
 
-    private List<Integer> roleUserRelaKeyListToRoleIdList(List<RoleUserRelaKey> roles){
-        List<Integer> roleIdList = new ArrayList<>();
-        for (RoleUserRelaKey key:
-             roles) {
-            roleIdList.add(key.getRoleId());
+
+
+    /**
+     *
+     * @param keyWord 关键词 模糊匹配名字及用户名
+     * @param role 用户的角色ID 不查询该参数 传 -1
+     * @param type 用户的类型 普通用户0 管理员用户1 不查询 -1
+     * @param status 用户状态 0：未验证 1：已经验证
+     * @return 不包含密码盐值的用户列表
+     */
+    @GetMapping(path = "users",params = "query=user-manager")
+    public List<User> findAllFor(@RequestParam String keyWord,@RequestParam Integer role,@RequestParam Short type,@RequestParam Short status){
+        keyWord = "%" + keyWord + "%";
+        //用户查询对象
+        UserExample userExample = new UserExample();
+        UserExample.Criteria usernameCriteria = userExample.or();
+        UserExample.Criteria nameCriteria = userExample.or();
+
+        usernameCriteria.andUsernameLike(keyWord);
+        nameCriteria.andUsernameLike(keyWord);
+
+        if (role > 0){
+            //获取该角色的username list
+            RoleUserRelaExample roleUserRelaExample = new RoleUserRelaExample();
+            roleUserRelaExample.createCriteria().andRoleIdEqualTo(role);
+            List<RoleUserRelaKey> roleUserRelaKeys = roleUserRelaMapper.selectByExample(roleUserRelaExample);
+            List<String> usernames = roleUserRelaKeys.stream().map(roleUserRelaKey -> {
+                return roleUserRelaKey.getUsername();
+            }).collect(Collectors.toList());
+            if (usernames == null || usernames.isEmpty()) {
+                return Lists.newArrayList();
+            }
+            usernameCriteria.andUsernameIn(usernames);
+            nameCriteria.andUsernameIn(usernames);
         }
-        return roleIdList;
-    }
+        if (type > 0){
+            usernameCriteria.andTypeEqualTo(type);
+            nameCriteria.andTypeEqualTo(type);
+        }
+        if (status > 0){
+            usernameCriteria.andStatusEqualTo(status);
+            nameCriteria.andStatusEqualTo(status);
+        }
 
+        //获得结果
+        List<User> users = userMapper.selectByExample(userExample).stream().map(user -> {
+            //去除敏感数据
+            user.setPassword(null);
+            user.setSalt(null);
+            return user;
+        }).collect(Collectors.toList());
 
-    //查询用户信息 不得暴露敏感数据
-    @GetMapping(path = "users",params = "query=")
-    public List<User> findAllFor(String keyWord,List<Integer> roles){
-        return null;
+        return users;
     }
 
 
