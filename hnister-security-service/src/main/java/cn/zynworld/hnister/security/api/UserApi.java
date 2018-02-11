@@ -4,21 +4,23 @@ import cn.zynworld.hnister.common.domain.RoleUserRelaExample;
 import cn.zynworld.hnister.common.domain.RoleUserRelaKey;
 import cn.zynworld.hnister.common.domain.User;
 import cn.zynworld.hnister.common.domain.UserExample;
+import cn.zynworld.hnister.common.dto.security.UserCarryRoleDTO;
 import cn.zynworld.hnister.common.mappers.RoleUserRelaMapper;
 import cn.zynworld.hnister.common.mappers.UserMapper;
+import cn.zynworld.hnister.common.utils.BeanUtils;
 import cn.zynworld.hnister.common.utils.CodecUtils;
+import cn.zynworld.hnister.common.utils.PageBean;
 import cn.zynworld.hnister.common.utils.ResultBean;
-import cn.zynworld.hnister.common.vo.UserLoginVo;
+import cn.zynworld.hnister.security.exception.InsertRoleUserKeyException;
+import cn.zynworld.hnister.security.utils.UserUtils;
 import com.google.common.collect.Lists;
-import com.netflix.discovery.converters.Auto;
-import org.apache.commons.lang.StringUtils;
+import org.apache.ibatis.session.RowBounds;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.bind.annotation.*;
 
-import java.util.ArrayList;
+import javax.websocket.server.PathParam;
 import java.util.List;
-import java.util.stream.Collector;
 import java.util.stream.Collectors;
 
 /**
@@ -61,18 +63,37 @@ public class UserApi {
      * @param role 用户的角色ID 不查询该参数 传 -1
      * @param type 用户的类型 普通用户0 管理员用户1 不查询 -1
      * @param status 用户状态 0：未验证 1：已经验证
-     * @return 不包含密码盐值的用户列表
+     * @return 不包含密码盐值 携带role信息的用户列表
      */
     @GetMapping(path = "users",params = "query=user-manager")
-    public List<User> findAllFor(@RequestParam String keyWord,@RequestParam Integer role,@RequestParam Short type,@RequestParam Short status){
+    public PageBean<UserCarryRoleDTO> findAllCarryRols(
+            //分页参数 pageSize <= 0 返回所有 不进行分页
+            @PathParam("pageCount") Integer pageCount, @PathParam("pageSize") Integer pageSize,
+            //查询条件
+            @RequestParam String keyWord, @RequestParam Integer role, @RequestParam Short type, @RequestParam Short status){
+
+        PageBean<UserCarryRoleDTO> pageBean = new PageBean<UserCarryRoleDTO>();
+
+
         keyWord = "%" + keyWord + "%";
-        //用户查询对象
+
+        //查询条件对象
         UserExample userExample = new UserExample();
+        RowBounds rowBounds = null;
+
+        //配置分页
+        pageBean.setPageCount(pageCount);
+        pageBean.setPageSize(pageSize);
+        if (pageSize >= 0){
+            rowBounds = new RowBounds(pageBean.getFirstItemIndex(), pageSize);
+        }
+
+        //条件拼凑
         UserExample.Criteria usernameCriteria = userExample.or();
         UserExample.Criteria nameCriteria = userExample.or();
 
         usernameCriteria.andUsernameLike(keyWord);
-        nameCriteria.andUsernameLike(keyWord);
+        nameCriteria.andNameLike(keyWord);
 
         if (role > 0){
             //获取该角色的username list
@@ -83,30 +104,118 @@ public class UserApi {
                 return roleUserRelaKey.getUsername();
             }).collect(Collectors.toList());
             if (usernames == null || usernames.isEmpty()) {
-                return Lists.newArrayList();
+                pageBean.setItems(Lists.newArrayList());
+                return pageBean;
             }
             usernameCriteria.andUsernameIn(usernames);
             nameCriteria.andUsernameIn(usernames);
         }
-        if (type > 0){
+        if (type >= 0){
             usernameCriteria.andTypeEqualTo(type);
             nameCriteria.andTypeEqualTo(type);
         }
-        if (status > 0){
+        if (status >= 0){
             usernameCriteria.andStatusEqualTo(status);
             nameCriteria.andStatusEqualTo(status);
         }
 
         //获得结果
-        List<User> users = userMapper.selectByExample(userExample).stream().map(user -> {
+        List<User> users = userMapper.selectByExampleWithRowbounds(userExample,rowBounds).stream().map(user -> {
             //去除敏感数据
             user.setPassword(null);
             user.setSalt(null);
             return user;
         }).collect(Collectors.toList());
 
-        return users;
+        List<UserCarryRoleDTO> userCarryRoleDTOList = Lists.newArrayList();
+        UserCarryRoleDTO userCarryRoleDTO = null;
+        RoleUserRelaExample roleUserRelaExample = null;
+        for (User user :
+             users) {
+            userCarryRoleDTO = new UserCarryRoleDTO();
+            BeanUtils.copyProperties(user, userCarryRoleDTO);
+            //查询该user的role信息
+            roleUserRelaExample = new RoleUserRelaExample();
+            roleUserRelaExample.createCriteria().andUsernameEqualTo(user.getUsername());
+            List<Integer> roleIdList = roleUserRelaMapper.selectByExample(roleUserRelaExample).stream().map(roleUserRelaKey -> {
+                return roleUserRelaKey.getRoleId();
+            }).collect(Collectors.toList());
+
+            userCarryRoleDTO.setRoleIdList(roleIdList);
+            userCarryRoleDTOList.add(userCarryRoleDTO);
+        }
+
+        //获取总数
+        int total = userMapper.countByExample(userExample);
+
+        //封装结果
+        pageBean.setItems(userCarryRoleDTOList);
+        pageBean.setTotal((long) total);
+
+
+        return pageBean;
     }
+
+
+    /**
+     * 添加用户并设置用户的角色信息
+     * @param userCarryRoleDTO
+     * @return
+     */
+    @Transactional
+    @PostMapping(path = "user")
+    public ResultBean addUser(@RequestBody UserCarryRoleDTO userCarryRoleDTO) throws InsertRoleUserKeyException {
+        User user = new User();
+        List<Integer> roleIdList = userCarryRoleDTO.getRoleIdList();
+
+        //copy properties
+        BeanUtils.copyProperties(userCarryRoleDTO,user);
+        //检测用户的用户名密码等长度是否符合要求
+        if (!UserUtils.checkUser(user)) {
+            return ResultBean.fail("用户名或密码长度不符合要求");
+        }
+
+        //添加用户
+        //加密
+        //获取sale
+        String sale = CodecUtils.getSale();
+        //结合sale加密password
+        user.setPassword(CodecUtils.getSalePassword(user.getPassword(),sale));
+        user.setSalt(sale);
+
+        int result = userMapper.insert(user);
+        if (result <= 0) {
+            //insert失败
+            return ResultBean.fail("添加用户失败");
+        }
+
+        if (roleIdList == null || roleIdList.isEmpty()) {
+            return ResultBean.success();
+        }
+
+        RoleUserRelaKey roleUserRelaKey = null;
+        int roleInsertResult = 0;
+        //为用户添加角色信息
+        for (Integer roleId :
+                roleIdList) {
+            roleUserRelaKey = new RoleUserRelaKey();
+            roleUserRelaKey.setRoleId(roleId);
+            roleUserRelaKey.setUsername(user.getUsername());
+            roleInsertResult = roleUserRelaMapper.insert(roleUserRelaKey);
+            //添加角色联系失败
+            if (roleInsertResult <= 0) {
+                //抛异常回滚
+                throw new InsertRoleUserKeyException();
+            }
+        }
+
+
+        return ResultBean.success();
+
+    }
+
+
+
 
 
 }

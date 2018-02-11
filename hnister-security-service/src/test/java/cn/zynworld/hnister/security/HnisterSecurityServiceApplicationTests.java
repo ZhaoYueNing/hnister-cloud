@@ -1,4 +1,4 @@
-package cn.zynworld.hnister;
+package cn.zynworld.hnister.security;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;

@@ -8,6 +8,7 @@ import cn.zynworld.hnister.common.mappers.UserMapper;
 import cn.zynworld.hnister.common.utils.CodecUtils;
 import cn.zynworld.hnister.common.utils.ResultBean;
 import cn.zynworld.hnister.common.vo.UserLoginVo;
+import cn.zynworld.hnister.security.utils.UserUtils;
 import org.apache.commons.lang.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.transaction.annotation.Transactional;
@@ -36,12 +37,12 @@ public class AccountApi {
      * @return
      */
     @Transactional
-    @RequestMapping(path = "user",method = RequestMethod.POST)
+    @RequestMapping(path = "user",method = RequestMethod.POST,params = "from=register")
     public ResultBean register(@RequestBody User user){
-        if (user == null || user.getPassword() == null || user.getPassword().length() < 8){
+        //判断用户是否符合注册条件
+        if (!UserUtils.checkUser(user)) {
             return ResultBean.fail();
         }
-
         //获取sale
         String sale = CodecUtils.getSale();
         //结合sale加密password

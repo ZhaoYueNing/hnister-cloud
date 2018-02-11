@@ -7,6 +7,7 @@ import com.netflix.zuul.context.RequestContext;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
 
 import javax.servlet.http.HttpServletRequest;
@@ -39,6 +40,11 @@ public class RequestPreFilter extends ZuulFilter {
         return true;
     }
 
+    //超级管理员角色
+    @Value("${root.role}")
+    private String ROOT_ROLE;
+
+
     @Override
     public Object run() {
         RequestContext ctx = RequestContext.getCurrentContext();
@@ -63,7 +69,7 @@ public class RequestPreFilter extends ZuulFilter {
             //jwt 用户角色信息
             List<String> roleIdList = (List<String>) jwtBean.getPlayload("roles");
             //指定id为1 的角色为超级管理员
-            if (roleIdList != null && roleIdList.contains("1")){
+            if (roleIdList != null && roleIdList.contains(ROOT_ROLE)){
                 return null;
             }
 

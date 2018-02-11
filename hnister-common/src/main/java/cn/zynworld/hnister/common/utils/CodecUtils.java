@@ -11,6 +11,7 @@ import java.security.NoSuchAlgorithmException;
 import java.util.Date;
 import java.util.HashMap;
 import java.util.Map;
+import java.util.UUID;
 
 /**
  * Created by zhaoyuening on 2018/1/26.
@@ -57,7 +58,7 @@ public class CodecUtils {
      * @return
      */
     public  static String getSale(){
-        return new Date().getTime()+"";
+        return UUID.randomUUID().toString();
     }
 
     /**
