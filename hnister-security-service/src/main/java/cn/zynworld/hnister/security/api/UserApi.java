@@ -184,6 +184,7 @@ public class UserApi {
         user.setSalt(sale);
 
         int result = userMapper.insert(user);
+
         if (result <= 0) {
             //insert失败
             return ResultBean.fail("添加用户失败");
@@ -208,12 +209,73 @@ public class UserApi {
                 throw new InsertRoleUserKeyException();
             }
         }
-
-
         return ResultBean.success();
 
     }
 
+    /**
+     * 编辑用户及其角色信息
+     * @param userCarryRoleDTO
+     * @return
+     */
+    @Transactional
+    @PutMapping(path = "user")
+    public ResultBean update(@RequestBody UserCarryRoleDTO userCarryRoleDTO) throws InsertRoleUserKeyException {
+        User user = new User();
+        List<Integer> roleIdList = userCarryRoleDTO.getRoleIdList();
+
+        //copy properties
+        BeanUtils.copyProperties(userCarryRoleDTO,user);
+        //检测用户的用户名密码等长度是否符合要求
+        if (!UserUtils.checkUser(user)) {
+            return ResultBean.fail("用户名或密码长度不符合要求");
+        }
+
+        //添加用户
+        //加密
+        //获取sale
+        String sale = CodecUtils.getSale();
+        //结合sale加密password
+        user.setPassword(CodecUtils.getSalePassword(user.getPassword(),sale));
+        user.setSalt(sale);
+
+        int result = userMapper.insert(user);
+
+        if (result <= 0) {
+            //insert失败
+            return ResultBean.fail("添加用户失败");
+        }
+
+        if (roleIdList == null || roleIdList.isEmpty()) {
+            return ResultBean.success();
+        }
+
+        RoleUserRelaKey roleUserRelaKey = null;
+        int roleInsertResult = 0;
+        //为用户添加角色信息
+        for (Integer roleId :
+                roleIdList) {
+            roleUserRelaKey = new RoleUserRelaKey();
+            roleUserRelaKey.setRoleId(roleId);
+            roleUserRelaKey.setUsername(user.getUsername());
+            roleInsertResult = roleUserRelaMapper.insert(roleUserRelaKey);
+            //添加角色联系失败
+            if (roleInsertResult <= 0) {
+                //抛异常回滚
+                throw new InsertRoleUserKeyException();
+            }
+        }
+        return ResultBean.success();
+
+    }
+
+
+    @Transactional
+    @DeleteMapping(path = "user/{username}")
+    public ResultBean remove(@PathVariable String username) {
+        int result = userMapper.deleteByPrimaryKey(username);
+        return ResultBean.create(result > 0);
+    }
 
 
 

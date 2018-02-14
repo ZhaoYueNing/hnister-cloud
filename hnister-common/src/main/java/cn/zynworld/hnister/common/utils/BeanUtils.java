@@ -37,7 +37,11 @@ public class BeanUtils {
                 }
                 //targetObj 是否有对应set方法
                 String setMethodName = SET + method.getName().substring(3);
-                Method targetSetMethod = targetObjClass.getMethod(setMethodName, method.getReturnType());
+                Method targetSetMethod = null;
+                try{
+                    targetSetMethod = targetObjClass.getMethod(setMethodName, method.getReturnType());
+                }catch (NoSuchMethodException e){
+                }
                 if (targetSetMethod == null) {
                     continue;
                 }
@@ -47,8 +51,6 @@ public class BeanUtils {
                 //赋值给targetObj
                 targetSetMethod.invoke(targetObj,getValue);
 
-            } catch (NoSuchMethodException e) {
-                e.printStackTrace();
             } catch (IllegalAccessException e) {
                 e.printStackTrace();
             } catch (InvocationTargetException e) {

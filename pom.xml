@@ -25,6 +25,7 @@
         <module>hnister-common</module>
         <module>hnister-news-service</module>
         <module>hnister-security-service</module>
+        <module>hnister-schoolmate-service</module>
 
 
         <!--废弃模块
