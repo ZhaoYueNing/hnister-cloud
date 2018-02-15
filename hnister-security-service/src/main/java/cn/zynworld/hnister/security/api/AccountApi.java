@@ -37,7 +37,7 @@ public class AccountApi {
      * @return
      */
     @Transactional
-    @RequestMapping(path = "user",method = RequestMethod.POST,params = "from=register")
+    @PostMapping(path = "user/@/for=register" )
     public ResultBean register(@RequestBody User user){
         //判断用户是否符合注册条件
         if (!UserUtils.checkUser(user)) {
@@ -58,7 +58,7 @@ public class AccountApi {
     //============后台账户===============
     //后台管理登录
     //TODO 前后台登录不能使用相同的接口 token格式区分
-    @RequestMapping(path = "user/admin/login",method = RequestMethod.POST)
+    @PostMapping(path = "user/admin/login")
     public ResultBean login(@RequestBody UserLoginVo userLoginVo) {
         if (StringUtils.isBlank(userLoginVo.getUsername()) || StringUtils.isBlank(userLoginVo.getPassword())){
             return ResultBean.fail();
@@ -93,7 +93,7 @@ public class AccountApi {
 
 
     //后台登出
-    @RequestMapping(path = "user/admin/logout")
+    @GetMapping(path = "user/admin/logout")
     public ResultBean logout(@RequestHeader("token") String token){
         //登出系统靠前端移除
         CodecUtils.JwtBean jwtBean = CodecUtils.JwtBean.getJwtBean(token);

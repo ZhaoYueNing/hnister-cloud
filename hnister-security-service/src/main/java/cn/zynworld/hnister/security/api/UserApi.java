@@ -35,8 +35,6 @@ public class UserApi {
     @Autowired
     private RoleUserRelaMapper roleUserRelaMapper;
 
-
-
     @RequestMapping(method = RequestMethod.GET,path = "user/admin/info")
     public User getUserInfo(@RequestParam("token") String jwt){
         CodecUtils.JwtBean jwtBean = CodecUtils.JwtBean.getJwtBean(jwt);
@@ -55,8 +53,6 @@ public class UserApi {
     }
 
 
-
-
     /**
      *
      * @param keyWord 关键词 模糊匹配名字及用户名
@@ -65,7 +61,7 @@ public class UserApi {
      * @param status 用户状态 0：未验证 1：已经验证
      * @return 不包含密码盐值 携带role信息的用户列表
      */
-    @GetMapping(path = "users",params = "query=user-manager")
+    @GetMapping(path = "users/@/for=page&condition")
     public PageBean<UserCarryRoleDTO> findAllCarryRols(
             //分页参数 pageSize <= 0 返回所有 不进行分页
             @PathParam("pageCount") Integer pageCount, @PathParam("pageSize") Integer pageSize,
@@ -157,11 +153,10 @@ public class UserApi {
     }
 
     //TODO 存在鉴权的安全漏洞 待修复
-    @GetMapping(path = "user/{username}",params = "query=user-manager")
+    @GetMapping(path = "user/{username}/@/for=admin")
     public PageBean<UserCarryRoleDTO> findByUsernameCarryRols(@PathVariable String username){
         return null;
     }
-
 
     /**
      * 添加用户并设置用户的角色信息
@@ -282,15 +277,11 @@ public class UserApi {
 
     }
 
-
     @Transactional
     @DeleteMapping(path = "user/{username}")
     public ResultBean remove(@PathVariable String username) {
         int result = userMapper.deleteByPrimaryKey(username);
         return ResultBean.create(result > 0);
     }
-
-
-
 
 }

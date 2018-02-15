@@ -56,7 +56,7 @@ public class ResourceApi {
 
 
     //分页 + 条件查询
-    @GetMapping(path = "resources", params = {"page=true","condition=true"})
+    @GetMapping(path = "resources/@/for=page&condition")
     public PageBean<Resource> findByPageAndCondition(
             //分页参数 pageSize <= 0 返回所有 不进行分页
             @PathParam("pageCount") Integer pageCount, @PathParam("pageSize") Integer pageSize,
