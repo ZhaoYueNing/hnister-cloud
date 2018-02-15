@@ -156,6 +156,12 @@ public class UserApi {
         return pageBean;
     }
 
+    //TODO 存在鉴权的安全漏洞 待修复
+    @GetMapping(path = "user/{username}",params = "query=user-manager")
+    public PageBean<UserCarryRoleDTO> findByUsernameCarryRols(@PathVariable String username){
+        return null;
+    }
+
 
     /**
      * 添加用户并设置用户的角色信息
@@ -239,17 +245,24 @@ public class UserApi {
         user.setPassword(CodecUtils.getSalePassword(user.getPassword(),sale));
         user.setSalt(sale);
 
-        int result = userMapper.insert(user);
+        int result = userMapper.updateByPrimaryKey(user);
 
         if (result <= 0) {
             //insert失败
-            return ResultBean.fail("添加用户失败");
+            return ResultBean.fail("编辑用户失败");
         }
+
+        //解除与所有role的绑定
+        RoleUserRelaExample roleUserRelaExample = new RoleUserRelaExample();
+        roleUserRelaExample.createCriteria().andUsernameEqualTo(user.getUsername());
+        roleUserRelaMapper.deleteByExample(roleUserRelaExample);
+
 
         if (roleIdList == null || roleIdList.isEmpty()) {
             return ResultBean.success();
         }
 
+        //添加新的与role的关系
         RoleUserRelaKey roleUserRelaKey = null;
         int roleInsertResult = 0;
         //为用户添加角色信息
@@ -261,7 +274,7 @@ public class UserApi {
             roleInsertResult = roleUserRelaMapper.insert(roleUserRelaKey);
             //添加角色联系失败
             if (roleInsertResult <= 0) {
-                //抛异常回滚
+                //回滚
                 throw new InsertRoleUserKeyException();
             }
         }
