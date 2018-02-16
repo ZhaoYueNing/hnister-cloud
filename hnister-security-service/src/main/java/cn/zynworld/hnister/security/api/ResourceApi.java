@@ -59,6 +59,12 @@ public class ResourceApi {
         return resourceList;
     }
 
+    //通过resource id获取
+    @GetMapping(path = "resource/{resourceId}")
+    public Resource findById(@PathVariable Integer resourceId) {
+        Resource resource = resourceMapper.selectByPrimaryKey(resourceId);
+        return resource;
+    }
 
     //分页 + 条件查询
     @GetMapping(path = "resources/@/for=page&condition")
@@ -124,5 +130,8 @@ public class ResourceApi {
                 }).collect(Collectors.toList());
         return resourceIdList;
     }
+
+
+
 
 }
