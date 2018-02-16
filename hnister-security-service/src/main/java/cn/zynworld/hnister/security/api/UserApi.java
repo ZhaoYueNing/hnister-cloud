@@ -17,6 +17,7 @@ import com.google.common.collect.Lists;
 import org.apache.ibatis.session.RowBounds;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.transaction.annotation.Transactional;
+import org.springframework.util.StringUtils;
 import org.springframework.web.bind.annotation.*;
 
 import javax.websocket.server.PathParam;
@@ -152,10 +153,31 @@ public class UserApi {
         return pageBean;
     }
 
-    //TODO 存在鉴权的安全漏洞 待修复
     @GetMapping(path = "user/{username}/@/for=admin")
-    public PageBean<UserCarryRoleDTO> findByUsernameCarryRols(@PathVariable String username){
-        return null;
+    public UserCarryRoleDTO findByUsernameCarryRols(@PathVariable String username){
+        UserCarryRoleDTO userCarryRoleDTO = new UserCarryRoleDTO();
+        //query user info
+        User user = userMapper.selectByPrimaryKey(username);
+        if (user == null) {
+            return null;
+        }
+        //wipe out password&sale info
+        user.setPassword("");
+        user.setSalt("");
+
+        //query user`s role info
+        RoleUserRelaExample roleUserRelaExample = new RoleUserRelaExample();
+        roleUserRelaExample.createCriteria().andUsernameEqualTo(username);
+        List<Integer> roleIdList = roleUserRelaMapper.selectByExample(roleUserRelaExample)
+                .stream().map(roleUserRelaKey -> {
+                    return roleUserRelaKey.getRoleId();
+                }).collect(Collectors.toList());
+
+        //packaging bean
+        BeanUtils.copyProperties(user,userCarryRoleDTO);
+        userCarryRoleDTO.setRoleIdList(roleIdList);
+
+        return userCarryRoleDTO;
     }
 
     /**
@@ -220,27 +242,34 @@ public class UserApi {
      * @return
      */
     @Transactional
-    @PutMapping(path = "user")
+    @PutMapping(path = "user/@/for=admin")
     public ResultBean update(@RequestBody UserCarryRoleDTO userCarryRoleDTO) throws InsertRoleUserKeyException {
         User user = new User();
         List<Integer> roleIdList = userCarryRoleDTO.getRoleIdList();
 
         //copy properties
         BeanUtils.copyProperties(userCarryRoleDTO,user);
-        //检测用户的用户名密码等长度是否符合要求
-        if (!UserUtils.checkUser(user)) {
-            return ResultBean.fail("用户名或密码长度不符合要求");
-        }
 
         //添加用户
-        //加密
-        //获取sale
-        String sale = CodecUtils.getSale();
-        //结合sale加密password
-        user.setPassword(CodecUtils.getSalePassword(user.getPassword(),sale));
-        user.setSalt(sale);
+        //是否需要改密码
+        if (!StringUtils.isEmpty(user.getPassword())) {
+            //检测用户的用户名密码等长度是否符合要求
+            if (!UserUtils.checkUser(user)) {
+                return ResultBean.fail("用户名或密码长度不符合要求");
+            }
+            //加密
+            //获取sale
+            String sale = CodecUtils.getSale();
+            //结合sale加密password
+            user.setPassword(CodecUtils.getSalePassword(user.getPassword(),sale));
+            user.setSalt(sale);
+        }else {
+            user.setSalt(null);
+            user.setPassword(null);
+        }
 
-        int result = userMapper.updateByPrimaryKey(user);
+
+        int result = userMapper.updateByPrimaryKeySelective(user);
 
         if (result <= 0) {
             //insert失败
@@ -283,5 +312,6 @@ public class UserApi {
         int result = userMapper.deleteByPrimaryKey(username);
         return ResultBean.create(result > 0);
     }
+
 
 }

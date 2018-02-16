@@ -2,7 +2,9 @@ package cn.zynworld.hnister.security.api;
 
 import cn.zynworld.hnister.common.domain.Resource;
 import cn.zynworld.hnister.common.domain.ResourceExample;
+import cn.zynworld.hnister.common.domain.RoleResourceRelaExample;
 import cn.zynworld.hnister.common.mappers.ResourceMapper;
+import cn.zynworld.hnister.common.mappers.RoleResourceRelaMapper;
 import cn.zynworld.hnister.common.utils.PageBean;
 import cn.zynworld.hnister.common.utils.ResultBean;
 import org.apache.ibatis.session.RowBounds;
@@ -13,6 +15,7 @@ import org.springframework.web.bind.annotation.*;
 
 import javax.websocket.server.PathParam;
 import java.util.List;
+import java.util.stream.Collectors;
 
 /**
  * Created by zhaoyuening on 2018/1/28.
@@ -22,6 +25,8 @@ public class ResourceApi {
 
     @Autowired
     private ResourceMapper resourceMapper;
+    @Autowired
+    private RoleResourceRelaMapper roleResourceRelaMapper;
 
     @Transactional
     @RequestMapping(path = "resource",method = RequestMethod.POST)
@@ -63,8 +68,6 @@ public class ResourceApi {
             //查询条件 group <= 0 查询所有组       likeWord不为空匹配查询 name & url          method <g 0 查询所有
             @PathParam("group") Integer groupId,@PathParam("likeWrod") String likeWord,@PathParam( "method") Integer method
     ) {
-
-
         PageBean pageBean = new PageBean();
         pageBean.setPageSize(pageSize);
         pageBean.setPageCount(pageCount);
@@ -109,8 +112,17 @@ public class ResourceApi {
         return pageBean;
     }
 
+    //获取该角色所拥有的资源ID列表
+    @GetMapping(path = "resources/roleId/{roleId}")
+    public List<Integer> findByRoleId(@PathVariable("roleId") Integer roleId){
+        RoleResourceRelaExample roleResourceRelaExample = new RoleResourceRelaExample();
+        roleResourceRelaExample.createCriteria().andRoleIdEqualTo(roleId);
 
-
-
+        List<Integer> resourceIdList = roleResourceRelaMapper.selectByExample(roleResourceRelaExample).stream()
+                .map(roleResourceRelaKey -> {
+                    return roleResourceRelaKey.getResourceId();
+                }).collect(Collectors.toList());
+        return resourceIdList;
+    }
 
 }
