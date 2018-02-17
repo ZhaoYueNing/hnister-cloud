@@ -71,8 +71,8 @@ public class ResourceApi {
     public PageBean<Resource> findByPageAndCondition(
             //分页参数 pageSize <= 0 返回所有 不进行分页
             @PathParam("pageCount") Integer pageCount, @PathParam("pageSize") Integer pageSize,
-            //查询条件 group <= 0 查询所有组       likeWord不为空匹配查询 name & url          method <g 0 查询所有
-            @PathParam("group") Integer groupId,@PathParam("likeWrod") String likeWord,@PathParam( "method") Integer method
+            //查询条件 group < 0 查询所有组 group = 0 查询null      likeWord不为空匹配查询 name & url          method <g 0 查询所有
+            @PathParam("groupId") Integer groupId,@PathParam("likeWrod") String likeWord,@PathParam( "method") Integer method
     ) {
         PageBean pageBean = new PageBean();
         pageBean.setPageSize(pageSize);
@@ -89,6 +89,11 @@ public class ResourceApi {
         if (groupId != null && groupId > 0) {
             nameCriteria.andGroupIdEqualTo(groupId);
             urlCriteria.andGroupIdEqualTo(groupId);
+        }
+        if (groupId != null && groupId == 0) {
+            //查询group 为空
+            nameCriteria.andGroupIdIsNull();
+            urlCriteria.andGroupIdIsNull();
         }
         if (method != null && method >= 0) {
             nameCriteria.andMethodEqualTo(method);

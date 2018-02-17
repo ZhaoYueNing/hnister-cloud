@@ -56,6 +56,19 @@ public class ResourceGroupApi {
             //add to result
             resourceGroupCarryResourcesDTOList.add(resourceGroupCarryResourcesDTO);
         }
+        //查询为组为空的资源
+        resourceGroupCarryResourcesDTO = new ResourceGroupCarryResourcesDTO();
+
+        resourceExample.clear();
+        resourceExample.createCriteria().andGroupIdIsNull();
+        resourceList = resourceMapper.selectByExample(resourceExample);
+
+        resourceGroupCarryResourcesDTO.setId(0);
+        resourceGroupCarryResourcesDTO.setName("null");
+        resourceGroupCarryResourcesDTO.setRemark("null");
+        resourceGroupCarryResourcesDTO.setResourceList(resourceList);
+
+        resourceGroupCarryResourcesDTOList.add(resourceGroupCarryResourcesDTO);
 
         return resourceGroupCarryResourcesDTOList;
     }
