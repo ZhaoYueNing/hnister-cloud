@@ -60,7 +60,7 @@ public class NewsApi {
 	/**
 	 * 查询所有news，非分页
 	 */
-	@GetMapping(path = "news",params = "!page")
+	@GetMapping(path = "news")
 	public List<News> findAll() {
 		List<News> list = newsMapper.selectByExample(null);
 		return list;
@@ -72,9 +72,9 @@ public class NewsApi {
 	 * @param pageSize 分页大小
 	 * @param moduleId -1 查询所有 0 查询草稿箱 >0 查询对应id的文章
 	 * @return pageBean
-	 * http://localhost:10000/hnist-news-service/news?page=true&pageCount=1&pageSize=2&moduleId=3
+	 * http://localhost:10000/hnister-news-service/news?page=true&pageCount=1&pageSize=2&moduleId=3
 	 */
-	@GetMapping(path = "news",params = "page=true")
+	@GetMapping(path = "news/@/for=page")
 	public PageBean<News> findByPage(@PathParam("pageCount") Integer pageCount, @PathParam("pageSize") Integer pageSize, @PathParam("moduleId") Integer moduleId){
 		NewsExample newsExample = null;
 		PageBean<News> pageBean = new PageBean<News>();

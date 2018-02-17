@@ -7,3 +7,4 @@
 | hnister-zuul-server | 服务代理端口 | 10000 |
 | hnister-news-service | 新闻服务 | 9001 |
 | hnister-security-service | 安全服务 | 9002 |
+| hnister-schoolmate-service | 校友服务 | 9003 |

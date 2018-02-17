@@ -1,0 +1,11 @@
+jwt 
+{
+	type:'jwt',
+	alg:'sha256'
+},
+{
+	role:'admin',
+	username:'zhao',
+	yxq:15785647,
+
+}
