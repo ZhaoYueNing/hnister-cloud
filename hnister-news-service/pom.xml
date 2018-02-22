@@ -24,6 +24,7 @@
 		<spring-cloud.version>Edgware.SR1</spring-cloud.version>
 	</properties>
 
+
 	<dependencyManagement>
 		<dependencies>
 			<dependency>
@@ -35,6 +36,7 @@
 			</dependency>
 		</dependencies>
 	</dependencyManagement>
+
 
 	<dependencies>
 		<!--myself-->

@@ -136,7 +136,4 @@ public class ResourceApi {
         return resourceIdList;
     }
 
-
-
-
 }

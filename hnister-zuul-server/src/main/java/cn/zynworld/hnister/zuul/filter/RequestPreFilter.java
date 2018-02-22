@@ -92,8 +92,8 @@ public class RequestPreFilter extends ZuulFilter {
     private void createResponce(String msg,RequestContext ctx){
         // 过滤该请求，不对其进行路由
         ctx.setSendZuulResponse(false);
-        // 返回错误码
-        ctx.setResponseStatusCode(401);
+        // 返回无权限错误码
+        ctx.setResponseStatusCode(50008);
         // 返回错误内容
         ctx.setResponseBody(msg);
         ctx.set("isSuccess", false);

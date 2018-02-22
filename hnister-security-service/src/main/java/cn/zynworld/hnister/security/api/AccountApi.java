@@ -93,7 +93,7 @@ public class AccountApi {
 
 
     //后台登出
-    @GetMapping(path = "user/admin/logout")
+    @PostMapping(path = "user/admin/logout")
     public ResultBean logout(@RequestHeader("token") String token){
         //登出系统靠前端移除
         CodecUtils.JwtBean jwtBean = CodecUtils.JwtBean.getJwtBean(token);
