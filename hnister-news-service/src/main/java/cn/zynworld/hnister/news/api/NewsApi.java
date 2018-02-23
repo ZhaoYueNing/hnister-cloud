@@ -48,7 +48,7 @@ public class NewsApi {
 		news.setPostDate(new Date());
 		int newsId = newsMapper.insert(news);
 
-		if (newsId > 0 ){
+		if (newsId > 0 && news.getModuleId()!=null){
 			NewsModuleExample newsModuleExample = new NewsModuleExample();
 			newsModuleExample.createCriteria().andIdEqualTo(news.getModuleId());
 			newsModuleMapper.updateChangeNumberByExample(1,newsModuleExample);

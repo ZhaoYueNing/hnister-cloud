@@ -65,7 +65,7 @@ public class UserApi {
     @GetMapping(path = "users/@/for=page&condition")
     public PageBean<UserCarryRoleDTO> findAllCarryRols(
             //分页参数 pageSize <= 0 返回所有 不进行分页
-            @PathParam("pageCount") Integer pageCount, @PathParam("pageSize") Integer pageSize,
+            @RequestParam("pageCount") Integer pageCount, @RequestParam("pageSize") Integer pageSize,
             //查询条件
             @RequestParam String keyWord, @RequestParam Integer role, @RequestParam Short type, @RequestParam Short status){
 

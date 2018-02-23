@@ -69,4 +69,15 @@ public class News {
         this.content = content;
         return this;
     }
+
+    public static void main(String[] args) {
+        News news = new News();
+
+        news.setTitle("dizl");
+        news.setModuleId(1);
+        news.setId(1L);
+        news.setPostDate(new Date());
+
+        System.out.println(news.getTitle());
+    }
 }

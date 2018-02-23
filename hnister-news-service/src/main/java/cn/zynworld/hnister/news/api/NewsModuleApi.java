@@ -32,8 +32,9 @@ public class NewsModuleApi {
 	@Transactional
 	@RequestMapping(path = "newsModule",method = RequestMethod.POST)
 	public ResultBean add(@RequestBody NewsModule newsModule){
+		//初始模块文章数量0
+		newsModule.setNumber(0L);
 		int newsModuleId = newsModuleMapper.insert(newsModule);
-
 		return ResultBean.create(newsModuleId > 0);
 	}
 
