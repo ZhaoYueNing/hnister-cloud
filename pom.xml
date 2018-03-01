@@ -26,6 +26,7 @@
         <module>hnister-common</module>
         <module>hnister-file-service</module>
         <module>hnister-news-service</module>
+        <module>hnister-content-service</module>
         <module>hnister-security-service</module>
         <module>hnister-schoolmate-service</module>
 

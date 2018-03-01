@@ -55,6 +55,9 @@ public class AccountApi {
     }
     //============前台账户===============
 
+
+
+
     //============后台账户===============
     //后台管理登录
     //TODO 前后台登录不能使用相同的接口 token格式区分
@@ -73,6 +76,9 @@ public class AccountApi {
 
         //检验
         boolean result = CodecUtils.checkUser(userLoginVo.getPassword(),sale,encodedPassword);
+        if (!result) {
+            return ResultBean.fail("用户名或密码不正确，登录失败！");
+        }
         //创建token
         //获取用户角色
         RoleUserRelaExample roleUserRelaExample = new RoleUserRelaExample();
@@ -112,4 +118,7 @@ public class AccountApi {
         }
         return roleIdList;
     }
+
+
+    
 }

@@ -17,10 +17,13 @@ import java.util.List;
  * Created by zhaoyuening on 2018/1/26.
  */
 @Component
-public class RequestPreFilter extends ZuulFilter {
+public class TokenCheckFilter extends ZuulFilter {
 
     private final String JWT_HEADER_NAME = "token";
-    private final Logger logger = LoggerFactory.getLogger(RequestPreFilter.class);
+    private final Logger logger = LoggerFactory.getLogger(TokenCheckFilter.class);
+
+    @Value("${token.filter}")
+    private boolean IS_FILTER;
 
     @Autowired
     private RoleResourceManager roleResourceManager;
@@ -37,7 +40,12 @@ public class RequestPreFilter extends ZuulFilter {
 
     @Override
     public boolean shouldFilter() {
-        return true;
+        if (IS_FILTER){
+            logger.info("开启token过滤");
+        }else{
+            logger.info("未开启token过滤");
+        }
+        return IS_FILTER;
     }
 
     //超级管理员角色
@@ -46,6 +54,8 @@ public class RequestPreFilter extends ZuulFilter {
 
 
     @Override
+    //TODO 目前每次修改鉴权权限等信息 需要重启
+    //后续版本修改后采用mq 自动更新缓存
     public Object run() {
         RequestContext ctx = RequestContext.getCurrentContext();
         HttpServletRequest request = ctx.getRequest();
