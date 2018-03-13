@@ -15,6 +15,7 @@ import javax.websocket.server.PathParam;
  * 负责文件上传的鉴权等操作
  */
 @RestController
+@RequestMapping(path = "rest")
 public class FileUploadApi {
 
     @Value("${qiniu.ak}")
@@ -25,7 +26,7 @@ public class FileUploadApi {
     private String QINIU_BUCKET;
 
     //获取七牛云上传token
-    @GetMapping(path = "upToken")
+    @GetMapping(path = "df/upToken")
     public String getUpToken(@RequestParam(name = "key",required = false) String key) {
         Auth auth = Auth.create(QINIU_AK, QINIU_SK);
         String upToken = "";

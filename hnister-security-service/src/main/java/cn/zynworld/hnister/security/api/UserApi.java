@@ -7,10 +7,7 @@ import cn.zynworld.hnister.common.domain.UserExample;
 import cn.zynworld.hnister.common.dto.security.UserCarryRoleDTO;
 import cn.zynworld.hnister.common.mappers.RoleUserRelaMapper;
 import cn.zynworld.hnister.common.mappers.UserMapper;
-import cn.zynworld.hnister.common.utils.BeanUtils;
-import cn.zynworld.hnister.common.utils.CodecUtils;
-import cn.zynworld.hnister.common.utils.PageBean;
-import cn.zynworld.hnister.common.utils.ResultBean;
+import cn.zynworld.hnister.common.utils.*;
 import cn.zynworld.hnister.security.exception.InsertRoleUserKeyException;
 import cn.zynworld.hnister.security.utils.UserUtils;
 import com.google.common.collect.Lists;
@@ -29,6 +26,7 @@ import java.util.stream.Collectors;
  * 用户管理API
  */
 @RestController
+@RequestMapping(path = "rest")
 public class UserApi {
 
     @Autowired
@@ -36,13 +34,12 @@ public class UserApi {
     @Autowired
     private RoleUserRelaMapper roleUserRelaMapper;
 
-    @RequestMapping(method = RequestMethod.GET,path = "user/admin/info")
-    public User getUserInfo(@RequestParam("token") String jwt){
-        CodecUtils.JwtBean jwtBean = CodecUtils.JwtBean.getJwtBean(jwt);
-        if (jwtBean == null || jwtBean.getPlayload("username")==null){
+    @GetMapping(path = "df/user/admin/info")
+    public User getUserInfo(){
+        String username = AccountUtils.getUsername();
+        if (username == null) {
             return null;
         }
-        String username = (String) jwtBean.getPlayload("username");
         //进行查询
         User user = userMapper.selectByPrimaryKey(username);
         if (user != null){
@@ -62,7 +59,7 @@ public class UserApi {
      * @param status 用户状态 0：未验证 1：已经验证
      * @return 不包含密码盐值 携带role信息的用户列表
      */
-    @GetMapping(path = "users/@/for=page&condition")
+    @GetMapping(path = "pt/users/@/for=page&condition")
     public PageBean<UserCarryRoleDTO> findAllCarryRols(
             //分页参数 pageSize <= 0 返回所有 不进行分页
             @RequestParam("pageCount") Integer pageCount, @RequestParam("pageSize") Integer pageSize,
@@ -153,7 +150,7 @@ public class UserApi {
         return pageBean;
     }
 
-    @GetMapping(path = "user/{username}/@/for=admin")
+    @GetMapping(path = "pt/user/{username}/@/for=admin")
     public UserCarryRoleDTO findByUsernameCarryRols(@PathVariable String username){
         UserCarryRoleDTO userCarryRoleDTO = new UserCarryRoleDTO();
         //query user info
@@ -186,7 +183,7 @@ public class UserApi {
      * @return
      */
     @Transactional
-    @PostMapping(path = "user")
+    @PostMapping(path = "pt/user")
     public ResultBean addUser(@RequestBody UserCarryRoleDTO userCarryRoleDTO) throws InsertRoleUserKeyException {
         User user = new User();
         List<Integer> roleIdList = userCarryRoleDTO.getRoleIdList();
@@ -242,7 +239,7 @@ public class UserApi {
      * @return
      */
     @Transactional
-    @PutMapping(path = "user/@/for=admin")
+    @PutMapping(path = "pt/user/@/for=admin")
     public ResultBean update(@RequestBody UserCarryRoleDTO userCarryRoleDTO) throws InsertRoleUserKeyException {
         User user = new User();
         List<Integer> roleIdList = userCarryRoleDTO.getRoleIdList();
@@ -307,7 +304,7 @@ public class UserApi {
     }
 
     @Transactional
-    @DeleteMapping(path = "user/{username}")
+    @DeleteMapping(path = "pt/user/{username}")
     public ResultBean remove(@PathVariable String username) {
         int result = userMapper.deleteByPrimaryKey(username);
         return ResultBean.create(result > 0);

@@ -19,19 +19,20 @@ import java.util.stream.Collectors;
  * Created by zhaoyuening on 2018/2/28.
  */
 @RestController
+@RequestMapping(path = "rest")
 public class ContentMenuApi {
     @Autowired
     private ContentMenuMapper contentMenuMapper;
 
     @Transactional
-    @PostMapping(path = "contentMenu")
+    @PostMapping(path = "pt/contentMenu")
     public ResultBean add(@RequestBody ContentMenu contentMenu) {
         int result = contentMenuMapper.insert(contentMenu);
         return ResultBean.create(result > 0);
     }
 
     @Transactional
-    @DeleteMapping(path = "contentMenu/{id}")
+    @DeleteMapping(path = "pt/contentMenu/{id}")
     public ResultBean delete(@PathVariable Integer id) {
         //删除该菜单项
         contentMenuMapper.deleteByPrimaryKey(id);
@@ -64,7 +65,7 @@ public class ContentMenuApi {
 
     //将返回包括所有该节点的 子节点 传入0搜索根节点
     //TODO 当前效率低下 后期采用redis 缓存
-    @GetMapping(path = "contentMenu/{id}/@/for=carryChilds")
+    @GetMapping(path = "pb/contentMenu/{id}/@/for=carryChilds")
     public ContentMenuDTO getByIdCarryChilds(@PathVariable Integer id) {
         ContentMenuDTO rootContentMenuDTO = new ContentMenuDTO();
 

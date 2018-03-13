@@ -10,3 +10,13 @@
 | hnister-security-service | 安全服务 | 9002 |
 | hnister-schoolmate-service | 校友服务 | 9003 |
 | hnister-content-service | 内容管理服务 | 9004 |
+
+
+## url配置规则
+|    url前缀    | 外访 | 登录 | 鉴权 |  说明        |
+|    :----:    | :-:  | :-: |  :-:  | :---:        |
+|/rest/pb/     |  √   |  ×  |  ×  |public开放     |
+|/rest/pt/     |  √   |  √  |  √  |protected受保护|
+|/rest/df/     |  √   |  √  |  ×  |default登录不鉴权|
+|/rest/pr/     |  ×   |  ×  |  ×  |private私有     |
+|其他           |  ×   |  ×  |  ×  |private私有     |

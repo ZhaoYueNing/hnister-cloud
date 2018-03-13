@@ -14,12 +14,13 @@ import java.util.List;
  * Created by zhaoyuening on 2018/2/12.
  */
 @RestController
+@RequestMapping(path = "rest")
 public class ZlassApi {
 
     @Autowired
     private ZlassMapper zlassMapper;
 
-    @GetMapping(path = "zlass")
+    @GetMapping(path = "pb/zlass")
     public List<Zlass> findAll() {
         List<Zlass> zlasses = zlassMapper.selectByExample(null);
         return zlasses;
