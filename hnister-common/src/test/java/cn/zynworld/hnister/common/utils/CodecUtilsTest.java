@@ -37,7 +37,7 @@ public class CodecUtilsTest {
 
     @Test
     public void testJwt() throws Exception {
-        CodecUtils.JwtBean jwtBean = new CodecUtils.JwtBean();
+        JwtBean jwtBean = new JwtBean();
 
         jwtBean.addHead("typ","jwt");
         jwtBean.addHead("alg","ha256");
@@ -51,20 +51,20 @@ public class CodecUtilsTest {
     @Test
     public void testCreateJwtByJsonToken() throws Exception {
         String jsonToken = "eyJ0eXAiOiJKV1QiLCJhbGciOiJIQTI1NiJ9.eyJyb2xlIjpbeyJyb2xlSWQiOjEsInVzZXJuYW1lIjoiemhhb3poYW96aGFvMiJ9XX0=.26d6c858e666ee510eb14640689e1bb121c029240678f4d37277141bc699d933";
-        CodecUtils.JwtBean jwtBean = CodecUtils.JwtBean.getJwtBean(jsonToken);
+        JwtBean jwtBean = JwtBean.getJwtBean(jsonToken);
         System.out.println(jwtBean.getHeadJson());
         System.out.println(jwtBean.getPlayloadJson());
     }
 
     @Test
     public void testCreateJwtByJsonToken2() throws Exception {
-        CodecUtils.JwtBean jwtBean = new CodecUtils.JwtBean();
+        JwtBean jwtBean = new JwtBean();
         jwtBean.addHead("typ","jwt");
         jwtBean.addHead("alg","ha256");
 
         jwtBean.addPlayload("role",new Integer[]{1,2});
 
-        CodecUtils.JwtBean createdJwtBean = CodecUtils.JwtBean.getJwtBean(jwtBean.toString());
+        JwtBean createdJwtBean = JwtBean.getJwtBean(jwtBean.toString());
         System.out.println(createdJwtBean);
     }
 }

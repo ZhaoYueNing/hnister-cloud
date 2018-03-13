@@ -21,5 +21,5 @@
 |/rest/pb/     |  √   |  ×  |  ×  |public开放     |
 |/rest/pt/     |  √   |  √  |  √  |protected受保护|
 |/rest/df/     |  √   |  √  |  ×  |default登录不鉴权|
-|/rest/pr/     |  ×   |  ×  |  ×  |private私有     |
+|/rest/pv/     |  ×   |  ×  |  ×  |private私有     |
 |其他           |  ×   |  ×  |  ×  |private私有     |

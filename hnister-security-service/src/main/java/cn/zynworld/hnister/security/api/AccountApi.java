@@ -8,6 +8,7 @@ import cn.zynworld.hnister.common.mappers.RoleUserRelaMapper;
 import cn.zynworld.hnister.common.mappers.UserMapper;
 import cn.zynworld.hnister.common.utils.AccountUtils;
 import cn.zynworld.hnister.common.utils.CodecUtils;
+import cn.zynworld.hnister.common.utils.JwtBean;
 import cn.zynworld.hnister.common.utils.ResultBean;
 import cn.zynworld.hnister.common.vo.UserLoginVo;
 import cn.zynworld.hnister.security.utils.UserUtils;
@@ -64,7 +65,7 @@ public class AccountApi {
     //============后台账户===============
     //后台管理登录
     //TODO 前后台登录不能使用相同的接口 token格式区分
-    @PostMapping(path = "pt/user/admin/login")
+    @PostMapping(path = "pb/user/admin/login")
     public ResultBean login(@RequestBody UserLoginVo userLoginVo) {
         if (StringUtils.isBlank(userLoginVo.getUsername()) || StringUtils.isBlank(userLoginVo.getPassword())){
             return ResultBean.fail();
@@ -87,7 +88,7 @@ public class AccountApi {
         RoleUserRelaExample roleUserRelaExample = new RoleUserRelaExample();
         roleUserRelaExample.createCriteria().andUsernameEqualTo(user.getUsername());
         List<RoleUserRelaKey> roles = roleUserRelaMapper.selectByExample(roleUserRelaExample);
-        CodecUtils.JwtBean jwtBean = new CodecUtils.JwtBean();
+        JwtBean jwtBean = new JwtBean();
         jwtBean.addHead("typ","JWT");
         jwtBean.addHead("alg","HA256");
         //放入角色列表
@@ -107,7 +108,7 @@ public class AccountApi {
     @PostMapping(path = "pt/user/admin/logout")
     public ResultBean logout(@RequestHeader("token") String token){
         //登出系统靠前端移除
-        CodecUtils.JwtBean jwtBean = CodecUtils.JwtBean.getJwtBean(token);
+        JwtBean jwtBean = JwtBean.getJwtBean(token);
         return ResultBean.create(jwtBean != null);
     }
 

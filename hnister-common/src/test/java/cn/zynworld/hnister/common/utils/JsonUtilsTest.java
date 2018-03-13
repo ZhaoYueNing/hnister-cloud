@@ -14,7 +14,7 @@ public class JsonUtilsTest {
 
     @Test
     public void testJson2Map() throws Exception {
-        CodecUtils.JwtBean jwtBean = new CodecUtils.JwtBean();
+        JwtBean jwtBean = new JwtBean();
         jwtBean.addHead("typ","abc");
         List<String> list = new ArrayList<String>();
         list.add("admin");

@@ -1,8 +1,10 @@
 package cn.zynworld.hnister.zuul.manager;
 
+import cn.zynworld.hnister.common.ResourceTypeEnum;
 import cn.zynworld.hnister.common.domain.Resource;
 import cn.zynworld.hnister.common.domain.ResourceExample;
 import cn.zynworld.hnister.common.domain.RoleResourceRelaKey;
+import cn.zynworld.hnister.common.enums.account.ResourceStatusEnum;
 import cn.zynworld.hnister.common.mappers.ResourceMapper;
 import cn.zynworld.hnister.common.mappers.RoleResourceRelaMapper;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -108,6 +110,38 @@ public class RoleResourceManager {
             return 2;
         }
         return 1;
+    }
+
+    /**
+     * 检测url类型
+     * @param url
+     * @return {@link cn.zynworld.hnister.common.enums.account.ResourceStatusEnum}
+     */
+    public Integer checkUrlType(String url) {
+        try {
+            String[] split = url.split("/");
+            if (split[2].equals("rest")) {
+                if (split[3].equals(ResourceStatusEnum.PUBLIC.getUrl())) {
+                    return ResourceStatusEnum.PUBLIC.getCode();
+                }
+                if (split[3].equals(ResourceStatusEnum.PROTECTED.getUrl())) {
+                    return ResourceStatusEnum.PROTECTED.getCode();
+                }
+                if (split[3].equals(ResourceStatusEnum.DEFAULT.getUrl())) {
+                    return ResourceStatusEnum.DEFAULT.getCode();
+                }
+                if (split[3].equals(ResourceStatusEnum.PRIVATE.getUrl())) {
+                    return ResourceStatusEnum.PRIVATE.getCode();
+                }
+                if (split[3].equals(ResourceStatusEnum.OTHER.getUrl())) {
+                    return ResourceStatusEnum.OTHER.getCode();
+                }
+            }
+
+        } catch (Exception e) {
+            return ResourceStatusEnum.OTHER.getCode();
+        }
+        return ResourceStatusEnum.OTHER.getCode();
     }
 
 

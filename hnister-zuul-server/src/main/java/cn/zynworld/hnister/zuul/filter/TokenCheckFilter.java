@@ -2,8 +2,10 @@ package cn.zynworld.hnister.zuul.filter;
 
 import cn.zynworld.hnister.common.enums.account.JwtFieldEnum;
 import cn.zynworld.hnister.common.enums.account.RequestHeaderKeyEnum;
+import cn.zynworld.hnister.common.enums.account.ResourceStatusEnum;
 import cn.zynworld.hnister.common.utils.AccountUtils;
 import cn.zynworld.hnister.common.utils.CodecUtils;
+import cn.zynworld.hnister.common.utils.JwtBean;
 import cn.zynworld.hnister.zuul.manager.RoleResourceManager;
 import com.google.gson.Gson;
 import com.netflix.zuul.ZuulFilter;
@@ -62,50 +64,74 @@ public class TokenCheckFilter extends ZuulFilter {
     //TODO 目前每次修改鉴权权限等信息 需要重启
     //后续版本修改后采用mq 自动更新缓存
     public Object run() {
+        JwtBean jwtBean = null;
         RequestContext ctx = RequestContext.getCurrentContext();
         HttpServletRequest request = ctx.getRequest();
         String url = request.getRequestURI();
         String method = request.getMethod();
 
-        //检测资源状态 是否为白名单 或 被禁用
-        // 0 白名单 1 被监控权限 2 禁用
-        Integer resourceStatus = roleResourceManager.checkStatusForResource(method, url);
-        if (resourceStatus == null || resourceStatus == -1||resourceStatus == 2){
-            createResponce("request fail!",ctx);
-            return null;
-        } else if (resourceStatus == 0){
-            //白名单 放行
+        //通过url规范 检测url
+        Integer urlType = roleResourceManager.checkUrlType(url);
+        if (urlType.equals(ResourceStatusEnum.PUBLIC.getCode())) {
             return null;
         }
-
-        //使用jwtBean解码装载jwt信息
-        CodecUtils.JwtBean jwtBean = CodecUtils.JwtBean.getJwtBean(request.getHeader(JWT_HEADER_NAME));
-        //将信息存储到request
-        addRequestHeader(jwtBean,ctx);
-        try {
-            //验证ip地址是否一致
-            Object ipAddress = jwtBean.getPlayload(JwtFieldEnum.IP.getField());
-            if (!ipAddress.equals(AccountUtils.getIpAddressFromRequest())) {
-                //IP不匹配
-                createResponce("request fail",ctx);
-                return null;
-            }
-
-            //jwt 用户角色信息
-            List<String> roleIdList = (List<String>) jwtBean.getPlayload(JwtFieldEnum.ROLES.getField());
-            //指定id为1 的角色为超级管理员
-            if (roleIdList != null && roleIdList.contains(ROOT_ROLE)){
-                return null;
-            }
-
-            if (roleIdList != null && roleResourceManager.checkAuthority(method, url, roleIdList)) {
-                //该检验通过 该用户具备访问资源的权限
-                return null;
-            }
-        } catch (Exception e) {
+        if (urlType.equals(ResourceStatusEnum.OTHER.getCode()) || urlType.equals(ResourceStatusEnum.PRIVATE)) {
             createResponce("request fail",ctx);
             return null;
         }
+        if (urlType.equals(ResourceStatusEnum.DEFAULT.getCode())) {
+            //使用jwtBean解码装载jwt信息
+            jwtBean = JwtBean.getJwtBean(request.getHeader(JWT_HEADER_NAME));
+            if (jwtBean == null) {
+                createResponce("request fail",ctx);
+                return null;
+            }
+            //将信息存储到request
+            addRequestHeader(jwtBean,ctx);
+            return null;
+        }
+        if (urlType.equals(ResourceStatusEnum.PROTECTED.getCode())) {
+            //检测资源状态 是否为白名单 或 被禁用
+            // 0 白名单 1 被监控权限 2 禁用
+            Integer resourceStatus = roleResourceManager.checkStatusForResource(method, url);
+            if (resourceStatus == null || resourceStatus == -1||resourceStatus == 2){
+                createResponce("request fail!",ctx);
+                return null;
+            } else if (resourceStatus == 0){
+                //白名单 放行
+                return null;
+            }
+
+            //使用jwtBean解码装载jwt信息
+            jwtBean = JwtBean.getJwtBean(request.getHeader(JWT_HEADER_NAME));
+            //将信息存储到request
+            addRequestHeader(jwtBean,ctx);
+            try {
+                //验证ip地址是否一致
+                Object ipAddress = jwtBean.getPlayload(JwtFieldEnum.IP.getField());
+                if (!ipAddress.equals(AccountUtils.getIpAddressFromRequest())) {
+                    //IP不匹配
+                    createResponce("request fail",ctx);
+                    return null;
+                }
+
+                //jwt 用户角色信息
+                List<String> roleIdList = (List<String>) jwtBean.getPlayload(JwtFieldEnum.ROLES.getField());
+                //指定id为1 的角色为超级管理员
+                if (roleIdList != null && roleIdList.contains(ROOT_ROLE)){
+                    return null;
+                }
+
+                if (roleIdList != null && roleResourceManager.checkAuthority(method, url, roleIdList)) {
+                    //该检验通过 该用户具备访问资源的权限
+                    return null;
+                }
+            } catch (Exception e) {
+                createResponce("request fail",ctx);
+                return null;
+            }
+        }
+
         //游客身份
         //查看是否为白名单Resource
         createResponce("request fail",ctx);
@@ -132,7 +158,7 @@ public class TokenCheckFilter extends ZuulFilter {
      * @param jwtBean
      * @param ctx
      */
-    private void addRequestHeader(CodecUtils.JwtBean jwtBean, RequestContext ctx) {
+    private void addRequestHeader(JwtBean jwtBean, RequestContext ctx) {
         if (jwtBean == null) {
             return;
         }
