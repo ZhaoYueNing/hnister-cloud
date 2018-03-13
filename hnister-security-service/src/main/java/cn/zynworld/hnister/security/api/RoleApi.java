@@ -1,11 +1,14 @@
 package cn.zynworld.hnister.security.api;
 
 import cn.zynworld.hnister.common.domain.Role;
+import cn.zynworld.hnister.common.enums.account.RequestHeaderKeyEnum;
 import cn.zynworld.hnister.common.mappers.RoleMapper;
+import cn.zynworld.hnister.common.utils.AccountUtils;
 import cn.zynworld.hnister.common.utils.ResultBean;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+import javax.servlet.http.HttpServletRequest;
 import java.util.List;
 
 /**
@@ -18,7 +21,7 @@ public class RoleApi {
     private RoleMapper roleMapper;
 
     @GetMapping(path = "roles")
-    public List<Role> findAll(){
+    public List<Role> findAll(HttpServletRequest request){
         List<Role> roles = roleMapper.selectByExample(null);
         return roles;
     }

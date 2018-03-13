@@ -1,7 +1,11 @@
 package cn.zynworld.hnister.zuul.filter;
 
+import cn.zynworld.hnister.common.enums.account.JwtFieldEnum;
+import cn.zynworld.hnister.common.enums.account.RequestHeaderKeyEnum;
+import cn.zynworld.hnister.common.utils.AccountUtils;
 import cn.zynworld.hnister.common.utils.CodecUtils;
 import cn.zynworld.hnister.zuul.manager.RoleResourceManager;
+import com.google.gson.Gson;
 import com.netflix.zuul.ZuulFilter;
 import com.netflix.zuul.context.RequestContext;
 import org.slf4j.Logger;
@@ -21,6 +25,7 @@ public class TokenCheckFilter extends ZuulFilter {
 
     private final String JWT_HEADER_NAME = "token";
     private final Logger logger = LoggerFactory.getLogger(TokenCheckFilter.class);
+    private final static Gson GSON = new Gson();
 
     @Value("${token.filter}")
     private boolean IS_FILTER;
@@ -35,7 +40,7 @@ public class TokenCheckFilter extends ZuulFilter {
 
     @Override
     public int filterOrder() {
-        return 1;
+        return 5;
     }
 
     @Override
@@ -75,9 +80,19 @@ public class TokenCheckFilter extends ZuulFilter {
 
         //使用jwtBean解码装载jwt信息
         CodecUtils.JwtBean jwtBean = CodecUtils.JwtBean.getJwtBean(request.getHeader(JWT_HEADER_NAME));
-        if (jwtBean != null){
+        //将信息存储到request
+        addRequestHeader(jwtBean,ctx);
+        try {
+            //验证ip地址是否一致
+            Object ipAddress = jwtBean.getPlayload(JwtFieldEnum.IP.getField());
+            if (!ipAddress.equals(AccountUtils.getIpAddressFromRequest())) {
+                //IP不匹配
+                createResponce("request fail",ctx);
+                return null;
+            }
+
             //jwt 用户角色信息
-            List<String> roleIdList = (List<String>) jwtBean.getPlayload("roles");
+            List<String> roleIdList = (List<String>) jwtBean.getPlayload(JwtFieldEnum.ROLES.getField());
             //指定id为1 的角色为超级管理员
             if (roleIdList != null && roleIdList.contains(ROOT_ROLE)){
                 return null;
@@ -87,6 +102,9 @@ public class TokenCheckFilter extends ZuulFilter {
                 //该检验通过 该用户具备访问资源的权限
                 return null;
             }
+        } catch (Exception e) {
+            createResponce("request fail",ctx);
+            return null;
         }
         //游客身份
         //查看是否为白名单Resource
@@ -107,5 +125,24 @@ public class TokenCheckFilter extends ZuulFilter {
         // 返回错误内容
         ctx.setResponseBody(msg);
         ctx.set("isSuccess", false);
+    }
+
+    /**
+     * 从jwtBean获取相应信息，并加装到request内
+     * @param jwtBean
+     * @param ctx
+     */
+    private void addRequestHeader(CodecUtils.JwtBean jwtBean, RequestContext ctx) {
+        if (jwtBean == null) {
+            return;
+        }
+        //roles
+        Object roles = jwtBean.getPlayload(JwtFieldEnum.ROLES.getField());
+        Object username = jwtBean.getPlayload(JwtFieldEnum.USERNAME.getField());
+        Object admin = jwtBean.getPlayload(JwtFieldEnum.ADMIN.getField());
+        //save info to request
+        ctx.addZuulRequestHeader(RequestHeaderKeyEnum.ACCOUNT_ROLES.getKey(), GSON.toJson(roles));
+        ctx.addZuulRequestHeader(RequestHeaderKeyEnum.ACCOUNT_USERNAME.getKey(), GSON.toJson(username));
+        ctx.addZuulRequestHeader(RequestHeaderKeyEnum.ACCOUNT_ADMIN.getKey(), GSON.toJson(admin));
     }
 }

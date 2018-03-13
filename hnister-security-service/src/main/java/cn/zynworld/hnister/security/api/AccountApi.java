@@ -3,8 +3,10 @@ package cn.zynworld.hnister.security.api;
 import cn.zynworld.hnister.common.domain.RoleUserRelaExample;
 import cn.zynworld.hnister.common.domain.RoleUserRelaKey;
 import cn.zynworld.hnister.common.domain.User;
+import cn.zynworld.hnister.common.enums.account.JwtFieldEnum;
 import cn.zynworld.hnister.common.mappers.RoleUserRelaMapper;
 import cn.zynworld.hnister.common.mappers.UserMapper;
+import cn.zynworld.hnister.common.utils.AccountUtils;
 import cn.zynworld.hnister.common.utils.CodecUtils;
 import cn.zynworld.hnister.common.utils.ResultBean;
 import cn.zynworld.hnister.common.vo.UserLoginVo;
@@ -88,11 +90,13 @@ public class AccountApi {
         jwtBean.addHead("typ","JWT");
         jwtBean.addHead("alg","HA256");
         //放入角色列表
-        jwtBean.addPlayload("roles",roleUserRelaKeyListToRoleIdList(roles));
+        jwtBean.addPlayload(JwtFieldEnum.ROLES.getField(),roleUserRelaKeyListToRoleIdList(roles));
         //用户名
-        jwtBean.addPlayload("username",userLoginVo.getUsername());
+        jwtBean.addPlayload(JwtFieldEnum.USERNAME.getField(),userLoginVo.getUsername());
         //在jwt token中加入 后台管理员标识
-        jwtBean.addPlayload("admin",true);
+        jwtBean.addPlayload(JwtFieldEnum.ADMIN.getField(),true);
+        //存入用户访问ip
+        jwtBean.addPlayload(JwtFieldEnum.IP.getField(),AccountUtils.getIpAddressFromRequest());
 
         return ResultBean.create(result).setMsg(jwtBean.toString());
     }

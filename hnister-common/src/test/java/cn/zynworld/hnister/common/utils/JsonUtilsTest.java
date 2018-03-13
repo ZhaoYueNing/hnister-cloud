@@ -3,6 +3,7 @@ package cn.zynworld.hnister.common.utils;
 import org.junit.Test;
 
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 import java.util.Map;
 
@@ -23,5 +24,10 @@ public class JsonUtilsTest {
         System.out.println(jwtBean.getHeadJson());
         Map<String, Object> map = JsonUtils.jsonToMap(jwtBean.getHeadJson());
         System.out.println(map.size());
+    }
+
+    @Test
+    public void testTime() throws Exception {
+        System.out.println(new Date().getTime());
     }
 }
