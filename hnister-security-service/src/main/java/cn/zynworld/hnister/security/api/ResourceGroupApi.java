@@ -18,6 +18,7 @@ import java.util.List;
  * Created by zhaoyuening on 2018/1/29.
  */
 @RestController
+@RequestMapping(path = "rest")
 public class ResourceGroupApi {
 
     @Autowired
@@ -25,14 +26,14 @@ public class ResourceGroupApi {
     @Autowired
     private ResourceMapper resourceMapper;
 
-    @GetMapping(path = "resourceGroups")
+    @GetMapping(path = "pt/resourceGroups")
     public List<ResourceGroup> findAll(){
         List<ResourceGroup> resourceGroups = resourceGroupMapper.selectByExample(null);
         return resourceGroups;
     }
 
     //返回所有resourceGroup 并携带resource
-    @GetMapping(path = "resourceGroups/@/for=carryResource")
+    @GetMapping(path = "pt/resourceGroups/@/for=carryResource")
     public List<ResourceGroupCarryResourcesDTO> findAllCarryResource() {
         //result
         List<ResourceGroupCarryResourcesDTO> resourceGroupCarryResourcesDTOList = Lists.newArrayList();
@@ -73,7 +74,7 @@ public class ResourceGroupApi {
         return resourceGroupCarryResourcesDTOList;
     }
 
-    @GetMapping(path = "resourceGroup/{id}")
+    @GetMapping(path = "pt/resourceGroup/{id}")
     public ResourceGroup findById(@PathVariable Integer id) {
         if (id == null) {
             return null;
@@ -82,7 +83,7 @@ public class ResourceGroupApi {
     }
 
 
-    @PutMapping(path = "resourceGroup")
+    @PutMapping(path = "pt/resourceGroup")
     public ResultBean updateResourceGroup(@RequestBody ResourceGroup resourceGroup) {
         if (resourceGroup == null || resourceGroup.getId() == null) {
             return ResultBean.fail("参数 或 id 不得为空");
@@ -91,7 +92,7 @@ public class ResourceGroupApi {
         return ResultBean.create(result > 0);
     }
 
-    @DeleteMapping(path = "resourceGroup/{id}")
+    @DeleteMapping(path = "pt/resourceGroup/{id}")
     public ResultBean deleteById(@PathVariable Integer id) {
 
         if (id == null) {
@@ -101,7 +102,7 @@ public class ResourceGroupApi {
         return ResultBean.create(result > 0);
     }
 
-    @PostMapping(path = "resourceGroup")
+    @PostMapping(path = "pt/resourceGroup")
     public ResultBean add(@RequestBody ResourceGroup resourceGroup) {
         int result = resourceGroupMapper.insert(resourceGroup);
         return ResultBean.create(result > 0);

@@ -18,6 +18,7 @@ import java.util.stream.Collectors;
  * Created by zhaoyuening on 2018/2/16.
  */
 @RestController
+@RequestMapping(path = "rest")
 public class RoleResourceApi {
 
     @Autowired
@@ -25,7 +26,7 @@ public class RoleResourceApi {
 
     //为角色分配资源
     @Transactional
-    @PostMapping(path = "roleAllocateResources/@/for=allocateResources")
+    @PostMapping(path = "pt/roleAllocateResources/@/for=allocateResources")
     public ResultBean roleAllocateResources(@RequestBody RoleAllocateResourcesDTO roleAllocateResourcesDTO){
         if (StringUtils.isEmpty(roleAllocateResourcesDTO.getRoleId()) || roleAllocateResourcesDTO.getResourceIdList() == null) {
             return ResultBean.fail("参数异常");

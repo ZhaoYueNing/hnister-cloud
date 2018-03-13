@@ -5,10 +5,10 @@
 
 	<groupId>cn.zynworld.hnister</groupId>
 	<artifactId>hnister-schoolmate-service</artifactId>
-	<version>0.0.1-SNAPSHOT</version>
+	<version>1.0.0-SNAPSHOT</version>
 	<packaging>jar</packaging>
 
-	<name>hnister-news-service</name>
+	<name>hnister-schoolmate-service</name>
 	<description>Demo project for Spring Boot</description>
 
 	<parent>
@@ -24,6 +24,7 @@
 		<spring-cloud.version>Edgware.SR1</spring-cloud.version>
 	</properties>
 
+
 	<dependencyManagement>
 		<dependencies>
 			<dependency>
@@ -35,6 +36,7 @@
 			</dependency>
 		</dependencies>
 	</dependencyManagement>
+
 
 	<dependencies>
 		<!--myself-->

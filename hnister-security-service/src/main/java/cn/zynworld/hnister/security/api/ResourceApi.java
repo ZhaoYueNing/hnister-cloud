@@ -21,6 +21,7 @@ import java.util.stream.Collectors;
  * Created by zhaoyuening on 2018/1/28.
  */
 @RestController
+@RequestMapping(path = "rest")
 public class ResourceApi {
 
     @Autowired
@@ -29,21 +30,21 @@ public class ResourceApi {
     private RoleResourceRelaMapper roleResourceRelaMapper;
 
     @Transactional
-    @RequestMapping(path = "resource",method = RequestMethod.POST)
+    @PostMapping(path = "pt/resource")
     public ResultBean add(@RequestBody Resource resource){
         int result = resourceMapper.insert(resource);
         return ResultBean.create(result > 0);
     }
 
     @Transactional
-    @DeleteMapping(path = "resource/{id}")
+    @DeleteMapping(path = "pt/resource/{id}")
     public ResultBean deleteById(@PathVariable("id") Integer id) {
         int result = resourceMapper.deleteByPrimaryKey(id);
         return ResultBean.create(result > 0);
     }
 
     @Transactional
-    @PutMapping(path = "resource")
+    @PutMapping(path = "pt/resource")
     public ResultBean update(@RequestBody Resource resource) {
         if (resource == null || resource.getId() == null) {
             return ResultBean.fail("参数异常");
@@ -53,21 +54,21 @@ public class ResourceApi {
         return ResultBean.create(result > 0);
     }
 
-    @GetMapping(path = "resources")
+    @GetMapping(path = "pt/resources")
     public List<Resource> findAll(){
         List<Resource> resourceList = resourceMapper.selectByExample(null);
         return resourceList;
     }
 
     //通过resource id获取
-    @GetMapping(path = "resource/{resourceId}")
+    @GetMapping(path = "pt/resource/{resourceId}")
     public Resource findById(@PathVariable Integer resourceId) {
         Resource resource = resourceMapper.selectByPrimaryKey(resourceId);
         return resource;
     }
 
     //分页 + 条件查询
-    @GetMapping(path = "resources/@/for=page&condition")
+    @GetMapping(path = "pt/resources/@/for=page&condition")
     public PageBean<Resource> findByPageAndCondition(
             //分页参数 pageSize <= 0 返回所有 不进行分页
             @PathParam("pageCount") Integer pageCount, @PathParam("pageSize") Integer pageSize,
@@ -124,7 +125,7 @@ public class ResourceApi {
     }
 
     //获取该角色所拥有的资源ID列表
-    @GetMapping(path = "resources/roleId/{roleId}")
+    @GetMapping(path = "pt/resources/roleId/{roleId}")
     public List<Integer> findByRoleId(@PathVariable("roleId") Integer roleId){
         RoleResourceRelaExample roleResourceRelaExample = new RoleResourceRelaExample();
         roleResourceRelaExample.createCriteria().andRoleIdEqualTo(roleId);
@@ -135,8 +136,5 @@ public class ResourceApi {
                 }).collect(Collectors.toList());
         return resourceIdList;
     }
-
-
-
 
 }

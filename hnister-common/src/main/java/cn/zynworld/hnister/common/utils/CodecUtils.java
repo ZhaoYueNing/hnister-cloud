@@ -104,7 +104,11 @@ public class CodecUtils {
     public static String getJwtString(){
         return null;
     }
-    //用于装载 jwt 信息的载体
+
+    /**
+     * 用于装载 jwt 信息的载体
+     * playload内存储的key {@link cn.zynworld.hnister.common.enums.account.JwtFieldEnum}
+     */
     public static class JwtBean{
         private Map<String,Object> headMap = new HashMap<String, Object>();
         private Map<String,Object> playloadMap = new HashMap<String, Object>();

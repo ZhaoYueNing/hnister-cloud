@@ -3,8 +3,10 @@ package cn.zynworld.hnister.security.api;
 import cn.zynworld.hnister.common.domain.RoleUserRelaExample;
 import cn.zynworld.hnister.common.domain.RoleUserRelaKey;
 import cn.zynworld.hnister.common.domain.User;
+import cn.zynworld.hnister.common.enums.account.JwtFieldEnum;
 import cn.zynworld.hnister.common.mappers.RoleUserRelaMapper;
 import cn.zynworld.hnister.common.mappers.UserMapper;
+import cn.zynworld.hnister.common.utils.AccountUtils;
 import cn.zynworld.hnister.common.utils.CodecUtils;
 import cn.zynworld.hnister.common.utils.ResultBean;
 import cn.zynworld.hnister.common.vo.UserLoginVo;
@@ -22,6 +24,7 @@ import java.util.List;
  * 登录登出注册 账户相关api
  */
 @RestController
+@RequestMapping(path = "rest")
 public class AccountApi {
 
     @Autowired
@@ -37,7 +40,7 @@ public class AccountApi {
      * @return
      */
     @Transactional
-    @PostMapping(path = "user/@/for=register" )
+    @PostMapping(path = "pt/user/@/for=register" )
     public ResultBean register(@RequestBody User user){
         //判断用户是否符合注册条件
         if (!UserUtils.checkUser(user)) {
@@ -55,10 +58,13 @@ public class AccountApi {
     }
     //============前台账户===============
 
+
+
+
     //============后台账户===============
     //后台管理登录
     //TODO 前后台登录不能使用相同的接口 token格式区分
-    @PostMapping(path = "user/admin/login")
+    @PostMapping(path = "pt/user/admin/login")
     public ResultBean login(@RequestBody UserLoginVo userLoginVo) {
         if (StringUtils.isBlank(userLoginVo.getUsername()) || StringUtils.isBlank(userLoginVo.getPassword())){
             return ResultBean.fail();
@@ -73,6 +79,9 @@ public class AccountApi {
 
         //检验
         boolean result = CodecUtils.checkUser(userLoginVo.getPassword(),sale,encodedPassword);
+        if (!result) {
+            return ResultBean.fail("用户名或密码不正确，登录失败！");
+        }
         //创建token
         //获取用户角色
         RoleUserRelaExample roleUserRelaExample = new RoleUserRelaExample();
@@ -82,18 +91,20 @@ public class AccountApi {
         jwtBean.addHead("typ","JWT");
         jwtBean.addHead("alg","HA256");
         //放入角色列表
-        jwtBean.addPlayload("roles",roleUserRelaKeyListToRoleIdList(roles));
+        jwtBean.addPlayload(JwtFieldEnum.ROLES.getField(),roleUserRelaKeyListToRoleIdList(roles));
         //用户名
-        jwtBean.addPlayload("username",userLoginVo.getUsername());
+        jwtBean.addPlayload(JwtFieldEnum.USERNAME.getField(),userLoginVo.getUsername());
         //在jwt token中加入 后台管理员标识
-        jwtBean.addPlayload("admin",true);
+        jwtBean.addPlayload(JwtFieldEnum.ADMIN.getField(),true);
+        //存入用户访问ip
+        jwtBean.addPlayload(JwtFieldEnum.IP.getField(),AccountUtils.getIpAddressFromRequest());
 
         return ResultBean.create(result).setMsg(jwtBean.toString());
     }
 
 
     //后台登出
-    @GetMapping(path = "user/admin/logout")
+    @PostMapping(path = "pt/user/admin/logout")
     public ResultBean logout(@RequestHeader("token") String token){
         //登出系统靠前端移除
         CodecUtils.JwtBean jwtBean = CodecUtils.JwtBean.getJwtBean(token);
@@ -112,4 +123,7 @@ public class AccountApi {
         }
         return roleIdList;
     }
+
+
+    
 }

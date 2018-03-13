@@ -16,6 +16,7 @@ import java.util.List;
  * @create 2018/1/6
  */
 @RestController
+@RequestMapping(path = "rest")
 public class NewsModuleApi {
 
 	@Autowired
@@ -24,21 +25,22 @@ public class NewsModuleApi {
 	@Autowired
 	private NewsModuleMapper newsModuleMapper;
 
-	@GetMapping(path = "newsModules")
+	@GetMapping(path = "pb/newsModules")
 	public List<NewsModule> findAll() {
 		return newsModuleMapper.selectByExample(null);
 	}
 
 	@Transactional
-	@RequestMapping(path = "newsModule",method = RequestMethod.POST)
+	@PostMapping(path = "pt/newsModule")
 	public ResultBean add(@RequestBody NewsModule newsModule){
+		//初始模块文章数量0
+		newsModule.setNumber(0L);
 		int newsModuleId = newsModuleMapper.insert(newsModule);
-
 		return ResultBean.create(newsModuleId > 0);
 	}
 
 	@Transactional
-	@RequestMapping(path = "newsModule/{id}",method = RequestMethod.DELETE)
+	@DeleteMapping(path = "pt/newsModule/{id}")
 	public ResultBean deleteById(@PathVariable  int id){
 		//将该模块下所有所有文章module id 为null
 		newsMapper.updateModuleIdIsNullByModuleId(id);
@@ -49,7 +51,7 @@ public class NewsModuleApi {
 	}
 
 
-	@RequestMapping(path = "newsModule",method = RequestMethod.PUT)
+	@PutMapping(path = "pt/newsModule")
 	public ResultBean edit(@RequestBody NewsModule newsModule){
 		if (newsModule.getId() == null) {
 			return ResultBean.fail("id 不得为 null");

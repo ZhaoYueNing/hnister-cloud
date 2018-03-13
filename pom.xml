@@ -22,10 +22,14 @@
         <module>hnister-config-server</module>
         <module>hnister-zuul-server</module>
 
+
         <module>hnister-common</module>
+        <module>hnister-file-service</module>
         <module>hnister-news-service</module>
+        <module>hnister-content-service</module>
         <module>hnister-security-service</module>
         <module>hnister-schoolmate-service</module>
+
 
 
         <!--废弃模块
@@ -54,10 +58,15 @@
                 <artifactId>commons-codec</artifactId>
                 <version>1.9</version>
             </dependency>
+
+
         </dependencies>
 
 
     </dependencyManagement>
+
+
+
 
 
 </project>

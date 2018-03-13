@@ -22,6 +22,7 @@ import java.util.List;
  * @create 2018/1/2
  */
 @RestController
+@RequestMapping(path = "rest")
 public class NewsApi {
 
 
@@ -31,7 +32,7 @@ public class NewsApi {
 	private NewsModuleMapper newsModuleMapper;
 
 
-	@GetMapping(path = "news/{id}")
+	@GetMapping(path = "pb/news/{id}")
 	public News findById(@PathVariable Long id){
 		News news = newsMapper.selectByPrimaryKey(id);
 		return news;
@@ -43,12 +44,12 @@ public class NewsApi {
 	 * @return 成功返回 success resultBean & msg = newsId
 	 */
 	@Transactional
-	@RequestMapping(path = "/news",method = RequestMethod.POST)
+	@RequestMapping(path = "pt/news",method = RequestMethod.POST)
 	public ResultBean addNews(@RequestBody News news){
 		news.setPostDate(new Date());
 		int newsId = newsMapper.insert(news);
 
-		if (newsId > 0 ){
+		if (newsId > 0 && news.getModuleId()!=null){
 			NewsModuleExample newsModuleExample = new NewsModuleExample();
 			newsModuleExample.createCriteria().andIdEqualTo(news.getModuleId());
 			newsModuleMapper.updateChangeNumberByExample(1,newsModuleExample);
@@ -74,7 +75,7 @@ public class NewsApi {
 	 * @return pageBean
 	 * http://localhost:10000/hnister-news-service/news?page=true&pageCount=1&pageSize=2&moduleId=3
 	 */
-	@GetMapping(path = "news/@/for=page")
+	@GetMapping(path = "pb/news/@/for=page")
 	public PageBean<News> findByPage(@PathParam("pageCount") Integer pageCount, @PathParam("pageSize") Integer pageSize, @PathParam("moduleId") Integer moduleId){
 		NewsExample newsExample = null;
 		PageBean<News> pageBean = new PageBean<News>();
@@ -101,7 +102,7 @@ public class NewsApi {
 	}
 
 	@Transactional
-	@DeleteMapping(path = "news/{id}")
+	@DeleteMapping(path = "pt/news/{id}")
 	public ResultBean deleteById(@PathVariable Long id){
 		News news = newsMapper.selectByPrimaryKey(id);
 		if (news == null){
@@ -118,7 +119,7 @@ public class NewsApi {
 	}
 
 	@Transactional
-	@PutMapping(path = "news")
+	@PutMapping(path = "pt/news")
 	public ResultBean update(@RequestBody News news) {
 		if (news.getId() == null) {
 			return ResultBean.fail("id 不得为空");
