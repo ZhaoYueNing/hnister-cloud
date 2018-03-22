@@ -6,7 +6,6 @@ import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 import com.google.gson.JsonElement;
 import com.google.gson.JsonParser;
-import com.sun.tools.javac.jvm.Code;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -21,6 +20,8 @@ public class JwtBean{
 
     private Map<String,Object> headMap = new HashMap<String, Object>();
     private Map<String,Object> playloadMap = new HashMap<String, Object>();
+
+
     private static Gson gson = new GsonBuilder().create();
     private static JsonParser jsonParser = new JsonParser();
 
@@ -64,10 +65,16 @@ public class JwtBean{
         return jwtBean;
     }
 
+    /**
+     * 为jwt添加头信息
+     */
     public void addHead(String key,Object value){
         headMap.put(key,value);
     }
 
+    /**
+     * 为jwt添加荷载
+     */
     public void addPlayload(String key,Object value){
         playloadMap.put(key,value);
     }
@@ -107,6 +114,7 @@ public class JwtBean{
         return this;
     }
 
+    //将JwtBean对象转换为字符串
     @Override
     public String toString(){
         String jwt = null;
