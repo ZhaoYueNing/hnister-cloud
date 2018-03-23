@@ -12,7 +12,7 @@
 | hnister-news-service | 新闻服务 | 9001 |
 | hnister-security-service | 安全服务 | 9002 |
 | hnister-schoolmate-service | 校友服务 | 9003 |
-| hnister-content-service | 内容管理服务 | 9004 |
+| hnister-setting-service | 基础配置服务 | 9004 |
 
 
 ## url配置规则

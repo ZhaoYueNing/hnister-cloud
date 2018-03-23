@@ -26,7 +26,7 @@
         <module>hnister-common</module>
         <module>hnister-file-service</module>
         <module>hnister-news-service</module>
-        <module>hnister-content-service</module>
+        <module>hnister-setting-service</module>
         <module>hnister-security-service</module>
         <module>hnister-schoolmate-service</module>
 
@@ -57,6 +57,11 @@
                 <groupId>commons-codec</groupId>
                 <artifactId>commons-codec</artifactId>
                 <version>1.9</version>
+            </dependency>
+            <dependency>
+                <groupId>org.projectlombok</groupId>
+                <artifactId>lombok</artifactId>
+                <version>1.16.20</version>
             </dependency>
 
 

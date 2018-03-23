@@ -56,7 +56,7 @@ LOCK TABLES `t_news` WRITE;
 
 INSERT INTO `t_news` (`id`, `title`, `content`, `author`, `post_date`, `module_id`)
 VALUES
-	(11,'@Transactional','<p>init content<span style=\"color: #808000; background-color: #ddffc5; font-family: \'Source Code Pro\'; font-size: 12.8pt;\">@Transactional</span></p>\n<pre style=\"background-color: #ddffc5; font-family: \'Source Code Pro\'; font-size: 12.8pt;\"><span style=\"color: #808000;\">&nbsp;</span></pre>','@Transactional','2018-01-10',NULL),
+	(11,'@Transactional','<p>init setting<span style=\"color: #808000; background-color: #ddffc5; font-family: \'Source Code Pro\'; font-size: 12.8pt;\">@Transactional</span></p>\n<pre style=\"background-color: #ddffc5; font-family: \'Source Code Pro\'; font-size: 12.8pt;\"><span style=\"color: #808000;\">&nbsp;</span></pre>','@Transactional','2018-01-10',NULL),
 	(14,'DEMOBBBBB','<p>init contentDEMO</p>','DEMO','2018-01-10',17),
 	(15,'DEMO','<p>init contentDEMO</p>','DEMO','2018-01-10',17),
 	(16,'DEMO','<p>init contentDEMO</p>','DEMO','2018-01-10',17),
@@ -114,11 +114,11 @@ VALUES
 	(76,'中国男足取得世界杯冠军','<p>这是不可能的事情</p>','赵岳宁','2018-01-24',NULL),
 	(77,'中国男足取得世界杯冠军','<p>这是不可能的事情</p>','赵岳宁','2018-01-24',NULL),
 	(78,'中国男足取得世界杯冠军','<p>这是不可能的事情</p>','赵岳宁','2018-01-24',NULL),
-	(79,'abc','init content','abc','2018-01-24',NULL),
-	(80,'abc','init content','abc','2018-01-24',NULL),
-	(81,'abc','init content','abc','2018-01-24',NULL),
-	(82,'abc','init content','abc','2018-01-24',NULL),
-	(83,'abc','init content','abc','2018-01-24',NULL);
+	(79,'abc','init setting','abc','2018-01-24',NULL),
+	(80,'abc','init setting','abc','2018-01-24',NULL),
+	(81,'abc','init setting','abc','2018-01-24',NULL),
+	(82,'abc','init setting','abc','2018-01-24',NULL),
+	(83,'abc','init setting','abc','2018-01-24',NULL);
 
 /*!40000 ALTER TABLE `t_news` ENABLE KEYS */;
 UNLOCK TABLES;

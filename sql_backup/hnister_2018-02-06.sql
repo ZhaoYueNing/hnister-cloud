@@ -111,11 +111,11 @@ VALUES
 	(76,'中国男足取得世界杯冠军','<p>这是不可能的事情</p>','赵岳宁','2018-01-24',NULL),
 	(77,'中国男足取得世界杯冠军','<p>这是不可能的事情</p>','赵岳宁','2018-01-24',NULL),
 	(78,'中国男足取得世界杯冠军','<p>这是不可能的事情</p>','赵岳宁','2018-01-24',NULL),
-	(79,'abc','init content','abc','2018-01-24',NULL),
-	(80,'abc','init content','abc','2018-01-24',NULL),
-	(81,'abc','init content','abc','2018-01-24',NULL),
-	(82,'abc','init content','abc','2018-01-24',NULL),
-	(83,'abc','init content','abc','2018-01-24',NULL),
+	(79,'abc','init setting','abc','2018-01-24',NULL),
+	(80,'abc','init setting','abc','2018-01-24',NULL),
+	(81,'abc','init setting','abc','2018-01-24',NULL),
+	(82,'abc','init setting','abc','2018-01-24',NULL),
+	(83,'abc','init setting','abc','2018-01-24',NULL),
 	(84,'fsxlvjljfl','<p>sdjfkljlkdfjlsjdflinit contentf</p>','zhao','2018-01-29',NULL),
 	(85,'fjsdklfjklsd','<p>sdfsdfdsfsdfinit contentf</p>','jdsklfjlkdsj','2018-02-02',NULL);
 

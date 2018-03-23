@@ -17,7 +17,7 @@
 		</commentGenerator>
 
 		<!--数据库连接信息 -->
-		<jdbcConnection driverClass="com.mysql.jdbc.Driver" connectionURL="jdbc:mysql://localhost:3306/hnister?useUnicode=true&characterEncoding=utf-8"
+		<jdbcConnection driverClass="com.mysql.jdbc.Driver" connectionURL="jdbc:mysql://localhost:3306/hnister?useUnicode=true&amp;characterEncoding=UTF-8"
 						userId="root"
 						password="20080808">
 		</jdbcConnection>
@@ -29,16 +29,23 @@
 		</javaModelGenerator>
 
 		<!--生成xml mapper文件 路径 -->
-		<sqlMapGenerator targetPackage="config.mappers" targetProject="src/main/resouces">
+		<sqlMapGenerator targetPackage="config.mappers" targetProject="src/main/resources">
 			<property name="enableSubPackages" value="ture"/>
 		</sqlMapGenerator>
+
+
 
 		<!-- 生成的Dao接口 的包路径 -->
 		<javaClientGenerator type="XMLMAPPER" targetPackage="cn.zynworld.hnister.common.mappers" targetProject="src/main/java">
 			<property name="enableSubPackages" value="ture"/>
 		</javaClientGenerator>
 
-		<!--对应数据库表名，多个表，请复制指定 -->
-		<table tableName="t_menu" domainObjectName="ContentMenu" enableCountByExample=""></table>
+		<!--对应数据库表名，多个表，请复制指定-->
+		<table tableName="t_menu" domainObjectName="Menu" >
+			<generatedKey column="id" sqlStatement="MySql" identity="true"/>
+		</table>
+		<table tableName="t_menu_group" domainObjectName="MenuGroup" >
+			<generatedKey column="id" sqlStatement="MySql" identity="true"/>
+		</table>
 	</context>
 </generatorConfiguration>
