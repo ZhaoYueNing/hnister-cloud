@@ -2,6 +2,8 @@ package cn.zynworld.hnister.setting.service.impl;
 
 import cn.zynworld.hnister.common.domain.Menu;
 import cn.zynworld.hnister.common.domain.MenuExample;
+import cn.zynworld.hnister.common.domain.MenuGroup;
+import cn.zynworld.hnister.common.mappers.MenuGroupMapper;
 import cn.zynworld.hnister.common.mappers.MenuMapper;
 import cn.zynworld.hnister.setting.convertors.MenuConvertors;
 import cn.zynworld.hnister.setting.dto.MenuDTO;
@@ -24,16 +26,28 @@ import java.util.stream.Collectors;
 public class MenuServiceImpl implements MenuService{
 
 	@Autowired
-	MenuMapper menuMapper;
+	private MenuMapper menuMapper;
+	@Autowired
+	private MenuGroupMapper menuGroupMapper;
 
 	@Override
 	public MenuDTO findMenuTreeByGroupId(Integer groupId) {
 		//构建菜单的根元素
-		MenuDTO menuDTO = MenuDTO.builder().id(0).groupId(groupId).build();
+		MenuDTO menuDTO = MenuDTO.builder().id(0).groupId(groupId).tier(0).build();
 		Map<Integer, List<MenuDTO>> menuMap = getMenuDTOMapByGroup(groupId);
 		menuAddChildren(menuDTO,menuMap);
 		return menuDTO;
 	}
+
+	@Override
+	public List<MenuDTO> findMenuListByGroupId(Integer groupId) {
+		List<MenuDTO> menuList = Lists.newArrayList();
+
+		Map<Integer, List<MenuDTO>> menuMap = getMenuDTOMapByGroup(groupId);
+		addMenuToList(0, 1,menuList, menuMap);
+		return menuList;
+	}
+
 
 
 
@@ -56,6 +70,14 @@ public class MenuServiceImpl implements MenuService{
 		return true;
 	}
 
+	@Override
+	public boolean update(Menu menu) {
+		int result = menuMapper.updateByPrimaryKey(menu);
+		return result > 0;
+	}
+
+
+
 
 	//为menuDTO 添加子菜单
 	private void menuAddChildren(MenuDTO parentMenu, Map<Integer, List<MenuDTO>> menuMap) {
@@ -71,6 +93,8 @@ public class MenuServiceImpl implements MenuService{
 		}
 		List<MenuDTO> menuList = menuMap.get(parentId);
 		menuList.stream().forEach(menu -> {
+			//set 层级
+			menu.setTier(parentMenu.getTier()+1);
 			parentMenu.getChildren().add(menu);
 			menuAddChildren(menu,menuMap);
 		});
@@ -104,5 +128,19 @@ public class MenuServiceImpl implements MenuService{
 		}
 		return menuMapper.deleteByPrimaryKey(id) > 0;
 	}
+
+	//将该组菜单按顺序插入list中
+	private void addMenuToList(Integer parentId,Integer tier, List<MenuDTO> menuList, Map<Integer, List<MenuDTO>> menuMap) {
+		if (!menuMap.containsKey(parentId)) {
+			return;
+		}
+		List<MenuDTO> currentParentIdMenuList = menuMap.get(parentId);
+		for (MenuDTO menu : currentParentIdMenuList) {
+			menuList.add(menu);
+			menu.setTier(tier);
+			addMenuToList(menu.getId(),tier+1,menuList,menuMap);
+		}
+	}
+
 
 }

@@ -16,8 +16,6 @@ public class MenuDTO {
 
 	private Integer groupId;
 
-	private Boolean parent;
-
 	private Integer parentId;
 
 	private String name;
@@ -29,4 +27,7 @@ public class MenuDTO {
 	private Integer type;
 
 	private List<MenuDTO> children;
+
+	//菜单层级 1为一级菜单 2为2级菜单
+	private Integer tier;
 }

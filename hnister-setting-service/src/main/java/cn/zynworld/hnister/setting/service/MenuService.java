@@ -2,8 +2,8 @@ package cn.zynworld.hnister.setting.service;
 
 import cn.zynworld.hnister.common.domain.Menu;
 import cn.zynworld.hnister.setting.dto.MenuDTO;
-import lombok.NonNull;
-import org.springframework.stereotype.Service;
+
+import java.util.List;
 
 /**
  * @auther Buynow Zhao
@@ -20,4 +20,8 @@ public interface MenuService {
 	boolean add(Menu menu);
 
 	boolean deleteById(Integer id);
+
+	boolean update(Menu menu);
+
+	List<MenuDTO> findMenuListByGroupId(Integer groupId);
 }

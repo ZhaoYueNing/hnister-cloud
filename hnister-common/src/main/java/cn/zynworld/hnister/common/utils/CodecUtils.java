@@ -99,10 +99,8 @@ public class CodecUtils {
         return false;
     }
 
-    //JWT
-    public static String getJwtString(){
-        return null;
-    }
+
+
 
 
 }
