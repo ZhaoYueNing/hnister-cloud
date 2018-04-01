@@ -3,7 +3,7 @@ server:
 
 eureka:
   instance:
-    hostname: localhost
+    hostname: eureka.hnister.cn
   client:
     #通过下面两个值 确定为server
     registerWithEureka: false

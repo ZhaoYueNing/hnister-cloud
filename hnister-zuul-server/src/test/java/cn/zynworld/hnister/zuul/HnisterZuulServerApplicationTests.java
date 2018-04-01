@@ -11,8 +11,8 @@ import org.springframework.boot.autoconfigure.AutoConfigureOrder;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringRunner;
 
-@RunWith(SpringRunner.class)
-@SpringBootTest
+//@RunWith(SpringRunner.class)
+//@SpringBootTest
 public class HnisterZuulServerApplicationTests {
 
 	@Autowired
@@ -21,7 +21,7 @@ public class HnisterZuulServerApplicationTests {
 	@Autowired
 	private RoleResourceRelaMapper roleResourceRelaMapper;
 
-	@Test
+//	@Test
 	public void contextLoads() {
 //		roleResourceManager.init();
 		System.out.println("");

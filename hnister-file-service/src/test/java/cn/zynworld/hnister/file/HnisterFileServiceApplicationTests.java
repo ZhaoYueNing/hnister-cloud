@@ -7,8 +7,8 @@ import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringRunner;
 
-@RunWith(SpringRunner.class)
-@SpringBootTest
+//@RunWith(SpringRunner.class)
+//@SpringBootTest
 public class HnisterFileServiceApplicationTests {
 
 	@Value("${qiniu.ak}")
@@ -16,11 +16,11 @@ public class HnisterFileServiceApplicationTests {
 	@Value("${qiniu.sk}")
 	private String QINIU_SK;
 
-	@Test
+//	@Test
 	public void contextLoads() {
 	}
 
-	@Test
+//	@Test
 	//测试创建 upToken
 	public void testGetUpToken() throws Exception {
 		String bucket = "hnister";

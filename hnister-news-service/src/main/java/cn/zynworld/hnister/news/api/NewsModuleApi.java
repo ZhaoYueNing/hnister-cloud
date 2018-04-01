@@ -30,6 +30,12 @@ public class NewsModuleApi {
 		return newsModuleMapper.selectByExample(null);
 	}
 
+	@GetMapping(path = "pb/newsModule/{moduleId}")
+	public NewsModule findById(@PathVariable Integer moduleId) {
+		NewsModule newsModule = newsModuleMapper.selectByPrimaryKey(moduleId);
+		return newsModule;
+	}
+
 	@Transactional
 	@PostMapping(path = "pt/newsModule")
 	public ResultBean add(@RequestBody NewsModule newsModule){
