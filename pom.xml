@@ -33,6 +33,7 @@
         <module>hnister-setting-service</module>
         <module>hnister-security-service</module>
         <module>hnister-schoolmate-service</module>
+        <module>hnister-bbs-service</module>
 
 
 

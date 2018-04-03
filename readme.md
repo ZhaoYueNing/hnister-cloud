@@ -13,6 +13,7 @@
 | hnister-security-service | 安全服务 | 9002 |
 | hnister-schoolmate-service | 校友服务 | 9003 |
 | hnister-setting-service | 基础配置服务 | 9004 |
+| hnister-bbs-service | 社区论坛服务 | 9005 |
 
 
 ## url配置规则

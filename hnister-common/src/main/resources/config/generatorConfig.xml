@@ -40,11 +40,29 @@
 			<property name="enableSubPackages" value="ture"/>
 		</javaClientGenerator>
 
-		<!--对应数据库表名，多个表，请复制指定-->
+
+		<!--对应数据库表名，多个表，请复制指定
 		<table tableName="t_menu" domainObjectName="Menu" >
 			<generatedKey column="id" sqlStatement="MySql" identity="true"/>
 		</table>
 		<table tableName="t_menu_group" domainObjectName="MenuGroup" >
+			<generatedKey column="id" sqlStatement="MySql" identity="true"/>
+		</table>
+		-->
+
+		<table tableName="t_bbs_plate" domainObjectName="BBSPlate" >
+			<generatedKey column="id" sqlStatement="MySql" identity="true"/>
+		</table>
+		<table tableName="t_bbs_theme" domainObjectName="BBSTheme" >
+			<generatedKey column="id" sqlStatement="MySql" identity="true"/>
+		</table>
+		<table tableName="t_bbs_topic" domainObjectName="BBSTopic" >
+			<generatedKey column="id" sqlStatement="MySql" identity="true"/>
+		</table>
+		<table tableName="t_bbs_tier" domainObjectName="BBSTier" >
+			<generatedKey column="id" sqlStatement="MySql" identity="true"/>
+		</table>
+		<table tableName="t_bbs_reply" domainObjectName="BBSReply" >
 			<generatedKey column="id" sqlStatement="MySql" identity="true"/>
 		</table>
 	</context>
