@@ -51,7 +51,7 @@ public class TokenCheckFilter extends ZuulFilter {
             logger.info("开启token过滤");
         }else{
             logger.info("未开启token过滤");
-            //TODO 解决在未开启鉴权拦截时 后台无法获取用户信息
+            //解决在未开启鉴权拦截时 后台无法获取用户信息
             RequestContext ctx = RequestContext.getCurrentContext();
             HttpServletRequest request = ctx.getRequest();
             //使用jwtBean解码装载jwt信息

@@ -10,7 +10,7 @@ public enum ContentMenuTypeEnum implements BaseCodeEnum {
     //无跳转菜单
     NO_URL_TYPE(1),
     //跳转到内部菜单
-    NEWS_TYPE(2),
+    INSERT_TYPE(2),
     //跳转到外部菜单
     URL_TYPE(3);
 
