@@ -1,4 +1,4 @@
-package cn.zynworld.hnister.file.api;
+package cn.zynworld.hnister.file.rest;
 
 import com.qiniu.util.Auth;
 import org.apache.commons.lang.StringUtils;
@@ -8,15 +8,13 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
-import javax.websocket.server.PathParam;
-
 /**
  * Created by zhaoyuening on 2018/2/22.
  * 负责文件上传的鉴权等操作
  */
 @RestController
 @RequestMapping(path = "rest")
-public class FileUploadApi {
+public class FileUploadRest {
 
     @Value("${qiniu.ak}")
     private String QINIU_AK;

@@ -1,4 +1,4 @@
-package cn.zynworld.hnister.security.api;
+package cn.zynworld.hnister.security.rest;
 
 import cn.zynworld.hnister.common.domain.RoleUserRelaExample;
 import cn.zynworld.hnister.common.domain.RoleUserRelaKey;
@@ -17,7 +17,6 @@ import org.springframework.transaction.annotation.Transactional;
 import org.springframework.util.StringUtils;
 import org.springframework.web.bind.annotation.*;
 
-import javax.websocket.server.PathParam;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -27,7 +26,7 @@ import java.util.stream.Collectors;
  */
 @RestController
 @RequestMapping(path = "rest")
-public class UserApi {
+public class UserRest {
 
     @Autowired
     private UserMapper userMapper;

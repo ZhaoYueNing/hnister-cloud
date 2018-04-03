@@ -1,4 +1,4 @@
-package cn.zynworld.hnister.news.api;
+package cn.zynworld.hnister.news.rest;
 
 import cn.zynworld.hnister.common.domain.News;
 import org.junit.Test;
@@ -14,7 +14,7 @@ import org.springframework.test.context.junit4.SpringRunner;
 @SpringBootTest
 public class NewsApiTest {
     @Autowired
-    private NewsApi newsApi;
+    private NewsRest newsApi;
 
     @Test
     public void testNewsAdd() throws Exception {

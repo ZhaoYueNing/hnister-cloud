@@ -1,4 +1,4 @@
-package cn.zynworld.hnister.security.api;
+package cn.zynworld.hnister.security.rest;
 
 import cn.zynworld.hnister.common.domain.Resource;
 import cn.zynworld.hnister.common.domain.ResourceExample;
@@ -19,7 +19,7 @@ import java.util.List;
  */
 @RestController
 @RequestMapping(path = "rest")
-public class ResourceGroupApi {
+public class ResourceGroupRest {
 
     @Autowired
     private ResourceGroupMapper resourceGroupMapper;

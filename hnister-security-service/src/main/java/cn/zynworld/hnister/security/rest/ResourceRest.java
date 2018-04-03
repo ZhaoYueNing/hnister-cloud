@@ -1,4 +1,4 @@
-package cn.zynworld.hnister.security.api;
+package cn.zynworld.hnister.security.rest;
 
 import cn.zynworld.hnister.common.domain.Resource;
 import cn.zynworld.hnister.common.domain.ResourceExample;
@@ -22,7 +22,7 @@ import java.util.stream.Collectors;
  */
 @RestController
 @RequestMapping(path = "rest")
-public class ResourceApi {
+public class ResourceRest {
 
     @Autowired
     private ResourceMapper resourceMapper;

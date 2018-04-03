@@ -1,4 +1,4 @@
-package cn.zynworld.hnister.security.api;
+package cn.zynworld.hnister.security.rest;
 
 import cn.zynworld.hnister.common.domain.RoleUserRelaExample;
 import cn.zynworld.hnister.common.domain.RoleUserRelaKey;
@@ -26,7 +26,7 @@ import java.util.List;
  */
 @RestController
 @RequestMapping(path = "rest")
-public class AccountApi {
+public class AccountRest {
 
     @Autowired
     private UserMapper userMapper;

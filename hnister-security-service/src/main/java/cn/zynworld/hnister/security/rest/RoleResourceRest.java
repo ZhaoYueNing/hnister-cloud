@@ -1,6 +1,5 @@
-package cn.zynworld.hnister.security.api;
+package cn.zynworld.hnister.security.rest;
 
-import cn.zynworld.hnister.common.domain.ResourceExample;
 import cn.zynworld.hnister.common.domain.RoleResourceRelaExample;
 import cn.zynworld.hnister.common.domain.RoleResourceRelaKey;
 import cn.zynworld.hnister.common.dto.security.RoleAllocateResourcesDTO;
@@ -12,14 +11,13 @@ import org.springframework.util.StringUtils;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
-import java.util.stream.Collectors;
 
 /**
  * Created by zhaoyuening on 2018/2/16.
  */
 @RestController
 @RequestMapping(path = "rest")
-public class RoleResourceApi {
+public class RoleResourceRest {
 
     @Autowired
     private RoleResourceRelaMapper roleResourceRelaMapper;
