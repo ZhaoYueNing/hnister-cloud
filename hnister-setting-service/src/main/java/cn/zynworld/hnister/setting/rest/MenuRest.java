@@ -1,4 +1,4 @@
-package cn.zynworld.hnister.setting.api;
+package cn.zynworld.hnister.setting.rest;
 
 import cn.zynworld.hnister.common.domain.Menu;
 import cn.zynworld.hnister.common.utils.ResultBean;
@@ -15,7 +15,7 @@ import java.util.List;
  */
 @RestController
 @RequestMapping(path = "rest")
-public class MenuApi {
+public class MenuRest {
 	@Autowired
 	private MenuService menuService;
 

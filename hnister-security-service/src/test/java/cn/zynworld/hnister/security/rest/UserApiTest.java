@@ -1,13 +1,11 @@
-package cn.zynworld.hnister.security.api;
+package cn.zynworld.hnister.security.rest;
 
-import cn.zynworld.hnister.common.domain.User;
 import cn.zynworld.hnister.common.dto.security.UserCarryRoleDTO;
 import cn.zynworld.hnister.common.mappers.UserMapper;
 import cn.zynworld.hnister.common.utils.PageBean;
 import cn.zynworld.hnister.common.utils.ResultBean;
 import cn.zynworld.hnister.security.exception.InsertRoleUserKeyException;
 import com.google.common.collect.Lists;
-import com.netflix.discovery.converters.Auto;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -25,7 +23,7 @@ import java.util.List;
 public class UserApiTest {
 
     @Autowired
-    private UserApi userApi;
+    private UserRest userApi;
 
     @Autowired
     private UserMapper userMapper;

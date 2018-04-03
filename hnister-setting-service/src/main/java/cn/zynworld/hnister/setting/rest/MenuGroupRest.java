@@ -1,4 +1,4 @@
-package cn.zynworld.hnister.setting.api;
+package cn.zynworld.hnister.setting.rest;
 
 import cn.zynworld.hnister.common.domain.MenuGroup;
 import cn.zynworld.hnister.common.mappers.MenuGroupMapper;
@@ -15,7 +15,7 @@ import java.util.List;
  */
 @RestController
 @RequestMapping(path = "rest")
-public class MenuGroupApi {
+public class MenuGroupRest {
 	@Autowired
 	private MenuGroupMapper groupMapper;
 

@@ -1,8 +1,7 @@
-package cn.zynworld.hnister.schoolmate.api;
+package cn.zynworld.hnister.schoolmate.rest;
 
 import cn.zynworld.hnister.common.domain.Zlass;
 import cn.zynworld.hnister.common.mappers.ZlassMapper;
-import com.netflix.discovery.converters.Auto;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -15,7 +14,7 @@ import java.util.List;
  */
 @RestController
 @RequestMapping(path = "rest")
-public class ZlassApi {
+public class ZlassRest {
 
     @Autowired
     private ZlassMapper zlassMapper;
