@@ -4,6 +4,7 @@ import cn.zynworld.hnister.common.domain.BBSTier;
 import cn.zynworld.hnister.common.domain.BBSTierExample;
 import java.util.List;
 import org.apache.ibatis.annotations.Param;
+import org.apache.ibatis.session.RowBounds;
 
 public interface BBSTierMapper {
     long countByExample(BBSTierExample example);
@@ -16,7 +17,11 @@ public interface BBSTierMapper {
 
     int insertSelective(BBSTier record);
 
+    List<BBSTier> selectByExampleWithBLOBsWithRowbounds(BBSTierExample example, RowBounds rowBounds);
+
     List<BBSTier> selectByExampleWithBLOBs(BBSTierExample example);
+
+    List<BBSTier> selectByExampleWithRowbounds(BBSTierExample example, RowBounds rowBounds);
 
     List<BBSTier> selectByExample(BBSTierExample example);
 

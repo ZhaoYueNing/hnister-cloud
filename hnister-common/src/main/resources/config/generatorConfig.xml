@@ -11,6 +11,10 @@
 
 
 	<context id="DB2Tables" targetRuntime="MyBatis3">
+
+		<!--分页插件-->
+		<plugin type="org.mybatis.generator.plugins.RowBoundsPlugin"></plugin>
+
 		<!--关闭注释 -->
 		<commentGenerator>
 			<property name="suppressAllComments" value="true"/>
@@ -39,6 +43,8 @@
 		<javaClientGenerator type="XMLMAPPER" targetPackage="cn.zynworld.hnister.common.mappers" targetProject="src/main/java">
 			<property name="enableSubPackages" value="ture"/>
 		</javaClientGenerator>
+
+
 
 
 		<!--对应数据库表名，多个表，请复制指定

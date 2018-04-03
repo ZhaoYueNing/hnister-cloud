@@ -4,6 +4,7 @@ import cn.zynworld.hnister.common.domain.BBSTopic;
 import cn.zynworld.hnister.common.domain.BBSTopicExample;
 import java.util.List;
 import org.apache.ibatis.annotations.Param;
+import org.apache.ibatis.session.RowBounds;
 
 public interface BBSTopicMapper {
     long countByExample(BBSTopicExample example);
@@ -15,6 +16,8 @@ public interface BBSTopicMapper {
     int insert(BBSTopic record);
 
     int insertSelective(BBSTopic record);
+
+    List<BBSTopic> selectByExampleWithRowbounds(BBSTopicExample example, RowBounds rowBounds);
 
     List<BBSTopic> selectByExample(BBSTopicExample example);
 

@@ -4,6 +4,7 @@ import cn.zynworld.hnister.common.domain.BBSReply;
 import cn.zynworld.hnister.common.domain.BBSReplyExample;
 import java.util.List;
 import org.apache.ibatis.annotations.Param;
+import org.apache.ibatis.session.RowBounds;
 
 public interface BBSReplyMapper {
     long countByExample(BBSReplyExample example);
@@ -16,7 +17,11 @@ public interface BBSReplyMapper {
 
     int insertSelective(BBSReply record);
 
+    List<BBSReply> selectByExampleWithBLOBsWithRowbounds(BBSReplyExample example, RowBounds rowBounds);
+
     List<BBSReply> selectByExampleWithBLOBs(BBSReplyExample example);
+
+    List<BBSReply> selectByExampleWithRowbounds(BBSReplyExample example, RowBounds rowBounds);
 
     List<BBSReply> selectByExample(BBSReplyExample example);
 

@@ -4,6 +4,7 @@ import cn.zynworld.hnister.common.domain.BBSTheme;
 import cn.zynworld.hnister.common.domain.BBSThemeExample;
 import java.util.List;
 import org.apache.ibatis.annotations.Param;
+import org.apache.ibatis.session.RowBounds;
 
 public interface BBSThemeMapper {
     long countByExample(BBSThemeExample example);
@@ -15,6 +16,8 @@ public interface BBSThemeMapper {
     int insert(BBSTheme record);
 
     int insertSelective(BBSTheme record);
+
+    List<BBSTheme> selectByExampleWithRowbounds(BBSThemeExample example, RowBounds rowBounds);
 
     List<BBSTheme> selectByExample(BBSThemeExample example);
 
