@@ -10,8 +10,13 @@ import cn.zynworld.hnister.common.utils.AccountUtils;
 import cn.zynworld.hnister.common.utils.CodecUtils;
 import cn.zynworld.hnister.common.utils.JwtBean;
 import cn.zynworld.hnister.common.utils.ResultBean;
-import cn.zynworld.hnister.common.vo.UserLoginVo;
+import cn.zynworld.hnister.security.convertor.UserConvertor;
+import cn.zynworld.hnister.security.exception.CreateUserException;
+import cn.zynworld.hnister.security.service.UserService;
+import cn.zynworld.hnister.security.vo.UserLoginAdminVo;
+import cn.zynworld.hnister.security.vo.UserLoginVo;
 import cn.zynworld.hnister.security.utils.UserUtils;
+import cn.zynworld.hnister.security.vo.UserRegisterVO;
 import org.apache.commons.lang.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.transaction.annotation.Transactional;
@@ -32,11 +37,13 @@ public class AccountRest {
     private UserMapper userMapper;
     @Autowired
     private RoleUserRelaMapper roleUserRelaMapper;
+    @Autowired
+    private UserService userService;
 
 
 
     /**
-     * 用户注册
+     * 后台添加用户
      * @param user
      * @return
      */
@@ -47,25 +54,19 @@ public class AccountRest {
         if (!UserUtils.checkUser(user)) {
             return ResultBean.fail();
         }
-        //获取sale
-        String sale = CodecUtils.getSale();
-        //结合sale加密password
-        user.setPassword(CodecUtils.getSalePassword(user.getPassword(),sale));
-        user.setSalt(sale);
+        //获取salt
+        String salt = CodecUtils.getSalt();
+        //结合salt加密password
+        user.setPassword(CodecUtils.getSaltPassword(user.getPassword(),salt));
+        user.setSalt(salt);
         user.setStatus((short) 0);
 
         int result = userMapper.insert(user);
         return ResultBean.create(result > 0);
     }
+
     //============前台账户===============
-
-
-
-
-    //============后台账户===============
-    //后台管理登录
-    //TODO 前后台登录不能使用相同的接口 token格式区分
-    @PostMapping(path = "pb/user/admin/login")
+    @PostMapping(path = "pb/user/login")
     public ResultBean login(@RequestBody UserLoginVo userLoginVo) {
         if (StringUtils.isBlank(userLoginVo.getUsername()) || StringUtils.isBlank(userLoginVo.getPassword())){
             return ResultBean.fail();
@@ -76,10 +77,60 @@ public class AccountRest {
             return ResultBean.fail().setMsg("用户名或密码错误!");
         }
         String encodedPassword = user.getPassword();
-        String sale = user.getSalt();
+        String salt = user.getSalt();
 
         //检验
-        boolean result = CodecUtils.checkUser(userLoginVo.getPassword(),sale,encodedPassword);
+        boolean result = CodecUtils.checkUser(userLoginVo.getPassword(),salt,encodedPassword);
+        if (!result) {
+            return ResultBean.fail("用户名或密码不正确，登录失败！");
+        }
+
+        //创建token
+        //获取用户角色
+        JwtBean jwtBean = new JwtBean();
+        jwtBean.addHead("typ","JWT");
+        jwtBean.addHead("alg","HA256");
+        //用户名
+        jwtBean.addPlayload(JwtFieldEnum.USERNAME.getField(),userLoginVo.getUsername());
+        //在jwt token中加入 后台管理员标识
+        jwtBean.addPlayload(JwtFieldEnum.ADMIN.getField(),false);
+        //存入用户访问ip
+        jwtBean.addPlayload(JwtFieldEnum.IP.getField(),AccountUtils.getIpAddressFromRequest());
+
+        return ResultBean.create(result).setMsg(jwtBean.toString());
+    }
+
+    @PostMapping(path = "pb/user")
+    public ResultBean register(@RequestBody UserRegisterVO registerVO) {
+
+        User user = UserConvertor.registerVO2DO(registerVO);
+        try {
+            boolean result = userService.add(user);
+            return ResultBean.create(result);
+        } catch (CreateUserException e) {
+            return ResultBean.fail(e.getMessage());
+        }
+    }
+
+
+    //============后台账户===============
+    //后台管理登录
+    //TODO 前后台登录不能使用相同的接口 token格式区分
+    @PostMapping(path = "pb/user/admin/login")
+    public ResultBean loginAdmin(@RequestBody UserLoginAdminVo userLoginAdminVo) {
+        if (StringUtils.isBlank(userLoginAdminVo.getUsername()) || StringUtils.isBlank(userLoginAdminVo.getPassword())){
+            return ResultBean.fail();
+        }
+        User user = userMapper.selectByPrimaryKey(userLoginAdminVo.getUsername());
+        //检测是否存在该用户 且 该用户类型为 1 管理员用户
+        if (user == null || user.getType() != 1){
+            return ResultBean.fail().setMsg("用户名或密码错误!");
+        }
+        String encodedPassword = user.getPassword();
+        String salt = user.getSalt();
+
+        //检验
+        boolean result = CodecUtils.checkUser(userLoginAdminVo.getPassword(),salt,encodedPassword);
         if (!result) {
             return ResultBean.fail("用户名或密码不正确，登录失败！");
         }
@@ -94,7 +145,7 @@ public class AccountRest {
         //放入角色列表
         jwtBean.addPlayload(JwtFieldEnum.ROLES.getField(),roleUserRelaKeyListToRoleIdList(roles));
         //用户名
-        jwtBean.addPlayload(JwtFieldEnum.USERNAME.getField(),userLoginVo.getUsername());
+        jwtBean.addPlayload(JwtFieldEnum.USERNAME.getField(),userLoginAdminVo.getUsername());
         //在jwt token中加入 后台管理员标识
         jwtBean.addPlayload(JwtFieldEnum.ADMIN.getField(),true);
         //存入用户访问ip

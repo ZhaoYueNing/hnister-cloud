@@ -11,6 +11,8 @@ public class BBSTheme {
 
     private Integer status;
 
+    private String name;
+
     public Long getId() {
         return id;
     }
@@ -49,5 +51,13 @@ public class BBSTheme {
 
     public void setStatus(Integer status) {
         this.status = status;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name == null ? null : name.trim();
     }
 }

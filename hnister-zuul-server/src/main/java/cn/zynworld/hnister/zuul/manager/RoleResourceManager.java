@@ -1,6 +1,5 @@
 package cn.zynworld.hnister.zuul.manager;
 
-import cn.zynworld.hnister.common.ResourceTypeEnum;
 import cn.zynworld.hnister.common.domain.Resource;
 import cn.zynworld.hnister.common.domain.ResourceExample;
 import cn.zynworld.hnister.common.domain.RoleResourceRelaKey;

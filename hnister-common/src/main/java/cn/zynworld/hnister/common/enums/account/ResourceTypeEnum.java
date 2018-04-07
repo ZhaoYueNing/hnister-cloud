@@ -1,4 +1,4 @@
-package cn.zynworld.hnister.common;
+package cn.zynworld.hnister.common.enums.account;
 
 /**
  * Created by zhaoyuening on 2018/3/11.

@@ -8,12 +8,12 @@ import org.junit.Test;
  */
 public class CodecUtilsTest {
     @Test
-    public void testSalePassword() throws Exception {
-        String sale = CodecUtils.getSale();
+    public void testSaltPassword() throws Exception {
+        String salt = CodecUtils.getSalt();
         String pw = "abcdefg...";
 
-        String salePassword = CodecUtils.getSalePassword(pw, sale);
-        System.out.println(salePassword);
+        String saltPassword = CodecUtils.getSaltPassword(pw, salt);
+        System.out.println(saltPassword);
     }
 
 

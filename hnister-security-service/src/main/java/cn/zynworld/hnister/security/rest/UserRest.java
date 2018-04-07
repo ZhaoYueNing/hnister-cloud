@@ -138,11 +138,11 @@ public class UserRest {
         }
 
         //获取总数
-        int total = userMapper.countByExample(userExample);
+        long total = userMapper.countByExample(userExample);
 
         //封装结果
         pageBean.setItems(userCarryRoleDTOList);
-        pageBean.setTotal((long) total);
+        pageBean.setTotal(total);
 
 
         return pageBean;
@@ -156,7 +156,7 @@ public class UserRest {
         if (user == null) {
             return null;
         }
-        //wipe out password&sale info
+        //wipe out password&salt info
         user.setPassword("");
         user.setSalt("");
 
@@ -195,11 +195,11 @@ public class UserRest {
 
         //添加用户
         //加密
-        //获取sale
-        String sale = CodecUtils.getSale();
-        //结合sale加密password
-        user.setPassword(CodecUtils.getSalePassword(user.getPassword(),sale));
-        user.setSalt(sale);
+        //获取salt
+        String salt = CodecUtils.getSalt();
+        //结合salt加密password
+        user.setPassword(CodecUtils.getSaltPassword(user.getPassword(),salt));
+        user.setSalt(salt);
 
         int result = userMapper.insert(user);
 
@@ -253,11 +253,11 @@ public class UserRest {
                 return ResultBean.fail("用户名或密码长度不符合要求");
             }
             //加密
-            //获取sale
-            String sale = CodecUtils.getSale();
-            //结合sale加密password
-            user.setPassword(CodecUtils.getSalePassword(user.getPassword(),sale));
-            user.setSalt(sale);
+            //获取salt
+            String salt = CodecUtils.getSalt();
+            //结合salt加密password
+            user.setPassword(CodecUtils.getSaltPassword(user.getPassword(),salt));
+            user.setSalt(salt);
         }else {
             user.setSalt(null);
             user.setPassword(null);

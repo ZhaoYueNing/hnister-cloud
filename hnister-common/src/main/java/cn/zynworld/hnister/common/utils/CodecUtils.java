@@ -1,6 +1,5 @@
 package cn.zynworld.hnister.common.utils;
 
-import com.google.gson.*;
 import org.apache.commons.codec.binary.Base64;
 import org.apache.commons.codec.binary.Hex;
 import org.springframework.util.StringUtils;
@@ -8,9 +7,6 @@ import org.springframework.util.StringUtils;
 import java.io.UnsupportedEncodingException;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
-import java.util.Date;
-import java.util.HashMap;
-import java.util.Map;
 import java.util.UUID;
 
 /**
@@ -24,12 +20,12 @@ public class CodecUtils {
     /**
      * 盐值加密
      * @param password
-     * @param sale
+     * @param salt
      * @return
      */
-    public static String getSalePassword(String password,String sale){
+    public static String getSaltPassword(String password, String salt){
         password = getSHA256Str(password);
-        password = password + sale;
+        password = password + salt;
         password = getSHA256Str(password);
         return password;
     }
@@ -56,7 +52,7 @@ public class CodecUtils {
      * 获取盐值
      * @return
      */
-    public  static String getSale(){
+    public  static String getSalt(){
         return UUID.randomUUID().toString();
     }
 
@@ -83,17 +79,17 @@ public class CodecUtils {
     /**
      * 检验用户登录
      * @param password
-     * @param sale
+     * @param salt
      * @param encodedPassword
      * @return
      */
-    public static boolean checkUser(String password,String sale,String encodedPassword){
-        if (StringUtils.isEmpty(password) || StringUtils.isEmpty(sale) || StringUtils.isEmpty(encodedPassword)){
+    public static boolean checkUser(String password,String salt,String encodedPassword){
+        if (StringUtils.isEmpty(password) || StringUtils.isEmpty(salt) || StringUtils.isEmpty(encodedPassword)){
             return false;
         }
 
-        String salePassword = getSalePassword(password, sale);
-        if (salePassword.equals(encodedPassword)){
+        String saltPassword = getSaltPassword(password, salt);
+        if (saltPassword.equals(encodedPassword)){
             return true;
         }
         return false;

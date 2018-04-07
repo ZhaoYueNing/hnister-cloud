@@ -6,9 +6,9 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
 @MapperScan("cn.zynworld.hnister.common.mappers")
-public class HnisterBbsServiceApplication {
+public class HnisterBBSServiceApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(HnisterBbsServiceApplication.class, args);
+		SpringApplication.run(HnisterBBSServiceApplication.class, args);
 	}
 }

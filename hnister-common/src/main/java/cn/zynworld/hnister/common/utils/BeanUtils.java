@@ -17,12 +17,12 @@ public class BeanUtils {
      * @param sourceObj 被拷贝属性对象
      * @param targetObj 被赋值属性对象
      */
-    public static void copyProperties(Object sourceObj,Object targetObj){
+    public static <S,T> T copyProperties(S sourceObj,T targetObj){
         final String GET = "get";
         final String SET = "set";
 
         if (sourceObj == null || targetObj == null) {
-            return;
+            return null;
         }
         Method[] sourceObjMethods = sourceObj.getClass().getMethods();
         Class<?> targetObjClass = targetObj.getClass();
@@ -57,5 +57,6 @@ public class BeanUtils {
                 e.printStackTrace();
             }
         }
+        return targetObj;
     }
 }

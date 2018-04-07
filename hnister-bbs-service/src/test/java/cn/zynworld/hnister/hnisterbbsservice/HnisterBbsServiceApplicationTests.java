@@ -78,4 +78,10 @@ public class HnisterBbsServiceApplicationTests {
 		Integer result = bbsPlateService.baseDeleteByPrimaryKey(id);
 		System.out.println(result);
 	}
+
+	@Test
+	public void testGetExample() throws Exception {
+		BBSPlateExample example = bbsPlateService.createExample();
+		System.out.println(example);
+	}
 }

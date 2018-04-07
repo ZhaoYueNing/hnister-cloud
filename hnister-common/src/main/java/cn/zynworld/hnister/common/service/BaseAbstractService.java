@@ -5,9 +5,11 @@ import org.apache.ibatis.session.RowBounds;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
+import java.lang.reflect.ParameterizedType;
 import java.util.List;
 
 /**
@@ -21,14 +23,19 @@ import java.util.List;
  * @param <Mapper> 实体类对应的mapper
  * @param <Example> 实体类对应的example
  *
- * 当存在多主键的场景不可调用方法{@link BaseAbstractService::baseDeleteByPrimaryKey} 及 {@link BaseAbstractService::updateByPrimaryKeyMethod}
- * 重载并废弃这两个方法后自实现
+ * 当存在多主键的场景不可调用方法{@link BaseAbstractService::baseDeleteByPrimaryKey}
+ * 重载并废弃这个方法后自实现
  */
 public abstract class BaseAbstractService<Type,PK,Mapper,Example>  {
 	private final Logger logger = LoggerFactory.getLogger(BaseAbstractService.class);
 
 	@Autowired
 	private Mapper mapper;
+
+	//获取泛型class信息
+	private Class<Example> typeClass =  (Class <Example>) ((ParameterizedType) getClass().getGenericSuperclass()).getActualTypeArguments()[0];
+	private Class<Example> pkClass =  (Class <Example>) ((ParameterizedType) getClass().getGenericSuperclass()).getActualTypeArguments()[1];
+	private Class<Example> exampleClass =  (Class <Example>) ((ParameterizedType) getClass().getGenericSuperclass()).getActualTypeArguments()[3];
 
 	private Method insertMethod = null;
 	private Method updateByPrimaryKeyMethod = null;
@@ -39,10 +46,11 @@ public abstract class BaseAbstractService<Type,PK,Mapper,Example>  {
 	private Method selectByExampleWithRowboundsMethod = null;
 	private Method countByExampleMethod = null;
 
+	@Transactional
 	public Integer baseAdd(Type typeObj){
 		if (insertMethod == null) {
 			try {
-				insertMethod = mapper.getClass().getMethod("insert",new Class[]{typeObj.getClass()});
+				insertMethod = mapper.getClass().getMethod("insert",new Class[]{typeClass});
 			} catch (NoSuchMethodException e) {
 				e.printStackTrace();
 			}
@@ -54,10 +62,11 @@ public abstract class BaseAbstractService<Type,PK,Mapper,Example>  {
 		return 0;
 	}
 
+	@Transactional
 	public Integer baseEdit(Type typeObj){
 		if (updateByPrimaryKeyMethod == null) {
 			try {
-				updateByPrimaryKeyMethod = mapper.getClass().getMethod("updateByPrimaryKey",new Class[]{typeObj.getClass()});
+				updateByPrimaryKeyMethod = mapper.getClass().getMethod("updateByPrimaryKey",new Class[]{typeClass});
 			} catch (NoSuchMethodException e) {
 				e.printStackTrace();
 			}
@@ -69,11 +78,11 @@ public abstract class BaseAbstractService<Type,PK,Mapper,Example>  {
 		return 0;
 	}
 
-
+	@Transactional
 	public Integer baseDeleteByExample(Example example){
 		if (deleteByExampleMethod == null) {
 			try {
-				updateByPrimaryKeyMethod = mapper.getClass().getMethod("updateByPrimaryKey",new Class[]{example.getClass()});
+				updateByPrimaryKeyMethod = mapper.getClass().getMethod("updateByPrimaryKey",new Class[]{exampleClass});
 			} catch (NoSuchMethodException e) {
 				e.printStackTrace();
 			}
@@ -88,7 +97,7 @@ public abstract class BaseAbstractService<Type,PK,Mapper,Example>  {
 	public Type baseFindByPrimaryKey(PK pk){
 		if (selectByPrimaryKeyMethod == null) {
 			try {
-				selectByPrimaryKeyMethod = mapper.getClass().getMethod("selectByPrimaryKey",new Class[]{pk.getClass()});
+				selectByPrimaryKeyMethod = mapper.getClass().getMethod("selectByPrimaryKey",new Class[]{pkClass});
 			} catch (NoSuchMethodException e) {
 				e.printStackTrace();
 			}
@@ -103,7 +112,7 @@ public abstract class BaseAbstractService<Type,PK,Mapper,Example>  {
 	public List<Type> baseFindByExample(Example example){
 		if (selectByExampleMethod == null) {
 			try {
-				selectByExampleMethod = mapper.getClass().getMethod("selectByExample",new Class[]{example.getClass()});
+				selectByExampleMethod = mapper.getClass().getMethod("selectByExample",new Class[]{exampleClass});
 			} catch (NoSuchMethodException e) {
 				e.printStackTrace();
 			}
@@ -118,7 +127,7 @@ public abstract class BaseAbstractService<Type,PK,Mapper,Example>  {
 	public Long baseFindCountByExample(Example example) {
 		if (countByExampleMethod == null) {
 			try {
-				countByExampleMethod = mapper.getClass().getMethod("countByExample",new Class[]{example.getClass()});
+				countByExampleMethod = mapper.getClass().getMethod("countByExample",new Class[]{exampleClass});
 			} catch (NoSuchMethodException e) {
 				e.printStackTrace();
 			}
@@ -133,7 +142,7 @@ public abstract class BaseAbstractService<Type,PK,Mapper,Example>  {
 	public PageBean<Type> baseFindByExampleWithPage(Example example, int pageCount, int pageSize){
 		if (selectByExampleWithRowboundsMethod == null) {
 			try {
-				selectByExampleWithRowboundsMethod = mapper.getClass().getMethod("selectByExampleWithRowbounds",new Class[]{example.getClass(),RowBounds.class});
+				selectByExampleWithRowboundsMethod = mapper.getClass().getMethod("selectByExampleWithRowbounds",new Class[]{exampleClass,RowBounds.class});
 			} catch (NoSuchMethodException e) {
 				e.printStackTrace();
 			}
@@ -150,11 +159,11 @@ public abstract class BaseAbstractService<Type,PK,Mapper,Example>  {
 		}
 		return null;
 	}
-
+	@Transactional
 	public Integer baseDeleteByPrimaryKey(PK pk){
 		if (deleteByPrimaryKeyMethod == null) {
 			try {
-				deleteByPrimaryKeyMethod = mapper.getClass().getMethod("deleteByPrimaryKey",new Class[]{pk.getClass()});
+				deleteByPrimaryKeyMethod = mapper.getClass().getMethod("deleteByPrimaryKey",new Class[]{pkClass});
 			} catch (NoSuchMethodException e) {
 				e.printStackTrace();
 			}
@@ -164,6 +173,21 @@ public abstract class BaseAbstractService<Type,PK,Mapper,Example>  {
 			return (Integer) result;
 		}
 		return 0;
+	}
+
+	public Example createExample() {
+		try {
+			return this.exampleClass.newInstance();
+		} catch (InstantiationException e) {
+			e.printStackTrace();
+		} catch (IllegalAccessException e) {
+			e.printStackTrace();
+		}
+		return null;
+	}
+
+	protected Mapper getMapper() {
+		return this.mapper;
 	}
 
 	private Class getMapperZlass() {
