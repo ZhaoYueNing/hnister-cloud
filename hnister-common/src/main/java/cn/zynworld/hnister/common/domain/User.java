@@ -31,7 +31,7 @@ public class User {
 
     private Integer collegeId;
 
-    private Integer grad;
+    private String grad;
 
     public String getUsername() {
         return username;
@@ -145,11 +145,11 @@ public class User {
         this.collegeId = collegeId;
     }
 
-    public Integer getGrad() {
+    public String getGrad() {
         return grad;
     }
 
-    public void setGrad(Integer grad) {
-        this.grad = grad;
+    public void setGrad(String grad) {
+        this.grad = grad == null ? null : grad.trim();
     }
 }

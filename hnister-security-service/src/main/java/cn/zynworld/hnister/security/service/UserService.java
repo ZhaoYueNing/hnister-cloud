@@ -2,11 +2,14 @@ package cn.zynworld.hnister.security.service;
 
 import cn.zynworld.hnister.common.domain.User;
 import cn.zynworld.hnister.common.domain.UserExample;
+import cn.zynworld.hnister.common.domain.Zlass;
 import cn.zynworld.hnister.common.mappers.UserMapper;
 import cn.zynworld.hnister.common.service.BaseAbstractService;
 import cn.zynworld.hnister.common.utils.CodecUtils;
+import cn.zynworld.hnister.schoolmate.api.ZlassRestApi;
 import cn.zynworld.hnister.security.exception.CreateUserException;
 import org.apache.commons.lang.StringUtils;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -16,6 +19,9 @@ import org.springframework.transaction.annotation.Transactional;
  */
 @Service
 public class UserService extends BaseAbstractService<User,String,UserMapper,UserExample> {
+
+	@Autowired
+	private ZlassRestApi zlassRestApi;
 
 	/**
 	 * 添加用户，检查用户各字段是否符合要求，自动加密存储salt
@@ -33,10 +39,16 @@ public class UserService extends BaseAbstractService<User,String,UserMapper,User
 		String salt = CodecUtils.getSalt();
 		user.setSalt(salt);
 		user.setPassword(CodecUtils.getSaltPassword(user.getPassword(),user.getSalt()));
-		//班级 专业 学院
+		//为user 冗余专业、年级、学院信息
 		if (user.getZlassId() != null) {
-			//TODO 客户端只传来classId 需要获取class对应的专业及班级
-
+			Zlass zlass = zlassRestApi.findById(user.getZlassId());
+			if (zlass != null) {
+				user.setSpecialtyId(zlass.getSpecialtyId());
+				user.setCollegeId(zlass.getCollegeId());
+				user.setGrad(zlass.getGrade());
+			}else{
+				user.setZlassId(null);
+			}
 		}
 
 		//add

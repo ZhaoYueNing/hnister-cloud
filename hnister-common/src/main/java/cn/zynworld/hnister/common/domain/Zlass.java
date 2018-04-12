@@ -9,6 +9,8 @@ public class Zlass {
 
     private String grade;
 
+    private Integer collegeId;
+
     public Integer getId() {
         return id;
     }
@@ -39,5 +41,13 @@ public class Zlass {
 
     public void setGrade(String grade) {
         this.grade = grade == null ? null : grade.trim();
+    }
+
+    public Integer getCollegeId() {
+        return collegeId;
+    }
+
+    public void setCollegeId(Integer collegeId) {
+        this.collegeId = collegeId;
     }
 }

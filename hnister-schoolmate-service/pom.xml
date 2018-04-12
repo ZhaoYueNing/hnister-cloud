@@ -6,7 +6,10 @@
 	<groupId>cn.zynworld.hnister</groupId>
 	<artifactId>hnister-schoolmate-service</artifactId>
 	<version>1.0.0-SNAPSHOT</version>
-	<packaging>jar</packaging>
+	<modules>
+		<module>hnister-schoolmate-api</module>
+	</modules>
+	<packaging>pom</packaging>
 
 	<name>hnister-schoolmate-service</name>
 	<description>Demo project for Spring Boot</description>

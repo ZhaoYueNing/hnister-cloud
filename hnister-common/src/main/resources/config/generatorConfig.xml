@@ -70,7 +70,13 @@
 		<table tableName="t_bbs_reply" domainObjectName="BBSReply" >
 			<generatedKey column="id" sqlStatement="MySql" identity="true"/>
 		</table>
+
+		<table tableName="t_user" domainObjectName="User" >
+			<generatedKey column="username" sqlStatement="MySql" identity="true"/>
+		</table>
 		-->
+
+
 
 		<table tableName="t_user" domainObjectName="User" >
 			<generatedKey column="username" sqlStatement="MySql" identity="true"/>

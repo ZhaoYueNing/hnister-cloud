@@ -20,7 +20,7 @@ public class RoleRest {
     private RoleMapper roleMapper;
 
     @GetMapping(path = "pt/roles")
-    public List<Role> findAll(HttpServletRequest request){
+    public List<Role> findAll(){
         List<Role> roles = roleMapper.selectByExample(null);
         return roles;
     }

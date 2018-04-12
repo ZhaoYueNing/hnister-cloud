@@ -363,6 +363,66 @@ public class ZlassExample {
             addCriterion("grade not between", value1, value2, "grade");
             return (Criteria) this;
         }
+
+        public Criteria andCollegeIdIsNull() {
+            addCriterion("college_id is null");
+            return (Criteria) this;
+        }
+
+        public Criteria andCollegeIdIsNotNull() {
+            addCriterion("college_id is not null");
+            return (Criteria) this;
+        }
+
+        public Criteria andCollegeIdEqualTo(Integer value) {
+            addCriterion("college_id =", value, "collegeId");
+            return (Criteria) this;
+        }
+
+        public Criteria andCollegeIdNotEqualTo(Integer value) {
+            addCriterion("college_id <>", value, "collegeId");
+            return (Criteria) this;
+        }
+
+        public Criteria andCollegeIdGreaterThan(Integer value) {
+            addCriterion("college_id >", value, "collegeId");
+            return (Criteria) this;
+        }
+
+        public Criteria andCollegeIdGreaterThanOrEqualTo(Integer value) {
+            addCriterion("college_id >=", value, "collegeId");
+            return (Criteria) this;
+        }
+
+        public Criteria andCollegeIdLessThan(Integer value) {
+            addCriterion("college_id <", value, "collegeId");
+            return (Criteria) this;
+        }
+
+        public Criteria andCollegeIdLessThanOrEqualTo(Integer value) {
+            addCriterion("college_id <=", value, "collegeId");
+            return (Criteria) this;
+        }
+
+        public Criteria andCollegeIdIn(List<Integer> values) {
+            addCriterion("college_id in", values, "collegeId");
+            return (Criteria) this;
+        }
+
+        public Criteria andCollegeIdNotIn(List<Integer> values) {
+            addCriterion("college_id not in", values, "collegeId");
+            return (Criteria) this;
+        }
+
+        public Criteria andCollegeIdBetween(Integer value1, Integer value2) {
+            addCriterion("college_id between", value1, value2, "collegeId");
+            return (Criteria) this;
+        }
+
+        public Criteria andCollegeIdNotBetween(Integer value1, Integer value2) {
+            addCriterion("college_id not between", value1, value2, "collegeId");
+            return (Criteria) this;
+        }
     }
 
     public static class Criteria extends GeneratedCriteria {

@@ -2,13 +2,12 @@ package cn.zynworld.hnister.common.mappers;
 
 import cn.zynworld.hnister.common.domain.Zlass;
 import cn.zynworld.hnister.common.domain.ZlassExample;
+import java.util.List;
 import org.apache.ibatis.annotations.Param;
 import org.apache.ibatis.session.RowBounds;
 
-import java.util.List;
-
 public interface ZlassMapper {
-    int countByExample(ZlassExample example);
+    long countByExample(ZlassExample example);
 
     int deleteByExample(ZlassExample example);
 

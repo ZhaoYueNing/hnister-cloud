@@ -1042,52 +1042,62 @@ public class UserExample {
             return (Criteria) this;
         }
 
-        public Criteria andGradEqualTo(Integer value) {
+        public Criteria andGradEqualTo(String value) {
             addCriterion("grad =", value, "grad");
             return (Criteria) this;
         }
 
-        public Criteria andGradNotEqualTo(Integer value) {
+        public Criteria andGradNotEqualTo(String value) {
             addCriterion("grad <>", value, "grad");
             return (Criteria) this;
         }
 
-        public Criteria andGradGreaterThan(Integer value) {
+        public Criteria andGradGreaterThan(String value) {
             addCriterion("grad >", value, "grad");
             return (Criteria) this;
         }
 
-        public Criteria andGradGreaterThanOrEqualTo(Integer value) {
+        public Criteria andGradGreaterThanOrEqualTo(String value) {
             addCriterion("grad >=", value, "grad");
             return (Criteria) this;
         }
 
-        public Criteria andGradLessThan(Integer value) {
+        public Criteria andGradLessThan(String value) {
             addCriterion("grad <", value, "grad");
             return (Criteria) this;
         }
 
-        public Criteria andGradLessThanOrEqualTo(Integer value) {
+        public Criteria andGradLessThanOrEqualTo(String value) {
             addCriterion("grad <=", value, "grad");
             return (Criteria) this;
         }
 
-        public Criteria andGradIn(List<Integer> values) {
+        public Criteria andGradLike(String value) {
+            addCriterion("grad like", value, "grad");
+            return (Criteria) this;
+        }
+
+        public Criteria andGradNotLike(String value) {
+            addCriterion("grad not like", value, "grad");
+            return (Criteria) this;
+        }
+
+        public Criteria andGradIn(List<String> values) {
             addCriterion("grad in", values, "grad");
             return (Criteria) this;
         }
 
-        public Criteria andGradNotIn(List<Integer> values) {
+        public Criteria andGradNotIn(List<String> values) {
             addCriterion("grad not in", values, "grad");
             return (Criteria) this;
         }
 
-        public Criteria andGradBetween(Integer value1, Integer value2) {
+        public Criteria andGradBetween(String value1, String value2) {
             addCriterion("grad between", value1, value2, "grad");
             return (Criteria) this;
         }
 
-        public Criteria andGradNotBetween(Integer value1, Integer value2) {
+        public Criteria andGradNotBetween(String value1, String value2) {
             addCriterion("grad not between", value1, value2, "grad");
             return (Criteria) this;
         }

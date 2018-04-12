@@ -1,13 +1,11 @@
 package cn.zynworld.hnister.security.rest;
 
-import cn.zynworld.hnister.common.domain.RoleUserRelaExample;
-import cn.zynworld.hnister.common.domain.RoleUserRelaKey;
-import cn.zynworld.hnister.common.domain.User;
-import cn.zynworld.hnister.common.domain.UserExample;
+import cn.zynworld.hnister.common.domain.*;
 import cn.zynworld.hnister.common.dto.security.UserCarryRoleDTO;
 import cn.zynworld.hnister.common.mappers.RoleUserRelaMapper;
 import cn.zynworld.hnister.common.mappers.UserMapper;
 import cn.zynworld.hnister.common.utils.*;
+import cn.zynworld.hnister.schoolmate.api.ZlassRestApi;
 import cn.zynworld.hnister.security.exception.InsertRoleUserKeyException;
 import cn.zynworld.hnister.security.utils.UserUtils;
 import com.google.common.collect.Lists;
@@ -307,6 +305,6 @@ public class UserRest {
         int result = userMapper.deleteByPrimaryKey(username);
         return ResultBean.create(result > 0);
     }
-
+    
 
 }
