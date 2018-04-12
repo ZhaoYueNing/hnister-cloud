@@ -7,12 +7,14 @@ import cn.zynworld.hnister.common.service.BaseAbstractService;
 import cn.zynworld.hnister.common.utils.CodecUtils;
 import cn.zynworld.hnister.security.exception.CreateUserException;
 import org.apache.commons.lang.StringUtils;
+import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 /**
  * @auther Buynow Zhao
  * @create 2018/4/7
  */
+@Service
 public class UserService extends BaseAbstractService<User,String,UserMapper,UserExample> {
 
 	/**
@@ -31,6 +33,12 @@ public class UserService extends BaseAbstractService<User,String,UserMapper,User
 		String salt = CodecUtils.getSalt();
 		user.setSalt(salt);
 		user.setPassword(CodecUtils.getSaltPassword(user.getPassword(),user.getSalt()));
+		//班级 专业 学院
+		if (user.getZlassId() != null) {
+			//TODO 客户端只传来classId 需要获取class对应的专业及班级
+
+		}
+
 		//add
 		Integer result = baseAdd(user);
 		return result > 0;

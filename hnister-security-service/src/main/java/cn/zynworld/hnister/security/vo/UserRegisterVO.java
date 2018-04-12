@@ -10,7 +10,6 @@ import java.util.Date;
  * @create 2018/4/7
  */
 @Data
-@Builder
 public class UserRegisterVO {
 
 	private String username;
@@ -19,19 +18,8 @@ public class UserRegisterVO {
 
 	private String name;
 
-	private Date birth;
-
 	private Integer gender;
-
-	private String city;
 
 	private String password;
 
-	private String avatar;
-
-	private Integer specialtyId;
-
-	private Integer collegeId;
-
-	private Integer grad;
 }

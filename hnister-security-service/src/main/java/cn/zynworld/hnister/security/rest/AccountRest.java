@@ -100,10 +100,12 @@ public class AccountRest {
         return ResultBean.create(result).setMsg(jwtBean.toString());
     }
 
+    //前台用户注册接口
     @PostMapping(path = "pb/user")
     public ResultBean register(@RequestBody UserRegisterVO registerVO) {
-
         User user = UserConvertor.registerVO2DO(registerVO);
+        user.setStatus((short) 0);
+        user.setType((short) 0);
         try {
             boolean result = userService.add(user);
             return ResultBean.create(result);

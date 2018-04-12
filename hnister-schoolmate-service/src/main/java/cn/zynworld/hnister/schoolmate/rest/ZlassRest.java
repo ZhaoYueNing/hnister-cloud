@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.client.RestTemplate;
 
 import java.util.List;
 
@@ -22,8 +23,11 @@ public class ZlassRest {
     @GetMapping(path = "pb/zlass")
     public List<Zlass> findAll() {
         List<Zlass> zlasses = zlassMapper.selectByExample(null);
+        RestTemplate restTemplate = new RestTemplate();
         return zlasses;
     }
+
+
 
 
 
