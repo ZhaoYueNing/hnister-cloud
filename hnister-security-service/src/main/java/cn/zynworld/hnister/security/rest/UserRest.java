@@ -31,7 +31,7 @@ public class UserRest {
     @Autowired
     private RoleUserRelaMapper roleUserRelaMapper;
 
-    @GetMapping(path = "df/user/admin/info")
+    @GetMapping(path = "df/user/info")
     public User getUserInfo(){
         String username = AccountUtils.getUsername();
         if (username == null) {
@@ -48,7 +48,6 @@ public class UserRest {
     }
 
     /**
-     *
      * @param keyWord 关键词 模糊匹配名字及用户名
      * @param role 用户的角色ID 不查询该参数 传 -1
      * @param type 用户的类型 普通用户0 管理员用户1 不查询 -1
@@ -305,6 +304,4 @@ public class UserRest {
         int result = userMapper.deleteByPrimaryKey(username);
         return ResultBean.create(result > 0);
     }
-    
-
 }

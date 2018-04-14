@@ -1,5 +1,6 @@
 package cn.zynworld.hnister.common.utils;
 
+import com.google.gson.Gson;
 import com.google.gson.JsonElement;
 import com.google.gson.JsonParser;
 
@@ -9,16 +10,14 @@ import java.util.*;
  * Created by zhaoyuening on 2018/1/26.
  */
 public class JsonUtils {
-    private final static JsonParser JSON_PARSER = new JsonParser();
+    private final static Gson GSON = new Gson();
 
     public static Map<String,Object> jsonToMap(String json){
-        JsonElement element = JSON_PARSER.parse(json);
-        if (! element.isJsonObject()){
-            return null;
-        }
-        return (Map<String, Object>) jsonToObject(element);
+        return GSON.fromJson(json, Map.class);
     }
 
+
+    @Deprecated
     public static Object jsonToObject(JsonElement element){
         if (element.isJsonPrimitive()){
             return element.getAsJsonPrimitive().getAsString();

@@ -19,10 +19,12 @@ import cn.zynworld.hnister.security.utils.UserUtils;
 import cn.zynworld.hnister.security.vo.UserRegisterVO;
 import org.apache.commons.lang.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
 /**
@@ -39,6 +41,10 @@ public class AccountRest {
     private RoleUserRelaMapper roleUserRelaMapper;
     @Autowired
     private UserService userService;
+
+    //token 过期时间
+    @Value("${user.token.limit}")
+    private Long LIMT_TIME;
 
 
 
@@ -72,8 +78,8 @@ public class AccountRest {
             return ResultBean.fail();
         }
         User user = userMapper.selectByPrimaryKey(userLoginVo.getUsername());
-        //检测是否存在该用户 且 该用户类型为 1 管理员用户
-        if (user == null || user.getType() != 1){
+        //检测是否存在该用户
+        if (user == null ){
             return ResultBean.fail().setMsg("用户名或密码错误!");
         }
         String encodedPassword = user.getPassword();
@@ -96,7 +102,8 @@ public class AccountRest {
         jwtBean.addPlayload(JwtFieldEnum.ADMIN.getField(),false);
         //存入用户访问ip
         jwtBean.addPlayload(JwtFieldEnum.IP.getField(),AccountUtils.getIpAddressFromRequest());
-
+        //添加过期时间
+        jwtBean.addPlayload(JwtFieldEnum.LIMIT.getField(), System.currentTimeMillis() + LIMT_TIME);
         return ResultBean.create(result).setMsg(jwtBean.toString());
     }
 
@@ -112,6 +119,12 @@ public class AccountRest {
         } catch (CreateUserException e) {
             return ResultBean.fail(e.getMessage());
         }
+    }
+
+    @GetMapping(path = "pt/user/logout")
+    public ResultBean logout() {
+        //登出操作 暂无操作 后可以加入记录用户登陆登出情况
+        return ResultBean.success();
     }
 
 
@@ -152,14 +165,15 @@ public class AccountRest {
         jwtBean.addPlayload(JwtFieldEnum.ADMIN.getField(),true);
         //存入用户访问ip
         jwtBean.addPlayload(JwtFieldEnum.IP.getField(),AccountUtils.getIpAddressFromRequest());
-
+        //添加过期时间
+        jwtBean.addPlayload(JwtFieldEnum.LIMIT.getField(), System.currentTimeMillis() + LIMT_TIME);
         return ResultBean.create(result).setMsg(jwtBean.toString());
     }
 
 
     //后台登出
     @PostMapping(path = "pt/user/admin/logout")
-    public ResultBean logout(@RequestHeader("token") String token){
+    public ResultBean adminLogout(@RequestHeader("token") String token){
         //登出系统靠前端移除
         JwtBean jwtBean = JwtBean.getJwtBean(token);
         return ResultBean.create(jwtBean != null);

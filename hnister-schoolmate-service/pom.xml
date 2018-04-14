@@ -47,6 +47,11 @@
 			<groupId>cn.zhaoyuening.hnister</groupId>
 			<artifactId>hnister-common</artifactId>
 		</dependency>
+		<dependency>
+			<groupId>cn.zynworld.hnister</groupId>
+			<artifactId>hnister-schoolmate-api</artifactId>
+			<version>1.0.0-SNAPSHOT</version>
+		</dependency>
 
 		<!--
 		暂时停用Spring config

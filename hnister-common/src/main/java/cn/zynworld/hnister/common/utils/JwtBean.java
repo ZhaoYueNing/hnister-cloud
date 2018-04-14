@@ -1,5 +1,6 @@
 package cn.zynworld.hnister.common.utils;
 
+import cn.zynworld.hnister.common.enums.account.JwtFieldEnum;
 import cn.zynworld.hnister.common.utils.CodecUtils;
 import cn.zynworld.hnister.common.utils.JsonUtils;
 import com.google.gson.Gson;
@@ -15,6 +16,7 @@ import java.util.Map;
  * playload内存储的key {@link cn.zynworld.hnister.common.enums.account.JwtFieldEnum}
  */
 public class JwtBean{
+
     //敏感值 用于对jwt HA256加密
     private final static String SECRET = "jklf-=ertjerk.,sdf";
 
@@ -50,14 +52,16 @@ public class JwtBean{
         //验证成功 构建jwtBean
         JwtBean jwtBean = null;
         try{
-            JsonElement headElement = jsonParser.parse(CodecUtils.decodeBase64(jwts[0]));
-            JsonElement payloadElement = jsonParser.parse(CodecUtils.decodeBase64(jwts[1]));
-
             jwtBean = new JwtBean();
             jwtBean.setHeadMap( JsonUtils.jsonToMap(CodecUtils.decodeBase64(jwts[0])));
             jwtBean.setPlayloadMap( JsonUtils.jsonToMap(CodecUtils.decodeBase64(jwts[1])));
 
-
+            //判断是否过期
+            Object limit = jwtBean.getPlayload(JwtFieldEnum.LIMIT.getField());
+            if ((Double)limit < System.currentTimeMillis()) {
+                //过期token
+                return null;
+            }
         }catch (Exception e){
             return null;
         }

@@ -12,6 +12,9 @@ import org.apache.commons.lang.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
+import org.springframework.web.bind.annotation.GetMapping;
+
+import java.util.List;
 
 /**
  * @auther Buynow Zhao
@@ -55,4 +58,5 @@ public class UserService extends BaseAbstractService<User,String,UserMapper,User
 		Integer result = baseAdd(user);
 		return result > 0;
 	}
+
 }

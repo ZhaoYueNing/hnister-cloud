@@ -18,9 +18,18 @@ import java.util.List;
 @FeignClient(name = ServiceConstant.HNISTER_SCHOOLMATE,fallback = ZlassRestApiFallback.class,path = "rest")
 public interface ZlassRestApi {
 
+	/**
+	 * 获取全部班级
+	 * @return
+	 */
 	@GetMapping(path = "pb/zlass")
 	public List<Zlass> findAll();
 
+	/**
+	 * 通过id 获取zlass对象
+	 * @param id
+	 * @return
+	 */
 	@GetMapping(path = "pb/zlass/{id}")
 	public Zlass findById(@PathVariable("id") Integer id);
 }

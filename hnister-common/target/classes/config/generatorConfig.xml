@@ -79,7 +79,6 @@
 
 
 		<table tableName="t_user" domainObjectName="User" >
-			<generatedKey column="username" sqlStatement="MySql" identity="true"/>
 		</table>
 	</context>
 </generatorConfiguration>
