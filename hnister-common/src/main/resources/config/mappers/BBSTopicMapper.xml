@@ -11,6 +11,9 @@
     <result column="reply" jdbcType="INTEGER" property="reply" />
     <result column="type" jdbcType="INTEGER" property="type" />
   </resultMap>
+  <resultMap extends="BaseResultMap" id="ResultMapWithBLOBs" type="cn.zynworld.hnister.common.domain.BBSTopic">
+    <result column="content" jdbcType="LONGVARCHAR" property="content" />
+  </resultMap>
   <sql id="Example_Where_Clause">
     <where>
       <foreach collection="oredCriteria" item="criteria" separator="or">
@@ -72,6 +75,25 @@
   <sql id="Base_Column_List">
     id, plate_id, theme_id, title, post_time, username, reply, type
   </sql>
+  <sql id="Blob_Column_List">
+    content
+  </sql>
+  <select id="selectByExampleWithBLOBs" parameterType="cn.zynworld.hnister.common.domain.BBSTopicExample" resultMap="ResultMapWithBLOBs">
+    select
+    <if test="distinct">
+      distinct
+    </if>
+    <include refid="Base_Column_List" />
+    ,
+    <include refid="Blob_Column_List" />
+    from t_bbs_topic
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null">
+      order by ${orderByClause}
+    </if>
+  </select>
   <select id="selectByExample" parameterType="cn.zynworld.hnister.common.domain.BBSTopicExample" resultMap="BaseResultMap">
     select
     <if test="distinct">
@@ -86,9 +108,11 @@
       order by ${orderByClause}
     </if>
   </select>
-  <select id="selectByPrimaryKey" parameterType="java.lang.Long" resultMap="BaseResultMap">
+  <select id="selectByPrimaryKey" parameterType="java.lang.Long" resultMap="ResultMapWithBLOBs">
     select 
     <include refid="Base_Column_List" />
+    ,
+    <include refid="Blob_Column_List" />
     from t_bbs_topic
     where id = #{id,jdbcType=BIGINT}
   </select>
@@ -108,10 +132,10 @@
     </selectKey>
     insert into t_bbs_topic (plate_id, theme_id, title, 
       post_time, username, reply, 
-      type)
+      type, content)
     values (#{plateId,jdbcType=INTEGER}, #{themeId,jdbcType=INTEGER}, #{title,jdbcType=VARCHAR}, 
       #{postTime,jdbcType=TIMESTAMP}, #{username,jdbcType=VARCHAR}, #{reply,jdbcType=INTEGER}, 
-      #{type,jdbcType=INTEGER})
+      #{type,jdbcType=INTEGER}, #{content,jdbcType=LONGVARCHAR})
   </insert>
   <insert id="insertSelective" parameterType="cn.zynworld.hnister.common.domain.BBSTopic">
     <selectKey keyProperty="id" order="AFTER" resultType="java.lang.Long">
@@ -140,6 +164,9 @@
       <if test="type != null">
         type,
       </if>
+      <if test="content != null">
+        content,
+      </if>
     </trim>
     <trim prefix="values (" suffix=")" suffixOverrides=",">
       <if test="plateId != null">
@@ -162,6 +189,9 @@
       </if>
       <if test="type != null">
         #{type,jdbcType=INTEGER},
+      </if>
+      <if test="content != null">
+        #{content,jdbcType=LONGVARCHAR},
       </if>
     </trim>
   </insert>
@@ -198,7 +228,25 @@
       <if test="record.type != null">
         type = #{record.type,jdbcType=INTEGER},
       </if>
+      <if test="record.content != null">
+        content = #{record.content,jdbcType=LONGVARCHAR},
+      </if>
     </set>
+    <if test="_parameter != null">
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByExampleWithBLOBs" parameterType="map">
+    update t_bbs_topic
+    set id = #{record.id,jdbcType=BIGINT},
+      plate_id = #{record.plateId,jdbcType=INTEGER},
+      theme_id = #{record.themeId,jdbcType=INTEGER},
+      title = #{record.title,jdbcType=VARCHAR},
+      post_time = #{record.postTime,jdbcType=TIMESTAMP},
+      username = #{record.username,jdbcType=VARCHAR},
+      reply = #{record.reply,jdbcType=INTEGER},
+      type = #{record.type,jdbcType=INTEGER},
+      content = #{record.content,jdbcType=LONGVARCHAR}
     <if test="_parameter != null">
       <include refid="Update_By_Example_Where_Clause" />
     </if>
@@ -241,7 +289,22 @@
       <if test="type != null">
         type = #{type,jdbcType=INTEGER},
       </if>
+      <if test="content != null">
+        content = #{content,jdbcType=LONGVARCHAR},
+      </if>
     </set>
+    where id = #{id,jdbcType=BIGINT}
+  </update>
+  <update id="updateByPrimaryKeyWithBLOBs" parameterType="cn.zynworld.hnister.common.domain.BBSTopic">
+    update t_bbs_topic
+    set plate_id = #{plateId,jdbcType=INTEGER},
+      theme_id = #{themeId,jdbcType=INTEGER},
+      title = #{title,jdbcType=VARCHAR},
+      post_time = #{postTime,jdbcType=TIMESTAMP},
+      username = #{username,jdbcType=VARCHAR},
+      reply = #{reply,jdbcType=INTEGER},
+      type = #{type,jdbcType=INTEGER},
+      content = #{content,jdbcType=LONGVARCHAR}
     where id = #{id,jdbcType=BIGINT}
   </update>
   <update id="updateByPrimaryKey" parameterType="cn.zynworld.hnister.common.domain.BBSTopic">
@@ -255,6 +318,22 @@
       type = #{type,jdbcType=INTEGER}
     where id = #{id,jdbcType=BIGINT}
   </update>
+  <select id="selectByExampleWithBLOBsWithRowbounds" parameterType="cn.zynworld.hnister.common.domain.BBSTopicExample" resultMap="ResultMapWithBLOBs">
+    select
+    <if test="distinct">
+      distinct
+    </if>
+    <include refid="Base_Column_List" />
+    ,
+    <include refid="Blob_Column_List" />
+    from t_bbs_topic
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null">
+      order by ${orderByClause}
+    </if>
+  </select>
   <select id="selectByExampleWithRowbounds" parameterType="cn.zynworld.hnister.common.domain.BBSTopicExample" resultMap="BaseResultMap">
     select
     <if test="distinct">

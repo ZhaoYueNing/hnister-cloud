@@ -202,6 +202,8 @@ public abstract class BaseAbstractService<Type,PK,Mapper,Example>  {
 			logger.error("BaseAbstractService error：method baseAdd IllegalAccessException");
 		} catch (InvocationTargetException e) {
 			logger.error("BaseAbstractService error：method baseAdd InvocationTargetException");
+		} catch (Exception e) {
+			logger.error("BaseAbstractService error：" + e.getMessage());
 		}
 		return null;
 	}

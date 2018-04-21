@@ -13,7 +13,7 @@ import java.util.List;
  * @create 2018/4/4
  */
 @Service
-public class BBSThemeService extends BaseAbstractService<BBSTheme,Integer,BBSThemeMapper,BBSThemeExample> {
+public class BBSThemeService extends BaseAbstractService<BBSTheme,Long,BBSThemeMapper,BBSThemeExample> {
 
 
 	/**
@@ -26,4 +26,5 @@ public class BBSThemeService extends BaseAbstractService<BBSTheme,Integer,BBSThe
 		example.createCriteria().andPlateIdEqualTo(plateId);
 		return getMapper().selectByExample(example);
 	}
+
 }

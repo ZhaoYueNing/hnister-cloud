@@ -17,6 +17,10 @@ public interface BBSTopicMapper {
 
     int insertSelective(BBSTopic record);
 
+    List<BBSTopic> selectByExampleWithBLOBsWithRowbounds(BBSTopicExample example, RowBounds rowBounds);
+
+    List<BBSTopic> selectByExampleWithBLOBs(BBSTopicExample example);
+
     List<BBSTopic> selectByExampleWithRowbounds(BBSTopicExample example, RowBounds rowBounds);
 
     List<BBSTopic> selectByExample(BBSTopicExample example);
@@ -25,9 +29,13 @@ public interface BBSTopicMapper {
 
     int updateByExampleSelective(@Param("record") BBSTopic record, @Param("example") BBSTopicExample example);
 
+    int updateByExampleWithBLOBs(@Param("record") BBSTopic record, @Param("example") BBSTopicExample example);
+
     int updateByExample(@Param("record") BBSTopic record, @Param("example") BBSTopicExample example);
 
     int updateByPrimaryKeySelective(BBSTopic record);
+
+    int updateByPrimaryKeyWithBLOBs(BBSTopic record);
 
     int updateByPrimaryKey(BBSTopic record);
 }

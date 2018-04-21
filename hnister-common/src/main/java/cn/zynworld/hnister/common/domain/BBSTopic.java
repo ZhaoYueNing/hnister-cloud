@@ -19,6 +19,8 @@ public class BBSTopic {
 
     private Integer type;
 
+    private String content;
+
     public Long getId() {
         return id;
     }
@@ -81,5 +83,13 @@ public class BBSTopic {
 
     public void setType(Integer type) {
         this.type = type;
+    }
+
+    public String getContent() {
+        return content;
+    }
+
+    public void setContent(String content) {
+        this.content = content == null ? null : content.trim();
     }
 }

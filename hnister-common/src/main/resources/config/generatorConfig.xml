@@ -61,9 +61,7 @@
 		<table tableName="t_bbs_theme" domainObjectName="BBSTheme" >
 			<generatedKey column="id" sqlStatement="MySql" identity="true"/>
 		</table>
-		<table tableName="t_bbs_topic" domainObjectName="BBSTopic" >
-			<generatedKey column="id" sqlStatement="MySql" identity="true"/>
-		</table>
+
 		<table tableName="t_bbs_tier" domainObjectName="BBSTier" >
 			<generatedKey column="id" sqlStatement="MySql" identity="true"/>
 		</table>
@@ -74,11 +72,13 @@
 		<table tableName="t_user" domainObjectName="User" >
 			<generatedKey column="username" sqlStatement="MySql" identity="true"/>
 		</table>
-		-->
-
-
-
 		<table tableName="t_user" domainObjectName="User" >
 		</table>
+		-->
+		<table tableName="t_bbs_topic" domainObjectName="BBSTopic" >
+			<generatedKey column="id" sqlStatement="MySql" identity="true"/>
+		</table>
+
+
 	</context>
 </generatorConfiguration>
