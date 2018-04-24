@@ -9,6 +9,9 @@
     <result column="type" jdbcType="INTEGER" property="type" />
     <result column="status" jdbcType="INTEGER" property="status" />
     <result column="reply_num" jdbcType="INTEGER" property="replyNum" />
+    <result column="theme_id" jdbcType="INTEGER" property="themeId" />
+    <result column="plate_id" jdbcType="INTEGER" property="plateId" />
+    <result column="post_time" jdbcType="TIMESTAMP" property="postTime" />
   </resultMap>
   <resultMap extends="BaseResultMap" id="ResultMapWithBLOBs" type="cn.zynworld.hnister.common.domain.BBSTier">
     <result column="content" jdbcType="LONGVARCHAR" property="content" />
@@ -72,7 +75,7 @@
     </where>
   </sql>
   <sql id="Base_Column_List">
-    id, topic_id, number, username, type, status, reply_num
+    id, topic_id, number, username, type, status, reply_num, theme_id, plate_id, post_time
   </sql>
   <sql id="Blob_Column_List">
     content
@@ -131,9 +134,11 @@
     </selectKey>
     insert into t_bbs_tier (topic_id, number, username, 
       type, status, reply_num, 
+      theme_id, plate_id, post_time, 
       content)
     values (#{topicId,jdbcType=BIGINT}, #{number,jdbcType=INTEGER}, #{username,jdbcType=VARCHAR}, 
       #{type,jdbcType=INTEGER}, #{status,jdbcType=INTEGER}, #{replyNum,jdbcType=INTEGER}, 
+      #{themeId,jdbcType=INTEGER}, #{plateId,jdbcType=INTEGER}, #{postTime,jdbcType=TIMESTAMP}, 
       #{content,jdbcType=LONGVARCHAR})
   </insert>
   <insert id="insertSelective" parameterType="cn.zynworld.hnister.common.domain.BBSTier">
@@ -160,6 +165,15 @@
       <if test="replyNum != null">
         reply_num,
       </if>
+      <if test="themeId != null">
+        theme_id,
+      </if>
+      <if test="plateId != null">
+        plate_id,
+      </if>
+      <if test="postTime != null">
+        post_time,
+      </if>
       <if test="content != null">
         content,
       </if>
@@ -182,6 +196,15 @@
       </if>
       <if test="replyNum != null">
         #{replyNum,jdbcType=INTEGER},
+      </if>
+      <if test="themeId != null">
+        #{themeId,jdbcType=INTEGER},
+      </if>
+      <if test="plateId != null">
+        #{plateId,jdbcType=INTEGER},
+      </if>
+      <if test="postTime != null">
+        #{postTime,jdbcType=TIMESTAMP},
       </if>
       <if test="content != null">
         #{content,jdbcType=LONGVARCHAR},
@@ -218,6 +241,15 @@
       <if test="record.replyNum != null">
         reply_num = #{record.replyNum,jdbcType=INTEGER},
       </if>
+      <if test="record.themeId != null">
+        theme_id = #{record.themeId,jdbcType=INTEGER},
+      </if>
+      <if test="record.plateId != null">
+        plate_id = #{record.plateId,jdbcType=INTEGER},
+      </if>
+      <if test="record.postTime != null">
+        post_time = #{record.postTime,jdbcType=TIMESTAMP},
+      </if>
       <if test="record.content != null">
         content = #{record.content,jdbcType=LONGVARCHAR},
       </if>
@@ -235,6 +267,9 @@
       type = #{record.type,jdbcType=INTEGER},
       status = #{record.status,jdbcType=INTEGER},
       reply_num = #{record.replyNum,jdbcType=INTEGER},
+      theme_id = #{record.themeId,jdbcType=INTEGER},
+      plate_id = #{record.plateId,jdbcType=INTEGER},
+      post_time = #{record.postTime,jdbcType=TIMESTAMP},
       content = #{record.content,jdbcType=LONGVARCHAR}
     <if test="_parameter != null">
       <include refid="Update_By_Example_Where_Clause" />
@@ -248,7 +283,10 @@
       username = #{record.username,jdbcType=VARCHAR},
       type = #{record.type,jdbcType=INTEGER},
       status = #{record.status,jdbcType=INTEGER},
-      reply_num = #{record.replyNum,jdbcType=INTEGER}
+      reply_num = #{record.replyNum,jdbcType=INTEGER},
+      theme_id = #{record.themeId,jdbcType=INTEGER},
+      plate_id = #{record.plateId,jdbcType=INTEGER},
+      post_time = #{record.postTime,jdbcType=TIMESTAMP}
     <if test="_parameter != null">
       <include refid="Update_By_Example_Where_Clause" />
     </if>
@@ -274,6 +312,15 @@
       <if test="replyNum != null">
         reply_num = #{replyNum,jdbcType=INTEGER},
       </if>
+      <if test="themeId != null">
+        theme_id = #{themeId,jdbcType=INTEGER},
+      </if>
+      <if test="plateId != null">
+        plate_id = #{plateId,jdbcType=INTEGER},
+      </if>
+      <if test="postTime != null">
+        post_time = #{postTime,jdbcType=TIMESTAMP},
+      </if>
       <if test="content != null">
         content = #{content,jdbcType=LONGVARCHAR},
       </if>
@@ -288,6 +335,9 @@
       type = #{type,jdbcType=INTEGER},
       status = #{status,jdbcType=INTEGER},
       reply_num = #{replyNum,jdbcType=INTEGER},
+      theme_id = #{themeId,jdbcType=INTEGER},
+      plate_id = #{plateId,jdbcType=INTEGER},
+      post_time = #{postTime,jdbcType=TIMESTAMP},
       content = #{content,jdbcType=LONGVARCHAR}
     where id = #{id,jdbcType=BIGINT}
   </update>
@@ -298,7 +348,10 @@
       username = #{username,jdbcType=VARCHAR},
       type = #{type,jdbcType=INTEGER},
       status = #{status,jdbcType=INTEGER},
-      reply_num = #{replyNum,jdbcType=INTEGER}
+      reply_num = #{replyNum,jdbcType=INTEGER},
+      theme_id = #{themeId,jdbcType=INTEGER},
+      plate_id = #{plateId,jdbcType=INTEGER},
+      post_time = #{postTime,jdbcType=TIMESTAMP}
     where id = #{id,jdbcType=BIGINT}
   </update>
   <select id="selectByExampleWithBLOBsWithRowbounds" parameterType="cn.zynworld.hnister.common.domain.BBSTierExample" resultMap="ResultMapWithBLOBs">

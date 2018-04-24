@@ -1,5 +1,7 @@
 package cn.zynworld.hnister.common.domain;
 
+import java.util.Date;
+
 public class BBSReply {
     private Long id;
 
@@ -12,6 +14,8 @@ public class BBSReply {
     private String replyedUsername;
 
     private Integer type;
+
+    private Date postTime;
 
     private String content;
 
@@ -61,6 +65,14 @@ public class BBSReply {
 
     public void setType(Integer type) {
         this.type = type;
+    }
+
+    public Date getPostTime() {
+        return postTime;
+    }
+
+    public void setPostTime(Date postTime) {
+        this.postTime = postTime;
     }
 
     public String getContent() {

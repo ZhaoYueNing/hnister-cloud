@@ -1,6 +1,7 @@
 package cn.zynworld.hnister.common.domain;
 
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
 public class BBSTierExample {
@@ -531,6 +532,186 @@ public class BBSTierExample {
 
         public Criteria andReplyNumNotBetween(Integer value1, Integer value2) {
             addCriterion("reply_num not between", value1, value2, "replyNum");
+            return (Criteria) this;
+        }
+
+        public Criteria andThemeIdIsNull() {
+            addCriterion("theme_id is null");
+            return (Criteria) this;
+        }
+
+        public Criteria andThemeIdIsNotNull() {
+            addCriterion("theme_id is not null");
+            return (Criteria) this;
+        }
+
+        public Criteria andThemeIdEqualTo(Integer value) {
+            addCriterion("theme_id =", value, "themeId");
+            return (Criteria) this;
+        }
+
+        public Criteria andThemeIdNotEqualTo(Integer value) {
+            addCriterion("theme_id <>", value, "themeId");
+            return (Criteria) this;
+        }
+
+        public Criteria andThemeIdGreaterThan(Integer value) {
+            addCriterion("theme_id >", value, "themeId");
+            return (Criteria) this;
+        }
+
+        public Criteria andThemeIdGreaterThanOrEqualTo(Integer value) {
+            addCriterion("theme_id >=", value, "themeId");
+            return (Criteria) this;
+        }
+
+        public Criteria andThemeIdLessThan(Integer value) {
+            addCriterion("theme_id <", value, "themeId");
+            return (Criteria) this;
+        }
+
+        public Criteria andThemeIdLessThanOrEqualTo(Integer value) {
+            addCriterion("theme_id <=", value, "themeId");
+            return (Criteria) this;
+        }
+
+        public Criteria andThemeIdIn(List<Integer> values) {
+            addCriterion("theme_id in", values, "themeId");
+            return (Criteria) this;
+        }
+
+        public Criteria andThemeIdNotIn(List<Integer> values) {
+            addCriterion("theme_id not in", values, "themeId");
+            return (Criteria) this;
+        }
+
+        public Criteria andThemeIdBetween(Integer value1, Integer value2) {
+            addCriterion("theme_id between", value1, value2, "themeId");
+            return (Criteria) this;
+        }
+
+        public Criteria andThemeIdNotBetween(Integer value1, Integer value2) {
+            addCriterion("theme_id not between", value1, value2, "themeId");
+            return (Criteria) this;
+        }
+
+        public Criteria andPlateIdIsNull() {
+            addCriterion("plate_id is null");
+            return (Criteria) this;
+        }
+
+        public Criteria andPlateIdIsNotNull() {
+            addCriterion("plate_id is not null");
+            return (Criteria) this;
+        }
+
+        public Criteria andPlateIdEqualTo(Integer value) {
+            addCriterion("plate_id =", value, "plateId");
+            return (Criteria) this;
+        }
+
+        public Criteria andPlateIdNotEqualTo(Integer value) {
+            addCriterion("plate_id <>", value, "plateId");
+            return (Criteria) this;
+        }
+
+        public Criteria andPlateIdGreaterThan(Integer value) {
+            addCriterion("plate_id >", value, "plateId");
+            return (Criteria) this;
+        }
+
+        public Criteria andPlateIdGreaterThanOrEqualTo(Integer value) {
+            addCriterion("plate_id >=", value, "plateId");
+            return (Criteria) this;
+        }
+
+        public Criteria andPlateIdLessThan(Integer value) {
+            addCriterion("plate_id <", value, "plateId");
+            return (Criteria) this;
+        }
+
+        public Criteria andPlateIdLessThanOrEqualTo(Integer value) {
+            addCriterion("plate_id <=", value, "plateId");
+            return (Criteria) this;
+        }
+
+        public Criteria andPlateIdIn(List<Integer> values) {
+            addCriterion("plate_id in", values, "plateId");
+            return (Criteria) this;
+        }
+
+        public Criteria andPlateIdNotIn(List<Integer> values) {
+            addCriterion("plate_id not in", values, "plateId");
+            return (Criteria) this;
+        }
+
+        public Criteria andPlateIdBetween(Integer value1, Integer value2) {
+            addCriterion("plate_id between", value1, value2, "plateId");
+            return (Criteria) this;
+        }
+
+        public Criteria andPlateIdNotBetween(Integer value1, Integer value2) {
+            addCriterion("plate_id not between", value1, value2, "plateId");
+            return (Criteria) this;
+        }
+
+        public Criteria andPostTimeIsNull() {
+            addCriterion("post_time is null");
+            return (Criteria) this;
+        }
+
+        public Criteria andPostTimeIsNotNull() {
+            addCriterion("post_time is not null");
+            return (Criteria) this;
+        }
+
+        public Criteria andPostTimeEqualTo(Date value) {
+            addCriterion("post_time =", value, "postTime");
+            return (Criteria) this;
+        }
+
+        public Criteria andPostTimeNotEqualTo(Date value) {
+            addCriterion("post_time <>", value, "postTime");
+            return (Criteria) this;
+        }
+
+        public Criteria andPostTimeGreaterThan(Date value) {
+            addCriterion("post_time >", value, "postTime");
+            return (Criteria) this;
+        }
+
+        public Criteria andPostTimeGreaterThanOrEqualTo(Date value) {
+            addCriterion("post_time >=", value, "postTime");
+            return (Criteria) this;
+        }
+
+        public Criteria andPostTimeLessThan(Date value) {
+            addCriterion("post_time <", value, "postTime");
+            return (Criteria) this;
+        }
+
+        public Criteria andPostTimeLessThanOrEqualTo(Date value) {
+            addCriterion("post_time <=", value, "postTime");
+            return (Criteria) this;
+        }
+
+        public Criteria andPostTimeIn(List<Date> values) {
+            addCriterion("post_time in", values, "postTime");
+            return (Criteria) this;
+        }
+
+        public Criteria andPostTimeNotIn(List<Date> values) {
+            addCriterion("post_time not in", values, "postTime");
+            return (Criteria) this;
+        }
+
+        public Criteria andPostTimeBetween(Date value1, Date value2) {
+            addCriterion("post_time between", value1, value2, "postTime");
+            return (Criteria) this;
+        }
+
+        public Criteria andPostTimeNotBetween(Date value1, Date value2) {
+            addCriterion("post_time not between", value1, value2, "postTime");
             return (Criteria) this;
         }
     }

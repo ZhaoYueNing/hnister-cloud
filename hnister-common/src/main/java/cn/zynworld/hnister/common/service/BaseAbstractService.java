@@ -200,10 +200,13 @@ public abstract class BaseAbstractService<Type,PK,Mapper,Example>  {
 			return result;
 		} catch (IllegalAccessException e) {
 			logger.error("BaseAbstractService error：method baseAdd IllegalAccessException");
+			e.printStackTrace();
 		} catch (InvocationTargetException e) {
 			logger.error("BaseAbstractService error：method baseAdd InvocationTargetException");
+			e.printStackTrace();
 		} catch (Exception e) {
 			logger.error("BaseAbstractService error：" + e.getMessage());
+			e.printStackTrace();
 		}
 		return null;
 	}

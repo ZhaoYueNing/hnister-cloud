@@ -19,7 +19,11 @@ public class BBSTopic {
 
     private Integer type;
 
-    private String content;
+    private Integer maxTierNum;
+
+    private Integer status;
+
+    private Integer orderNum;
 
     public Long getId() {
         return id;
@@ -85,11 +89,27 @@ public class BBSTopic {
         this.type = type;
     }
 
-    public String getContent() {
-        return content;
+    public Integer getMaxTierNum() {
+        return maxTierNum;
     }
 
-    public void setContent(String content) {
-        this.content = content == null ? null : content.trim();
+    public void setMaxTierNum(Integer maxTierNum) {
+        this.maxTierNum = maxTierNum;
+    }
+
+    public Integer getStatus() {
+        return status;
+    }
+
+    public void setStatus(Integer status) {
+        this.status = status;
+    }
+
+    public Integer getOrderNum() {
+        return orderNum;
+    }
+
+    public void setOrderNum(Integer orderNum) {
+        this.orderNum = orderNum;
     }
 }

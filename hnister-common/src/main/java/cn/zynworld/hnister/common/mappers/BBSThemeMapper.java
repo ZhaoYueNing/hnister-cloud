@@ -11,7 +11,7 @@ public interface BBSThemeMapper {
 
     int deleteByExample(BBSThemeExample example);
 
-    int deleteByPrimaryKey(Long id);
+    int deleteByPrimaryKey(Integer id);
 
     int insert(BBSTheme record);
 
@@ -21,7 +21,7 @@ public interface BBSThemeMapper {
 
     List<BBSTheme> selectByExample(BBSThemeExample example);
 
-    BBSTheme selectByPrimaryKey(Long id);
+    BBSTheme selectByPrimaryKey(Integer id);
 
     int updateByExampleSelective(@Param("record") BBSTheme record, @Param("example") BBSThemeExample example);
 

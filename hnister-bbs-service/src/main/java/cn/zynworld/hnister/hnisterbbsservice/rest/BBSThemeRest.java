@@ -24,7 +24,7 @@ public class BBSThemeRest {
 	}
 
 	@DeleteMapping(path = "pt/theme/{id}")
-	public ResultBean deleteById(@PathVariable Long id) {
+	public ResultBean deleteById(@PathVariable Integer id) {
 		return ResultBean.create(themeService.baseDeleteByPrimaryKey(id) > 0);
 	}
 
@@ -39,7 +39,7 @@ public class BBSThemeRest {
 	}
 
 	@GetMapping(path = "pb/theme/{themeId}")
-	public BBSTheme findById(@PathVariable Long themeId) {
+	public BBSTheme findById(@PathVariable Integer themeId) {
 		return themeService.baseFindByPrimaryKey(themeId);
 	}
 

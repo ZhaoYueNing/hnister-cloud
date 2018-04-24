@@ -1,5 +1,7 @@
 package cn.zynworld.hnister.common.domain;
 
+import java.util.Date;
+
 public class BBSTier {
     private Long id;
 
@@ -14,6 +16,12 @@ public class BBSTier {
     private Integer status;
 
     private Integer replyNum;
+
+    private Integer themeId;
+
+    private Integer plateId;
+
+    private Date postTime;
 
     private String content;
 
@@ -71,6 +79,30 @@ public class BBSTier {
 
     public void setReplyNum(Integer replyNum) {
         this.replyNum = replyNum;
+    }
+
+    public Integer getThemeId() {
+        return themeId;
+    }
+
+    public void setThemeId(Integer themeId) {
+        this.themeId = themeId;
+    }
+
+    public Integer getPlateId() {
+        return plateId;
+    }
+
+    public void setPlateId(Integer plateId) {
+        this.plateId = plateId;
+    }
+
+    public Date getPostTime() {
+        return postTime;
+    }
+
+    public void setPostTime(Date postTime) {
+        this.postTime = postTime;
     }
 
     public String getContent() {

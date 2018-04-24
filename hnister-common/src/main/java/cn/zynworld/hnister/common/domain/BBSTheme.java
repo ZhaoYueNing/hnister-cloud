@@ -1,7 +1,7 @@
 package cn.zynworld.hnister.common.domain;
 
 public class BBSTheme {
-    private Long id;
+    private Integer id;
 
     private Integer plateId;
 
@@ -13,11 +13,11 @@ public class BBSTheme {
 
     private String name;
 
-    public Long getId() {
+    public Integer getId() {
         return id;
     }
 
-    public void setId(Long id) {
+    public void setId(Integer id) {
         this.id = id;
     }
 

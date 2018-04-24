@@ -604,6 +604,186 @@ public class BBSTopicExample {
             addCriterion("type not between", value1, value2, "type");
             return (Criteria) this;
         }
+
+        public Criteria andMaxTierNumIsNull() {
+            addCriterion("max_tier_num is null");
+            return (Criteria) this;
+        }
+
+        public Criteria andMaxTierNumIsNotNull() {
+            addCriterion("max_tier_num is not null");
+            return (Criteria) this;
+        }
+
+        public Criteria andMaxTierNumEqualTo(Integer value) {
+            addCriterion("max_tier_num =", value, "maxTierNum");
+            return (Criteria) this;
+        }
+
+        public Criteria andMaxTierNumNotEqualTo(Integer value) {
+            addCriterion("max_tier_num <>", value, "maxTierNum");
+            return (Criteria) this;
+        }
+
+        public Criteria andMaxTierNumGreaterThan(Integer value) {
+            addCriterion("max_tier_num >", value, "maxTierNum");
+            return (Criteria) this;
+        }
+
+        public Criteria andMaxTierNumGreaterThanOrEqualTo(Integer value) {
+            addCriterion("max_tier_num >=", value, "maxTierNum");
+            return (Criteria) this;
+        }
+
+        public Criteria andMaxTierNumLessThan(Integer value) {
+            addCriterion("max_tier_num <", value, "maxTierNum");
+            return (Criteria) this;
+        }
+
+        public Criteria andMaxTierNumLessThanOrEqualTo(Integer value) {
+            addCriterion("max_tier_num <=", value, "maxTierNum");
+            return (Criteria) this;
+        }
+
+        public Criteria andMaxTierNumIn(List<Integer> values) {
+            addCriterion("max_tier_num in", values, "maxTierNum");
+            return (Criteria) this;
+        }
+
+        public Criteria andMaxTierNumNotIn(List<Integer> values) {
+            addCriterion("max_tier_num not in", values, "maxTierNum");
+            return (Criteria) this;
+        }
+
+        public Criteria andMaxTierNumBetween(Integer value1, Integer value2) {
+            addCriterion("max_tier_num between", value1, value2, "maxTierNum");
+            return (Criteria) this;
+        }
+
+        public Criteria andMaxTierNumNotBetween(Integer value1, Integer value2) {
+            addCriterion("max_tier_num not between", value1, value2, "maxTierNum");
+            return (Criteria) this;
+        }
+
+        public Criteria andStatusIsNull() {
+            addCriterion("status is null");
+            return (Criteria) this;
+        }
+
+        public Criteria andStatusIsNotNull() {
+            addCriterion("status is not null");
+            return (Criteria) this;
+        }
+
+        public Criteria andStatusEqualTo(Integer value) {
+            addCriterion("status =", value, "status");
+            return (Criteria) this;
+        }
+
+        public Criteria andStatusNotEqualTo(Integer value) {
+            addCriterion("status <>", value, "status");
+            return (Criteria) this;
+        }
+
+        public Criteria andStatusGreaterThan(Integer value) {
+            addCriterion("status >", value, "status");
+            return (Criteria) this;
+        }
+
+        public Criteria andStatusGreaterThanOrEqualTo(Integer value) {
+            addCriterion("status >=", value, "status");
+            return (Criteria) this;
+        }
+
+        public Criteria andStatusLessThan(Integer value) {
+            addCriterion("status <", value, "status");
+            return (Criteria) this;
+        }
+
+        public Criteria andStatusLessThanOrEqualTo(Integer value) {
+            addCriterion("status <=", value, "status");
+            return (Criteria) this;
+        }
+
+        public Criteria andStatusIn(List<Integer> values) {
+            addCriterion("status in", values, "status");
+            return (Criteria) this;
+        }
+
+        public Criteria andStatusNotIn(List<Integer> values) {
+            addCriterion("status not in", values, "status");
+            return (Criteria) this;
+        }
+
+        public Criteria andStatusBetween(Integer value1, Integer value2) {
+            addCriterion("status between", value1, value2, "status");
+            return (Criteria) this;
+        }
+
+        public Criteria andStatusNotBetween(Integer value1, Integer value2) {
+            addCriterion("status not between", value1, value2, "status");
+            return (Criteria) this;
+        }
+
+        public Criteria andOrderNumIsNull() {
+            addCriterion("order_num is null");
+            return (Criteria) this;
+        }
+
+        public Criteria andOrderNumIsNotNull() {
+            addCriterion("order_num is not null");
+            return (Criteria) this;
+        }
+
+        public Criteria andOrderNumEqualTo(Integer value) {
+            addCriterion("order_num =", value, "orderNum");
+            return (Criteria) this;
+        }
+
+        public Criteria andOrderNumNotEqualTo(Integer value) {
+            addCriterion("order_num <>", value, "orderNum");
+            return (Criteria) this;
+        }
+
+        public Criteria andOrderNumGreaterThan(Integer value) {
+            addCriterion("order_num >", value, "orderNum");
+            return (Criteria) this;
+        }
+
+        public Criteria andOrderNumGreaterThanOrEqualTo(Integer value) {
+            addCriterion("order_num >=", value, "orderNum");
+            return (Criteria) this;
+        }
+
+        public Criteria andOrderNumLessThan(Integer value) {
+            addCriterion("order_num <", value, "orderNum");
+            return (Criteria) this;
+        }
+
+        public Criteria andOrderNumLessThanOrEqualTo(Integer value) {
+            addCriterion("order_num <=", value, "orderNum");
+            return (Criteria) this;
+        }
+
+        public Criteria andOrderNumIn(List<Integer> values) {
+            addCriterion("order_num in", values, "orderNum");
+            return (Criteria) this;
+        }
+
+        public Criteria andOrderNumNotIn(List<Integer> values) {
+            addCriterion("order_num not in", values, "orderNum");
+            return (Criteria) this;
+        }
+
+        public Criteria andOrderNumBetween(Integer value1, Integer value2) {
+            addCriterion("order_num between", value1, value2, "orderNum");
+            return (Criteria) this;
+        }
+
+        public Criteria andOrderNumNotBetween(Integer value1, Integer value2) {
+            addCriterion("order_num not between", value1, value2, "orderNum");
+            return (Criteria) this;
+        }
     }
 
     public static class Criteria extends GeneratedCriteria {
