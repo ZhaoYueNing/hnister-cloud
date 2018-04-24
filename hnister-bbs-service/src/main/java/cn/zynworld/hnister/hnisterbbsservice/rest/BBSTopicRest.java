@@ -1,25 +1,18 @@
 package cn.zynworld.hnister.hnisterbbsservice.rest;
 
-import cn.zynworld.hnister.common.domain.BBSPlateExample;
 import cn.zynworld.hnister.common.domain.BBSTopic;
 import cn.zynworld.hnister.common.domain.BBSTopicExample;
-import cn.zynworld.hnister.common.enums.bbs.BBSTopicStautsEnum;
-import cn.zynworld.hnister.common.enums.bbs.BBSTopicTypeEnum;
 import cn.zynworld.hnister.common.utils.AccountUtils;
 import cn.zynworld.hnister.common.utils.PageBean;
 import cn.zynworld.hnister.common.utils.ResultBean;
 import cn.zynworld.hnister.hnisterbbsservice.convertor.BBSTopicConvertor;
 import cn.zynworld.hnister.hnisterbbsservice.dto.BBSTopicPostDTO;
-import cn.zynworld.hnister.hnisterbbsservice.exception.BBSTierException;
-import cn.zynworld.hnister.hnisterbbsservice.exception.BBSTopicException;
 import cn.zynworld.hnister.hnisterbbsservice.service.BBSTopicService;
 import cn.zynworld.hnister.hnisterbbsservice.vo.BBSTopicPostVO;
 import org.apache.commons.lang.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
-import java.util.Date;
-import java.util.List;
 
 /**
  * @auther Buynow Zhao
@@ -49,7 +42,9 @@ public class BBSTopicRest {
 			if (topicId > 0) {
 				return ResultBean.success(topicId);
 			}
-		} catch (Exception e) {}
+		} catch (Exception e) {
+			return ResultBean.fail(e.getMessage());
+		}
 		return ResultBean.fail();
 	}
 

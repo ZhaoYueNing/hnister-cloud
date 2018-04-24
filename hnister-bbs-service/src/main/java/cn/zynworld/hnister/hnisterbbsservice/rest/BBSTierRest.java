@@ -2,6 +2,7 @@ package cn.zynworld.hnister.hnisterbbsservice.rest;
 
 import cn.zynworld.hnister.common.domain.BBSTier;
 import cn.zynworld.hnister.common.domain.BBSTierExample;
+import cn.zynworld.hnister.common.mappers.BBSTierMapper;
 import cn.zynworld.hnister.common.utils.AccountUtils;
 import cn.zynworld.hnister.common.utils.BeanUtils;
 import cn.zynworld.hnister.common.utils.PageBean;
@@ -28,7 +29,7 @@ public class BBSTierRest {
 
 	//用户发布帖子接口
 	@PostMapping(path = "pt/tier")
-	public ResultBean add(BBSTierPostVO tierPostVO) {
+	public ResultBean add(@RequestBody BBSTierPostVO tierPostVO) {
 		String username = AccountUtils.getUsername();
 		if (StringUtils.isEmpty(username)) {
 			return ResultBean.fail("请求失败，用户鉴定失败");
@@ -64,6 +65,6 @@ public class BBSTierRest {
 		if (!StringUtils.isEmpty(username)) {
 			example.createCriteria().andUsernameEqualTo(username);
 		}
-		return tierService.baseFindByExampleWithPage(example,pageCount,pageSize);
+		return tierService.baseFindByExampleWithPageWithBLOBs(example,pageCount,pageSize);
 	}
 }

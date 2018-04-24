@@ -7,6 +7,8 @@ import cn.zynworld.hnister.common.domain.BBSTopicExample;
 import cn.zynworld.hnister.common.enums.OrderNumEnum;
 import cn.zynworld.hnister.common.enums.bbs.BBSTierStatusEnum;
 import cn.zynworld.hnister.common.enums.bbs.BBSTierTypeEnum;
+import cn.zynworld.hnister.common.enums.bbs.BBSTopicStautsEnum;
+import cn.zynworld.hnister.common.enums.bbs.BBSTopicTypeEnum;
 import cn.zynworld.hnister.common.mappers.BBSTierMapper;
 import cn.zynworld.hnister.common.mappers.BBSTopicMapper;
 import cn.zynworld.hnister.common.service.BaseAbstractService;
@@ -54,6 +56,12 @@ public class BBSTopicService extends BaseAbstractService<BBSTopic,Long,BBSTopicM
 		topic.setPostTime(new Date());
 		if (topic.getOrderNum() == null) {
 			topic.setOrderNum(OrderNumEnum.DEFALUT_ORDER.getCode());
+		}
+		if (topic.getType() == null) {
+			topic.setType(BBSTopicTypeEnum.GENERAL_TYPE.getCode());
+		}
+		if (topic.getStatus() == null) {
+			topic.setStatus(BBSTopicStautsEnum.GENERAL_STATUS.getCode());
 		}
 		// 插入topic
 		boolean result = baseAdd(topic) > 0;

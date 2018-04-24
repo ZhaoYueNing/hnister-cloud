@@ -43,7 +43,9 @@ public abstract class BaseAbstractService<Type,PK,Mapper,Example>  {
 	private Method deleteByPrimaryKeyMethod = null;
 	private Method selectByPrimaryKeyMethod = null;
 	private Method selectByExampleMethod = null;
+	private Method selectByExampleWithBLOBsMethod = null;
 	private Method selectByExampleWithRowboundsMethod = null;
+	private Method selectByExampleWithBLOBsWithRowboundsMethod = null;
 	private Method countByExampleMethod = null;
 
 	@Transactional
@@ -124,6 +126,21 @@ public abstract class BaseAbstractService<Type,PK,Mapper,Example>  {
 		return null;
 	}
 
+	public List<Type> baseFindByExampleWithBLOBs(Example example){
+		if (selectByExampleWithBLOBsMethod == null) {
+			try {
+				selectByExampleWithBLOBsMethod = mapper.getClass().getMethod("selectByExampleWithBLOBs",new Class[]{exampleClass});
+			} catch (NoSuchMethodException e) {
+				e.printStackTrace();
+			}
+		}
+		Object result = baseInvocation(selectByExampleWithBLOBsMethod,new Object[]{example});
+		if (result != null) {
+			return (List<Type>) result;
+		}
+		return null;
+	}
+
 	public Long baseFindCountByExample(Example example) {
 		if (countByExampleMethod == null) {
 			try {
@@ -148,6 +165,27 @@ public abstract class BaseAbstractService<Type,PK,Mapper,Example>  {
 			}
 		}
 		Object items = baseInvocation(selectByExampleWithRowboundsMethod,new Object[]{example,new RowBounds(0,pageSize)});
+		Object total = baseFindCountByExample(example);
+		if (items != null) {
+			PageBean<Type> pageBean = new PageBean<Type>();
+			pageBean.setItems((List<Type>) items);
+			pageBean.setPageCount(pageCount);
+			pageBean.setPageSize(pageSize);
+			pageBean.setTotal((Long) total);
+			return pageBean;
+		}
+		return null;
+	}
+
+	public PageBean<Type> baseFindByExampleWithPageWithBLOBs(Example example, int pageCount, int pageSize){
+		if (selectByExampleWithBLOBsWithRowboundsMethod == null) {
+			try {
+				selectByExampleWithBLOBsWithRowboundsMethod = mapper.getClass().getMethod("selectByExampleWithBLOBsWithRowbounds",new Class[]{exampleClass,RowBounds.class});
+			} catch (NoSuchMethodException e) {
+				e.printStackTrace();
+			}
+		}
+		Object items = baseInvocation(selectByExampleWithBLOBsWithRowboundsMethod,new Object[]{example,new RowBounds(0,pageSize)});
 		Object total = baseFindCountByExample(example);
 		if (items != null) {
 			PageBean<Type> pageBean = new PageBean<Type>();
