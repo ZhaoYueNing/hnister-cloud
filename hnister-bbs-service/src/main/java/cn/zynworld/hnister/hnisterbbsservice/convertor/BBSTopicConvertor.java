@@ -1,6 +1,6 @@
 package cn.zynworld.hnister.hnisterbbsservice.convertor;
 
-import cn.zynworld.hnister.common.domain.BBSTopic;
+import cn.zynworld.hnister.hnisterbbsservice.domain.BBSTopic;
 import cn.zynworld.hnister.common.utils.BeanUtils;
 import cn.zynworld.hnister.hnisterbbsservice.dto.BBSTopicPostDTO;
 import cn.zynworld.hnister.hnisterbbsservice.vo.BBSTopicPostVO;

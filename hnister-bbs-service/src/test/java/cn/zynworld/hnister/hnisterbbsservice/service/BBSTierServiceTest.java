@@ -1,6 +1,6 @@
 package cn.zynworld.hnister.hnisterbbsservice.service;
 
-import cn.zynworld.hnister.common.domain.BBSTier;
+import cn.zynworld.hnister.hnisterbbsservice.domain.BBSTier;
 import cn.zynworld.hnister.hnisterbbsservice.dto.BBSTierPostDTO;
 import org.junit.Test;
 import org.junit.runner.RunWith;

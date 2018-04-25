@@ -1,8 +1,8 @@
 package cn.zynworld.hnister.hnisterbbsservice.service;
 
-import cn.zynworld.hnister.common.domain.BBSTheme;
-import cn.zynworld.hnister.common.domain.BBSThemeExample;
-import cn.zynworld.hnister.common.mappers.BBSThemeMapper;
+import cn.zynworld.hnister.hnisterbbsservice.domain.BBSTheme;
+import cn.zynworld.hnister.hnisterbbsservice.domain.BBSThemeExample;
+import cn.zynworld.hnister.hnisterbbsservice.mappers.BBSThemeMapper;
 import cn.zynworld.hnister.common.service.BaseAbstractService;
 import org.springframework.stereotype.Service;
 

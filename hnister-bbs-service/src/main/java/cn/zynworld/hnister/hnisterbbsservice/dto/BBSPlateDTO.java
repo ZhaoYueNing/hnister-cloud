@@ -1,6 +1,6 @@
 package cn.zynworld.hnister.hnisterbbsservice.dto;
 
-import cn.zynworld.hnister.common.domain.BBSTheme;
+import cn.zynworld.hnister.hnisterbbsservice.domain.BBSTheme;
 import lombok.Builder;
 import lombok.Data;
 

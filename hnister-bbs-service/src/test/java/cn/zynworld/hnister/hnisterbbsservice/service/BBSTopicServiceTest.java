@@ -1,9 +1,9 @@
 package cn.zynworld.hnister.hnisterbbsservice.service;
 
-import cn.zynworld.hnister.common.domain.BBSTopic;
+import cn.zynworld.hnister.hnisterbbsservice.domain.BBSTopic;
 import cn.zynworld.hnister.common.enums.bbs.BBSTopicStautsEnum;
 import cn.zynworld.hnister.common.enums.bbs.BBSTopicTypeEnum;
-import cn.zynworld.hnister.common.mappers.BBSTopicMapper;
+import cn.zynworld.hnister.hnisterbbsservice.mappers.BBSTopicMapper;
 import cn.zynworld.hnister.hnisterbbsservice.dto.BBSTopicPostDTO;
 import org.junit.Test;
 import org.junit.runner.RunWith;

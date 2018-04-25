@@ -1,7 +1,7 @@
 package cn.zynworld.hnister.hnisterbbsservice.rest;
 
-import cn.zynworld.hnister.common.domain.BBSTopic;
-import cn.zynworld.hnister.common.domain.BBSTopicExample;
+import cn.zynworld.hnister.hnisterbbsservice.domain.BBSTopic;
+import cn.zynworld.hnister.hnisterbbsservice.domain.BBSTopicExample;
 import cn.zynworld.hnister.common.utils.AccountUtils;
 import cn.zynworld.hnister.common.utils.PageBean;
 import cn.zynworld.hnister.common.utils.ResultBean;

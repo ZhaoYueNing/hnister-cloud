@@ -1,6 +1,6 @@
 package cn.zynworld.hnister.hnisterbbsservice.rest;
 
-import cn.zynworld.hnister.common.domain.BBSTheme;
+import cn.zynworld.hnister.hnisterbbsservice.domain.BBSTheme;
 import cn.zynworld.hnister.common.utils.ResultBean;
 import cn.zynworld.hnister.hnisterbbsservice.service.BBSThemeService;
 import org.springframework.beans.factory.annotation.Autowired;

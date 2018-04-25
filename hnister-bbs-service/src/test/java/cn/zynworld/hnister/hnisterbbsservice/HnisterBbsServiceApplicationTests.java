@@ -1,8 +1,8 @@
 package cn.zynworld.hnister.hnisterbbsservice;
 
-import cn.zynworld.hnister.common.domain.BBSPlate;
-import cn.zynworld.hnister.common.domain.BBSPlateExample;
-import cn.zynworld.hnister.common.mappers.BBSPlateMapper;
+import cn.zynworld.hnister.hnisterbbsservice.domain.BBSPlate;
+import cn.zynworld.hnister.hnisterbbsservice.domain.BBSPlateExample;
+import cn.zynworld.hnister.hnisterbbsservice.mappers.BBSPlateMapper;
 import cn.zynworld.hnister.common.utils.PageBean;
 import cn.zynworld.hnister.hnisterbbsservice.service.BBSPlateService;
 import org.junit.Test;

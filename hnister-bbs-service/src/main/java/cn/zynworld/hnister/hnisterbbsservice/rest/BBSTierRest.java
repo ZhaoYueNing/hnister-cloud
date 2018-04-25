@@ -1,8 +1,8 @@
 package cn.zynworld.hnister.hnisterbbsservice.rest;
 
-import cn.zynworld.hnister.common.domain.BBSTier;
-import cn.zynworld.hnister.common.domain.BBSTierExample;
-import cn.zynworld.hnister.common.mappers.BBSTierMapper;
+import cn.zynworld.hnister.hnisterbbsservice.domain.BBSTier;
+import cn.zynworld.hnister.hnisterbbsservice.domain.BBSTierExample;
+import cn.zynworld.hnister.hnisterbbsservice.mappers.BBSTierMapper;
 import cn.zynworld.hnister.common.utils.AccountUtils;
 import cn.zynworld.hnister.common.utils.BeanUtils;
 import cn.zynworld.hnister.common.utils.PageBean;

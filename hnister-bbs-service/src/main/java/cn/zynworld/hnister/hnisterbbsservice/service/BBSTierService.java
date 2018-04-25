@@ -1,11 +1,11 @@
 package cn.zynworld.hnister.hnisterbbsservice.service;
 
-import cn.zynworld.hnister.common.domain.BBSTier;
-import cn.zynworld.hnister.common.domain.BBSTierExample;
-import cn.zynworld.hnister.common.domain.BBSTopic;
+import cn.zynworld.hnister.hnisterbbsservice.domain.BBSTier;
+import cn.zynworld.hnister.hnisterbbsservice.domain.BBSTierExample;
+import cn.zynworld.hnister.hnisterbbsservice.domain.BBSTopic;
 import cn.zynworld.hnister.common.enums.bbs.BBSTierStatusEnum;
 import cn.zynworld.hnister.common.enums.bbs.BBSTierTypeEnum;
-import cn.zynworld.hnister.common.mappers.BBSTierMapper;
+import cn.zynworld.hnister.hnisterbbsservice.mappers.BBSTierMapper;
 import cn.zynworld.hnister.common.service.BaseAbstractService;
 import cn.zynworld.hnister.hnisterbbsservice.convertor.BBSTierConvertor;
 import cn.zynworld.hnister.hnisterbbsservice.dto.BBSTierPostDTO;

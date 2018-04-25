@@ -1,10 +1,10 @@
 package cn.zynworld.hnister.hnisterbbsservice.service;
 
-import cn.zynworld.hnister.common.domain.BBSPlate;
-import cn.zynworld.hnister.common.domain.BBSPlateExample;
-import cn.zynworld.hnister.common.domain.BBSTheme;
-import cn.zynworld.hnister.common.mappers.BBSPlateMapper;
-import cn.zynworld.hnister.common.mappers.BBSThemeMapper;
+import cn.zynworld.hnister.hnisterbbsservice.domain.BBSPlate;
+import cn.zynworld.hnister.hnisterbbsservice.domain.BBSPlateExample;
+import cn.zynworld.hnister.hnisterbbsservice.domain.BBSTheme;
+import cn.zynworld.hnister.hnisterbbsservice.mappers.BBSPlateMapper;
+import cn.zynworld.hnister.hnisterbbsservice.mappers.BBSThemeMapper;
 import cn.zynworld.hnister.common.service.BaseAbstractService;
 import cn.zynworld.hnister.hnisterbbsservice.convertor.BBSPlateConvertor;
 import cn.zynworld.hnister.hnisterbbsservice.dto.BBSPlateDTO;

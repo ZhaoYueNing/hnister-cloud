@@ -1,16 +1,16 @@
 package cn.zynworld.hnister.hnisterbbsservice.service;
 
-import cn.zynworld.hnister.common.domain.BBSTheme;
-import cn.zynworld.hnister.common.domain.BBSTier;
-import cn.zynworld.hnister.common.domain.BBSTopic;
-import cn.zynworld.hnister.common.domain.BBSTopicExample;
+import cn.zynworld.hnister.hnisterbbsservice.domain.BBSTheme;
+import cn.zynworld.hnister.hnisterbbsservice.domain.BBSTier;
+import cn.zynworld.hnister.hnisterbbsservice.domain.BBSTopic;
+import cn.zynworld.hnister.hnisterbbsservice.domain.BBSTopicExample;
 import cn.zynworld.hnister.common.enums.OrderNumEnum;
 import cn.zynworld.hnister.common.enums.bbs.BBSTierStatusEnum;
 import cn.zynworld.hnister.common.enums.bbs.BBSTierTypeEnum;
 import cn.zynworld.hnister.common.enums.bbs.BBSTopicStautsEnum;
 import cn.zynworld.hnister.common.enums.bbs.BBSTopicTypeEnum;
-import cn.zynworld.hnister.common.mappers.BBSTierMapper;
-import cn.zynworld.hnister.common.mappers.BBSTopicMapper;
+import cn.zynworld.hnister.hnisterbbsservice.mappers.BBSTierMapper;
+import cn.zynworld.hnister.hnisterbbsservice.mappers.BBSTopicMapper;
 import cn.zynworld.hnister.common.service.BaseAbstractService;
 import cn.zynworld.hnister.hnisterbbsservice.convertor.BBSTopicConvertor;
 import cn.zynworld.hnister.hnisterbbsservice.dto.BBSTopicPostDTO;

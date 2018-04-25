@@ -1,6 +1,6 @@
 package cn.zynworld.hnister.hnisterbbsservice.rest;
 
-import cn.zynworld.hnister.common.domain.BBSPlate;
+import cn.zynworld.hnister.hnisterbbsservice.domain.BBSPlate;
 import cn.zynworld.hnister.common.utils.PageBean;
 import cn.zynworld.hnister.common.utils.ResultBean;
 import cn.zynworld.hnister.hnisterbbsservice.dto.BBSPlateDTO;

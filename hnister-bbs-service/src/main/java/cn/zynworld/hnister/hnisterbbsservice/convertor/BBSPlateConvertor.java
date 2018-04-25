@@ -1,6 +1,6 @@
 package cn.zynworld.hnister.hnisterbbsservice.convertor;
 
-import cn.zynworld.hnister.common.domain.BBSPlate;
+import cn.zynworld.hnister.hnisterbbsservice.domain.BBSPlate;
 import cn.zynworld.hnister.common.utils.BeanUtils;
 import cn.zynworld.hnister.hnisterbbsservice.dto.BBSPlateDTO;
 
