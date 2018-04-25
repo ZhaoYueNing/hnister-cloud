@@ -1,4 +1,4 @@
-package cn.zynworld.hnister.common.domain;
+package cn.zynworld.hnister.news.domain;
 
 import java.util.ArrayList;
 import java.util.List;

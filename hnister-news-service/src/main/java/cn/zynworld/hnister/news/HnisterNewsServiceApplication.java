@@ -5,7 +5,7 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-@MapperScan("cn.zynworld.hnister.common.mappers")
+@MapperScan("cn.zynworld.hnister.news.mappers")
 public class HnisterNewsServiceApplication {
 
 	public static void main(String[] args) {

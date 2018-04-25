@@ -1,4 +1,4 @@
-package cn.zynworld.hnister.common.domain;
+package cn.zynworld.hnister.news.domain;
 
 public class NewsModule {
     private Integer id;
@@ -13,35 +13,31 @@ public class NewsModule {
         return id;
     }
 
-    public NewsModule setId(Integer id) {
+    public void setId(Integer id) {
         this.id = id;
-        return this;
     }
 
     public String getName() {
         return name;
     }
 
-    public NewsModule setName(String name) {
-        this.name = name;
-        return this;
+    public void setName(String name) {
+        this.name = name == null ? null : name.trim();
     }
 
     public String getRemark() {
         return remark;
     }
 
-    public NewsModule setRemark(String remark) {
-        this.remark = remark;
-        return this;
+    public void setRemark(String remark) {
+        this.remark = remark == null ? null : remark.trim();
     }
 
     public Long getNumber() {
         return number;
     }
 
-    public NewsModule setNumber(Long number) {
+    public void setNumber(Long number) {
         this.number = number;
-        return this;
     }
 }

@@ -1,14 +1,13 @@
-package cn.zynworld.hnister.common.mappers;
+package cn.zynworld.hnister.news.mappers;
 
-import cn.zynworld.hnister.common.domain.NewsModule;
-import cn.zynworld.hnister.common.domain.NewsModuleExample;
+import cn.zynworld.hnister.news.domain.NewsModule;
+import cn.zynworld.hnister.news.domain.NewsModuleExample;
+import java.util.List;
 import org.apache.ibatis.annotations.Param;
 import org.apache.ibatis.session.RowBounds;
 
-import java.util.List;
-
 public interface NewsModuleMapper {
-    int countByExample(NewsModuleExample example);
+    long countByExample(NewsModuleExample example);
 
     int deleteByExample(NewsModuleExample example);
 
@@ -32,5 +31,5 @@ public interface NewsModuleMapper {
 
     int updateByPrimaryKey(NewsModule record);
 
-    int updateChangeNumberByExample(@Param("val") Integer val, @Param("example") NewsModuleExample example);
+	int updateChangeNumberByExample(int val, NewsModuleExample newsModuleExample);
 }

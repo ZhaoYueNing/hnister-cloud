@@ -1,12 +1,11 @@
 package cn.zynworld.hnister.news;
 
-import cn.zynworld.hnister.common.domain.NewsExample;
-import cn.zynworld.hnister.common.mappers.NewsMapper;
+import cn.zynworld.hnister.news.domain.NewsExample;
+import cn.zynworld.hnister.news.mappers.NewsMapper;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
-import org.springframework.context.annotation.Import;
 import org.springframework.test.context.junit4.SpringRunner;
 
 @RunWith(SpringRunner.class)

@@ -1,12 +1,12 @@
 package cn.zynworld.hnister.news.rest;
 
-import cn.zynworld.hnister.common.domain.News;
-import cn.zynworld.hnister.common.domain.NewsExample;
-import cn.zynworld.hnister.common.domain.NewsModuleExample;
+import cn.zynworld.hnister.news.domain.News;
+import cn.zynworld.hnister.news.domain.NewsExample;
+import cn.zynworld.hnister.news.domain.NewsModuleExample;
 import cn.zynworld.hnister.common.utils.PageBean;
 import cn.zynworld.hnister.common.utils.ResultBean;
-import cn.zynworld.hnister.common.mappers.NewsMapper;
-import cn.zynworld.hnister.common.mappers.NewsModuleMapper;
+import cn.zynworld.hnister.news.mappers.NewsMapper;
+import cn.zynworld.hnister.news.mappers.NewsModuleMapper;
 import org.apache.ibatis.session.RowBounds;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.transaction.annotation.Transactional;
@@ -94,7 +94,7 @@ public class NewsRest {
 		//分页查询
 		List<News> newsList = newsMapper.selectByExampleWithRowbounds(newsExample, rowBounds);
 		//获取该查询非分页情况总数
-		int total = newsMapper.countByExample(newsExample);
+		long total = newsMapper.countByExample(newsExample);
 		pageBean.setTotal((long) total);
 		pageBean.setItems(newsList);
 

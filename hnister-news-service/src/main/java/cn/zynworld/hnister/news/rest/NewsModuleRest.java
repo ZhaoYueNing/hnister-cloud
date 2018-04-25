@@ -1,9 +1,9 @@
 package cn.zynworld.hnister.news.rest;
 
-import cn.zynworld.hnister.common.domain.NewsModule;
 import cn.zynworld.hnister.common.utils.ResultBean;
-import cn.zynworld.hnister.common.mappers.NewsMapper;
-import cn.zynworld.hnister.common.mappers.NewsModuleMapper;
+import cn.zynworld.hnister.news.domain.NewsModule;
+import cn.zynworld.hnister.news.mappers.NewsMapper;
+import cn.zynworld.hnister.news.mappers.NewsModuleMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.bind.annotation.*;
