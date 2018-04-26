@@ -18,6 +18,7 @@
 
     <properties>
         <docker.image.prefix>hnister</docker.image.prefix>
+        <spring-cloud.version>Edgware.SR1</spring-cloud.version>
     </properties>
 
     <modules>
@@ -32,15 +33,14 @@
         <module>hnister-news-service</module>
         <module>hnister-setting-service</module>
         <module>hnister-security-service</module>
-        <module>hnister-schoolmate-service</module>
+        <module>hnister-schoolmate</module>
         <module>hnister-bbs-service</module>
 
 
-
-        <!--废弃模块
-        <module>hnister-config-demo</module>
-        <module>hnister-news-service-old</module>
-        -->
+		<!--废弃模块
+		<module>hnister-config-demo</module>
+		<module>hnister-news-service-old</module>
+		-->
     </modules>
 
 

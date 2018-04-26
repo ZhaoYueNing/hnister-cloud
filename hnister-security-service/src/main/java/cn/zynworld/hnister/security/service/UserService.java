@@ -2,19 +2,16 @@ package cn.zynworld.hnister.security.service;
 
 import cn.zynworld.hnister.common.domain.User;
 import cn.zynworld.hnister.common.domain.UserExample;
-import cn.zynworld.hnister.common.domain.Zlass;
 import cn.zynworld.hnister.common.mappers.UserMapper;
 import cn.zynworld.hnister.common.service.BaseAbstractService;
 import cn.zynworld.hnister.common.utils.CodecUtils;
 import cn.zynworld.hnister.schoolmate.api.ZlassRestApi;
+import cn.zynworld.hnister.schoolmate.api.dto.ZlassDTO;
 import cn.zynworld.hnister.security.exception.CreateUserException;
 import org.apache.commons.lang.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
-import org.springframework.web.bind.annotation.GetMapping;
-
-import java.util.List;
 
 /**
  * @auther Buynow Zhao
@@ -44,7 +41,7 @@ public class UserService extends BaseAbstractService<User,String,UserMapper,User
 		user.setPassword(CodecUtils.getSaltPassword(user.getPassword(),user.getSalt()));
 		//为user 冗余专业、年级、学院信息
 		if (user.getZlassId() != null) {
-			Zlass zlass = zlassRestApi.findById(user.getZlassId());
+			ZlassDTO zlass = zlassRestApi.findById(user.getZlassId());
 			if (zlass != null) {
 				user.setSpecialtyId(zlass.getSpecialtyId());
 				user.setCollegeId(zlass.getCollegeId());
