@@ -9,6 +9,7 @@ public enum JwtFieldEnum {
     USERNAME("username","保存用户名"),
     ADMIN("admin","标识是否为管理员用户"),
     IP("ip","用户登录的ip地址"),
+    LIMIT("limit","token有效时间戳")
     ;
 
     private String field;

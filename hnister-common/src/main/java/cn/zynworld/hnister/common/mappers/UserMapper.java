@@ -2,13 +2,12 @@ package cn.zynworld.hnister.common.mappers;
 
 import cn.zynworld.hnister.common.domain.User;
 import cn.zynworld.hnister.common.domain.UserExample;
+import java.util.List;
 import org.apache.ibatis.annotations.Param;
 import org.apache.ibatis.session.RowBounds;
 
-import java.util.List;
-
 public interface UserMapper {
-    int countByExample(UserExample example);
+    long countByExample(UserExample example);
 
     int deleteByExample(UserExample example);
 

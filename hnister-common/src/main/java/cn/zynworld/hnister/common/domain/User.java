@@ -27,6 +27,12 @@ public class User {
 
     private Short type;
 
+    private Integer specialtyId;
+
+    private Integer collegeId;
+
+    private String grad;
+
     public String getUsername() {
         return username;
     }
@@ -121,5 +127,29 @@ public class User {
 
     public void setType(Short type) {
         this.type = type;
+    }
+
+    public Integer getSpecialtyId() {
+        return specialtyId;
+    }
+
+    public void setSpecialtyId(Integer specialtyId) {
+        this.specialtyId = specialtyId;
+    }
+
+    public Integer getCollegeId() {
+        return collegeId;
+    }
+
+    public void setCollegeId(Integer collegeId) {
+        this.collegeId = collegeId;
+    }
+
+    public String getGrad() {
+        return grad;
+    }
+
+    public void setGrad(String grad) {
+        this.grad = grad == null ? null : grad.trim();
     }
 }

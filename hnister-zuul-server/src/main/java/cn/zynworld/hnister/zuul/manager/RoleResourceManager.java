@@ -1,12 +1,15 @@
 package cn.zynworld.hnister.zuul.manager;
 
-import cn.zynworld.hnister.common.ResourceTypeEnum;
 import cn.zynworld.hnister.common.domain.Resource;
 import cn.zynworld.hnister.common.domain.ResourceExample;
 import cn.zynworld.hnister.common.domain.RoleResourceRelaKey;
 import cn.zynworld.hnister.common.enums.account.ResourceStatusEnum;
 import cn.zynworld.hnister.common.mappers.ResourceMapper;
 import cn.zynworld.hnister.common.mappers.RoleResourceRelaMapper;
+import cn.zynworld.hnister.security.api.ResourceRestApi;
+import cn.zynworld.hnister.security.api.RoleResourceRelaRestApi;
+import cn.zynworld.hnister.security.api.dto.ResourceDTO;
+import cn.zynworld.hnister.security.api.dto.RoleResourceRelaKeyDTO;
 import org.springframework.beans.factory.annotation.Autowired;
 
 import java.util.*;
@@ -16,11 +19,11 @@ import java.util.*;
  * 缓存role 与 resource的对应关系
  */
 public class RoleResourceManager {
-    @Autowired
-    private RoleResourceRelaMapper roleResourceRelaMapper;
-    @Autowired
-    private ResourceMapper resourceMapper;
 
+    @Autowired
+    private ResourceRestApi resourceRestApi;
+    @Autowired
+    private RoleResourceRelaRestApi roleResourceRelaRestApi;
 
     //roleId&resourceId`s Set
     private Map<Integer, Set<Integer>> roleResourceMap = null;
@@ -49,8 +52,8 @@ public class RoleResourceManager {
         resourceStatus0Set = new HashSet<>();
         resourceStatus2Set = new HashSet<>();
 
-        List<RoleResourceRelaKey> roleResourceRelaKeys = roleResourceRelaMapper.selectByExample(null);
-        for (RoleResourceRelaKey key :
+        List<RoleResourceRelaKeyDTO> roleResourceRelaKeys = roleResourceRelaRestApi.findAll();
+        for (RoleResourceRelaKeyDTO key :
                 roleResourceRelaKeys) {
             if (!roleResourceRelaKeys.contains(key.getRoleId())){
                 roleResourceMap.put(key.getRoleId(),new HashSet<Integer>());
@@ -58,8 +61,8 @@ public class RoleResourceManager {
             roleResourceMap.get(key.getRoleId()).add(key.getResourceId());
         }
 
-        List<Resource> resources = resourceMapper.selectByExample(null);
-        for (Resource resource :
+        List<ResourceDTO> resources = resourceRestApi.findAll();
+        for (ResourceDTO resource :
                 resources) {
             //采用 httpMethod + ||| + url 的方法
             resourcePathIdMap.put(getResourceString(resource.getMethod(),resource.getUrl()),resource.getId());
@@ -75,17 +78,14 @@ public class RoleResourceManager {
         httpMethodMap.put("TRACE",7);
 
         //status 0
-        ResourceExample resourceExample = new ResourceExample();
-        resourceExample.createCriteria().andStatusEqualTo(0);
-        List<Resource> resourceList = resourceMapper.selectByExample(resourceExample);
-        for (Resource resource:
+        List<ResourceDTO> resourceList = resourceRestApi.findByStatus(0);
+        for (ResourceDTO resource:
              resourceList) {
             resourceStatus0Set.add(getResourceString(resource.getMethod(),resource.getUrl()));
         }
-        resourceExample = new ResourceExample();
-        resourceExample.createCriteria().andStatusEqualTo(2);
-        resourceList = resourceMapper.selectByExample(resourceExample);
-        for (Resource resource:
+
+        resourceList = resourceRestApi.findByStatus(2);
+        for (ResourceDTO resource:
                 resourceList) {
             resourceStatus2Set.add(getResourceString(resource.getMethod(),resource.getUrl()));
         }

@@ -2,7 +2,6 @@ package cn.zynworld.hnister.zuul;
 
 import cn.zynworld.hnister.common.mappers.RoleResourceRelaMapper;
 import cn.zynworld.hnister.zuul.manager.RoleResourceManager;
-import com.netflix.discovery.converters.Auto;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.omg.CORBA.PRIVATE_MEMBER;

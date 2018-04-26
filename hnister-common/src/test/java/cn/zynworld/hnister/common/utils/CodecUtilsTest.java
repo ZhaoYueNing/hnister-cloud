@@ -8,12 +8,12 @@ import org.junit.Test;
  */
 public class CodecUtilsTest {
     @Test
-    public void testSalePassword() throws Exception {
-        String sale = CodecUtils.getSale();
+    public void testSaltPassword() throws Exception {
+        String salt = CodecUtils.getSalt();
         String pw = "abcdefg...";
 
-        String salePassword = CodecUtils.getSalePassword(pw, sale);
-        System.out.println(salePassword);
+        String saltPassword = CodecUtils.getSaltPassword(pw, salt);
+        System.out.println(saltPassword);
     }
 
 
@@ -48,7 +48,7 @@ public class CodecUtilsTest {
         System.out.println(jwtBean);
     }
 
-    @Test
+//    @Test
     public void testCreateJwtByJsonToken() throws Exception {
         String jsonToken = "eyJ0eXAiOiJKV1QiLCJhbGciOiJIQTI1NiJ9.eyJyb2xlIjpbeyJyb2xlSWQiOjEsInVzZXJuYW1lIjoiemhhb3poYW96aGFvMiJ9XX0=.26d6c858e666ee510eb14640689e1bb121c029240678f4d37277141bc699d933";
         JwtBean jwtBean = JwtBean.getJwtBean(jsonToken);

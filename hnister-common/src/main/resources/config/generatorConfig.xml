@@ -11,6 +11,10 @@
 
 
 	<context id="DB2Tables" targetRuntime="MyBatis3">
+
+		<!--分页插件-->
+		<plugin type="org.mybatis.generator.plugins.RowBoundsPlugin"></plugin>
+
 		<!--关闭注释 -->
 		<commentGenerator>
 			<property name="suppressAllComments" value="true"/>
@@ -41,6 +45,8 @@
 		</javaClientGenerator>
 
 
+
+
 		<!--对应数据库表名，多个表，请复制指定
 		<table tableName="t_menu" domainObjectName="Menu" >
 			<generatedKey column="id" sqlStatement="MySql" identity="true"/>
@@ -48,22 +54,38 @@
 		<table tableName="t_menu_group" domainObjectName="MenuGroup" >
 			<generatedKey column="id" sqlStatement="MySql" identity="true"/>
 		</table>
-		-->
 
-		<table tableName="t_bbs_plate" domainObjectName="BBSPlate" >
-			<generatedKey column="id" sqlStatement="MySql" identity="true"/>
-		</table>
+
 		<table tableName="t_bbs_theme" domainObjectName="BBSTheme" >
 			<generatedKey column="id" sqlStatement="MySql" identity="true"/>
 		</table>
+
+		<table tableName="t_bbs_tier" domainObjectName="BBSTier" >
+			<generatedKey column="id" sqlStatement="MySql" identity="true"/>
+		</table>
+
+
+		<table tableName="t_user" domainObjectName="User" >
+			<generatedKey column="username" sqlStatement="MySql" identity="true"/>
+		</table>
+		<table tableName="t_user" domainObjectName="User" >
+		</table>
+		-->
 		<table tableName="t_bbs_topic" domainObjectName="BBSTopic" >
 			<generatedKey column="id" sqlStatement="MySql" identity="true"/>
 		</table>
 		<table tableName="t_bbs_tier" domainObjectName="BBSTier" >
 			<generatedKey column="id" sqlStatement="MySql" identity="true"/>
 		</table>
+		<table tableName="t_bbs_theme" domainObjectName="BBSTheme" >
+			<generatedKey column="id" sqlStatement="MySql" identity="true"/>
+		</table>
 		<table tableName="t_bbs_reply" domainObjectName="BBSReply" >
 			<generatedKey column="id" sqlStatement="MySql" identity="true"/>
 		</table>
+		<table tableName="t_bbs_plate" domainObjectName="BBSPlate" >
+			<generatedKey column="id" sqlStatement="MySql" identity="true"/>
+		</table>
+
 	</context>
 </generatorConfiguration>
