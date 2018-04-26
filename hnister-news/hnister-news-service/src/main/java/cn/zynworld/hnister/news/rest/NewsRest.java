@@ -61,7 +61,7 @@ public class NewsRest {
 	/**
 	 * 查询所有news，非分页
 	 */
-	@GetMapping(path = "news")
+	@GetMapping(path = "pb/news")
 	public List<News> findAll() {
 		List<News> list = newsMapper.selectByExample(null);
 		return list;

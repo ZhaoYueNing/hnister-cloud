@@ -19,6 +19,7 @@
     <properties>
         <docker.image.prefix>hnister</docker.image.prefix>
         <spring-cloud.version>Edgware.SR1</spring-cloud.version>
+        <mybatis.generator.configurationFile>${basedir}/src/main/resources/config/generatorConfig.xml</mybatis.generator.configurationFile>
     </properties>
 
     <modules>
@@ -30,17 +31,12 @@
 
         <module>hnister-common</module>
         <module>hnister-news</module>
-        <module>hnister-setting-service</module>
-        <module>hnister-security-service</module>
         <module>hnister-schoolmate</module>
 		<module>hnister-bbs</module>
+        <module>hnister-setting</module>
+		<module>hnister-security</module>
 
-
-		<!--废弃模块
-		<module>hnister-config-demo</module>
-		<module>hnister-news-service-old</module>
-		-->
-    </modules>
+	</modules>
 
 
     <dependencyManagement>

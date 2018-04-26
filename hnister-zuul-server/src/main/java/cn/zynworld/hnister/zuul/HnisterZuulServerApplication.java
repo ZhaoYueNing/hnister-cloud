@@ -1,25 +1,38 @@
 package cn.zynworld.hnister.zuul;
 
+import cn.zynworld.hnister.common.constants.ServiceApiPackageConstant;
+import cn.zynworld.hnister.security.api.ResourceRestApi;
+import cn.zynworld.hnister.security.api.dto.ResourceDTO;
 import cn.zynworld.hnister.zuul.manager.RoleResourceManager;
 import org.mybatis.spring.annotation.MapperScan;
 import org.mybatis.spring.boot.autoconfigure.MybatisAutoConfiguration;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.autoconfigure.jdbc.DataSourceAutoConfiguration;
 import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
+import org.springframework.cloud.netflix.feign.EnableFeignClients;
 import org.springframework.cloud.netflix.zuul.EnableZuulProxy;
 import org.springframework.context.annotation.Bean;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.cors.CorsConfiguration;
 import org.springframework.web.cors.UrlBasedCorsConfigurationSource;
 import org.springframework.web.filter.CorsFilter;
 
-@SpringBootApplication
+import java.util.List;
+
+@SpringBootApplication(scanBasePackages = {"cn.zynworld.hnister"})
 @EnableZuulProxy
 @EnableDiscoveryClient
 @MapperScan("cn.zynworld.hnister.common.mappers")
 //@EnableAutoConfiguration(exclude = {MybatisAutoConfiguration.class, DataSourceAutoConfiguration.class})
+@EnableFeignClients(basePackages = {ServiceApiPackageConstant.HNISTER_SECURITY_API})
+@RestController
 public class HnisterZuulServerApplication {
+
+
 
 
 	@Bean
