@@ -29,12 +29,11 @@
 
 
         <module>hnister-common</module>
-        <module>hnister-file-service</module>
-        <module>hnister-news-service</module>
+        <module>hnister-news</module>
         <module>hnister-setting-service</module>
         <module>hnister-security-service</module>
         <module>hnister-schoolmate</module>
-        <module>hnister-bbs-service</module>
+		<module>hnister-bbs</module>
 
 
 		<!--废弃模块
