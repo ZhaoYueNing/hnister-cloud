@@ -1,9 +1,9 @@
 package cn.zynworld.hnister.security.rest;
 
-import cn.zynworld.hnister.common.domain.RoleResourceRelaExample;
-import cn.zynworld.hnister.common.domain.RoleResourceRelaKey;
-import cn.zynworld.hnister.common.dto.security.RoleAllocateResourcesDTO;
-import cn.zynworld.hnister.common.mappers.RoleResourceRelaMapper;
+import cn.zynworld.hnister.security.domain.RoleResourceRelaExample;
+import cn.zynworld.hnister.security.domain.RoleResourceRelaKey;
+import cn.zynworld.hnister.security.dto.RoleAllocateResourcesDTO;
+import cn.zynworld.hnister.security.mappers.RoleResourceRelaMapper;
 import cn.zynworld.hnister.common.utils.ResultBean;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.transaction.annotation.Transactional;

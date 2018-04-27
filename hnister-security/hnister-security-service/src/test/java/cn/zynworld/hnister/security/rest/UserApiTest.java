@@ -1,7 +1,7 @@
 package cn.zynworld.hnister.security.rest;
 
-import cn.zynworld.hnister.common.dto.security.UserCarryRoleDTO;
-import cn.zynworld.hnister.common.mappers.UserMapper;
+import cn.zynworld.hnister.security.dto.UserCarryRoleDTO;
+import cn.zynworld.hnister.security.mappers.UserMapper;
 import cn.zynworld.hnister.common.utils.PageBean;
 import cn.zynworld.hnister.common.utils.ResultBean;
 import cn.zynworld.hnister.security.exception.InsertRoleUserKeyException;

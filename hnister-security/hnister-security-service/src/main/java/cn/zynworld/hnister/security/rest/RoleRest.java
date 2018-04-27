@@ -1,12 +1,11 @@
 package cn.zynworld.hnister.security.rest;
 
-import cn.zynworld.hnister.common.domain.Role;
-import cn.zynworld.hnister.common.mappers.RoleMapper;
+import cn.zynworld.hnister.security.domain.Role;
+import cn.zynworld.hnister.security.mappers.RoleMapper;
 import cn.zynworld.hnister.common.utils.ResultBean;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
-import javax.servlet.http.HttpServletRequest;
 import java.util.List;
 
 /**

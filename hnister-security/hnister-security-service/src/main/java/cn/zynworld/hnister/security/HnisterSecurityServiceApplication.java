@@ -7,7 +7,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.cloud.netflix.feign.EnableFeignClients;
 
 @SpringBootApplication(scanBasePackages = {"cn.zynworld.hnister"})
-@MapperScan("cn.zynworld.hnister.common.mappers")
+@MapperScan("cn.zynworld.hnister.security.mappers")
 @EnableFeignClients(basePackages = {ServiceApiPackageConstant.HNISTER_SCHOOLMATE_API})
 public class HnisterSecurityServiceApplication {
 	public static void main( String[] args) {

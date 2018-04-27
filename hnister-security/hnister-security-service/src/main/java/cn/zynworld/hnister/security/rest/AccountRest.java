@@ -1,11 +1,11 @@
 package cn.zynworld.hnister.security.rest;
 
-import cn.zynworld.hnister.common.domain.RoleUserRelaExample;
-import cn.zynworld.hnister.common.domain.RoleUserRelaKey;
-import cn.zynworld.hnister.common.domain.User;
+import cn.zynworld.hnister.security.domain.RoleUserRelaExample;
+import cn.zynworld.hnister.security.domain.RoleUserRelaKey;
+import cn.zynworld.hnister.security.domain.User;
 import cn.zynworld.hnister.common.enums.account.JwtFieldEnum;
-import cn.zynworld.hnister.common.mappers.RoleUserRelaMapper;
-import cn.zynworld.hnister.common.mappers.UserMapper;
+import cn.zynworld.hnister.security.mappers.RoleUserRelaMapper;
+import cn.zynworld.hnister.security.mappers.UserMapper;
 import cn.zynworld.hnister.common.utils.AccountUtils;
 import cn.zynworld.hnister.common.utils.CodecUtils;
 import cn.zynworld.hnister.common.utils.JwtBean;
@@ -24,7 +24,6 @@ import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.ArrayList;
-import java.util.Date;
 import java.util.List;
 
 /**

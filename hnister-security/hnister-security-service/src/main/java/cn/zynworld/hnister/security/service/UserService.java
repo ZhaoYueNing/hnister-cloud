@@ -1,8 +1,8 @@
 package cn.zynworld.hnister.security.service;
 
-import cn.zynworld.hnister.common.domain.User;
-import cn.zynworld.hnister.common.domain.UserExample;
-import cn.zynworld.hnister.common.mappers.UserMapper;
+import cn.zynworld.hnister.security.domain.User;
+import cn.zynworld.hnister.security.domain.UserExample;
+import cn.zynworld.hnister.security.mappers.UserMapper;
 import cn.zynworld.hnister.common.service.BaseAbstractService;
 import cn.zynworld.hnister.common.utils.CodecUtils;
 import cn.zynworld.hnister.schoolmate.api.ZlassRestApi;

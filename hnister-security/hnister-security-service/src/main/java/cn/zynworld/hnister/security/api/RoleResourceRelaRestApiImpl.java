@@ -1,11 +1,8 @@
 package cn.zynworld.hnister.security.api;
 
-import cn.zynworld.hnister.common.dto.security.RoleAllocateResourcesDTO;
-import cn.zynworld.hnister.common.mappers.RoleResourceRelaMapper;
-import cn.zynworld.hnister.security.api.dto.ResourceDTO;
+import cn.zynworld.hnister.security.mappers.RoleResourceRelaMapper;
 import cn.zynworld.hnister.security.api.dto.RoleResourceRelaKeyDTO;
 import cn.zynworld.hnister.security.convertor.RoleResourceRelaKeyConvertor;
-import org.bouncycastle.cms.PasswordRecipientId;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;

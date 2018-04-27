@@ -1,6 +1,6 @@
 package cn.zynworld.hnister.security.convertor;
 
-import cn.zynworld.hnister.common.domain.RoleResourceRelaKey;
+import cn.zynworld.hnister.security.domain.RoleResourceRelaKey;
 import cn.zynworld.hnister.common.utils.BeanUtils;
 import cn.zynworld.hnister.security.api.dto.RoleResourceRelaKeyDTO;
 

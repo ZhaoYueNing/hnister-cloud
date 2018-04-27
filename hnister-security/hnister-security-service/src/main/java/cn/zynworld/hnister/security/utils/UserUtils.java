@@ -1,6 +1,6 @@
 package cn.zynworld.hnister.security.utils;
 
-import cn.zynworld.hnister.common.domain.User;
+import cn.zynworld.hnister.security.domain.User;
 
 /**
  * Created by zhaoyuening on 2018/2/11.
