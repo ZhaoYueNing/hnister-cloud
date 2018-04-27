@@ -1,8 +1,8 @@
 package cn.zynworld.hnister.security.service;
 
-import cn.zynworld.hnister.common.domain.Resource;
-import cn.zynworld.hnister.common.domain.ResourceExample;
-import cn.zynworld.hnister.common.mappers.ResourceMapper;
+import cn.zynworld.hnister.security.domain.Resource;
+import cn.zynworld.hnister.security.domain.ResourceExample;
+import cn.zynworld.hnister.security.mappers.ResourceMapper;
 import cn.zynworld.hnister.common.service.BaseAbstractService;
 import org.springframework.stereotype.Service;
 

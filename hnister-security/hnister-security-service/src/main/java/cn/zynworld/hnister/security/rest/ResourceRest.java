@@ -1,10 +1,10 @@
 package cn.zynworld.hnister.security.rest;
 
-import cn.zynworld.hnister.common.domain.Resource;
-import cn.zynworld.hnister.common.domain.ResourceExample;
-import cn.zynworld.hnister.common.domain.RoleResourceRelaExample;
-import cn.zynworld.hnister.common.mappers.ResourceMapper;
-import cn.zynworld.hnister.common.mappers.RoleResourceRelaMapper;
+import cn.zynworld.hnister.security.domain.Resource;
+import cn.zynworld.hnister.security.domain.ResourceExample;
+import cn.zynworld.hnister.security.domain.RoleResourceRelaExample;
+import cn.zynworld.hnister.security.mappers.ResourceMapper;
+import cn.zynworld.hnister.security.mappers.RoleResourceRelaMapper;
 import cn.zynworld.hnister.common.utils.PageBean;
 import cn.zynworld.hnister.common.utils.ResultBean;
 import org.apache.ibatis.session.RowBounds;
@@ -116,10 +116,10 @@ public class ResourceRest {
 
         List<Resource> resources = resourceMapper.selectByExampleWithRowbounds(example, rowBounds);
         //获取总数
-        int total = resourceMapper.countByExample(example);
+        long total = resourceMapper.countByExample(example);
 
         pageBean.setItems(resources);
-        pageBean.setTotal((long) total);
+        pageBean.setTotal(total);
 
         return pageBean;
     }

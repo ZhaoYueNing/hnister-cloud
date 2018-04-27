@@ -1,6 +1,6 @@
 package cn.zynworld.hnister.security.api;
 
-import cn.zynworld.hnister.common.domain.ResourceExample;
+import cn.zynworld.hnister.security.domain.ResourceExample;
 import cn.zynworld.hnister.security.api.dto.ResourceDTO;
 import cn.zynworld.hnister.security.convertor.ResourceConvertor;
 import cn.zynworld.hnister.security.service.ResourceService;

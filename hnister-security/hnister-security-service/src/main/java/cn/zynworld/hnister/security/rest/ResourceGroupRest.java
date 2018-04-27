@@ -1,11 +1,11 @@
 package cn.zynworld.hnister.security.rest;
 
-import cn.zynworld.hnister.common.domain.Resource;
-import cn.zynworld.hnister.common.domain.ResourceExample;
-import cn.zynworld.hnister.common.domain.ResourceGroup;
-import cn.zynworld.hnister.common.dto.security.ResourceGroupCarryResourcesDTO;
-import cn.zynworld.hnister.common.mappers.ResourceGroupMapper;
-import cn.zynworld.hnister.common.mappers.ResourceMapper;
+import cn.zynworld.hnister.security.domain.Resource;
+import cn.zynworld.hnister.security.domain.ResourceExample;
+import cn.zynworld.hnister.security.domain.ResourceGroup;
+import cn.zynworld.hnister.security.dto.ResourceGroupCarryResourcesDTO;
+import cn.zynworld.hnister.security.mappers.ResourceGroupMapper;
+import cn.zynworld.hnister.security.mappers.ResourceMapper;
 import cn.zynworld.hnister.common.utils.BeanUtils;
 import cn.zynworld.hnister.common.utils.ResultBean;
 import com.google.common.collect.Lists;

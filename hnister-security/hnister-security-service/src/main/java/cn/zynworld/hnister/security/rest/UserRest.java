@@ -1,11 +1,13 @@
 package cn.zynworld.hnister.security.rest;
 
-import cn.zynworld.hnister.common.domain.*;
-import cn.zynworld.hnister.common.dto.security.UserCarryRoleDTO;
-import cn.zynworld.hnister.common.mappers.RoleUserRelaMapper;
-import cn.zynworld.hnister.common.mappers.UserMapper;
+import cn.zynworld.hnister.security.dto.UserCarryRoleDTO;
+import cn.zynworld.hnister.security.domain.RoleUserRelaExample;
+import cn.zynworld.hnister.security.domain.RoleUserRelaKey;
+import cn.zynworld.hnister.security.domain.User;
+import cn.zynworld.hnister.security.domain.UserExample;
+import cn.zynworld.hnister.security.mappers.RoleUserRelaMapper;
+import cn.zynworld.hnister.security.mappers.UserMapper;
 import cn.zynworld.hnister.common.utils.*;
-import cn.zynworld.hnister.schoolmate.api.ZlassRestApi;
 import cn.zynworld.hnister.security.exception.InsertRoleUserKeyException;
 import cn.zynworld.hnister.security.utils.UserUtils;
 import com.google.common.collect.Lists;

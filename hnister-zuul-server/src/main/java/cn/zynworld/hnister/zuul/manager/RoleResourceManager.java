@@ -1,11 +1,6 @@
 package cn.zynworld.hnister.zuul.manager;
 
-import cn.zynworld.hnister.common.domain.Resource;
-import cn.zynworld.hnister.common.domain.ResourceExample;
-import cn.zynworld.hnister.common.domain.RoleResourceRelaKey;
 import cn.zynworld.hnister.common.enums.account.ResourceStatusEnum;
-import cn.zynworld.hnister.common.mappers.ResourceMapper;
-import cn.zynworld.hnister.common.mappers.RoleResourceRelaMapper;
 import cn.zynworld.hnister.security.api.ResourceRestApi;
 import cn.zynworld.hnister.security.api.RoleResourceRelaRestApi;
 import cn.zynworld.hnister.security.api.dto.ResourceDTO;
